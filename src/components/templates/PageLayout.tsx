@@ -1,12 +1,5 @@
 import { FC, ReactNode, useState } from "react";
-import {
-  PageHead,
-  Header,
-  Footer,
-  SplashScreen,
-  GalleryModal,
-  CollabModal,
-} from "@components";
+import { PageHead, Header, Footer, SplashScreen } from "@components";
 import { enterAnimation, ViewContext } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -44,24 +37,23 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={`flex flex-col lg:min-h-screen h-full justify-between overflow-none  ${
+      className={`flex flex-col lg:min-h-screen h-full justify-between overflow-none ${
         fixed ? "absolute inset-0" : ""
       }`}
     >
       <PageHead
-        title="BRKRS"
-        description="unconventional. unorthodox. unphased. 1/1 pfp experiment by pencilxart"
-        url="https://rulebreakers.xyz/"
-        // url="https://rulebreakers.vercel.app/"
-        twitter="rulebreakers___"
+        title="EXP Studio"
+        description="web development services"
+        url="https://expstud.io/"
+        twitter="sol_exp"
       />
       <ViewContext.Provider value={value}>
         {/* header */}
-        <Header headerType={headerType} />
+        {/* <Header headerType={headerType} /> */}
 
         {/* body */}
         <motion.main
-          className={`flex flex-col h-full w-full ${mainClass} overflow-x-clip ${
+          className={`flex flex-col h-full w-full ${mainClass} overflow-x-clip fixed inset-0 ${
             footer ? "mb-8 md:mb-auto mt-4 md:mt-0" : ""
           }`}
           {...enterAnimation}
@@ -74,7 +66,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         {/* modals */}
         {assets && <SplashScreen assets={assets} />}
-        <AnimatePresence mode="wait">
+        {/* <AnimatePresence mode="wait">
           {galleryModalId !== -1 && (
             <GalleryModal
               key="gallery-modal"
@@ -90,7 +82,7 @@ const PageLayout: FC<Props> = (props: Props) => {
               setCollab={setCollabModal}
             />
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
       </ViewContext.Provider>
     </div>
   );

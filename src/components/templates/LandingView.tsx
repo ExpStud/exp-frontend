@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, FC, useContext } from "react";
-import { ViewContext, slideDown } from "@constants";
-import { IconBar } from "@components";
+import { ViewContext, slideUp } from "@constants";
+import { TwitterIcon } from "@components";
 import Image from "next/image";
 
 interface Props {
@@ -13,20 +13,15 @@ const LandingView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center lg:justify-end 3xl:justify-center">
-      <motion.div {...slideDown(showView)}>
-        <Image
-          src="/images/logo_lg.png"
-          alt="RULEBREAKERS"
-          width={1113}
-          height={721}
-          className="px-2 lg:px-20 2xl:px-0"
-          onLoadingComplete={() =>
-            setAssets && setAssets((prevState) => [(prevState[0] = true)])
-          }
-        />
+    <div className="relative w-full h-full flex flex-col items-center justify-center">
+      <motion.div {...slideUp(showView)}>
+        <h2 className=" text-xl md:text-6xl px-5 text-center">
+          expstud.io coming soon
+        </h2>
       </motion.div>
-      <IconBar className="lg:hidden absolute bottom-3" />
+      <motion.div className="absolute left-1/2 transform -translate-x-1/2 bottom-10">
+        <TwitterIcon />
+      </motion.div>
     </div>
   );
 };

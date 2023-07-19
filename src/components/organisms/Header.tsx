@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useState } from "react";
-import { Logo, Menu } from "@components";
+// import { Logo, Menu } from "@components";
 import {
   AnimatePresence,
   motion,
@@ -106,7 +106,7 @@ const HeaderItems: FC = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   return (
     <div className="w-screen flex items-center justify-between px-4 md:px-6 py-4 z-20">
-      <Logo />
+      {/* <Logo /> */}
       <AnimatePresence mode="wait">
         {!openMenu ? (
           <motion.div
@@ -140,7 +140,7 @@ const HeaderItems: FC = () => {
         )}
       </AnimatePresence>
 
-      <Menu toggleMenu={setOpenMenu} open={openMenu} />
+      {/* <Menu toggleMenu={setOpenMenu} open={openMenu} /> */}
     </div>
   );
 };
