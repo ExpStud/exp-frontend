@@ -45,7 +45,7 @@ const PageLayout: FC<Props> = (props: Props) => {
         title="EXP Studio"
         description="web development services"
         url="https://expstud.io/"
-        twitter="sol_exp"
+        twitter="expstudio_"
       />
       <ViewContext.Provider value={value}>
         {/* header */}

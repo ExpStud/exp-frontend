@@ -7,7 +7,7 @@ const TwitterIcon: FC<Props> = (props: Props) => {
   const { className, ...componentProps } = props;
   return (
     <a
-      href="https://twitter.com/sol_exp"
+      href="https://twitter.com/expstudio_"
       rel="noreferrer"
       target="_blank"
       // className="w-1/2 md:w-full"
