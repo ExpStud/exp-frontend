@@ -1,0 +1,41 @@
+@tailwind base; 
+@tailwind components; 
+@tailwind utilities;
+
+@font-face {
+  font-family: MoonieEyes;
+  src: url('../public/fonts/MoonieEyes.otf') format('truetype');
+}
+
+@font-face {
+  font-family: Discgent;
+  src: url('../public/fonts/Discgent.ttf') format('truetype');
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth bg-main bg-cover bg-fixed bg-custom-black text-custom-white font-primary;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
