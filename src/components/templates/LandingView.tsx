@@ -23,7 +23,7 @@ const LandingView: FC<Props> = (props: Props) => {
         className="absolute left-1/2 transform -translate-x-1/2 bottom-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 1.5, ease: "easeInOut" }}
+        transition={{ delay: 2, duration: 1.5, ease: "easeInOut" }}
       >
         <TwitterIcon />
       </motion.div>
