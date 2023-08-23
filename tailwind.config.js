@@ -16,7 +16,7 @@ module.exports = {
         primary: ["DaysOne"],
       },
       colors: {
-        "custom-black": "#121212",
+        "custom-black": "#0F0F0F",
         "custom-white": "#F3F1EA",
       },
       screens: {

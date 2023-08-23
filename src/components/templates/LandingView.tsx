@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, FC, useContext } from "react";
 import { ViewContext, slideUp } from "@constants";
-import { TwitterIcon } from "@components";
+import { TwitterIcon, ExpAnimatedIcon } from "@components";
 import Image from "next/image";
 
 interface Props {
@@ -14,7 +14,8 @@ const LandingView: FC<Props> = (props: Props) => {
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center">
-      <motion.div {...slideUp(showView)}>
+      <ExpAnimatedIcon />
+      {/* <motion.div {...slideUp(showView)}>
         <h2 className=" text-2xl md:text-6xl px-5 text-center">
           expstud.io coming soon
         </h2>
@@ -26,7 +27,7 @@ const LandingView: FC<Props> = (props: Props) => {
         transition={{ delay: 2, duration: 1.5, ease: "easeInOut" }}
       >
         <TwitterIcon />
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };

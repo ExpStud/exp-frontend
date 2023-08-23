@@ -10,7 +10,6 @@ const TwitterIcon: FC<Props> = (props: Props) => {
       href="https://twitter.com/expstudio_"
       rel="noreferrer"
       target="_blank"
-      // className="w-1/2 md:w-full"
     >
       <motion.svg
         width="55"

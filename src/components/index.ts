@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 
 //icons
 const TwitterIcon = dynamic(() => import("./@icons/TwitterIcon"));
+const ExpAnimatedIcon = dynamic(() => import("./@icons/ExpAnimatedIcon"));
 //atoms
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
@@ -20,5 +21,6 @@ export {
   PageLayout,
   SplashScreen,
   LandingView,
+  ExpAnimatedIcon,
   TwitterIcon
 };

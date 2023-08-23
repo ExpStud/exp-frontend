@@ -18,7 +18,7 @@ a {
 
 @layer base {
   html {
-    @apply scroll-smooth bg-background-gradient bg-cover bg-fixed bg-custom-black text-white font-primary;
+    @apply scroll-smooth bg-fixed bg-custom-black text-white font-primary;
   }
 }
 
