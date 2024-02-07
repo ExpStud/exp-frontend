@@ -13,11 +13,12 @@ module.exports = {
         "background-gradient": `linear-gradient(0deg, rgba(5,5,22,1) 44%,  rgba(20,20,20,1) 91%)`,
       },
       fontFamily: {
-        primary: ["DaysOne"],
+        primary: ["Barlow"],
       },
       colors: {
         "custom-black": "#121212",
         "custom-white": "#F3F1EA",
+        "custom-purple": "#9D87D9"
       },
       screens: {
         "3xl": "2160px",
