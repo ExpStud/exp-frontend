@@ -6,7 +6,7 @@ const Home: NextPage = () => {
   const [assets, setAssets] = useState<boolean[]>([]);
 
   return (
-    <PageLayout footer={false} assets={assets}>
+    <PageLayout footer={true} assets={assets}>
       <LandingView setAssets={setAssets} />
     </PageLayout>
   );

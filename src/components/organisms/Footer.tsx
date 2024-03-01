@@ -1,47 +1,44 @@
 import { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer: FC = () => {
-  return <footer className="">
-    <div className="flex flex-col sm:flex-row items-center gap-2 md:gap-4">
-        <div className="sm:w-1/3">
-          <div className="hidden flex-col md:flex-row items-center justify-center gap-4 lg:gap-14 text-3xl md:text-4xl text-white">
-            <a
-              href="https://twitter.com/rulebreakers___"
-              rel="noreferrer"
-              target="_blank"
-              className="cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
-            >
-              Twitter
+  return (
+    <footer className="relative w-screen h-[500px] bg-exp-purple-500 text-exp-purple-200 flex flex-col justify-between ">
+      <div className="flex flex-col gap-12 py-10 px-14">
+        <div className="flex justify-between w-full font-barlow font-medium">
+          <div className="flex flex-col gap-2">
+            <Link href="/">Home</Link>
+            <Link href="/">Our work</Link>
+            <Link href="/">What we do</Link>
+            <Link href="/">About us</Link>
+            <Link href="/">Contact us</Link>
+          </div>
+          <div className="flex flex-col gap-2">
+            <p className="opacity-60">Follow us</p>
+            <a href="" rel="noreferrer" target="_blank">
+              Instagran
             </a>
-            <a
-              href="https://twitter.com/rulebreakers___"
-              rel="noreferrer"
-              target="_blank"
-              className="cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
-            >
-              Discord
+            <a href="" rel="noreferrer" target="_blank">
+              LinkedIn
             </a>
-            <a
-              href="https://twitter.com/rulebreakers___"
-              rel="noreferrer"
-              target="_blank"
-              className="cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
-            >
-              Marketplace
+            <a href="" rel="noreferrer" target="_blank">
+              X
             </a>
           </div>
         </div>
-        <Image
+        <p>©2024 EXP STUDIO™</p>
+      </div>
+
+      <Image
         src="/images/footer.png"
         alt="footer"
-        width={608}
-        height={608}
-        className="px-2 lg:px-20 2xl:px-0"
-        // onLoadingComplete={() => handleAssetLoad(0, setAssets)}
+        height={180}
+        width={1536}
+        className="w-screen min-h-[120px] object-cover"
       />
-      </div>
-  </footer>;
+    </footer>
+  );
 };
 
 export default Footer;

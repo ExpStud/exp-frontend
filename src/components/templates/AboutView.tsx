@@ -14,7 +14,7 @@ const AboutView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   return (
-    <div className="relative w-full h-full items-center justify-center overflow-y-scroll">
+    <div className="relative w-full h-full items-center justify-center">
       <WelcomeSection title1="About us." title2="" />
 
       <div className="container ml-128 p-10 flex justify-between">

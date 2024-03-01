@@ -1,5 +1,11 @@
 import { FC, ReactNode, useState } from "react";
-import { PageHead, Header, Footer, SplashScreen, Navigation } from "@components";
+import {
+  PageHead,
+  Header,
+  Footer,
+  SplashScreen,
+  Navigation,
+} from "@components";
 import { enterAnimation, ViewContext } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -42,7 +48,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={`flex flex-col lg:min-h-screen h-full justify-between overflow-none ${
+      className={`flex flex-col lg:min-h-screen h-full justify-between overflow-x-hidden ${
         fixed ? "absolute inset-0" : ""
       }`}
     >
@@ -58,12 +64,9 @@ const PageLayout: FC<Props> = (props: Props) => {
       </div> */}
 
       <ViewContext.Provider value={value}>
-
         {/* body */}
         <motion.main
-          className={`flex flex-col h-full w-full ${mainClass} overflow-x-clip fixed inset-0 ${
-            footer ? "mb-8 md:mb-auto mt-4 md:mt-0" : ""
-          }`}
+          className={`flex flex-col h-full w-full ${mainClass} overflow-x-clip `}
           {...enterAnimation}
         >
           {children}
