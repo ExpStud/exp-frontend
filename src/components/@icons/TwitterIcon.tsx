@@ -13,8 +13,8 @@ const TwitterIcon: FC<Props> = (props: Props) => {
       // className="w-1/2 md:w-full"
     >
       <motion.svg
-        width="55"
-        height="45"
+        width="19"
+        height="16"
         viewBox="0 0 55 45"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

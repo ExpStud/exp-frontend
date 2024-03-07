@@ -14,7 +14,7 @@ interface Props {
 
 const PageLayout: FC<Props> = (props: Props) => {
   const {
-    footer = true,
+    footer = false,
     fixed = false,
     headerType = "absolute",
     children,
@@ -42,7 +42,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={`flex flex-col lg:min-h-screen h-full justify-between overflow-none ${
+      className={`flex flex-col lg:min-h-screen h-full justify-between overflow-none bg-background-black ${
         fixed ? "absolute inset-0" : ""
       }`}
     >
@@ -61,7 +61,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         {/* body */}
         <motion.main
-          className={`flex flex-col h-full w-full ${mainClass} overflow-x-clip fixed inset-0 ${
+          className={`flex flex-col h-full w-full ${mainClass} overflow-x-clip inset-0 ${
             footer ? "mb-8 md:mb-auto mt-4 md:mt-0" : ""
           }`}
           {...enterAnimation}
@@ -71,6 +71,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         {/* footer */}
         {footer && <Footer />}
+        <Footer />
 
         {/* modals */}
         {assets && <SplashScreen assets={assets} />}

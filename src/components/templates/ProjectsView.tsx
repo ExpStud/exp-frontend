@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, FC, useContext, useState } from "react";
 import Link from "next/link";
 import { ViewContext, slideUp } from "@constants";
-import { TwitterIcon, WelcomeSection, ProjectItem } from "@components";
+import { TwitterIcon, WelcomeSection, ProjectItem, LetsWorkLink, BackgroundImage } from "@components";
 import Image from "next/image";
 
 interface Props {
@@ -14,34 +14,51 @@ const ProjectsView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   return (
-    <div className="relative w-full h-full items-center justify-center overflow-y-scroll">
+    <div className="relative w-full h-full items-center justify-center" >
       
-      <WelcomeSection title1="Projects." title2="" />
+      <BackgroundImage />
 
-      <div className="container ml-128 mt-20 p-10">
+      <div className="relative z-10">
 
-        <ProjectItem title="Our services." subtitle="The full list." description="Services
-          My Slimes & All in Time (1 year and counting)
-          Project Manager at DeGods & y00ts (1 year)
-          Hot Heads (1 year)" />
+        <WelcomeSection title1="Projects." title2="" />
 
-        <ProjectItem title="Our services." subtitle="The full list." description="Services
-          My Slimes & All in Time (1 year and counting)
-          Project Manager at DeGods & y00ts (1 year)
-          Hot Heads (1 year)" />
+        <hr className="border-gray-700 mt-20"></hr>
 
-        <ProjectItem title="Our services." subtitle="The full list." description="Services
-          My Slimes & All in Time (1 year and counting)
-          Project Manager at DeGods & y00ts (1 year)
-          Hot Heads (1 year)" />
+        <div className="container ml-10">
 
-      </div>
+          <ProjectItem 
+            title="Our services." 
+            subtitle="The full list." 
+            first="Services My Slimes & All in Time (1 year and counting)"
+            second="Project Manager at DeGods & y00ts (1 year)"
+            third="Hot Heads (1 year)" 
+          />
 
-      <div className="container ml-128 p-10 text-8xl">
-        <Link href="/contact">
-          <p>Let&apos;s work together.</p>
-          <p>⟶</p>
-        </Link>
+          <hr className="border-gray-700 mt-20"></hr>
+
+          <ProjectItem 
+            title="Our services." 
+            subtitle="The full list." 
+            first="Services My Slimes & All in Time (1 year and counting)"
+            second="Project Manager at DeGods & y00ts (1 year)"
+            third="Hot Heads (1 year)" 
+          />
+
+          <hr className="border-gray-700 mt-20"></hr>
+
+          <ProjectItem 
+            title="Our services." 
+            subtitle="The full list." 
+            first="Services My Slimes & All in Time (1 year and counting)"
+            second="Project Manager at DeGods & y00ts (1 year)"
+            third="Hot Heads (1 year)" 
+          />
+
+        </div>
+
+        <hr className="border-gray-700 mt-20"></hr>
+
+        <LetsWorkLink />
       </div>
     </div>
   );
