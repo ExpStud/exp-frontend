@@ -1,16 +1,37 @@
 import { Variants } from "framer-motion";
 
+export const menuItemVariants: Variants = {
+  initial: { opacity: 0 },
+  animate: { 
+    opacity: 1,
+     transition: { 
+      delay: 0.5,
+      duration: 0.5, 
+      ease: "easeInOut" 
+    }, 
+  },
+  exit: { 
+    opacity: 0,
+     transition: { 
+      duration: 0.3, 
+      ease: "easeInOut" 
+    }, 
+  },
+ 
+};
+
 export const openMenuVariants = (width: number) => ({
   closed: {
     width: 64,
     transition: { 
+      delay: 0.2,
       duration: 0.4 
     },
   },
   open: { 
     width: width, 
     transition: { 
-      duration: 0.6 
+      duration: 0.8 
     } 
   },
 });
