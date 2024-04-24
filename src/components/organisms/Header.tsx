@@ -105,7 +105,7 @@ const Header: FC<Props> = (props: Props) => {
 const HeaderItems: FC = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   return (
-    <div className="w-screen flex items-center justify-between px-4 md:px-6 py-4 z-20">
+    <div className="flex items-center justify-between px-4 md:px-6 py-4 z-20">
       {/* <Logo /> */}
       <AnimatePresence mode="wait">
         {!openMenu ? (

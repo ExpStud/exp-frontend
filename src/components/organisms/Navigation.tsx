@@ -1,64 +1,115 @@
-import Link from 'next/link';
-import { useState } from 'react';
+import Link from "next/link";
+import { FC, useState } from "react";
+import { CloseIcon, ExpIcon, MenuIcon } from "@components";
+import { AnimatePresence, motion } from "framer-motion";
+import { exitAnimation, midExitAnimation, openMenuVariants } from "@constants";
+import Image from "next/image";
+import { useRouter } from "next/router";
 
-const Navigation = () => {
+interface Props {}
+
+const Navigation: FC<Props> = (props: Props) => {
+  const {} = props;
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="bg-gray-900 h-full w-64 flex flex-col text-gray-100">
-      <nav>
-        <ul>
-          <li>
-            <Link href="/">
-              <p className="block py-2 px-4">Home</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="/projects">
-              <p className="block py-2 px-4">Our work</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="/services">
-              <p className="block py-2 px-4">What we do</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="/about">
-              <p className="block py-2 px-4">About us</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <p className="block py-2 px-4">Contact us</p>
-            </Link>
-          </li>
-        </ul>
-        <p>Follow us</p>
-        <a
-          href="https://twitter.com/rulebreakers___"
-          rel="noreferrer"
-          target="_blank"
-          className="cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
-        >
-        Instagram
-        </a>
-        <a
-          href="https://twitter.com/rulebreakers___"
-          rel="noreferrer"
-          target="_blank"
-          className="cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
-        >
-        LinkdIn
-        </a>
-        <a
-          href="https://twitter.com/rulebreakers___"
-          rel="noreferrer"
-          target="_blank"
-          className="cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
-        >
-        X
-        </a>
-      </nav>
+    <div className="z-50 bg-black h-[100vh] w-16 flex flex-col text-gray-100">
+      <motion.div
+        className="z-10 fixed top-0 left-0 bottom-0 bg-black flex flex-col items-start justify-between py-7 px-4"
+        variants={openMenuVariants(800)}
+        initial="closed"
+        animate={open ? "open" : "closed"}
+      >
+        {!open ? (
+          <MenuIcon onClick={() => setOpen(!open)} />
+        ) : (
+          <CloseIcon onClick={() => setOpen(!open)} />
+        )}
+
+        {open && (
+          <motion.div
+            className="flex flex-col gap-8 h-full pl-32"
+            {...exitAnimation}
+          >
+            <NavigationItem href="/">Home</NavigationItem>
+            <NavigationItem href="/projects">Our work</NavigationItem>
+            <NavigationItem href="/services">What we do</NavigationItem>
+            <NavigationItem href="/about">About us</NavigationItem>
+            <NavigationItem href="/contact">Contact us</NavigationItem>
+
+            <div className="flex flex-col gap-2 pt-12">
+              <p className="opacity-60">Follow us</p>
+              <a
+                href="https://www.instagram.com/expstudio_/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://twitter.com/rulebreakers___"
+                rel="noreferrer"
+                target="_blank"
+              >
+                LinkdIn
+              </a>
+              <a
+                href="https://twitter.com/exp_studio_"
+                rel="noreferrer"
+                target="_blank"
+              >
+                X
+              </a>
+            </div>
+            {/*  corner image */}
+            <Image
+              src="/images/exp-corner.svg"
+              alt="exp"
+              width={673}
+              height={637}
+              className="absolute top-0 right-0 -z-10"
+            />
+          </motion.div>
+        )}
+
+        <ExpIcon />
+      </motion.div>
+
+      {/* background shadow */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="z-0 fixed inset-0 bg-background-black bg-opacity-80 "
+            onClick={() => setOpen(false)}
+            {...midExitAnimation}
+          />
+        )}
+      </AnimatePresence>
     </div>
+  );
+};
+
+interface NavigationItemProps {
+  children: React.ReactNode;
+  href: string;
+}
+const NavigationItem: FC<NavigationItemProps> = (
+  props: NavigationItemProps
+) => {
+  const { children, href } = props;
+
+  const router = useRouter();
+  const active = router.asPath === href;
+
+  return (
+    <Link
+      href={href}
+      className={`text-2xl lg:text-5xl transition-200 hover:opacity-100 hover:shadow-sm ${
+        active ? "opacity-100" : "opacity-60"
+      }`}
+    >
+      {children}
+    </Link>
   );
 };
 

@@ -6,7 +6,7 @@ const About: NextPage = () => {
   const [assets, setAssets] = useState<boolean[]>([]);
 
   return (
-    <PageLayout footer={false} assets={assets}>
+    <PageLayout assets={assets}>
       <AboutView setAssets={setAssets} />
     </PageLayout>
   );

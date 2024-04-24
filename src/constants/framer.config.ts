@@ -1,5 +1,20 @@
 import { Variants } from "framer-motion";
 
+export const openMenuVariants = (width: number) => ({
+  closed: {
+    width: 64,
+    transition: { 
+      duration: 0.4 
+    },
+  },
+  open: { 
+    width: width, 
+    transition: { 
+      duration: 0.6 
+    } 
+  },
+});
+
 //click animations - update
 export const largeClickAnimation = {
   whileHover: { scale: 1.1 },

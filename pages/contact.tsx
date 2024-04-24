@@ -6,7 +6,7 @@ const Contact: NextPage = () => {
   const [assets, setAssets] = useState<boolean[]>([]);
 
   return (
-    <PageLayout footer={false} assets={assets}>
+    <PageLayout assets={assets}>
       <ContactView setAssets={setAssets} />
     </PageLayout>
   );

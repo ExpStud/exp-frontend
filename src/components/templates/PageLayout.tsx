@@ -1,5 +1,5 @@
 import { FC, ReactNode, useState } from "react";
-import { PageHead, Header, Footer, SplashScreen, Navigation } from "@components";
+import { PageHead, Footer, SplashScreen, Navigation } from "@components";
 import { enterAnimation, ViewContext } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -14,9 +14,8 @@ interface Props {
 
 const PageLayout: FC<Props> = (props: Props) => {
   const {
-    footer = false,
+    footer = true,
     fixed = false,
-    headerType = "absolute",
     children,
     mainClass = "",
     assets = [],
@@ -24,76 +23,42 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   //context for splash screen & modals
   const [showView, setShowView] = useState<boolean>(false);
-  const [galleryModalId, setGalleryModalId] = useState<number>(-1);
-  const [collabModal, setCollabModal] = useState({ id: -1, type: "" });
-  const [isNavigationOpen, seetIsNavigationOpen] = useState(false);
+
   const value = {
     showView,
     setShowView,
-    galleryModalId,
-    setGalleryModalId,
-    collabModal,
-    setCollabModal,
-  };
-
-  const toggleNavigation = () => {
-    seetIsNavigationOpen(!isNavigationOpen);
   };
 
   return (
-    <div
-      className={`flex flex-col lg:min-h-screen h-full justify-between overflow-none bg-background-black ${
-        fixed ? "absolute inset-0" : ""
-      }`}
-    >
-      <PageHead
-        title="EXP Studio"
-        description="Web Development Solutions"
-        url="https://expstud.io/"
-        twitter="expstudio_"
-      />
-
-      {/* <div className={`fixed h-full ${isNavigationOpen ? 'w-64' : 'w-0'} transition-all duration-300 ease-in-out`}>
+    <ViewContext.Provider value={value}>
+      <div
+        className={`flex lg:min-h-screen h-full bg-background-black ${
+          fixed ? "absolute inset-0" : ""
+        }`}
+      >
+        <PageHead
+          title="EXP Studio"
+          description="Web Development Solutions"
+          url="https://expstud.io/"
+          twitter="expstudio_"
+        />
         <Navigation />
-      </div> */}
-
-      <ViewContext.Provider value={value}>
-
-        {/* body */}
-        <motion.main
-          className={`flex flex-col h-full w-full ${mainClass} overflow-x-clip inset-0 ${
-            footer ? "mb-8 md:mb-auto mt-4 md:mt-0" : ""
-          }`}
-          {...enterAnimation}
-        >
-          {children}
-        </motion.main>
-
-        {/* footer */}
-        {footer && <Footer />}
-        <Footer />
+        <div className="z-0 flex flex-col h-full w-full bg-custom-black">
+          <motion.main
+            className={`flex flex-col h-full w-full ${mainClass} inset-0 ${
+              footer ? "mb-8 md:mb-auto mt-4 md:mt-0" : ""
+            }`}
+            {...enterAnimation}
+          >
+            {children}
+          </motion.main>
+          {footer && <Footer />}
+        </div>
 
         {/* modals */}
         {assets && <SplashScreen assets={assets} />}
-        {/* <AnimatePresence mode="wait">
-          {galleryModalId !== -1 && (
-            <GalleryModal
-              key="gallery-modal"
-              imageId={galleryModalId}
-              setImageId={setGalleryModalId}
-            />
-          )}
-          {collabModal.id !== -1 && (
-            <CollabModal
-              key="collab-modal"
-              id={collabModal.id}
-              type={collabModal.type}
-              setCollab={setCollabModal}
-            />
-          )}
-        </AnimatePresence> */}
-      </ViewContext.Provider>
-    </div>
+      </div>
+    </ViewContext.Provider>
   );
 };
 export default PageLayout;
