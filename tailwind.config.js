@@ -13,11 +13,19 @@ module.exports = {
         "background-gradient": `linear-gradient(0deg, rgba(5,5,22,1) 44%,  rgba(20,20,20,1) 91%)`,
       },
       fontFamily: {
-        primary: ["DaysOne"],
+        primary: ['Barlow'],
       },
       colors: {
         "custom-black": "#0F0F0F",
         "custom-white": "#F3F1EA",
+        "custom-purple": "#9D87D9",
+        "custom-dark-purple": "#4c4462",
+        "footer-purple": "#2B1B57",
+        "copyright-purple": "#8374b8",
+        "custom-gray": "#a2a2a2",
+        "custom-dark-gray": "#7a7a7a",
+        "custom-btn-gray": "#2e2e2e",
+        "background-black": "#171717",
       },
       screens: {
         "3xl": "2160px",

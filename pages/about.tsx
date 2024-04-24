@@ -1,14 +1,14 @@
-import { PageLayout, LandingView } from "@components";
+import { PageLayout, AboutView } from "@components";
 import { NextPage } from "next";
 import { useState } from "react";
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
   const [assets, setAssets] = useState<boolean[]>([]);
 
   return (
     <PageLayout footer={false} assets={assets}>
-      <LandingView setAssets={setAssets} />
+      <AboutView setAssets={setAssets} />
     </PageLayout>
   );
 };
-export default Home;
+export default About;

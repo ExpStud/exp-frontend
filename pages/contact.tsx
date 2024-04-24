@@ -1,14 +1,14 @@
-import { PageLayout, LandingView } from "@components";
+import { PageLayout, ContactView } from "@components";
 import { NextPage } from "next";
 import { useState } from "react";
 
-const Home: NextPage = () => {
+const Contact: NextPage = () => {
   const [assets, setAssets] = useState<boolean[]>([]);
 
   return (
     <PageLayout footer={false} assets={assets}>
-      <LandingView setAssets={setAssets} />
+      <ContactView setAssets={setAssets} />
     </PageLayout>
   );
 };
-export default Home;
+export default Contact;

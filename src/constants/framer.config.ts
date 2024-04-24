@@ -1,6 +1,6 @@
 import { Variants } from "framer-motion";
 
-//click animations
+//click animations - update
 export const largeClickAnimation = {
   whileHover: { scale: 1.1 },
   whileTap: { scale: 1 },
