@@ -13,9 +13,13 @@ module.exports = {
         "background-gradient": `linear-gradient(0deg, rgba(5,5,22,1) 44%,  rgba(20,20,20,1) 91%)`,
       },
       fontFamily: {
-        primary: ['Barlow'],
+        primary: ["Barlow"],
       },
       colors: {
+        "exp-gray": {
+          200: "#2D2D2D",
+          600: "#353535",
+        },
         "custom-black": "#0F0F0F",
         "custom-white": "#F3F1EA",
         "custom-purple": "#9D87D9",
@@ -26,7 +30,7 @@ module.exports = {
         "custom-dark-gray": "#7a7a7a",
         "custom-btn-gray": "#2e2e2e",
         "background-black": "#171717",
-        "form-background": "#2d2d2d"
+        "form-background": "#2d2d2d",
       },
       screens: {
         "3xl": "2160px",

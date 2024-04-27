@@ -87,3 +87,7 @@ html {
 .icon-hover {
   @apply z-10 cursor-pointer transition-300 fill-white opacity-60 hover:opacity-100;
 }
+
+.input {
+  @apply border bg-form-background border-gray-600 rounded-lg px-3 py-2 focus:border-custom-purple active:border-custom-purple focus:outline-none active:outline-none;
+}
