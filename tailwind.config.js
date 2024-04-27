@@ -26,6 +26,7 @@ module.exports = {
         "custom-dark-gray": "#7a7a7a",
         "custom-btn-gray": "#2e2e2e",
         "background-black": "#171717",
+        "form-background": "#2d2d2d"
       },
       screens: {
         "3xl": "2160px",
