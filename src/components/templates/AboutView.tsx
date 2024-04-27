@@ -57,12 +57,11 @@ const AboutView: FC<Props> = (props: Props) => {
         <div className="ml-10 mt-20 flex">
 
           <Image
-              src="/images/miguel.png"
+              src="/images/14-nacho.jpg"
               alt="Miguel"
               width={608}
               height={608}
-              className="grayscale"
-              // onLoadingComplete={() => handleAssetLoad(0, setAssets)}
+              className="grayscale rounded-md"
             />
 
           <div className="flex flex-col justify-items-start w-1/2 ml-10">
@@ -101,12 +100,11 @@ const AboutView: FC<Props> = (props: Props) => {
           </div>
 
           <Image
-            src="/images/wallace.png"
+            src="/images/33-nino.jpg"
             alt="Wallace"
             width={608}
             height={608}
-            className="grayscale"
-            // onLoadingComplete={() => handleAssetLoad(0, setAssets)}
+            className="grayscale rounded-md"
           />
         </div>
 

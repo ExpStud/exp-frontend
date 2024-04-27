@@ -6,7 +6,7 @@ const Footer: FC = () => {
   return (
     <footer className="bg-footer-purple z-10">
       <div className="flex flex-col justify-between mx-10 sm:flex-row gap-2 md:gap-4 text-custom-purple">
-        <div className="flex flex-col mt-20">
+        <div className="flex flex-col mt-20 text-xl font-medium">
           <FooterItem href="/">Home</FooterItem>
           <FooterItem href="/projects">Our work</FooterItem>
           <FooterItem href="/services">What we do</FooterItem>
@@ -44,13 +44,16 @@ const Footer: FC = () => {
           </a>
         </div>
       </div>
-      <Image
-        src="/images/footer-image.png"
-        alt="footer"
-        width={608}
-        height={608}
-        className="w-full h-auto grayscale-purple"
-      />
+      <div className="relative w-full h-auto">
+        <Image
+            src="/images/footer.jpg"
+            alt="footer"
+            width={608}
+            height={608}
+            className="w-full h-auto"
+        />
+        <div className="absolute top-0 left-0 w-full h-full bg-purple-600 opacity-50 mix-blend-multiply"></div>
+    </div>
     </footer>
   );
 };
@@ -67,7 +70,7 @@ const FooterItem: FC<FooterItemProps> = (
   return (
     <Link
       href={href}
-      className={`mb-3 text-xl font-medium cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"`}
+      className={`text-xl font-medium transition-200 hover:opacity-100 cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200`}
     >
       {children}
     </Link>

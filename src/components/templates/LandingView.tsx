@@ -27,7 +27,7 @@ const LandingView: FC<Props> = (props: Props) => {
       name: "Scum",
       title: "Founder of My Slimes",
       company: "My Slimes",
-      image: "/images/testimonials.png",
+      image: "/images/1-scum.jpg",
       testimonial:
         "The team was always contactable, honest in their opinions, and patient to work through challenges as they arose. Very collaborative, listening to the client's needs, but also coming up with usability solutions that we didn't know about.",
     },
@@ -36,7 +36,7 @@ const LandingView: FC<Props> = (props: Props) => {
       name: "Robbie Shilstone",
       title: "Founder of Publique",
       company: "Publique",
-      image: "/images/r_shilstone.png",
+      image: "/images/robbie.jpg",
       testimonial:
         "EXP went above and beyond to make Publique a success. No idea ever felt to big to implement. They were perfectly suited to create this experience exactly how I envisioned it.",
     },
@@ -45,7 +45,7 @@ const LandingView: FC<Props> = (props: Props) => {
       name: "Calder Moore",
       title: "In Search Of",
       company: "In Search Of",
-      image: "/images/c_moore.png",
+      image: "/images/calder.gif",
       testimonial:
         "Commissioning EXP Studios was a great decision. They were super upfront about costs and worked with my budget to suit my needs. They provided works in progress along the way which I was always in absolutely in love with what they had done. Will definitely be returning to expand the website once it is ready to do so.",
     },
@@ -54,7 +54,7 @@ const LandingView: FC<Props> = (props: Props) => {
       name: "Andy Rew",
       title: "Founder of CyberFrogs",
       company: "CyberFrogs",
-      image: "/images/a_rew.png",
+      image: "/images/39-andres.jpg",
       testimonial:
         "Working with EXP has felt like working with an extension of my core team. Their attentiveness, attention to detail and their understanding of complex systems and web3 intricacies has made our contracted work not only pain free, but enjoyable. The EXP team just \"gets it\" and they have helped amplify our products in ways I previously thought unobtainable with outside contractors. They approached our contract as if they were working on their own project.",
     },
@@ -144,7 +144,7 @@ const LandingView: FC<Props> = (props: Props) => {
               ))}
             </div>
 
-            <div className="flex items-center mt-10">
+            <div className="flex items-start mt-10">
               <div className="flex w-1/2">
                 <Image
                   src={selectedTestimonial.image}
