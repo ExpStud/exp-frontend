@@ -6,20 +6,12 @@ const Footer: FC = () => {
   return (
     <footer className="bg-footer-purple z-10">
       <div className="flex flex-col justify-between mx-10 sm:flex-row gap-2 md:gap-4 text-custom-purple">
-        <div className="flex flex-col mt-20 text-xl font-medium">
-          <Link href="/" className="mb-3">
-            Home
-          </Link>
-          <Link href="/projects" className="mb-3">
-            Our work
-          </Link>
-          <Link href="/services" className="mb-3">
-            What we do
-          </Link>
-          <Link href="/about" className="mb-3">
-            About us
-          </Link>
-          <Link href="/contact">Contact us</Link>
+        <div className="flex flex-col mt-20">
+          <FooterItem href="/">Home</FooterItem>
+          <FooterItem href="/projects">Our work</FooterItem>
+          <FooterItem href="/services">What we do</FooterItem>
+          <FooterItem href="/about">About us</FooterItem>
+          <FooterItem href="/contact">Contact us</FooterItem>
           <p className="mt-20 mb-10 text-xs font-normal text-copyright-purple">
             ©2024 EXP STUDIO™
           </p>
@@ -60,6 +52,25 @@ const Footer: FC = () => {
         className="w-full h-auto grayscale-purple"
       />
     </footer>
+  );
+};
+
+interface FooterItemProps {
+  children: React.ReactNode;
+  href: string;
+}
+const FooterItem: FC<FooterItemProps> = (
+  props: FooterItemProps
+) => {
+  const { children, href } = props;
+
+  return (
+    <Link
+      href={href}
+      className={`mb-3 text-xl font-medium cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"`}
+    >
+      {children}
+    </Link>
   );
 };
 
