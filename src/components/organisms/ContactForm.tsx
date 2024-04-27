@@ -41,17 +41,17 @@ const ContactForm: FC<Props> = (props: Props) => {
   return (
     <form onSubmit={handleSubmit} className="mt-10 mr-20">
       <div className="mb-4 flex">
-        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} className="w-1/2 border bg-black border-gray-600 rounded px-3 py-2 mr-5" placeholder="Name" />
-        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="w-1/2 border bg-black border-gray-600 rounded px-3 py-2" placeholder="Email address" />
+        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} className="w-1/2 border bg-form-background border-gray-600 rounded px-3 py-2 mr-5" placeholder="Name" />
+        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="w-1/2 border bg-form-background border-gray-600 rounded px-3 py-2" placeholder="Email address" />
       </div>
       <div className="mb-4">
-        <textarea id="message" name="message" value={formData.message} onChange={handleChange} className="border bg-black border-gray-600 rounded px-3 py-2 w-full" placeholder="Message"></textarea>
+        <textarea id="message" name="message" value={formData.message} onChange={handleChange} className="border bg-form-background border-gray-600 rounded px-3 py-2 w-full" placeholder="Message"></textarea>
       </div>
       <div className="mb-4">
-        <input type="text" id="budgetRange" name="budgetRange" value={formData.budgetRange} onChange={handleChange} className="border bg-black border-gray-600 rounded px-3 py-2 w-full" placeholder="Budget Range" />
+        <input type="text" id="budgetRange" name="budgetRange" value={formData.budgetRange} onChange={handleChange} className="border bg-form-background border-gray-600 rounded px-3 py-2 w-full" placeholder="Budget Range" />
       </div>
       <div className="mb-4">
-      <input type="text" id="relevantDocuments" name="relevantDocuments" value={formData.relevantDocuments} onChange={handleChange} className="border bg-black border-gray-600 rounded px-3 py-2 w-full" placeholder="Relevant Documents" />
+      <input type="text" id="relevantDocuments" name="relevantDocuments" value={formData.relevantDocuments} onChange={handleChange} className="border bg-form-background border-gray-600 rounded px-3 py-2 w-full" placeholder="Relevant Documents" />
       </div>
       {/* <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit</button> */}
       <Button title="Send message" link="/projects" />
