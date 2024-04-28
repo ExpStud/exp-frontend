@@ -197,7 +197,7 @@ const LandingView: FC<Props> = (props: Props) => {
 
         <hr className="border-gray-700 mt-20"></hr>
 
-        <div className="ml-10 mt-20">
+        <div className="ml-8 mt-20">
           <p className="text-5xl text-custom-gray mb-3">About ourselves.</p>
           <p className="text-5xl">Perfeggcionism freaks.</p>
 

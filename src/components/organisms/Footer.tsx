@@ -44,16 +44,18 @@ const Footer: FC = () => {
           </a>
         </div>
       </div>
+      <hr className="border-footer-border"></hr>
       <div className="relative w-full h-auto">
         <Image
-            src="/images/footer.jpg"
+            src="/images/footer1.jpg"
             alt="footer"
             width={608}
             height={608}
             className="w-full h-auto"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-purple-600 opacity-50 mix-blend-multiply"></div>
-    </div>
+        {/* Adjust the background color and opacity here */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[#6242cb] opacity-60 mix-blend-overlay"></div>
+      </div>
     </footer>
   );
 };

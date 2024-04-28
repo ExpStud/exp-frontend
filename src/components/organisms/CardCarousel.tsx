@@ -37,41 +37,45 @@ const CardCarousel = () => {
     sliderRef.current.scrollLeft = scrollLeft - walk;
   };
 
+  const navigationWidth = '6.5rem';
+
   return (
-    <div className="relative mt-20 mb-500 ml-10 overflow-hidden" style={{ width: '100%' }}>
-      <div
-        ref={sliderRef}
-        className="flex cursor-pointer overflow-auto"
-        onMouseDown={startDragging}
-        onMouseLeave={stopDragging}
-        onMouseUp={stopDragging}
-        onMouseMove={onDrag}
-        onTouchStart={startDragging}
-        onTouchEnd={stopDragging}
-        onTouchMove={onDrag}
-        style={{
-          scrollBehavior: 'smooth',
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-        }}
-      >
-        <style>
-          {`
-            ::-webkit-scrollbar {
-              display: none;  // hides scrollbars in WebKit browsers
-            }
-          `}
-        </style>
-        {cards.map((card, index) => (
-          <div key={index} className="flex-none pr-4 mb-20" style={{ minWidth: card.width }}>
-            <Image
-              src={card.image}
-              alt={`Slide ${index}`}
-              width={card.width}
-              height={card.height}
-            />
-          </div>
-        ))}
+    <div className='ml-10 my-20' style={{ width: `calc(100vw - ${navigationWidth})` }}>
+      <div className="overflow-auto justify-end" style={{ width: '100%' }}>
+        <div
+          ref={sliderRef}
+          className="flex cursor-pointer overflow-auto"
+          onMouseDown={startDragging}
+          onMouseLeave={stopDragging}
+          onMouseUp={stopDragging}
+          onMouseMove={onDrag}
+          onTouchStart={startDragging}
+          onTouchEnd={stopDragging}
+          onTouchMove={onDrag}
+          style={{
+            scrollBehavior: 'smooth',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+          }}
+        >
+          <style>
+            {`
+              ::-webkit-scrollbar {
+                display: none;
+              }
+            `}
+          </style>
+          {cards.map((card, index) => (
+            <div key={index} className="pr-8" style={{ minWidth: card.width }}>
+              <Image
+                src={card.image}
+                alt={`Slide ${index}`}
+                width={card.width}
+                height={card.height}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
