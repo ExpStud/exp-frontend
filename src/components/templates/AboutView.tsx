@@ -57,7 +57,7 @@ const AboutView: FC<Props> = (props: Props) => {
         <div className="ml-10 mt-20 flex">
 
           <Image
-              src="/images/14-nacho.jpg"
+              src="/images/about/14-nacho.jpg"
               alt="Miguel"
               width={608}
               height={608}
@@ -100,7 +100,7 @@ const AboutView: FC<Props> = (props: Props) => {
           </div>
 
           <Image
-            src="/images/33-nino.jpg"
+            src="/images/about/33-nino.jpg"
             alt="Wallace"
             width={608}
             height={608}

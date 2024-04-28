@@ -113,7 +113,7 @@ const NavigationItem: FC<NavigationItemProps> = (
   return (
     <Link
       href={href}
-      className={`text-4xl lg:text-5xl transition-200 hover:opacity-100 hover:shadow-sm ${
+      className={`text-4xl lg:text-5xl transition-200 hover:opacity-100 ${
         active ? "opacity-100" : "opacity-60"
       }`}
     >

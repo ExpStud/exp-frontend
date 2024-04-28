@@ -19,7 +19,7 @@ const Footer: FC = () => {
         <div className="flex flex-col mt-20 mr-10">
           <p className="mb-3 text-copyright-purple">Follow us</p>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/expstudio_/"
             rel="noreferrer"
             target="_blank"
             className="mb-3 cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
@@ -27,7 +27,7 @@ const Footer: FC = () => {
             Instagram
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/exp-studio-llc"
             rel="noreferrer"
             target="_blank"
             className="mb-3 cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
@@ -35,7 +35,7 @@ const Footer: FC = () => {
             Linkedin
           </a>
           <a
-            href="https://twitter.com/rulebreakers___"
+            href="https://twitter.com/exp_studio_"
             rel="noreferrer"
             target="_blank"
             className="mb-3 cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
@@ -47,7 +47,7 @@ const Footer: FC = () => {
       <hr className="border-footer-border"></hr>
       <div className="relative w-full h-auto">
         <Image
-            src="/images/footer1.jpg"
+            src="/images/footer/footer.jpg"
             alt="footer"
             width={608}
             height={608}
@@ -64,9 +64,7 @@ interface FooterItemProps {
   children: React.ReactNode;
   href: string;
 }
-const FooterItem: FC<FooterItemProps> = (
-  props: FooterItemProps
-) => {
+const FooterItem: FC<FooterItemProps> = (props: FooterItemProps) => {
   const { children, href } = props;
 
   return (
