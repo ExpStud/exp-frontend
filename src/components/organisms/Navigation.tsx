@@ -3,7 +3,6 @@ import { FC, useState } from "react";
 import { CloseIcon, ExpIcon, MenuIcon } from "@components";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  exitAnimation,
   menuItemVariants,
   midExitAnimation,
   openMenuVariants,
