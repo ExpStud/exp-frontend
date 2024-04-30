@@ -15,12 +15,12 @@ const ProjectsView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
 
   return (
-    <div className="relative  w-full h-full items-center justify-center">
+    <div className="relative w-full h-full">
       <BackgroundImage />
 
       <WelcomeSection title1="Projects." className="left-margin" />
 
-      <hr className="border-gray-700 mt-20"></hr>
+      <hr className="border-gray-700 top-margin"></hr>
 
       <ProjectItem
         title="Our services."
@@ -30,7 +30,7 @@ const ProjectsView: FC<Props> = (props: Props) => {
         third="Hot Heads (1 year)"
       />
 
-      <hr className="border-gray-700 mt-20"></hr>
+      <hr className="border-gray-700 top-margin"></hr>
 
       <ProjectItem
         title="Our services."
@@ -40,7 +40,7 @@ const ProjectsView: FC<Props> = (props: Props) => {
         third="Hot Heads (1 year)"
       />
 
-      <hr className="border-gray-700 mt-20"></hr>
+      <hr className="border-gray-700 top-margin"></hr>
 
       <ProjectItem
         title="Our services."
@@ -50,7 +50,7 @@ const ProjectsView: FC<Props> = (props: Props) => {
         third="Hot Heads (1 year)"
       />
 
-      <hr className="border-gray-700 mt-20"></hr>
+      <hr className="border-gray-700 top-margin"></hr>
 
       <LetsWorkLink />
     </div>

@@ -14,14 +14,14 @@ const ProjectItem: FC<Props> = (props: Props) => {
   const { title, subtitle, first, second, third } = props;
 
   return (
-    <div className="left-margin top-magin flex flex-col lg:flex-row items-center justify-between py-4">
+    <div className="left-margin top-margin flex flex-col lg:flex-row lg:items-center justify-between py-4 lg:pr-10 xl:pr-[10vw] max-w-[1680px]">
       <div className="justify-space-between">
         <div className="text-5xl font-medium">
           <p className="text-custom-gray mb-3">{title}</p>
           <p className="text-4xl md:text-5xl">{subtitle}</p>
         </div>
 
-        <div className="mt-20">
+        <div className="top-margin">
           <p>Services</p>
           <div>
             <p className="text-gray-400">{first}</p>
@@ -30,7 +30,7 @@ const ProjectItem: FC<Props> = (props: Props) => {
           </div>
         </div>
 
-        <div className="mt-20">
+        <div className="top-margin hidden lg:flex">
           <Button title="View project" link="/about" />
         </div>
       </div>
@@ -40,8 +40,11 @@ const ProjectItem: FC<Props> = (props: Props) => {
         alt="project"
         width={608}
         height={480}
-        className="px-2 lg:px-20 2xl:px-0 bg-white rounded-md max-w-[320px] md:max-w-auto"
+        className="top-margin px-6 lg:px-20 2xl:px-0 bg-white rounded-md max-w-[320px] md:max-w-[608px] aspect-[608/480]"
       />
+      <div className="top-margin lg:hidden">
+        <Button title="View project" link="/about" />
+      </div>
     </div>
   );
 };
