@@ -82,7 +82,7 @@ const Testimonials: FC = () => {
   return (
     <div className="ml-10 mt-20">
       <p className="text-custom-gray text-5xl mb-3">Testimonials.</p>
-      <p className="text-5xl">Our wall of love.</p>
+      <p className="text-4xl md:text-5xl">Our wall of love.</p>
 
       <div className="mt-20 flex border-t border-b border-gray-600 overflow-x-auto">
         {testimonialsData.map((testimonial) => (
