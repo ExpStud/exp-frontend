@@ -15,10 +15,10 @@ const ProjectsView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
 
   return (
-    <div className="relative w-screen h-full items-center justify-center pl-6 lg:pl-0">
+    <div className="relative  w-full h-full items-center justify-center">
       <BackgroundImage />
 
-      <WelcomeSection title1="Projects." className="ml-10" />
+      <WelcomeSection title1="Projects." className="left-margin" />
 
       <hr className="border-gray-700 mt-20"></hr>
 

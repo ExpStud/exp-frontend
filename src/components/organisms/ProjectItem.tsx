@@ -14,8 +14,8 @@ const ProjectItem: FC<Props> = (props: Props) => {
   const { title, subtitle, first, second, third } = props;
 
   return (
-    <div className="flex items-center justify-between py-4 mt-20 pl-6 md:pl-16">
-      <div className="w-1/2 justify-space-between">
+    <div className="left-margin top-magin flex flex-col lg:flex-row items-center justify-between py-4">
+      <div className="justify-space-between">
         <div className="text-5xl font-medium">
           <p className="text-custom-gray mb-3">{title}</p>
           <p className="text-4xl md:text-5xl">{subtitle}</p>
@@ -35,14 +35,13 @@ const ProjectItem: FC<Props> = (props: Props) => {
         </div>
       </div>
 
-      {/* <Image
+      <Image
         src=""
         alt="project"
         width={608}
         height={480}
-        className="px-2 lg:px-20 2xl:px-0 bg-white rounded-md"
-        // onLoadingComplete={() => handleAssetLoad(0, setAssets)}
-      /> */}
+        className="px-2 lg:px-20 2xl:px-0 bg-white rounded-md max-w-[320px] md:max-w-auto"
+      />
     </div>
   );
 };
