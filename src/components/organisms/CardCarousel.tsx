@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 
 const CardCarousel = () => {
@@ -8,15 +8,17 @@ const CardCarousel = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const cards = [
-    { image: '/images/slider1.svg', width: 1040, height: 600 },
-    { image: '/images/slider1.svg', width: 1040, height: 600 },
-    { image: '/images/slider1.svg', width: 1040, height: 600 }
+    { image: "/images/slider1.svg", width: 1040, height: 600 },
+    { image: "/images/slider1.svg", width: 1040, height: 600 },
+    { image: "/images/slider1.svg", width: 1040, height: 600 },
   ];
 
   const startDragging = (e: React.MouseEvent | React.TouchEvent) => {
     if (sliderRef.current) {
       setIsDragging(true);
-      const clientX = e.type.includes('mouse') ? (e as React.MouseEvent).pageX : (e as React.TouchEvent).touches[0].pageX;
+      const clientX = e.type.includes("mouse")
+        ? (e as React.MouseEvent).pageX
+        : (e as React.TouchEvent).touches[0].pageX;
       setStartX(clientX - sliderRef.current.offsetLeft);
       setScrollLeft(sliderRef.current.scrollLeft);
     }
@@ -31,17 +33,22 @@ const CardCarousel = () => {
   const onDrag = (e: React.MouseEvent | React.TouchEvent) => {
     if (!isDragging || !sliderRef.current) return;
     e.preventDefault();
-    const clientX = e.type.includes('mouse') ? (e as React.MouseEvent).pageX : (e as React.TouchEvent).touches[0].pageX;
+    const clientX = e.type.includes("mouse")
+      ? (e as React.MouseEvent).pageX
+      : (e as React.TouchEvent).touches[0].pageX;
     const x = clientX - sliderRef.current.offsetLeft;
     const walk = (x - startX) * 3;
     sliderRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  const navigationWidth = '6.5rem';
+  const navigationWidth = "6.5rem";
 
   return (
-    <div className='ml-10 my-20' style={{ width: `calc(100vw - ${navigationWidth})` }}>
-      <div className="overflow-auto justify-end" style={{ width: '100%' }}>
+    <div
+      className=" my-20"
+      // style={{ width: `calc(100vw - ${navigationWidth})` }}
+    >
+      <div className="overflow-auto justify-end" style={{ width: "100%" }}>
         <div
           ref={sliderRef}
           className="flex cursor-pointer overflow-auto"
@@ -53,9 +60,9 @@ const CardCarousel = () => {
           onTouchEnd={stopDragging}
           onTouchMove={onDrag}
           style={{
-            scrollBehavior: 'smooth',
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
+            scrollBehavior: "smooth",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
           }}
         >
           <style>
@@ -66,7 +73,7 @@ const CardCarousel = () => {
             `}
           </style>
           {cards.map((card, index) => (
-            <div key={index} className="pr-8" style={{ minWidth: card.width }}>
+            <div key={index} className="px-4" style={{ minWidth: card.width }}>
               <Image
                 src={card.image}
                 alt={`Slide ${index}`}

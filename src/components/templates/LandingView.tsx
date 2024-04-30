@@ -22,7 +22,7 @@ const LandingView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
 
   return (
-    <div className="relative w-full h-full items-center justify-center pl-8">
+    <div className="relative w-full h-full items-center justify-center pl-6 md:pl-16">
       <BackgroundImage />
 
       <div className="relative z-10">
