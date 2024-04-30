@@ -1,16 +1,16 @@
-import { FC } from "react";
+import { FC, HTMLAttributes } from "react";
 import Link from "next/link";
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   title1: string;
-  title2: string;
+  title2?: string;
 }
 
 const WelcomeSection: FC<Props> = (props: Props) => {
-  const { title1, title2 } = props;
+  const { title1, title2, ...componentProps } = props;
 
   return (
-    <div className="ml-10">
+    <div className={componentProps.className}>
       <div className="border-b border-custom-dark-gray inline-block">
         <h1 className="py-5 text-2xl font-medium">EXP STUDIO</h1>
       </div>

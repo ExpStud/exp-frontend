@@ -6,7 +6,7 @@ interface Props {}
 
 const LetsWorkLink: FC<Props> = (props: Props) => {
   return (
-    <div className="ml-10 mt-20 mb-20 text-5xl xl:text-8xl">
+    <div className="left-margin mt-20 mb-20 text-5xl xl:text-8xl">
       <Link href="/contact">
         <p>Let&apos;s work together.</p>
         <Image

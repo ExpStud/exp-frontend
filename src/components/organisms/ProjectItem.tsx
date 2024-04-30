@@ -14,11 +14,11 @@ const ProjectItem: FC<Props> = (props: Props) => {
   const { title, subtitle, first, second, third } = props;
 
   return (
-    <div className="flex items-center justify-between py-4 mt-20">
+    <div className="flex items-center justify-between py-4 mt-20 pl-6 md:pl-16">
       <div className="w-1/2 justify-space-between">
         <div className="text-5xl font-medium">
           <p className="text-custom-gray mb-3">{title}</p>
-          <p>{subtitle}</p>
+          <p className="text-4xl md:text-5xl">{subtitle}</p>
         </div>
 
         <div className="mt-20">
@@ -35,14 +35,14 @@ const ProjectItem: FC<Props> = (props: Props) => {
         </div>
       </div>
 
-      <Image
-            src=""
-            alt="project"
-            width={608}
-            height={480}
-            className="px-2 lg:px-20 2xl:px-0 bg-white rounded-md"
-            // onLoadingComplete={() => handleAssetLoad(0, setAssets)}
-          />
+      {/* <Image
+        src=""
+        alt="project"
+        width={608}
+        height={480}
+        className="px-2 lg:px-20 2xl:px-0 bg-white rounded-md"
+        // onLoadingComplete={() => handleAssetLoad(0, setAssets)}
+      /> */}
     </div>
   );
 };

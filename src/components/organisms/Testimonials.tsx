@@ -80,7 +80,7 @@ const Testimonials: FC = () => {
   );
 
   return (
-    <div className="ml-10 mt-20">
+    <div className="left-margin mt-20">
       <p className="text-custom-gray text-5xl mb-3">Testimonials.</p>
       <p className="text-4xl md:text-5xl">Our wall of love.</p>
 

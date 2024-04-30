@@ -5,7 +5,7 @@ interface Props {}
 
 const ProductList: FC<Props> = (props: Props) => {
   return (
-    <div className="mt-12 lg:mt-20 ml-10">
+    <div className="mt-12 lg:mt-20 left-margin">
       <div className="pb-10">
         <p className="text-5xl text-custom-gray mb-3">Our services.</p>
         <p className="text-4xl md:text-5xl mb-3">Design-led digital</p>

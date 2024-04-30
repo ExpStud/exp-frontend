@@ -75,7 +75,7 @@ const CardCarousel = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`pr-4 ${index === 0 ? "pl-10" : "pl-4"}`}
+              className={`pr-4 ${index === 0 ? "pl-4 md:pl-10" : "pl-4"}`}
               style={{ minWidth: card.width }}
             >
               <Image

@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-footer-purple z-10 ml-6 md:ml-16">
-      <div className="flex flex-col justify-between mx-10 sm:flex-row gap-2 md:gap-4 text-custom-purple">
+    <footer className={`left-padding bg-footer-purple z-10`}>
+      <div className="flex flex-col justify-between mx-5 md:mx-10 sm:flex-row gap-2 md:gap-4 text-custom-purple">
         <div className="flex flex-col mt-20 text-xl font-medium">
           <FooterItem href="/">Home</FooterItem>
           <FooterItem href="/projects">Our work</FooterItem>
