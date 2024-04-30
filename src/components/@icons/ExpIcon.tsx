@@ -6,6 +6,7 @@ interface Props extends SVGProps<SVGSVGElement> {}
 
 const ExpIcon: FC<Props> = (props: Props) => {
   const { ...componentProps } = props;
+
   return (
     <Link href="/">
       <motion.svg
@@ -14,7 +15,7 @@ const ExpIcon: FC<Props> = (props: Props) => {
         viewBox="0 0 32 32"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="transition-500 hover:rotate-90"
+        className={`transition-500 hover:rotate-90 ${componentProps.className}`}
       >
         <rect
           y="23.8571"

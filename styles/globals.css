@@ -85,5 +85,5 @@ html {
 /* Custom */
 
 .icon-hover {
-  @apply z-10 cursor-pointer transition-300 fill-white opacity-60 hover:opacity-100;
+  @apply z-10 cursor-pointer transition-300 fill-white opacity-100 md:opacity-60 hover:opacity-100;
 }

@@ -3,6 +3,7 @@ import { FC, useState } from "react";
 import { CloseIcon, ExpIcon, MenuIcon } from "@components";
 import { AnimatePresence, motion } from "framer-motion";
 import {
+  fastExitAnimation,
   menuItemVariants,
   midExitAnimation,
   openMenuVariants,
@@ -22,20 +23,35 @@ const Navigation: FC<Props> = (props: Props) => {
   return (
     <div className="z-50 bg-black h-[100vh] w-16 flex flex-col text-gray-100">
       <motion.div
-        className="z-10 fixed top-0 left-0 bottom-0 bg-black flex flex-col items-start justify-between py-7 px-4"
-        variants={openMenuVariants(winWidth < 900 ? winWidth : 800)}
+        className="z-20 fixed top-0 left-0 bottom-0 bg-black flex flex-col items-start justify-between py-7 px-2 md:px-4"
+        variants={openMenuVariants(
+          winWidth < 768 ? 48 : 64,
+          winWidth < 900 ? winWidth : 800
+        )}
         initial="closed"
         animate={open ? "open" : "closed"}
       >
-        {!open ? (
-          <MenuIcon onClick={() => setOpen(!open)} />
-        ) : (
-          <CloseIcon onClick={() => setOpen(!open)} />
-        )}
+        <AnimatePresence mode="wait">
+          {!open ? (
+            <motion.div key="closed" {...fastExitAnimation}>
+              <MenuIcon
+                onClick={() => setOpen(!open)}
+                className="scale-90 md:scale-100 z-50"
+              />
+            </motion.div>
+          ) : (
+            <motion.div key="opened" {...fastExitAnimation}>
+              <CloseIcon
+                onClick={() => setOpen(!open)}
+                className="scale-90 md:scale-100 z-50"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
         <AnimatePresence>
           {open && (
             <motion.div
-              className="flex flex-col gap-8 h-full pl-16 md:pl-32"
+              className="flex flex-col gap-8 h-full pl-16 md:pl-32 z-0"
               {...menuItemVariants}
             >
               <NavigationItem href="/">Home</NavigationItem>
@@ -74,13 +90,13 @@ const Navigation: FC<Props> = (props: Props) => {
                 alt="exp"
                 width={673}
                 height={637}
-                className="absolute top-0 right-0 -z-10"
+                className="absolute top-0 right-0 -z-10 w-3/4 lg:w-auto"
               />
             </motion.div>
           )}
         </AnimatePresence>
 
-        <ExpIcon />
+        <ExpIcon className="scale-90 md:scale-100" />
       </motion.div>
 
       {/* background shadow */}

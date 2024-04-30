@@ -20,16 +20,16 @@ export const menuItemVariants: Variants = {
  
 };
 
-export const openMenuVariants = (width: number) => ({
+export const openMenuVariants = (closedWidth: number, openWidth: number) => ({
   closed: {
-    width: 64,
+    width: closedWidth,
     transition: { 
       delay: 0.2,
       duration: 0.4 
     },
   },
   open: { 
-    width: width, 
+    width: openWidth, 
     transition: { 
       duration: 0.8 
     } 

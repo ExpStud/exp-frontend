@@ -4,7 +4,7 @@ import { FC, SVGProps } from "react";
 interface Props extends SVGProps<SVGSVGElement> {}
 
 const CloseIcon: FC<Props> = (props: Props) => {
-  const { className, ...componentProps } = props;
+  const { ...componentProps } = props;
   return (
     <svg
       width="26"
@@ -12,7 +12,7 @@ const CloseIcon: FC<Props> = (props: Props) => {
       viewBox="0 0 26 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="icon-hover"
+      className={`icon-hover ${componentProps.className}`}
       onClick={componentProps.onClick}
     >
       <path

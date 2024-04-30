@@ -12,7 +12,7 @@ const MenuIcon: FC<Props> = (props: Props) => {
       viewBox="0 0 32 17"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="icon-hover"
+      className={`icon-hover ${componentProps.className}`}
       onClick={componentProps.onClick}
     >
       <path

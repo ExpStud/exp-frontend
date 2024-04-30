@@ -46,7 +46,7 @@ const PageLayout: FC<Props> = (props: Props) => {
         <div className="z-0 flex flex-col h-full w-full bg-custom-black">
           <motion.main
             className={`flex flex-col h-full w-full ${mainClass} inset-0 ${
-              footer ? "mb-8 md:mb-auto mt-4 md:mt-0" : ""
+              footer ? "mb-8 md:mb-auto" : ""
             }`}
             {...enterAnimation}
           >
