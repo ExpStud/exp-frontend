@@ -41,11 +41,11 @@ const CardCarousel = () => {
     sliderRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  const navigationWidth = "6.5rem";
+  // const navigationWidth = "6.5rem";
 
   return (
     <div
-      className=" my-20"
+      className="my-10 lg:my-20"
       // style={{ width: `calc(100vw - ${navigationWidth})` }}
     >
       <div className="overflow-auto justify-end" style={{ width: "100%" }}>
@@ -73,7 +73,11 @@ const CardCarousel = () => {
             `}
           </style>
           {cards.map((card, index) => (
-            <div key={index} className="px-4" style={{ minWidth: card.width }}>
+            <div
+              key={index}
+              className={`pr-4 ${index === 0 ? "pl-10" : "pl-4"}`}
+              style={{ minWidth: card.width }}
+            >
               <Image
                 src={card.image}
                 alt={`Slide ${index}`}

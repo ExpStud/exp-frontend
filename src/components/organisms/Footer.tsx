@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-footer-purple z-10">
+    <footer className="bg-footer-purple z-10 ml-6 md:ml-16">
       <div className="flex flex-col justify-between mx-10 sm:flex-row gap-2 md:gap-4 text-custom-purple">
         <div className="flex flex-col mt-20 text-xl font-medium">
           <FooterItem href="/">Home</FooterItem>
@@ -47,11 +47,11 @@ const Footer: FC = () => {
       <hr className="border-footer-border"></hr>
       <div className="relative w-full h-auto">
         <Image
-            src="/images/footer/footer.jpg"
-            alt="footer"
-            width={608}
-            height={608}
-            className="w-full h-auto"
+          src="/images/footer/footer.jpg"
+          alt="footer"
+          width={608}
+          height={608}
+          className="w-full h-auto"
         />
         {/* Adjust the background color and opacity here */}
         <div className="absolute top-0 left-0 w-full h-full bg-[#6242cb] opacity-60 mix-blend-overlay"></div>

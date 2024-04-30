@@ -91,7 +91,7 @@ const Testimonials: FC = () => {
             className={`py-2 px-4 cursor-pointer w-full min-w-[160px] transition-500 border-b-2 ${
               selectedTestimonial.id === testimonial.id
                 ? "border-white"
-                : "border-custom-black text-custom-gray"
+                : "border-custom-black text-custom-gray hover:text-white"
             }`}
             onClick={() => setSelectedTestimonial(testimonial)}
           >
