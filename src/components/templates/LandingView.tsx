@@ -22,11 +22,7 @@ const LandingView: FC<Props> = (props: Props) => {
       <BackgroundImage />
 
       <div className="relative">
-        <WelcomeSection
-          title1="Think. Design."
-          title2="Develop. Launch."
-          className="left-margin"
-        />
+        <WelcomeSection title1="Think. Design." title2="Develop. Launch." />
         <CardCarousel />
         <Button title="Our work" link="/projects" className="left-margin" />
 

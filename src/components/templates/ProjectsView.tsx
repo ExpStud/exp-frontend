@@ -18,7 +18,7 @@ const ProjectsView: FC<Props> = (props: Props) => {
     <div className="relative w-full h-full">
       <BackgroundImage />
 
-      <WelcomeSection title1="Projects." className="left-margin" />
+      <WelcomeSection title1="Projects." />
 
       <hr className="border-gray-700 top-margin"></hr>
 
