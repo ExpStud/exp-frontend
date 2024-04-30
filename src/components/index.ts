@@ -23,6 +23,7 @@ const WelcomeSection = dynamic(() => import("./organisms/WelcomeSection"));
 const ProjectItem = dynamic(() => import("./organisms/ProjectItem"));
 const ContactForm = dynamic(() => import("./organisms/ContactForm"));
 const CardCarousel = dynamic(() => import("./organisms/CardCarousel"));
+const Testimonials = dynamic(() => import("./organisms/Testimonials"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -55,5 +56,6 @@ export {
   BackgroundImage,
   MenuIcon,
   CloseIcon,
-  ExpIcon
+  ExpIcon,
+  Testimonials
 };
