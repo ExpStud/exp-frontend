@@ -28,20 +28,20 @@ const AboutView: FC<Props> = (props: Props) => {
   });
 
   return (
-    <div className="left-padding relative w-full h-full items-center justify-center pr-5">
+    <div className="relative w-full h-full items-center justify-center pr-5">
       <BackgroundImage setAssets={setAssets} />
 
       <div className="relative z-10">
         <AnimateWrapper animate={showView}>
           <WelcomeSection title1="About us." />
 
-          <div className="left-margin mt-20 flex flex-col lg:flex-row justify-between max-w-[1480px]">
+          <div className="left-margin mt-20 flex flex-col lg:flex-row justify-between max-w-[1220px]">
             <div className="font-medium">
               <p className="text-5xl text-custom-gray mb-3">Our journey.</p>
               <p className="text-4xl md:text-5xl">Perfeggcionism freaks.</p>
             </div>
 
-            <div className="lg:w-1/2 mt-10 text-xl max-w-[608px]">
+            <div className="lg:w-1/2 text-xl max-w-[608px]">
               <p>
                 Founded in January 2023, EXP Studio emerged from the nearly
                 decade-long partnership between Miguel Corzo and Wallace Palmer.

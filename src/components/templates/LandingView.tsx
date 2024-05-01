@@ -8,15 +8,14 @@ import {
   Testimonials,
   ProductList,
   About,
-  AnimateWrapper
+  AnimateWrapper,
 } from "@components";
 import { ViewContext } from "src/contexts";
-import {  useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
 }
-
 
 const LandingView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
@@ -41,7 +40,7 @@ const LandingView: FC<Props> = (props: Props) => {
   });
 
   return (
-    <div className="left-padding relative w-full h-full">
+    <div className="relative w-full h-full">
       <BackgroundImage setAssets={setAssets} />
 
       <div className="relative">
@@ -56,7 +55,7 @@ const LandingView: FC<Props> = (props: Props) => {
           ref={productRef}
         />
 
-        <AnimateWrapper animate={productInView} >
+        <AnimateWrapper animate={productInView}>
           <ProductList />
         </AnimateWrapper>
 
@@ -64,7 +63,7 @@ const LandingView: FC<Props> = (props: Props) => {
           className="border-white border-opacity-10 mt-12 lg:mt-20"
           ref={testRef}
         />
-        <AnimateWrapper animate={testInView} >
+        <AnimateWrapper animate={testInView}>
           <Testimonials />
         </AnimateWrapper>
 
@@ -72,7 +71,7 @@ const LandingView: FC<Props> = (props: Props) => {
           className="border-white border-opacity-10 mt-12 lg:mt-20"
           ref={aboutRef}
         />
-        <AnimateWrapper animate={aboutInView} >
+        <AnimateWrapper animate={aboutInView}>
           <About />
         </AnimateWrapper>
 

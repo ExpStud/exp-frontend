@@ -33,7 +33,7 @@ const PageLayout: FC<Props> = (props: Props) => {
   return (
     <ViewContext.Provider value={value}>
       <div
-        className={`flex  flex-col lg:min-h-screen h-full bg-background-black ${
+        className={`flex flex-col lg:min-h-screen h-full bg-background-black ${
           fixed ? "fixed inset-0" : ""
         }`}
       >
@@ -44,7 +44,7 @@ const PageLayout: FC<Props> = (props: Props) => {
           twitter="expstudio_"
         />
         <Navigation />
-        <div className="z-0 flex flex-col h-full w-screen ">
+        <div className="z-0 flex flex-col h-full left-padding relative">
           <motion.main
             className={`flex flex-col h-full w-full overflow-y-auto ${mainClass}`}
             {...enterAnimation}
