@@ -1,5 +1,10 @@
 import { Dispatch, SetStateAction, FC, useContext, useRef } from "react";
-import { WelcomeSection, LetsWorkLink, BackgroundImage, AnimateWrapper } from "@components";
+import {
+  WelcomeSection,
+  LetsWorkLink,
+  BackgroundImage,
+  AnimateWrapper,
+} from "@components";
 import Image from "next/image";
 import { ViewContext } from "src/contexts";
 import { useInView } from "framer-motion";
@@ -14,8 +19,6 @@ const AboutView: FC<Props> = (props: Props) => {
 
   const teamRef = useRef<HTMLHRElement>(null);
   const darthRef = useRef<HTMLHRElement>(null);
-  const aboutRef = useRef<HTMLHRElement>(null);
-  const workRef = useRef<HTMLHRElement>(null);
 
   const teamInView = useInView(teamRef, {
     once: true,
@@ -23,17 +26,10 @@ const AboutView: FC<Props> = (props: Props) => {
   const darthInView = useInView(darthRef, {
     once: true,
   });
-  const aboutInView = useInView(aboutRef, {
-    once: true,
-  });
-  const workInView = useInView(workRef, {
-    once: true,
-  });
 
   return (
     <div className="left-padding relative w-full h-full items-center justify-center pr-5">
-     
-    <BackgroundImage setAssets={setAssets} />
+      <BackgroundImage setAssets={setAssets} />
 
       <div className="relative z-10">
         <AnimateWrapper animate={showView}>
@@ -68,12 +64,11 @@ const AboutView: FC<Props> = (props: Props) => {
               <p>Projects completed</p>
             </div>
           </div>
-        </AnimateWrapper> 
+        </AnimateWrapper>
 
         <hr className="border-white border-opacity-10 mt-32" />
 
-
-        <AnimateWrapper animate={teamInView} >
+        <AnimateWrapper animate={teamInView}>
           <div className="left-margin mt-20 text-5xl font-medium" ref={teamRef}>
             <p className="text-5xl text-custom-gray mb-3">Our team.</p>
             <p className="text-4xl md:text-5xl">Perfeggcionism freaks.</p>
@@ -81,8 +76,8 @@ const AboutView: FC<Props> = (props: Props) => {
             <p className="text-xl lg:w-1/2 mt-10 font-normal">
               What sets us apart is not just our services but the passion and
               expertise each team member brings. We thrive on challenges, push
-              creative boundaries, and are dedicated to delivering solutions that
-              exceed expectations.
+              creative boundaries, and are dedicated to delivering solutions
+              that exceed expectations.
             </p>
           </div>
           <div className="left-margin mt-20 flex flex-col lg:flex-row gap-2">
@@ -97,10 +92,11 @@ const AboutView: FC<Props> = (props: Props) => {
             <div className="flex flex-col justify-items-start lg:w-1/2 max-w-[608px] lg:ml-10">
               <p>Miguel Corzo (Otablem)</p>
               <p className="text-custom-gray">
-                With a decade-long career, Miguel brings a wealth of experience to
-                the table. As EXP&apos;s project manager and founder, Miguel
+                With a decade-long career, Miguel brings a wealth of experience
+                to the table. As EXP&apos;s project manager and founder, Miguel
                 orchestrates seamless collaborations, and development cycles
-                ensuring your vision comes to life with precision and creativity.
+                ensuring your vision comes to life with precision and
+                creativity.
               </p>
 
               <p className="mt-5">Web 3 Experience</p>
@@ -125,16 +121,19 @@ const AboutView: FC<Props> = (props: Props) => {
           </div>
         </AnimateWrapper>
 
-        <AnimateWrapper animate={darthInView}> 
-          <div className="left-margin mt-10 flex flex-col-reverse lg:flex-row items-end gap-2" ref={darthRef}>
+        <AnimateWrapper animate={darthInView}>
+          <div
+            className="left-margin mt-10 flex flex-col-reverse lg:flex-row items-end gap-2"
+            ref={darthRef}
+          >
             <div className="flex flex-col lg:w-1/2 max-w-[608px]">
               <p>Wallace Palmer</p>
               <p className="text-custom-gray">
-                As EXP&apos;s lead developer, Wallace is the driving force behind
-                the technical brilliance at EXP Studio. With over 10 years
-                development experience in various industries he has evolved from
-                SaaS web & mobile engineering to pioneering modern solutions on
-                the Solana Blockchain.
+                As EXP&apos;s lead developer, Wallace is the driving force
+                behind the technical brilliance at EXP Studio. With over 10
+                years development experience in various industries he has
+                evolved from SaaS web & mobile engineering to pioneering modern
+                solutions on the Solana Blockchain.
               </p>
 
               <p className="mt-5">Web 3 Experience</p>
