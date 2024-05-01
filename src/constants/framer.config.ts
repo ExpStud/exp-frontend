@@ -1,5 +1,7 @@
 import { Variants } from "framer-motion";
 
+
+
 export const menuItemVariants: Variants = {
   initial: { opacity: 0 },
   animate: { 
@@ -182,10 +184,10 @@ export const slideDown = (animate: boolean) => ({
   transition: { duration: 1.5, ease: "easeInOut" },
 });
 
-export const slideUp = (animate: boolean) => ({
-  initial: { y: 300, opacity: 0 },
-  animate: { y: animate ? 0 : 300, opacity: animate ? 1 : 0 },
-  transition: { duration: 1.5, ease: "easeInOut" },
+export const slideUp = (animate: boolean, y?: number, duration?: number, delay?: number) => ({
+  initial: { y: y ?? 300, opacity: 0 },
+  animate: { y: animate ? 0 : y ?? 300, opacity: animate ? 1 : 0 },
+  transition: { duration: duration ?? 1.5, ease: "easeInOut" , delay: delay ?? 0},
 });
 export const slideLeft = (animate: boolean) => ({
   initial: { x: 300, opacity: 0 },

@@ -1,9 +1,13 @@
-import { FC } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import Image from "next/image";
+import { handleAssetLoad } from "@utils";
 
-interface Props {}
-
+interface Props {
+  setAssets?: Dispatch<SetStateAction<boolean[]>>;
+}
 const BackgroundImage: FC<Props> = (props: Props) => {
+  const { setAssets } = props;
+
   return (
     <div className="absolute top-0 left-0 w-full -z-[1] overflow-hidden">
       <Image
@@ -12,6 +16,7 @@ const BackgroundImage: FC<Props> = (props: Props) => {
         width={608}
         height={400}
         className="w-full object-cover grayscale"
+        onLoad={() => setAssets && handleAssetLoad(0, setAssets)}
       />
     </div>
   );

@@ -66,8 +66,8 @@ html {
 }
 
 /* Animations */
-.transition-1000 {
-  @apply transition-all duration-1000;
+.transition-1500 {
+  @apply transition-all duration-[1500ms];
 }
 .transition-700 {
   @apply transition-all duration-700;
