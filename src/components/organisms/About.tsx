@@ -5,11 +5,11 @@ interface Props {}
 
 const LandingView: FC<Props> = (props: Props) => {
   return (
-    <div className="left-margin mt-12 md:mt-20 pr-5">
+    <div className="left-margin top-margin pr-5">
       <p className="text-5xl text-custom-gray mb-3">About ourselves.</p>
       <p className="text-4xl md:text-5xl">Perfeggcionism freaks.</p>
 
-      <div className="lg:w-1/2 mt-10 text-xl  max-w-[800px]">
+      <div className="lg:w-1/2 mt-10 text-xl  max-w-[608px]">
         <p>
           At EXP, we specialise in building cutting-edge identity systems to
           help professional service providers increase their value and gain a
@@ -24,7 +24,7 @@ const LandingView: FC<Props> = (props: Props) => {
         </p>
       </div>
 
-      <div className="mt-12 md:mt-20">
+      <div className="top-margin">
         <Button title="About us" link="/about" />
       </div>
     </div>

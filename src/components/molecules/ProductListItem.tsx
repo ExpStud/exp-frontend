@@ -16,10 +16,10 @@ const ProductListItem: FC<Props> = (props: Props) => {
 
   return (
     <li className={mergedStyles}>
-      <span className="mr-2 text-custom-dark-purple text-4xl md:text-5xl">
+      <span className="mr-2 text-custom-dark-purple text-4xl md:text-5xl w-[26px]">
         {number}
       </span>
-      <span className="text-white text-xl md:text-2xl ml-3 md:ml-10">
+      <span className="text-white text-xl md:text-2xl ml-3 md:ml-10 ">
         {title}
       </span>
     </li>

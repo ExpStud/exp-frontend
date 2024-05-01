@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { FC, useState } from "react";
-import { fastExitAnimation, midExitAnimation } from "@constants";
+import { fastExitAnimation } from "@constants";
 import { TwitterIcon } from "@components";
 import Image from "next/image";
 
@@ -131,14 +131,12 @@ const TestimonialItem: FC<Props> = (props: Props) => {
         />
 
         <div className="flex flex-col items-center md:items-start">
-          <div className="font-semibold text-2xl">
-            {selectedTestimonial.name}
-          </div>
+          <div className="text-2xl uppercase">{selectedTestimonial.name}</div>
           <div className="text-custom-gray text-2xl">
             {selectedTestimonial.title}
           </div>
 
-          <div className="flex mt-2">
+          <div className="flex mt-6">
             <span className="mr-2">
               <TwitterIcon href={selectedTestimonial.twitter} />
             </span>

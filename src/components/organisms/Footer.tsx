@@ -9,11 +9,11 @@ const Footer: FC = () => {
 
   return (
     <footer
-      className={` bg-footer-purple z-10 ${
+      className={`relative bg-footer-purple z-10 ${
         router.asPath === "/" ? "left-padding" : ""
       }`}
     >
-      <div className="flex  justify-between  gap-2 md:gap-4 text-custom-purple  mx-5 md:mx-10 pt-10">
+      <div className="flex justify-between  gap-2 md:gap-4 text-custom-purple  mx-5 md:mx-10 pt-10">
         <div className="flex flex-col text-xl gap-1.5">
           <FooterItem href="/">Home</FooterItem>
           <FooterItem href="/projects">Our work</FooterItem>
@@ -55,14 +55,14 @@ const Footer: FC = () => {
       <hr className="border-footer-border mt-3"></hr>
       <div className="relative w-full h-auto">
         <Image
-          src="/images/footer/footer-1.jpg"
+          src="/images/footer/footer-blem.jpg"
           alt="footer"
           width={1536}
           height={180}
           className="hidden lg:block w-full h-auto aspect-[2/1] md:aspect-[6/1] lg:aspect-[9/1] object-cover"
         />
         <Image
-          src="/images/footer/footer-mobile.jpg"
+          src="/images/footer/footer-blem.jpg"
           alt="footer"
           width={1536}
           height={180}

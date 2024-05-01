@@ -16,7 +16,7 @@ interface Props {
 const PageLayout: FC<Props> = (props: Props) => {
   const {
     footer = true,
-    fixed = false,
+    fixed = true,
     children,
     mainClass = "",
     assets = [],
@@ -33,8 +33,8 @@ const PageLayout: FC<Props> = (props: Props) => {
   return (
     <ViewContext.Provider value={value}>
       <div
-        className={`flex lg:min-h-screen h-full bg-background-black ${
-          fixed ? "absolute inset-0" : ""
+        className={`flex  flex-col lg:min-h-screen h-full bg-background-black ${
+          fixed ? "fixed inset-0" : ""
         }`}
       >
         <PageHead
@@ -46,14 +46,12 @@ const PageLayout: FC<Props> = (props: Props) => {
         <Navigation />
         <div className="z-0 flex flex-col h-full w-screen ">
           <motion.main
-            className={`flex flex-col h-full w-full overflow-y-auto ${mainClass} ${
-              footer ? "mb-8 md:mb-auto" : ""
-            }`}
+            className={`flex flex-col h-full w-full overflow-y-auto ${mainClass}`}
             {...enterAnimation}
           >
-            {children}
+            <div>{children}</div>
+            <Footer />
           </motion.main>
-          {footer && <Footer />}
         </div>
 
         {/* modals */}
