@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction, FC } from "react";
-
 import {
   WelcomeSection,
   ProjectItem,

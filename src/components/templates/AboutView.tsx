@@ -1,13 +1,5 @@
-import { motion } from "framer-motion";
-import { Dispatch, SetStateAction, FC, useContext, useState } from "react";
-import Link from "next/link";
-import { ViewContext, slideUp } from "@constants";
-import {
-  TwitterIcon,
-  WelcomeSection,
-  LetsWorkLink,
-  BackgroundImage,
-} from "@components";
+import { Dispatch, SetStateAction, FC } from "react";
+import { WelcomeSection, LetsWorkLink, BackgroundImage } from "@components";
 import Image from "next/image";
 
 interface Props {
@@ -16,7 +8,6 @@ interface Props {
 
 const AboutView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
-  const { showView } = useContext(ViewContext);
 
   return (
     <div className="relative w-full h-full items-center justify-center pr-5">
