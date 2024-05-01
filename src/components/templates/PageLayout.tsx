@@ -45,7 +45,7 @@ const PageLayout: FC<Props> = (props: Props) => {
         <Navigation />
         <div className="z-0 flex flex-col h-full w-screen ">
           <motion.main
-            className={`flex flex-col h-full w-full ${mainClass} ${
+            className={`flex flex-col h-full w-full overflow-y-auto ${mainClass} ${
               footer ? "mb-8 md:mb-auto" : ""
             }`}
             {...enterAnimation}

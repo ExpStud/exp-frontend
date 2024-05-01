@@ -24,13 +24,13 @@ const Footer: FC = () => {
             ©{year} EXP STUDIO™
           </p>
         </div>
-        <div className="flex flex-col gap-1">
-          <p className="text-copyright-purple text-">Follow us</p>
+        <div className="flex flex-col gap-1 text-sm lg:text-base">
+          <p className="text-copyright-purple">Follow us</p>
           <a
             href="https://www.instagram.com/expstudio_/"
             rel="noreferrer"
             target="_blank"
-            className="text-sm transition-300 hover:text-white hover:text-opacity-80"
+            className="transition-300 hover:text-white hover:text-opacity-80"
           >
             Instagram
           </a>
@@ -38,7 +38,7 @@ const Footer: FC = () => {
             href="https://www.linkedin.com/company/exp-studio-llc"
             rel="noreferrer"
             target="_blank"
-            className="text-sm transition-300 hover:text-white hover:text-opacity-80"
+            className="transition-300 hover:text-white hover:text-opacity-80"
           >
             Linkedin
           </a>
@@ -46,7 +46,7 @@ const Footer: FC = () => {
             href="https://twitter.com/exp_studio_"
             rel="noreferrer"
             target="_blank"
-            className="text-sm transition-300 hover:text-white hover:text-opacity-80"
+            className="transition-300 hover:text-white hover:text-opacity-80"
           >
             X
           </a>

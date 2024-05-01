@@ -56,7 +56,7 @@ const Navigation: FC<Props> = (props: Props) => {
             )}
           </AnimatePresence>
           <AnimatePresence>
-            {open && (
+            {open ? (
               <motion.div
                 className="flex flex-col gap-8 h-full pl-16 md:pl-32 z-0"
                 {...menuItemVariants}
@@ -100,6 +100,8 @@ const Navigation: FC<Props> = (props: Props) => {
                   className="absolute top-0 right-0 -z-10 w-3/4 lg:w-auto"
                 />
               </motion.div>
+            ) : (
+              <></>
             )}
           </AnimatePresence>
 

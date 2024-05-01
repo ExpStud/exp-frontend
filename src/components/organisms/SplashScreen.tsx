@@ -2,6 +2,7 @@ import { FC, useCallback, useContext, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fastExitAnimation, ViewContext } from "@constants";
 import debounce from "lodash.debounce";
+import { BackgroundImage } from "..";
 
 interface Props {
   assets?: boolean[];
@@ -50,8 +51,8 @@ const SplashScreen: FC<Props> = (props: Props) => {
     <AnimatePresence mode="wait">
       {showAnimation && (
         <motion.div
-          className={`opacity-0 ${
-            showAnimation ? "fixed z-50 inset-0" : "hidden -z-50"
+          className={`opacity-0 bg-custom-black ${
+            showAnimation ? "fixed z-10 inset-0" : "hidden -z-50"
           }`}
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
@@ -61,6 +62,7 @@ const SplashScreen: FC<Props> = (props: Props) => {
             ease: "easeInOut",
           }}
         >
+          <BackgroundImage />
           {/*<div className="absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2">
              <motion.div className="rounded" {...containerAnimation}>
               <ExpIcon color={"white"} />
