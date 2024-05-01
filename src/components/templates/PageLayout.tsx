@@ -1,7 +1,8 @@
 import { FC, ReactNode, useState } from "react";
 import { PageHead, Footer, SplashScreen, Navigation } from "@components";
-import { enterAnimation, ViewContext } from "@constants";
-import { AnimatePresence, motion } from "framer-motion";
+import { enterAnimation } from "@constants";
+import { ViewContext } from "@contexts";
+import { motion } from "framer-motion";
 
 interface Props {
   children: ReactNode;

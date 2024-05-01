@@ -19,7 +19,7 @@ const ProjectsView: FC<Props> = (props: Props) => {
 
       <WelcomeSection title1="Projects." />
 
-      <hr className="border-gray-700 top-margin"></hr>
+      <hr className="border-white border-opacity-10 top-margin"></hr>
 
       <ProjectItem
         title="Our services."
@@ -29,7 +29,7 @@ const ProjectsView: FC<Props> = (props: Props) => {
         third="Hot Heads (1 year)"
       />
 
-      <hr className="border-gray-700 top-margin"></hr>
+      <hr className="border-white border-opacity-10 top-margin"></hr>
 
       <ProjectItem
         title="Our services."
@@ -39,7 +39,7 @@ const ProjectsView: FC<Props> = (props: Props) => {
         third="Hot Heads (1 year)"
       />
 
-      <hr className="border-gray-700 top-margin"></hr>
+      <hr className="border-white border-opacity-10 top-margin"></hr>
 
       <ProjectItem
         title="Our services."
@@ -49,7 +49,7 @@ const ProjectsView: FC<Props> = (props: Props) => {
         third="Hot Heads (1 year)"
       />
 
-      <hr className="border-gray-700 top-margin"></hr>
+      <hr className="border-white border-opacity-10 top-margin"></hr>
 
       <LetsWorkLink />
     </div>

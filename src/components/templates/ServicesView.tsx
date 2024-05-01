@@ -84,7 +84,7 @@ const ServicesView: FC<Props> = (props: Props) => {
         </div>
       </div>
 
-      <hr className="border-gray-700 top-margin"></hr>
+      <hr className="border-white border-opacity-10 top-margin"></hr>
 
       <LetsWorkLink />
     </div>

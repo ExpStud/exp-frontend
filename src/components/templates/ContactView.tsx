@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction, FC, useContext } from "react";
-import { ViewContext } from "@constants";
 import { WelcomeSection, ContactForm, BackgroundImage } from "@components";
 
 interface Props {

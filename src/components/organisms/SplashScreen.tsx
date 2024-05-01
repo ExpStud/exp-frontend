@@ -1,6 +1,6 @@
 import { FC, useCallback, useContext, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { fastExitAnimation, ViewContext } from "@constants";
+import { ViewContext } from "@contexts";
 import debounce from "lodash.debounce";
 import { BackgroundImage } from "..";
 
@@ -63,11 +63,6 @@ const SplashScreen: FC<Props> = (props: Props) => {
           }}
         >
           <BackgroundImage />
-          {/*<div className="absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2">
-             <motion.div className="rounded" {...containerAnimation}>
-              <ExpIcon color={"white"} />
-            </motion.div> 
-          </div>*/}
         </motion.div>
       )}
     </AnimatePresence>

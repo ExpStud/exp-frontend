@@ -46,7 +46,7 @@ const AboutView: FC<Props> = (props: Props) => {
           </div>
         </div>
 
-        <hr className="border-gray-700 mt-20"></hr>
+        <hr className="border-white border-opacity-10 mt-20"></hr>
 
         <div className="left-margin mt-20 text-5xl font-medium">
           <p className="text-5xl text-custom-gray mb-3">Our team.</p>
@@ -134,7 +134,7 @@ const AboutView: FC<Props> = (props: Props) => {
           />
         </div>
 
-        <hr className="border-gray-700 mt-20"></hr>
+        <hr className="border-white border-opacity-10 mt-20"></hr>
 
         <LetsWorkLink />
       </div>
