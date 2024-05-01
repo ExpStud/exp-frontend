@@ -10,7 +10,7 @@ const ContactView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
 
   return (
-    <div className="relative w-full h-full items-center justify-center">
+    <div className="relative w-full h-full items-center justify-center overflow-hidden">
       <BackgroundImage />
 
       <div className="relative z-10">

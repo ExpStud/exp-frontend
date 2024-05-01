@@ -5,7 +5,7 @@ interface Props {}
 
 const BackgroundImage: FC<Props> = (props: Props) => {
   return (
-    <div className="absolute top-0 left-0 w-full -z-[1]">
+    <div className="absolute top-0 left-0 w-full -z-[1] overflow-hidden">
       <Image
         src="/images/bg-image.png"
         alt="quote"

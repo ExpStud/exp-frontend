@@ -5,30 +5,32 @@ import { useRouter } from "next/router";
 
 const Footer: FC = () => {
   const router = useRouter();
+  const year = new Date().getFullYear();
+
   return (
     <footer
       className={` bg-footer-purple z-10 ${
         router.asPath === "/" ? "left-padding" : ""
       }`}
     >
-      <div className="flex flex-col justify-between mx-5 md:mx-10 sm:flex-row gap-2 md:gap-4 text-custom-purple">
-        <div className="flex flex-col mt-20 text-xl font-medium">
+      <div className="flex  justify-between  gap-2 md:gap-4 text-custom-purple  mx-5 md:mx-10 pt-10">
+        <div className="flex flex-col text-xl gap-1.5">
           <FooterItem href="/">Home</FooterItem>
           <FooterItem href="/projects">Our work</FooterItem>
           <FooterItem href="/services">What we do</FooterItem>
           <FooterItem href="/about">About us</FooterItem>
           <FooterItem href="/contact">Contact us</FooterItem>
-          <p className="mt-20 mb-10 text-xs font-normal text-copyright-purple">
-            ©2024 EXP STUDIO™
+          <p className="text-xs font-normal text-copyright-purple mt-14">
+            ©{year} EXP STUDIO™
           </p>
         </div>
-        <div className="flex flex-col mt-20 mr-10">
-          <p className="mb-3 text-copyright-purple">Follow us</p>
+        <div className="flex flex-col gap-1">
+          <p className="text-copyright-purple text-">Follow us</p>
           <a
             href="https://www.instagram.com/expstudio_/"
             rel="noreferrer"
             target="_blank"
-            className="mb-3 cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
+            className="text-sm transition-300 hover:text-white hover:text-opacity-80"
           >
             Instagram
           </a>
@@ -36,7 +38,7 @@ const Footer: FC = () => {
             href="https://www.linkedin.com/company/exp-studio-llc"
             rel="noreferrer"
             target="_blank"
-            className="mb-3 cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
+            className="text-sm transition-300 hover:text-white hover:text-opacity-80"
           >
             Linkedin
           </a>
@@ -44,20 +46,27 @@ const Footer: FC = () => {
             href="https://twitter.com/exp_studio_"
             rel="noreferrer"
             target="_blank"
-            className="mb-3 cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
+            className="text-sm transition-300 hover:text-white hover:text-opacity-80"
           >
             X
           </a>
         </div>
       </div>
-      <hr className="border-footer-border"></hr>
+      <hr className="border-footer-border mt-3"></hr>
       <div className="relative w-full h-auto">
         <Image
-          src="/images/footer/footer.jpg"
+          src="/images/footer/footer-1.jpg"
           alt="footer"
-          width={608}
-          height={608}
-          className="w-full h-auto"
+          width={1536}
+          height={180}
+          className="hidden lg:block w-full h-auto aspect-[2/1] md:aspect-[6/1] lg:aspect-[9/1] object-cover"
+        />
+        <Image
+          src="/images/footer/footer-mobile.jpg"
+          alt="footer"
+          width={1536}
+          height={180}
+          className="lg:hidden w-full h-auto aspect-[1.75/1] md:aspect-[6/1] lg:aspect-[9/1] object-cover"
         />
         {/* Adjust the background color and opacity here */}
         <div className="absolute top-0 left-0 w-full h-full bg-[#6242cb] opacity-60 mix-blend-overlay"></div>
@@ -76,7 +85,7 @@ const FooterItem: FC<FooterItemProps> = (props: FooterItemProps) => {
   return (
     <Link
       href={href}
-      className={`text-xl font-medium transition-200 hover:opacity-100 cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200`}
+      className={`text-lg md:text-xl transition-300 hover:text-white hover:text-opacity-80`}
     >
       {children}
     </Link>
