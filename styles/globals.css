@@ -96,3 +96,6 @@ html {
 .top-margin {
   @apply mt-12 md:mt-20;
 }
+.input {
+  @apply border bg-form-background border-gray-600 rounded-lg px-3 py-2 focus:border-custom-purple active:border-custom-purple focus:outline-none active:outline-none;
+}

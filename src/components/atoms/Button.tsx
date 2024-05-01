@@ -4,20 +4,25 @@ import Link from "next/link";
 interface Props extends HTMLAttributes<HTMLDivElement> {
   title: string;
   link: string;
+  disabled?: boolean;
 }
 
 const Button: FC<Props> = (props: Props) => {
-  const { title, link, ...componentProps } = props;
+  const { title, link, disabled = false, ...componentProps } = props;
   const [hover, setHover] = useState<boolean>(false);
   return (
     <Link href={link} className={componentProps.className}>
       <div
-        className="inline-flex items-center text-white text-xl font-medium pl-4 p-1 pr-1 rounded-full border border-white border-opacity-20 transition-500 hover:border-opacity-80"
+        className={`inline-flex items-center text-white text-xl font-medium pl-4 p-1 pr-1 rounded-full border border-white border-opacity-20 transition-300  ${
+          disabled
+            ? " cursor-not-allowed opacity-40"
+            : "hover:border-opacity-80"
+        }`}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
         <span
-          className={`mr-10 pb-0.5 transition-500 ${
+          className={`mr-10 pb-0.5 transition-300 ${
             hover ? "opacity-100" : "opacity-80"
           }`}
         >
@@ -36,8 +41,8 @@ const Button: FC<Props> = (props: Props) => {
               cy="18"
               r="18"
               fill="white"
-              className={`transition-500 ${
-                hover ? "opacity-30" : "opacity-10"
+              className={`transition-300 ${
+                disabled ? "opacity-10" : hover ? "opacity-30" : "opacity-10"
               }`}
             />
             <path
