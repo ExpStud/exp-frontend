@@ -44,10 +44,18 @@ const ServicesView: FC<Props> = (props: Props) => {
         {/* <div className="absolute w-full -top-2 -left-10 lg:-left-20  z-[100] padding-left aspect-[2/2] md:aspect-[1600/1067] overflow-hidden "> */}
         <div className="hidden 2xs:block absolute top-0 -left-10 lg:-left-20 -z-[2] h-[800px] lg:h-[900px] w-[110vw]">
           <Image
-            src="/images/services/big3_compressed.png"
+            src="/images/services/final.png"
             alt="Services"
             fill
-            className="object-cover -z-[10]"
+            className="hidden lg:block object-cover -z-[10]"
+            priority
+            onLoad={() => setAssets && handleAssetLoad(0, setAssets)}
+          />
+          <Image
+            src="/images/services/final_mobile.png"
+            alt="Services"
+            fill
+            className="lg:hidden object-cover -z-[10]"
             priority
             onLoad={() => setAssets && handleAssetLoad(0, setAssets)}
           />
