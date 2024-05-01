@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface Props {
   title1: string;
@@ -10,6 +11,7 @@ interface Props {
 
 const WelcomeSection: FC<Props> = (props: Props) => {
   const { title1, title2, title1Class = "", title2Class = "" } = props;
+  const router = useRouter();
 
   return (
     <div className="left-margin">
@@ -22,9 +24,11 @@ const WelcomeSection: FC<Props> = (props: Props) => {
         <p>We&apos;re open for business and new collaborations</p>
         <p>
           from Q3 2023.{" "}
-          <Link href="/contact">
-            <span className="text-gray-300 underline">Get in touch</span>
-          </Link>
+          {router.asPath !== "/contact" && (
+            <Link href="/contact">
+              <span className="text-gray-300 underline">Get in touch</span>
+            </Link>
+          )}
         </p>
       </div>
 

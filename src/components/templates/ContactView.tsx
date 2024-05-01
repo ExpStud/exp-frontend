@@ -8,12 +8,6 @@ interface Props {
 
 const ContactView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
-  const { showView } = useContext(ViewContext);
-
-  const handleSubmit = (formData: any) => {
-    // Handle form submission logic here
-    console.log(formData);
-  };
 
   return (
     <div className="relative w-full h-full items-center justify-center">
@@ -27,8 +21,8 @@ const ContactView: FC<Props> = (props: Props) => {
 
         <hr className="border-white border-opacity-10 top-margin"></hr>
 
-        <div className="ml-10 mt-10 flex lg:gap-20">
-          <div className="w-1/3 pr-10 max-w-[350px]">
+        <div className="left-margin mt-10  flex flex-col lg:flex-row  lg:gap-20">
+          <div className="lg:w-1/3 pr-10 max-w-[350px] mb-10">
             <p className="text-white text-opacity-60 text-xl">
               Working together takes some practice to get in sync, but once we
               find our rhythm, the result can be magical!
@@ -37,11 +31,11 @@ const ContactView: FC<Props> = (props: Props) => {
             <p>hello@expstudio.co</p>
           </div>
 
-          <div className="lg:w-2/3 max-w-[835px] mb-20">
+          <div className="lg:w-2/3 max-w-[835px] mb-20 pr-5">
             {/* <p>What are you looking for?</p>
             <p>Please choose an option below</p> */}
 
-            <ContactForm onSubmit={handleSubmit} />
+            <ContactForm />
           </div>
         </div>
       </div>

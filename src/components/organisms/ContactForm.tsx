@@ -1,13 +1,13 @@
 import { FC, useCallback, useEffect, useState } from "react";
 import { Button } from "@components";
 import axios from "axios";
+import toast from "react-hot-toast";
 
-interface Props {
-  onSubmit: any;
-}
+interface Props {}
 
 const ContactForm: FC<Props> = (props: Props) => {
-  const { onSubmit } = props;
+  const {} = props;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,12 +16,23 @@ const ContactForm: FC<Props> = (props: Props) => {
     relevantDocuments: "",
   });
 
+  const [isEmailValid, setIsEmailValid] = useState(false);
+
+  const validateEmail = (email: string) => {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
+  };
+
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+
+    if (name === "email") {
+      setIsEmailValid(validateEmail(value));
+    }
   };
 
   const handleFileChange = (e: any) => {
@@ -32,17 +43,49 @@ const ContactForm: FC<Props> = (props: Props) => {
     }));
   };
 
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.message ||
+      !formData.budgetRange
+    ) {
+      return;
+    }
+    if (formData.message.length < 20) {
+      toast.error("Message must be more than 20 characters");
+      return;
+    }
+    if (formData.budgetRange.length < 4) {
+      toast.error("Budget must be greater than 3 characters");
+      return;
+    }
+    if (!isEmailValid) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
     // Handle form submission logic here
     console.log(formData);
 
     try {
-      const response = await axios.get("/api/add-lead", {
-        params: formData,
-      });
+      // const response = await axios.get("/api/add-lead", {
+      //   params: formData,
+      // });
 
-      console.log(response.data);
+      // console.log(response.data);
+
+      // toast.loading("Submitting...");
+      toast.promise(axios.get("/api/add-lead", { params: formData }), {
+        loading: "Submitting...",
+        success: (res) => {
+          console.log(res.data);
+          return "Submitted successfully";
+        },
+        error: (err) => {
+          console.error(err);
+          return "Submission failed";
+        },
+      });
     } catch (error) {
       console.error(error);
     }
@@ -51,7 +94,7 @@ const ContactForm: FC<Props> = (props: Props) => {
   const fetchLeads = useCallback(async () => {
     try {
       const response = await axios.get("/api/get-leads");
-      console.log("response ", response.data);
+      console.log("response ", response.data.leads.rows);
     } catch (error) {
       console.error(error);
     }
@@ -63,15 +106,16 @@ const ContactForm: FC<Props> = (props: Props) => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <div className="flex">
+      <div className="flex flex-col md:flex-row gap-4">
         <input
           type="text"
           id="name"
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className="w-1/2 input mr-5"
+          className="w-full lg:w-1/2 input"
           placeholder="Name"
+          maxLength={250}
         />
         <input
           type="email"
@@ -79,8 +123,9 @@ const ContactForm: FC<Props> = (props: Props) => {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-1/2 input"
+          className="w-full lg:w-1/2 input"
           placeholder="Email address"
+          maxLength={250}
         />
       </div>
       <textarea
@@ -90,7 +135,7 @@ const ContactForm: FC<Props> = (props: Props) => {
         onChange={handleChange}
         className="input w-full"
         placeholder="Message"
-        rows={4}
+        rows={6}
       ></textarea>
       <input
         type="text"
@@ -100,49 +145,11 @@ const ContactForm: FC<Props> = (props: Props) => {
         onChange={handleChange}
         className="input w-full"
         placeholder="Budget Range"
+        maxLength={250}
       />
-      {/* <div className="">
-        <input
-          type="text"
-          id="relevantDocuments"
-          name="relevantDocuments"
-          value={formData.relevantDocuments}
-          onChange={handleChange}
-          className="input w-full"
-          placeholder="Relevant Documents"
-        />
-      </div> */}
-      {/* <button
-        type="submit"
-        className="transition-200 inline-flex items-center justify-between text-white 
-        text-xl font-medium pl-4 py-1 pr-1.5 rounded-full border border-gray-60 max-w-[215px] cursor-pointer disabled:cursor-not-allowed disabled:opacity-20"
-        disabled={
-          !formData.name ||
-          !formData.email ||
-          !formData.message ||
-          !formData.budgetRange
-        }
-      >
-        <p className="pb-0.5"> Send message</p>
-        <div className="flex items-center">
-          <svg
-            width="36"
-            height="36"
-            viewBox="0 0 36 36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="18" cy="18" r="18" fill="#a2a2a2" />
-            <path
-              d="M18.7528 24L17.9148 23.169L22.858 18.233H10.5V17.0398H22.858L17.9148 12.1037L18.7528 11.2727L25.1165 17.6364L18.7528 24Z"
-              fill="white"
-            />
-          </svg>
-        </div>
-      </button> */}
       <Button
         title="Send message"
-        link="/projects"
+        callback={() => handleSubmit()}
         disabled={
           !formData.name ||
           !formData.email ||

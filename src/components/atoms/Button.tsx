@@ -1,19 +1,30 @@
 import { FC, HTMLAttributes, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   title: string;
-  link: string;
+  link?: string;
   disabled?: boolean;
+  callback?: () => Promise<void> | void;
 }
 
 const Button: FC<Props> = (props: Props) => {
-  const { title, link, disabled = false, ...componentProps } = props;
+  const { title, link, disabled = false, callback, ...componentProps } = props;
   const [hover, setHover] = useState<boolean>(false);
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    if (disabled) return;
+    if (callback) callback();
+    else if (link) router.push(link);
+  };
+
   return (
-    <Link href={link} className={componentProps.className}>
+    <div className={componentProps.className} onClick={() => handleClick()}>
       <div
-        className={`inline-flex items-center text-white text-xl font-medium pl-4 p-1 pr-1 rounded-full border border-white border-opacity-20 transition-300  ${
+        className={`cursor-pointer inline-flex items-center text-white text-xl font-medium pl-4 p-1 pr-1 rounded-full border border-white border-opacity-20 transition-300  ${
           disabled
             ? " cursor-not-allowed opacity-40"
             : "hover:border-opacity-80"
@@ -23,7 +34,7 @@ const Button: FC<Props> = (props: Props) => {
       >
         <span
           className={`mr-10 pb-0.5 transition-300 ${
-            hover ? "opacity-100" : "opacity-80"
+            disabled ? "opacity-80" : hover ? "opacity-100" : "opacity-80"
           }`}
         >
           {title}
@@ -52,7 +63,7 @@ const Button: FC<Props> = (props: Props) => {
           </svg>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
