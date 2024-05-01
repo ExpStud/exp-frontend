@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 
 //icons
 const TwitterIcon = dynamic(() => import("./@icons/TwitterIcon"));
-const ExpAnimatedIcon = dynamic(() => import("./@icons/ExpAnimatedIcon"));
+const RightArrowIcon = dynamic(() => import("./@icons/RightArrowIcon"));
 const MenuIcon = dynamic(() => import("./@icons/MenuIcon"));
 const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const ExpIcon = dynamic(() => import("./@icons/ExpIcon"));
@@ -62,4 +62,5 @@ export {
   Testimonials,
   ProductList,
   About,
+  RightArrowIcon
 };
