@@ -8,29 +8,15 @@ import {
   Testimonials,
   ProductList,
   About,
+  AnimateWrapper
 } from "@components";
 import { ViewContext } from "src/contexts";
-import { motion, useInView } from "framer-motion";
-import { slideUp } from "src/constants";
+import {  useInView } from "framer-motion";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
 }
-interface AnimateWrapperProps {
-  animate: boolean;
-  children: React.ReactNode;
-  delay?: number;
-}
 
-const AnimateWrapper: FC<AnimateWrapperProps> = (
-  props: AnimateWrapperProps
-) => {
-  const { animate, children, delay = 0 } = props;
-
-  return (
-    <motion.div {...slideUp(animate, 150, 0.9, delay)}>{children}</motion.div>
-  );
-};
 
 const LandingView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
@@ -86,7 +72,7 @@ const LandingView: FC<Props> = (props: Props) => {
           className="border-white border-opacity-10 mt-12 lg:mt-20"
           ref={aboutRef}
         />
-        <AnimateWrapper animate={aboutInView} delay={1.2}>
+        <AnimateWrapper animate={aboutInView} delay={0.6}>
           <About />
         </AnimateWrapper>
 

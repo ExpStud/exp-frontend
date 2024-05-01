@@ -8,6 +8,7 @@ const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const ExpIcon = dynamic(() => import("./@icons/ExpIcon"));
 //atoms
 const Button = dynamic(() => import("./atoms/Button"));
+const AnimateWrapper = dynamic(() => import("./atoms/AnimateWrapper"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const ServiceListItem = dynamic(() => import("./molecules/ServiceListItem"));
@@ -62,5 +63,6 @@ export {
   Testimonials,
   ProductList,
   About,
-  RightArrowIcon
+  RightArrowIcon,
+  AnimateWrapper
 };
