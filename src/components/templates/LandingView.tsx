@@ -56,7 +56,7 @@ const LandingView: FC<Props> = (props: Props) => {
           ref={productRef}
         />
 
-        <AnimateWrapper animate={productInView} delay={1.2}>
+        <AnimateWrapper animate={productInView} delay={0}>
           <ProductList />
         </AnimateWrapper>
 
@@ -64,7 +64,7 @@ const LandingView: FC<Props> = (props: Props) => {
           className="border-white border-opacity-10 mt-12 lg:mt-20"
           ref={testRef}
         />
-        <AnimateWrapper animate={testInView} delay={1.2}>
+        <AnimateWrapper animate={testInView} delay={0}>
           <Testimonials />
         </AnimateWrapper>
 
@@ -72,7 +72,7 @@ const LandingView: FC<Props> = (props: Props) => {
           className="border-white border-opacity-10 mt-12 lg:mt-20"
           ref={aboutRef}
         />
-        <AnimateWrapper animate={aboutInView} delay={0.6}>
+        <AnimateWrapper animate={aboutInView} delay={0}>
           <About />
         </AnimateWrapper>
 
@@ -80,7 +80,7 @@ const LandingView: FC<Props> = (props: Props) => {
           className="border-white border-opacity-10 mt-12 lg:mt-20"
           ref={workRef}
         />
-        {/* <AnimateWrapper animate={workInView} delay={1.2}> */}
+        {/* <AnimateWrapper animate={workInView} delay={0}> */}
         <LetsWorkLink />
         {/* </AnimateWrapper> */}
       </div>
