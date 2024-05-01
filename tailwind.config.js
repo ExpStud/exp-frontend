@@ -34,6 +34,7 @@ module.exports = {
         "footer-border": "#423171",
       },
       screens: {
+        "2xs": "320px",
         "3xl": "2160px",
         "4xl": "3000px",
       },

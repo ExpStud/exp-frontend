@@ -9,6 +9,7 @@ import Image from "next/image";
 import ServiceListItem from "../molecules/ServiceListItem";
 import { ViewContext } from "src/contexts";
 import { useInView } from "framer-motion";
+import { handleAssetLoad } from "@utils";
 
 interface Props {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;
@@ -25,31 +26,40 @@ const ServicesView: FC<Props> = (props: Props) => {
   });
 
   return (
-    <div className="margin-left relative w-full h-full">
-      <BackgroundImage setAssets={setAssets} />
-      <div className="absolute w-full -top-2 left-0 md:-left-[77px] -z-[1] padding-left aspect-[1/2] md:aspect-square xl:aspect-[1600/1067]  ">
-        <Image
-          src="/images/services/transparent.png"
-          alt="Services"
-          fill
-          className="object-cover -z-[10]"
-          priority
-        />
-      </div>
+    <div className="margin-left w-full h-full relative overflow-x-hidden">
+      <BackgroundImage />
+
       <AnimateWrapper animate={showView}>
         <WelcomeSection
-          title1="We guide companies through moments of transformation."
-          title1Class="!text-4xl md:!text-6xl 2xl:!text-7xl max-w-[1256px] pr-8 "
+        // title1="We guide companies through moments of transformation."
+        // title1Class="!text-4xl md:!text-6xl 2xl:!text-7xl max-w-[1256px] pr-8 "
         />
-
-        <div className="left-margin top-margin relative aspect-[1500/750] lg:aspect-[1500/430] w-[78.5%]">
+        <div className="left-margin mt-0 sm:mt-12 md:mt-10 lg:mt-0 text-4xl sm:text-6xl xl:text-7xl font-medium ">
+          <p
+            className={`mb-3 text-3xl sm:text-4xl md:text-5xl lg:!text-6xl 2xl:!text-7xl max-w-[1256px] pr-4`}
+          >
+            We guide companies through moments of transformation.
+          </p>
+        </div>
+        {/* <div className="absolute w-full -top-2 -left-10 lg:-left-20  z-[100] padding-left aspect-[2/2] md:aspect-[1600/1067] overflow-hidden "> */}
+        <div className="hidden 2xs:block absolute top-0 -left-10 lg:-left-20 -z-[2] h-[800px] lg:h-[900px] w-[110vw]">
           <Image
+            src="/images/services/background.png"
+            alt="Services"
+            fill
+            className="object-cover -z-[10]"
+            priority
+            onLoad={() => setAssets && handleAssetLoad(0, setAssets)}
+          />
+        </div>
+        <div className="mt-10 hidden 2xs:block relative aspect-[5/4] sm:aspect-[3/1.5] md:aspect-[3/1] lg:aspect-[3/1] w-full bg- bg-opacity-50">
+          {/* <Image
             src="/images/services/cover.jpg"
             alt="Services"
             fill
             className="z-0 rounded-xl object-cover"
             priority
-          />
+          /> */}
         </div>
       </AnimateWrapper>
 

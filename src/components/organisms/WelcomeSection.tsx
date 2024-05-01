@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 interface Props {
-  title1: string;
+  title1?: string;
   title2?: string;
   title1Class?: string;
   title2Class?: string;
