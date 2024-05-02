@@ -1,18 +1,12 @@
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const Footer: FC = () => {
-  const router = useRouter();
   const year = new Date().getFullYear();
 
   return (
-    <footer
-      className={`relative bg-footer-purple z-10 ${
-        router.asPath === "/" ? "left-padding" : ""
-      }`}
-    >
+    <footer className={`relative bg-footer-purple z-10`}>
       <div className="flex justify-between  gap-2 md:gap-4 text-custom-purple  mx-5 md:mx-10 pt-10">
         <div className="flex flex-col text-xl gap-1.5">
           <FooterItem href="/">Home</FooterItem>

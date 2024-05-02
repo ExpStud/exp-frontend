@@ -1,82 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { FC, useState } from "react";
-import { fastExitAnimation } from "@constants";
+import { Client, clients, fastExitAnimation } from "@constants";
 import { TwitterIcon } from "@components";
 import Image from "next/image";
 
-type Testimonial = {
-  id: number;
-  name: string;
-  title: string;
-  company: string;
-  image: string;
-  testimonial: string;
-  twitter: string;
-  exchangeArt?: string;
-  tensor?: string;
-};
-
-const testimonialsData: Testimonial[] = [
-  {
-    id: 1,
-    name: "SCUM",
-    title: "Founder of My Slimes",
-    company: "My Slimes",
-    image: "/images/testimonials/1-scum.jpg",
-    testimonial:
-      "The team was always contactable, honest in their opinions, and patient to work through challenges as they arose. Very collaborative, listening to the client's needs, but also coming up with usability solutions that we didn't know about.",
-    twitter: "https://twitter.com/SCUMSOL",
-    exchangeArt: "https://exchange.art/scum/series",
-  },
-  {
-    id: 2,
-    name: "Robbie Shilstone",
-    title: "Founder of Publique",
-    company: "Publique",
-    image: "/images/testimonials/robbie.jpg",
-    testimonial:
-      "EXP went above and beyond to make Publique a success. No idea ever felt to big to implement. They were perfectly suited to create this experience exactly how I envisioned it.",
-    twitter: "https://twitter.com/shilstone_arts",
-    exchangeArt: "https://exchange.art/shilstone-arts/series",
-  },
-  {
-    id: 3,
-    name: "Calder Moore",
-    title: "In Search Of",
-    company: "In Search Of",
-    image: "/images/testimonials/calder.gif",
-    testimonial:
-      "Commissioning EXP Studios was a great decision. They were super upfront about costs and worked with my budget to suit my needs. They provided works in progress along the way which I was always in absolutely in love with what they had done. Will definitely be returning to expand the website once it is ready to do so.",
-    twitter: "https://twitter.com/CalderMoore_",
-    exchangeArt: "https://exchange.art/caldermoore/series",
-  },
-  {
-    id: 4,
-    name: "Andy Rew",
-    title: "Founder of CyberFrogs",
-    company: "CyberFrogs",
-    image: "/images/testimonials/39-andres.jpg",
-    testimonial:
-      'Working with EXP has felt like working with an extension of my core team. Their attentiveness, attention to detail and their understanding of complex systems and web3 intricacies has made our contracted work not only pain free, but enjoyable. The EXP team just "gets it" and they have helped amplify our products in ways I previously thought unobtainable with outside contractors. They approached our contract as if they were working on their own project.',
-    twitter: "https://twitter.com/CyberFrogsNFT",
-    tensor: "https://www.tensor.trade/trade/cyber_frogs",
-  },
-  {
-    id: 5,
-    name: "Zen0",
-    title: "Founder of Monster Friends",
-    company: "Monster Friends",
-    image: "/images/testimonials/zen0.gif",
-    testimonial:
-      "EXP did an awesome job at building a showcase for my art releases, as well as a rarity explorer for my Glyphscapes collection. They were efficient and designed everything accurately to my spec, as well as being flexible when changes needed to be made. I look forward to working together again in the future! :)",
-    twitter: "https://twitter.com/zen0m",
-    exchangeArt: "https://exchange.art/zen0/series",
-  },
-];
-
 const Testimonials: FC = () => {
-  const [selectedTestimonial, setSelectedTestimonial] = useState<Testimonial>(
-    testimonialsData[0]
+  const [selectedTestimonial, setSelectedTestimonial] = useState<Client>(
+    clients[0]
   );
 
   return (
@@ -85,20 +15,24 @@ const Testimonials: FC = () => {
       <p className="text-4xl md:text-5xl">Our wall of love.</p>
 
       <div className="mt-20 flex border-t border-b border-gray-600 overflow-x-auto">
-        {testimonialsData.map((testimonial) => (
-          <div
-            key={testimonial.id}
-            className={`py-2 px-4 cursor-pointer w-full min-w-[160px] transition-500 border-b-2 ${
-              selectedTestimonial.id === testimonial.id
-                ? "border-white"
-                : "border-custom-black text-custom-gray hover:text-white"
-            }`}
-            onClick={() => setSelectedTestimonial(testimonial)}
-          >
-            <p>{testimonial.name}</p>
-            <p>{testimonial.company}</p>
-          </div>
-        ))}
+        {clients.map((testimonial) => {
+          if (testimonial.testimonial) {
+            return (
+              <div
+                key={testimonial.id}
+                className={`py-2 px-4 cursor-pointer w-full min-w-[160px] transition-500 border-b-2 ${
+                  selectedTestimonial.id === testimonial.id
+                    ? "border-white"
+                    : "border-custom-black text-custom-gray hover:text-white"
+                }`}
+                onClick={() => setSelectedTestimonial(testimonial)}
+              >
+                <p>{testimonial.name}</p>
+                <p>{testimonial.company}</p>
+              </div>
+            );
+          }
+        })}
       </div>
       <AnimatePresence mode="wait">
         <TestimonialItem
@@ -111,7 +45,7 @@ const Testimonials: FC = () => {
 };
 
 interface Props {
-  selectedTestimonial: Testimonial;
+  selectedTestimonial: Client;
 }
 
 const TestimonialItem: FC<Props> = (props: Props) => {

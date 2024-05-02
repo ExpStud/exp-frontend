@@ -1,17 +1,20 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 
+interface Card {
+  name: string;
+}
+const cards = [
+  { image: "/images/slider1.svg", width: 1040, height: 600 },
+  { image: "/images/slider1.svg", width: 1040, height: 600 },
+  { image: "/images/slider1.svg", width: 1040, height: 600 },
+];
+
 const CardCarousel = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
-
-  const cards = [
-    { image: "/images/slider1.svg", width: 1040, height: 600 },
-    { image: "/images/slider1.svg", width: 1040, height: 600 },
-    { image: "/images/slider1.svg", width: 1040, height: 600 },
-  ];
 
   const startDragging = (e: React.MouseEvent | React.TouchEvent) => {
     if (sliderRef.current) {
