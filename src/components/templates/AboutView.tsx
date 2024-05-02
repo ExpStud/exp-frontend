@@ -1,4 +1,12 @@
-import { Dispatch, SetStateAction, FC, useContext, useRef } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  FC,
+  useContext,
+  useRef,
+  useState,
+  useEffect,
+} from "react";
 import {
   WelcomeSection,
   LetsWorkLink,
@@ -7,15 +15,24 @@ import {
 } from "@components";
 import Image from "next/image";
 import { ViewContext } from "src/contexts";
-import { useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 
 interface Props {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;
 }
 
+const yearsActive = 3;
+const projectsCompleted = 14;
+
 const AboutView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
   const { showView } = useContext(ViewContext);
+
+  const [showYearsCounter, setShowYearsCounter] = useState(false);
+  const [showProjectsCounter, setShowProjectsCounter] = useState(false);
+
+  const [yearsCount, setYearsCount] = useState<number>(0);
+  const [projectsCount, setProjectsCount] = useState<number>(0);
 
   const teamRef = useRef<HTMLHRElement>(null);
   const darthRef = useRef<HTMLHRElement>(null);
@@ -27,12 +44,49 @@ const AboutView: FC<Props> = (props: Props) => {
     once: true,
   });
 
+  //years active counter
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (showYearsCounter && yearsCount < yearsActive) {
+        setYearsCount((prevNumber) => prevNumber + 1);
+      }
+    }, 200);
+
+    if (yearsCount === yearsActive) {
+      clearInterval(timer);
+      setShowProjectsCounter(true);
+    }
+    return () => {
+      clearInterval(timer);
+    };
+  }, [projectsCount, showYearsCounter, yearsCount]);
+
+  //projects completed counter
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (showProjectsCounter && projectsCount < projectsCompleted) {
+        setProjectsCount((prevNumber) => prevNumber + 1);
+      }
+    }, 100);
+
+    if (projectsCount === projectsCompleted) {
+      clearInterval(timer);
+    }
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [projectsCount, showProjectsCounter]);
+
   return (
     <div className="relative w-full h-full items-center justify-center pr-5">
       <BackgroundImage setAssets={setAssets} />
 
       <div className="relative z-10">
-        <AnimateWrapper animate={showView}>
+        <AnimateWrapper
+          animate={showView}
+          onAnimationComplete={() => setShowYearsCounter(true)}
+        >
           <WelcomeSection title1="About us." />
 
           <div className="left-margin mt-20 flex flex-col lg:flex-row justify-between max-w-[1220px]">
@@ -55,12 +109,16 @@ const AboutView: FC<Props> = (props: Props) => {
 
           <div className="left-margin mt-20 flex flex-row text-xl text-custom-gray">
             <div>
-              <p className="text-9xl font-light text-custom-purple">03</p>
+              <p className="text-9xl font-light text-custom-purple">
+                {yearsCount}
+              </p>
               <p>Years active</p>
             </div>
 
             <div className="ml-20">
-              <p className="text-9xl font-light text-custom-purple">14</p>
+              <p className="text-9xl font-light text-custom-purple">
+                {projectsCount}
+              </p>
               <p>Projects completed</p>
             </div>
           </div>
@@ -86,7 +144,7 @@ const AboutView: FC<Props> = (props: Props) => {
               alt="Miguel"
               width={608}
               height={608}
-              className="rounded-md grayscale"
+              className="rounded-md grayscale-image"
             />
 
             <div className="flex flex-col justify-items-start lg:w-1/2 max-w-[608px] lg:ml-10">
@@ -156,7 +214,7 @@ const AboutView: FC<Props> = (props: Props) => {
               alt="Wallace"
               width={608}
               height={608}
-              className="rounded-md grayscale"
+              className="rounded-md grayscale-image transition-300"
             />
           </div>
         </AnimateWrapper>
