@@ -99,3 +99,11 @@ html {
 .input {
   @apply border bg-form-background border-white border-opacity-10 rounded-lg px-3 py-2 focus:border-custom-purple active:border-custom-purple focus:outline-none active:outline-none;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: white !important;
+}

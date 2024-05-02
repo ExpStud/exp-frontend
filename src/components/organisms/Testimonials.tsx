@@ -19,7 +19,7 @@ type Testimonial = {
 const testimonialsData: Testimonial[] = [
   {
     id: 1,
-    name: "Scum",
+    name: "SCUM",
     title: "Founder of My Slimes",
     company: "My Slimes",
     image: "/images/testimonials/1-scum.jpg",
@@ -131,7 +131,7 @@ const TestimonialItem: FC<Props> = (props: Props) => {
         />
 
         <div className="flex flex-col items-center md:items-start">
-          <div className="text-2xl uppercase">{selectedTestimonial.name}</div>
+          <div className="text-2xl">{selectedTestimonial.name}</div>
           <div className="text-custom-gray text-2xl">
             {selectedTestimonial.title}
           </div>

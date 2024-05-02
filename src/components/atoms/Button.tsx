@@ -22,7 +22,10 @@ const Button: FC<Props> = (props: Props) => {
   };
 
   return (
-    <div className={componentProps.className} onClick={() => handleClick()}>
+    <div
+      className={`max-w-[220px] whitespace-nowrap ${componentProps.className}`}
+      onClick={() => handleClick()}
+    >
       <div
         className={`cursor-pointer inline-flex items-center text-white text-xl font-medium pl-4 p-1 pr-1 rounded-full border border-white border-opacity-20 transition-300  ${
           disabled
