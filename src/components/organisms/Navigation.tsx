@@ -105,7 +105,7 @@ const Navigation: FC<Props> = (props: Props) => {
             )}
           </AnimatePresence>
 
-          <ExpIcon className="scale-90 md:scale-100" />
+          <ExpIcon className="scale-90 md:scale-100 fixed bottom-7" />
         </motion.div>
       )}
       {/* background shadow */}
