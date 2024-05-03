@@ -16,8 +16,7 @@ module.exports = {
         "robbie-gradient":
           "linear-gradient(180deg, #000000 -8.5%, #F8EFD5 151.17%)",
         "calder-gradient": "linear-gradient(180deg, #E2BBBD 0%, #EDD1D3 100%)",
-        "zen0-gradient":
-          "background: linear-gradient(180deg, #43FAB2 0%, #75FBC6 100%)",
+        "zen0-gradient": "linear-gradient(180deg, #43FAB2 0%, #75FBC6 100%)",
         "andy-gradient":
           "linear-gradient(180deg, #073517 -8.5%, #F8EFD5 116.75%)",
         "sike-gradient": "linear-gradient(180deg, #000000 0%, #4F170F 103.75%)",
