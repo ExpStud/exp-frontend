@@ -54,7 +54,7 @@ const TestimonialItem: FC<Props> = (props: Props) => {
   const { selectedTestimonial } = props;
   return (
     <motion.div
-      className="flex flex-col lg:flex-row items-center md:items-start lg:items-start mt-10 pr-10 gap-10 "
+      className="flex flex-col lg:flex-row items-start mt-10 pr-10 gap-10 "
       {...fastExitAnimation}
     >
       <div className="flex flex-col-reverse md:flex-row gap-8">
@@ -66,7 +66,7 @@ const TestimonialItem: FC<Props> = (props: Props) => {
           className="rounded-md"
         />
 
-        <div className="flex flex-col items-center md:items-start">
+        <div className="flex flex-col items-start">
           <div className="text-2xl">{selectedTestimonial.name}</div>
           <div className="text-custom-gray text-2xl">
             {selectedTestimonial.title}

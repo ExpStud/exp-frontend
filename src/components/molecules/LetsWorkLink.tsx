@@ -10,7 +10,7 @@ const LetsWorkLink: FC<Props> = (props: Props) => {
   return (
     <Link href="/contact">
       <div
-        className={`pl-5 md:pl-10 py-20 text-5xl xl:text-8xl transition-300 cursor-pointer ${
+        className={`pl-5 md:pl-10 py-20 text-3xl md:text-5xl lg:text-8xl transition-300 cursor-pointer ${
           hover ? "bg-white  bg-opacity-[0.02]" : ""
         }`}
         onMouseEnter={() => setHover(true)}
@@ -19,7 +19,10 @@ const LetsWorkLink: FC<Props> = (props: Props) => {
         <p className={`text-white transition-300 ${hover ? "" : "opacity-70"}`}>
           Let&apos;s work together.
         </p>
-        <RightArrowIcon className="mt-20 w-[129px] h-[70px]" animate={hover} />
+        <RightArrowIcon
+          className="mt-5 md:mt-10 lg:mt-20 w-[80px] md:w-[110px] lg:w-[129px] h-[70px]"
+          animate={hover}
+        />
       </div>
     </Link>
   );
