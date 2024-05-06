@@ -30,10 +30,7 @@ const ServicesView: FC<Props> = (props: Props) => {
       <BackgroundImage />
 
       <AnimateWrapper animate={showView}>
-        <WelcomeSection
-        // title1="We guide companies through moments of transformation."
-        // title1Class="!text-4xl md:!text-6xl 2xl:!text-7xl max-w-[1256px] pr-8 "
-        />
+        <WelcomeSection />
         <div className="left-margin mt-0 sm:mt-12 md:mt-10 lg:mt-0 text-4xl sm:text-6xl xl:text-7xl font-medium ">
           <p
             className={`mb-3 text-3xl sm:text-4xl md:text-5xl lg:!text-6xl 2xl:!text-7xl max-w-[1256px] pr-4`}
@@ -41,8 +38,8 @@ const ServicesView: FC<Props> = (props: Props) => {
             We guide companies through moments of transformation.
           </p>
         </div>
-        {/* <div className="absolute w-full -top-2 -left-10 lg:-left-20  z-[100] padding-left aspect-[2/2] md:aspect-[1600/1067] overflow-hidden "> */}
-        <div className="hidden 2xs:block absolute top-0 -left-10 lg:-left-20 -z-[2] h-[800px] lg:h-[900px] w-[110vw]">
+        {/* bg image */}
+        <div className="hidden 2xs:block absolute -top-0 2xl:top-0 -left-0 lg:left-0 xl:-left-20 2xl:-left-28 -z-[2] w-[100vw] h-[800px] lg:h-[900px] 2xl:h-[980px] ">
           <Image
             src="/images/services/final.png"
             alt="Services"
@@ -60,19 +57,16 @@ const ServicesView: FC<Props> = (props: Props) => {
             onLoad={() => setAssets && handleAssetLoad(0, setAssets)}
           />
         </div>
-        <div className="mt-10 hidden 2xs:block relative aspect-[5/4] sm:aspect-[3/1.5] md:aspect-[3/1] lg:aspect-[3/1] w-full bg- bg-opacity-50">
-          {/* <Image
-            src="/images/services/cover.jpg"
-            alt="Services"
-            fill
-            className="z-0 rounded-xl object-cover"
-            priority
-          /> */}
-        </div>
+        {/* invisible container */}
+        {/* xs:mt-10 hidden 2xs:block relative aspect-[5/4] xs:aspect-[2/1] sm:aspect-[3/1] lg:aspect-[3.5/1] w-full bg- bg-opacity-50 */}
+        <div
+          className="relative opacity-10 hidden 2xs:block
+          h-[360px] xs:h-[400px] md:h-[360px] lg:h-[400px] xl:h-[440px] 2xl:h-[520px] aspect-[8/7] xs:aspect-[5/3]  md:aspect-[3/1] lg:aspect-[3.5/1] "
+        ></div>
       </AnimateWrapper>
 
       <AnimateWrapper animate={listInView}>
-        <div className="left-margin top-margin z-10">
+        <div className="left-margin z-10">
           <div className="!opacity-100" ref={listRef}>
             <p className="text-5xl text-custom-gray mb-3">Our services.</p>
             <p className="text-4xl md:text-5xl">The full list.</p>
