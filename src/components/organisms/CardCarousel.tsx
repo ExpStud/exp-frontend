@@ -142,9 +142,10 @@ const CarouselItem: FC<CarouselItemProps> = (props: CarouselItemProps) => {
         <Button
           title={carousel.href ? "Visit Website" : "Coming Soon"}
           // link={carousel.href}
-          className={`mt-8 !min-w-[180px] !max-w-[180px] !h-[42px] !pr-1 !text-base hover:!border-opacity-80 ${carousel.borderColor} ${carousel.textColor}`}
+          className={`mt-8 !min-w-[180px] !max-w-[180px] !h-[42px] !pr-1 !text-base !border-opacity-20 hover:!border-opacity-80 
+            ${carousel.borderColor} ${carousel.textColor}`}
           circleClass={` ${carousel.fillColor}`}
-          pathClass={` ${carousel.arrowColor}`}
+          pathClass={` ${carousel.fillColor}`}
           svgClass="-rotate-45"
           callback={() => handleClick()}
         />

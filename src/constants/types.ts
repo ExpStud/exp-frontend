@@ -3,7 +3,6 @@ export type Carousel = {
   textColor: string;
   borderColor: string;
   fillColor: string;
-  arrowColor: string;
   title: string;
   src: string;
   href: string; //if href "Visit Website" else "Comin Soon"
