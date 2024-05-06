@@ -67,47 +67,42 @@ const CardCarousel = () => {
 
   return (
     <div
-      className="my-10 lg:my-20 flex flex-col items-center"
-      // style={{ width: `calc(100vw - ${navigationWidth})` }}
+      className="relative py-10 lg:py-20 flex flex-col items-center overflow-x-auto cursor-pointer "
+      ref={sliderRef}
+      onMouseDown={startDragging}
+      onMouseLeave={stopDragging}
+      onMouseUp={stopDragging}
+      onMouseMove={onDrag}
+      onTouchStart={startDragging}
+      onTouchEnd={stopDragging}
+      onTouchMove={onDrag}
+      onScroll={handleScroll}
+      style={{
+        scrollBehavior: "smooth",
+        scrollbarWidth: "none",
+        msOverflowStyle: "none",
+      }}
     >
-      <div className="" style={{ width: "100%" }}>
-        <div
-          ref={sliderRef}
-          className="flex cursor-pointer gap-2 overflow-x-auto"
-          onMouseDown={startDragging}
-          onMouseLeave={stopDragging}
-          onMouseUp={stopDragging}
-          onMouseMove={onDrag}
-          onTouchStart={startDragging}
-          onTouchEnd={stopDragging}
-          onTouchMove={onDrag}
-          onScroll={handleScroll}
-          style={{
-            scrollBehavior: "smooth",
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
-        >
-          <style>
-            {`
+      <div className="flex gap-2 items-end" style={{ width: "100%" }}>
+        <style>
+          {`
               ::-webkit-scrollbar {
                 display: none;
               }
             `}
-          </style>
-          {clients.map((client) => (
-            <>
-              {client.carousel?.map((item, index) => (
-                <CarouselItem
-                  key={index}
-                  index={index}
-                  client={client}
-                  carousel={item}
-                />
-              ))}
-            </>
-          ))}
-        </div>
+        </style>
+        {clients.map((client) => (
+          <>
+            {client.carousel?.map((item, index) => (
+              <CarouselItem
+                key={index}
+                index={index}
+                client={client}
+                carousel={item}
+              />
+            ))}
+          </>
+        ))}
       </div>
       <CarouselSlider
         sliderValue={sliderValue}
@@ -144,10 +139,10 @@ const CarouselSlider: FC<CarouselSliderProps> = (
   return (
     <div
       ref={containerRef}
-      className="relative flex justify-center gap-2 mt-6 h-[1px] w-[176px] bg-white bg-opacity-20"
+      className="absolute bottom-10 left-1/3 flex justify-center gap-2 mt-6 h-[1px] w-[176px] bg-white bg-opacity-20"
     >
       <motion.div
-        className="absolute bg-white w-[60px] h-[1px] cursor-pointer"
+        className="absolute bg-white w-[60px] h-[1px]"
         initial={{ left: 0 }}
         animate={{ left: sliderValue }}
         // drag="x"
