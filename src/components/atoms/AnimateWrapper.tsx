@@ -1,19 +1,24 @@
-import { motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
 import { FC } from "react";
 import { slideUp } from "@constants";
 
-interface AnimateWrapperProps {
+interface AnimateWrapperProps extends HTMLMotionProps<"div"> {
   animate: boolean;
-  children: React.ReactNode;
   delay?: number;
   opacity?: boolean;
   onAnimationComplete?: () => void;
 }
-
 const AnimateWrapper: FC<AnimateWrapperProps> = (
   props: AnimateWrapperProps
 ) => {
-  const { animate, children, delay = 0, opacity, onAnimationComplete } = props;
+  const {
+    animate,
+    children,
+    delay = 0,
+    opacity,
+    onAnimationComplete,
+    ...componentProps
+  } = props;
 
   return (
     <motion.div
@@ -21,6 +26,7 @@ const AnimateWrapper: FC<AnimateWrapperProps> = (
       onAnimationComplete={() => {
         onAnimationComplete && onAnimationComplete();
       }}
+      className={componentProps.className}
     >
       {children}
     </motion.div>

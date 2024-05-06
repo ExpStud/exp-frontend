@@ -14,11 +14,17 @@ import { PanInfo, motion } from "framer-motion";
 //   { image: "/images/slider1.svg", width: 1040, height: 600 },
 // ];
 
-const CardCarousel = () => {
+interface Props {
+  sliderValue: number;
+  setSliderValue: (value: number) => void;
+}
+
+const CardCarousel: FC<Props> = (props: Props) => {
+  const { sliderValue, setSliderValue } = props;
+
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [sliderValue, setSliderValue] = useState(0);
 
   const sliderRef = useRef<HTMLDivElement>(null);
 
@@ -48,26 +54,21 @@ const CardCarousel = () => {
     const x = clientX - sliderRef.current.offsetLeft;
     const walk = (x - startX) * 3;
     sliderRef.current.scrollLeft = scrollLeft - walk;
-
-    // console.log(sliderRef.current.scrollLeft); // Logs the scroll position
   };
-
-  // const navigationWidth = "6.5rem";
 
   const handleScroll = () => {
     if (sliderRef.current) {
       const scrollPosition = sliderRef.current.scrollLeft;
       const fullWidth = sliderRef.current.scrollWidth;
       const scrollPercentage = (scrollPosition / fullWidth) * 100;
-      const scrollPercentSlider = scrollPercentage * 0.01 * 145;
-      console.log(scrollPercentSlider); // Logs the scroll position as a percentage of the full width
+      const scrollPercentSlider = scrollPercentage * 0.01 * 155; //~width of slider
       setSliderValue(scrollPercentSlider);
     }
   };
 
   return (
     <div
-      className="relative py-10 lg:py-20 flex flex-col items-center overflow-x-auto cursor-pointer "
+      className="relative py-10 lg:py-20 flex flex-col items-center overflow-x-auto"
       ref={sliderRef}
       onMouseDown={startDragging}
       onMouseLeave={stopDragging}
@@ -83,7 +84,10 @@ const CardCarousel = () => {
         msOverflowStyle: "none",
       }}
     >
-      <div className="flex gap-2 items-end" style={{ width: "100%" }}>
+      <div
+        className="flex gap-2 items-end  cursor-pointer "
+        style={{ width: "100%" }}
+      >
         <style>
           {`
               ::-webkit-scrollbar {
@@ -104,51 +108,6 @@ const CardCarousel = () => {
           </>
         ))}
       </div>
-      <CarouselSlider
-        sliderValue={sliderValue}
-        setSliderValue={setSliderValue}
-      />
-    </div>
-  );
-};
-
-interface CarouselSliderProps {
-  sliderValue: number;
-  setSliderValue: (value: number) => void;
-}
-const CarouselSlider: FC<CarouselSliderProps> = (
-  props: CarouselSliderProps
-) => {
-  const { sliderValue, setSliderValue } = props;
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // const handleDrag = (e: MouseEvent | TouchEvent, info: PanInfo) => {
-  //   if (containerRef.current) {
-  //     const newSliderValue = Math.max(
-  //       0,
-  //       Math.min(
-  //         info.point.x,
-  //         containerRef.current.offsetWidth - 60 // Subtract the width of the slider
-  //       )
-  //     );
-  //     console.log("newSliderValue ", newSliderValue);
-  //     setSliderValue(newSliderValue);
-  //   }
-  // };
-
-  return (
-    <div
-      ref={containerRef}
-      className="absolute bottom-10 left-1/3 flex justify-center gap-2 mt-6 h-[1px] w-[176px] bg-white bg-opacity-20"
-    >
-      <motion.div
-        className="absolute bg-white w-[60px] h-[1px]"
-        initial={{ left: 0 }}
-        animate={{ left: sliderValue }}
-        // drag="x"
-        // dragConstraints={containerRef}
-        // onDrag={handleDrag}
-      />
     </div>
   );
 };
