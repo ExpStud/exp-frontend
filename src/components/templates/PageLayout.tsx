@@ -1,10 +1,11 @@
-import { FC, ReactNode, useState } from "react";
+import { FC, ReactNode, createRef, useRef, useState } from "react";
 import {
   PageHead,
   Footer,
   SplashScreen,
   Navigation,
   MobileNavigation,
+  Header,
 } from "@components";
 import { enterAnimation } from "@constants";
 import { ViewContext } from "@contexts";
@@ -28,6 +29,8 @@ const PageLayout: FC<Props> = (props: Props) => {
     assets = [],
   } = props;
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   //context for splash screen & modals
   const [showView, setShowView] = useState<boolean>(false);
 
@@ -49,14 +52,16 @@ const PageLayout: FC<Props> = (props: Props) => {
           url="https://expstud.io/"
           twitter="expstudio_"
         />
-        <MobileNavigation className="lg:hidden" />
+        <MobileNavigation className="lg:hidden" scrollRef={scrollRef} />
         <Navigation className="hidden lg:flex" />
         <div className="z-0 flex flex-col h-full left-padding relative">
           <motion.main
-            className={`flex flex-col h-full w-full overflow-y-auto pt-14 lg:pt-0 ${mainClass}`}
+            className={`flex flex-col h-full w-full overflow-y-auto ${mainClass}`}
             {...enterAnimation}
           >
-            <div>{children}</div>
+            <div ref={scrollRef} className="pt-16 lg:pt-0">
+              {children}
+            </div>
             <Footer />
           </motion.main>
         </div>

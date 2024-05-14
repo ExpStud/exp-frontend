@@ -15,7 +15,7 @@ const TwoLinesIcon: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={`relative flex-gap-2 w-7 h-7 cursor-pointer   ${
+      className={`relative flex-gap-2 w-7 h-7 cursor-pointer  ${
         props.className ?? ""
       }`}
       onClick={props.onClick}
