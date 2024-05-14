@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FC, useEffect, useState } from "react";
+import { FC, HTMLAttributes, useEffect, useState } from "react";
 import { CloseIcon, ExpIcon, MenuIcon } from "@components";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -12,10 +12,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useWindowSize } from "src/hooks";
 
-interface Props {}
-
-const Navigation: FC<Props> = (props: Props) => {
-  const {} = props;
+const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
+  const { ...componentProps } = props;
 
   const [open, setOpen] = useState(false);
   const [winWidth] = useWindowSize();
@@ -27,7 +25,11 @@ const Navigation: FC<Props> = (props: Props) => {
   }, [open]);
 
   return (
-    <div className="z-50 h-[100vh] w-12 md:w-16 flex flex-col text-gray-100">
+    <div
+      className={`z-50 h-[100vh] w-12 md:w-16 flex flex-col text-gray-100 ${
+        componentProps.className ?? ""
+      }`}
+    >
       {winWidth && (
         <motion.div
           className="z-20 fixed top-0 left-0 bottom-0 bg-black flex flex-col items-start justify-between py-7 px-2 md:px-4"

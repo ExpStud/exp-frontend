@@ -6,10 +6,11 @@ import { useInView } from "framer-motion";
 
 interface Props {
   project: Project;
+  showView: boolean;
 }
 
 const ProjectItem: FC<Props> = (props: Props) => {
-  const { project } = props;
+  const { project, showView } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
@@ -17,7 +18,7 @@ const ProjectItem: FC<Props> = (props: Props) => {
   });
 
   return (
-    <AnimateWrapper animate={isInView}>
+    <AnimateWrapper animate={showView && isInView}>
       <div
         className="left-margin top-margin flex flex-col lg:flex-row lg:items-center justify-between py-4 lg:pr-10 xl:pr-[10vw] max-w-[1680px]"
         ref={ref}

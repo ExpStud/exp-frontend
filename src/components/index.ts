@@ -6,6 +6,7 @@ const RightArrowIcon = dynamic(() => import("./@icons/RightArrowIcon"));
 const MenuIcon = dynamic(() => import("./@icons/MenuIcon"));
 const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const ExpIcon = dynamic(() => import("./@icons/ExpIcon"));
+const TwoLinesIcon = dynamic(() => import("./@icons/TwoLinesIcon"));
 //atoms
 const Button = dynamic(() => import("./atoms/Button"));
 const AnimateWrapper = dynamic(() => import("./atoms/AnimateWrapper"));
@@ -27,6 +28,7 @@ const CardCarousel = dynamic(() => import("./organisms/CardCarousel"));
 const Testimonials = dynamic(() => import("./organisms/Testimonials"));
 const ProductList = dynamic(() => import("./organisms/ProductList"));
 const About = dynamic(() => import("./organisms/About"));
+const MobileNavigation = dynamic(() => import("./organisms/MobileNavigation"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -64,5 +66,7 @@ export {
   ProductList,
   About,
   RightArrowIcon,
-  AnimateWrapper
+  AnimateWrapper,
+  MobileNavigation,
+  TwoLinesIcon
 };

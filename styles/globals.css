@@ -88,10 +88,10 @@ html {
   @apply z-10 cursor-pointer transition-300 fill-white opacity-100 md:opacity-60 hover:opacity-100;
 }
 .left-padding {
-  @apply pl-12 md:pl-16;
+  @apply lg:pl-16;
 }
 .left-margin {
-  @apply ml-5 md:ml-10;
+  @apply mx-5 md:ml-10;
 }
 .top-margin {
   @apply mt-12 md:mt-20;

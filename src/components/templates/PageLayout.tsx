@@ -1,5 +1,11 @@
 import { FC, ReactNode, useState } from "react";
-import { PageHead, Footer, SplashScreen, Navigation } from "@components";
+import {
+  PageHead,
+  Footer,
+  SplashScreen,
+  Navigation,
+  MobileNavigation,
+} from "@components";
 import { enterAnimation } from "@constants";
 import { ViewContext } from "@contexts";
 import { motion } from "framer-motion";
@@ -43,10 +49,11 @@ const PageLayout: FC<Props> = (props: Props) => {
           url="https://expstud.io/"
           twitter="expstudio_"
         />
-        <Navigation />
+        <MobileNavigation className="lg:hidden" />
+        <Navigation className="hidden lg:flex" />
         <div className="z-0 flex flex-col h-full left-padding relative">
           <motion.main
-            className={`flex flex-col h-full w-full overflow-y-auto ${mainClass}`}
+            className={`flex flex-col h-full w-full overflow-y-auto pt-14 lg:pt-0 ${mainClass}`}
             {...enterAnimation}
           >
             <div>{children}</div>
