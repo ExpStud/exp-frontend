@@ -8,11 +8,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 const TwoLinesIcon: FC<Props> = (props: Props) => {
   const { animate = false } = props;
 
-  const lineVariants = {
-    initial: { d: "M0.75 4.5H13.25" },
-    animate: { d: "M0.75 7H13.25" },
-  };
-
   return (
     <div
       className={`relative flex-gap-2 w-7 h-7 cursor-pointer  ${

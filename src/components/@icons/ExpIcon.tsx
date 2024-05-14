@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { FC, SVGProps } from "react";
 
-interface Props extends SVGProps<SVGSVGElement> {}
+interface Props extends SVGProps<SVGSVGElement> {
+  animate?: boolean;
+}
 
 const ExpIcon: FC<Props> = (props: Props) => {
-  const { ...componentProps } = props;
+  const { animate = false, ...componentProps } = props;
 
   return (
     <Link href="/">
@@ -15,7 +17,9 @@ const ExpIcon: FC<Props> = (props: Props) => {
         viewBox="0 0 32 32"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={`transition-500 hover:rotate-90 ${componentProps.className}`}
+        className={`transition-500 hover:rotate-90 ${
+          componentProps.className
+        } ${animate ? "-rotate-90 hover:rotate-0" : ""}`}
       >
         <rect
           y="23.8571"

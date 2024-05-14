@@ -55,15 +55,18 @@ const PageLayout: FC<Props> = (props: Props) => {
         <MobileNavigation className="lg:hidden" scrollRef={scrollRef} />
         <Navigation className="hidden lg:flex" />
         <div className="z-0 flex flex-col h-full left-padding relative">
-          <motion.main
+          <main
             className={`flex flex-col h-full w-full overflow-y-auto ${mainClass}`}
-            {...enterAnimation}
           >
-            <div ref={scrollRef} className="pt-16 lg:pt-0">
+            <motion.div
+              ref={scrollRef}
+              className="pt-16 lg:pt-0"
+              {...enterAnimation}
+            >
               {children}
-            </div>
+            </motion.div>
             <Footer />
-          </motion.main>
+          </main>
         </div>
 
         {/* modals */}
