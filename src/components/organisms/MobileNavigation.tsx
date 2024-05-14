@@ -126,17 +126,19 @@ const MobileNavigation: FC<Props> = (props: Props) => {
         animate={animateHeader ? "show" : "hidden"}
         className="h-16 w-screen bg-custom-black flex justify-between px-5 md:px-10 items-center "
       >
-        <ExpIcon className="scale-90 md:scale-100 " animate={open} />
+        <ExpIcon className="scale-90 md:scale-100 " animate={false} />
         <TwoLinesIcon animate={open} onClick={() => setOpen(!open)} />
         <AnimatePresence>
           {open && (
             <motion.div
-              className="fixed inset-x-0 top-16 bottom-0 bg-custom-black"
+              className="fixed inset-x-0 top-10 bottom-0 bg-custom-black -z-10"
               {...midExitAnimation}
             >
               <motion.div
                 className="flex flex-col gap-8 items-start h-full ml-5 lg:ml-10 mt-20"
                 {...dropdownAnimations}
+                initial="hidden"
+                animate="show"
               >
                 <NavigationItem href="/">Home</NavigationItem>
                 <NavigationItem href="/projects">Our work</NavigationItem>
@@ -147,7 +149,7 @@ const MobileNavigation: FC<Props> = (props: Props) => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.5, ease: "easeInOut" }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
               >
                 <Image
                   src="/images/exp-corner.svg"
@@ -179,15 +181,16 @@ const NavigationItem: FC<NavigationItemProps> = (
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        duration: 0.4,
-        ease: "easeInOut",
-        type: "spring",
-        stiffness: 300,
-        damping: 24,
-      }}
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // transition={{
+      //   duration: 0.4,
+      //   ease: "easeInOut",
+      //   type: "spring",
+      //   stiffness: 300,
+      //   damping: 24,
+      // }}
+      variants={dropdownItemsAnimations}
     >
       <Link
         href={href}
