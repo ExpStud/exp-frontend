@@ -1,4 +1,5 @@
 export type Carousel = {
+  name: string;
   backgroundColor: string;
   textColor: string;
   borderColor: string;

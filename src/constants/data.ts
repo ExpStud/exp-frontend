@@ -13,22 +13,24 @@ export const clients: Client[] = [
     exchangeArt: "https://exchange.art/scum/series",
     carousel : [
       {
-        backgroundColor: "!bg-scum-gradient",
-        textColor: "!text-scum-text",
-        borderColor: "!border-scum-text",
-        fillColor: "!fill-scum-text",
+        name: "Scum",
+        backgroundColor: "!bg-slimes-gradient",
+        textColor: "!text-slimes-text",
+        borderColor: "!border-slimes-text",
+        fillColor: "!fill-slimes-text",
         title: "My Slimes",
-        src: "/images/carousel/scum.png",
+        src: "/images/carousel/slimes.png",
         href: "https://slimes.xyz/",
       },
       {
+        name: "Scum",
         backgroundColor: "!bg-somos-gradient",
         textColor: "!text-somos-text",
         borderColor: "!border-somos-text",
         fillColor: "!fill-somos-text",
         title: "Somos Axolotl",
         src: "/images/carousel/somos.png",
-        href: "",
+        href: "https://somosaxolotl.com",
       },
     ]
   },
@@ -43,12 +45,13 @@ export const clients: Client[] = [
     twitter: "https://twitter.com/shilstone_arts",
     exchangeArt: "https://exchange.art/shilstone-arts/series",
     carousel : [{
+      name: "Robbie Shilstone",
       backgroundColor: "!bg-robbie-gradient",
       textColor: "!text-robbie-text",
       borderColor: "!border-robbie-text",
       fillColor: "!fill-robbie-text",
       title: "Publique World",
-      src: "/images/carousel/robbie.png",
+      src: "/images/carousel/publique.png",
       href: "https://publique.world/",
     }]
   },
@@ -63,6 +66,7 @@ export const clients: Client[] = [
     twitter: "https://twitter.com/CalderMoore_",
     exchangeArt: "https://exchange.art/caldermoore/series",
     carousel : [{
+      name: "Calder Moore",
       backgroundColor: "!bg-calder-gradient",
       textColor: "!text-calder-text",
       borderColor: "!border-calder-text",
@@ -83,6 +87,7 @@ export const clients: Client[] = [
     twitter: "https://twitter.com/CyberFrogsNFT",
     tensor: "https://www.tensor.trade/trade/cyber_frogs",
     carousel : [{
+      name: "Andy Rew",
       backgroundColor: "!bg-andy-gradient",
       textColor: "!text-andy-text",
       borderColor: "!border-andy-text",
@@ -103,6 +108,7 @@ export const clients: Client[] = [
     twitter: "https://twitter.com/zen0m",
     exchangeArt: "https://exchange.art/zen0/series",
     carousel : [{
+      name: "Zen0",
       backgroundColor: "!bg-zen0-gradient",
       textColor: "!text-zen0-text",
       borderColor: "!border-zen0-text",
@@ -121,6 +127,7 @@ export const clients: Client[] = [
     twitter: "https://twitter.com/HotHeadsNFT",
     exchangeArt: "https://exchange.art/hot-heads/nfts",
     carousel : [{
+      name: "Sikedelic",
       backgroundColor: "!bg-sike-gradient",
       textColor: "!text-sike-text",
       borderColor: "!border-sike-text",

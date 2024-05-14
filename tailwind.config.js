@@ -10,16 +10,6 @@ module.exports = {
         button: "url('/images/button.png')",
         container: "url('/images/container-transparent.png') 30 round",
         //gradients
-        "scum-gradient":
-          "linear-gradient(177.97deg, #4BB3A1 1.72%, #F8EFD5 115.63%)",
-        "somos-gradient": "linear-gradient(180deg, #000000 0%, #FFFFFF 100%)",
-        "robbie-gradient":
-          "linear-gradient(180deg, #000000 -8.5%, #F8EFD5 151.17%)",
-        "calder-gradient": "linear-gradient(180deg, #E2BBBD 0%, #EDD1D3 100%)",
-        "zen0-gradient": "linear-gradient(180deg, #43FAB2 0%, #75FBC6 100%)",
-        "andy-gradient":
-          "linear-gradient(180deg, #073517 -8.5%, #F8EFD5 116.75%)",
-        "sike-gradient": "linear-gradient(180deg, #000000 0%, #4F170F 103.75%)",
       },
       fontFamily: {
         primary: ["Barlow"],
@@ -42,13 +32,21 @@ module.exports = {
         "form-background": "#2d2d2d",
         "footer-border": "#423171",
         //carousel
-        "scum-text": "#511F23",
-        "somos-text": "#1A3A46",
-        "robbie-text": "#1E1E1E",
+        "slimes-text": "#1A3A46",
+        "somos-text": "#2A48AF",
+        "robbie-text": "#1C1C1C",
         "calder-text": "#511F23",
         "andy-text": "#E62E05",
         "zen0-text": "#1A3A46",
         "sike-text": "#EFB41C",
+        "calder-gradient": "#EDD1D3",
+
+        "slimes-gradient": "#F9D6C7",
+        "somos-gradient": "#F8B23C",
+        "robbie-gradient": "#8F8F8F",
+        "zen0-gradient": "#75FBC6",
+        "andy-gradient": "#224632",
+        "sike-gradient": "",
       },
       screens: {
         "2xs": "320px",
