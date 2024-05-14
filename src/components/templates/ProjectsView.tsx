@@ -1,10 +1,21 @@
-import { Dispatch, SetStateAction, FC } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  FC,
+  useContext,
+  Fragment,
+  useCallback,
+  useState,
+} from "react";
 import {
   WelcomeSection,
   ProjectItem,
   LetsWorkLink,
   BackgroundImage,
+  AnimateWrapper,
 } from "@components";
+import { ViewContext } from "@contexts";
+import { projects } from "@constants";
 
 interface Props {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;
@@ -12,44 +23,21 @@ interface Props {
 
 const ProjectsView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
+  const { showView } = useContext(ViewContext);
+
+  const [animate, setAnimate] = useState(false);
 
   return (
     <div className="relative w-full h-full">
-      <BackgroundImage />
+      <BackgroundImage setAssets={setAssets} />
+      <AnimateWrapper animate={showView}>
+        <WelcomeSection title1="Projects." />
+        <hr className="border-white border-opacity-10 top-margin"></hr>
+      </AnimateWrapper>
 
-      <WelcomeSection title1="Projects." />
-
-      <hr className="border-white border-opacity-10 top-margin"></hr>
-
-      <ProjectItem
-        title="Our services."
-        subtitle="The full list."
-        first="Services My Slimes & All in Time (1 year and counting)"
-        second="Project Manager at DeGods & y00ts (1 year)"
-        third="Hot Heads (1 year)"
-      />
-
-      <hr className="border-white border-opacity-10 top-margin"></hr>
-
-      <ProjectItem
-        title="Our services."
-        subtitle="The full list."
-        first="Services My Slimes & All in Time (1 year and counting)"
-        second="Project Manager at DeGods & y00ts (1 year)"
-        third="Hot Heads (1 year)"
-      />
-
-      <hr className="border-white border-opacity-10 top-margin"></hr>
-
-      <ProjectItem
-        title="Our services."
-        subtitle="The full list."
-        first="Services My Slimes & All in Time (1 year and counting)"
-        second="Project Manager at DeGods & y00ts (1 year)"
-        third="Hot Heads (1 year)"
-      />
-
-      <hr className="border-white border-opacity-10 top-margin"></hr>
+      {projects.map((project, index) => (
+        <ProjectItem project={project} key={index} />
+      ))}
 
       <LetsWorkLink />
     </div>

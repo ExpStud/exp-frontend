@@ -45,9 +45,6 @@ const LandingView: FC<Props> = (props: Props) => {
   const aboutInView = useInView(aboutRef, {
     once: true,
   });
-  const workInView = useInView(workRef, {
-    once: true,
-  });
 
   return (
     <div className="relative w-full h-full">

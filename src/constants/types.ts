@@ -9,6 +9,20 @@ export type Carousel = {
   href: string; //if href "Visit Website" else "Comin Soon"
 }
 
+export type Link = {
+  name: string;
+  url: string;
+};
+
+export type Project = { 
+  name: string;
+  published: number | null;
+  description: string;
+  services: string[];
+  links: Link[]
+  image: string;
+}
+
 export type Client = {
   id: number;
   name: string;
