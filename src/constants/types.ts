@@ -6,7 +6,9 @@ export type Carousel = {
   fillColor: string;
   title: string;
   src: string;
+  srcMobile?: string;
   href: string; //if href "Visit Website" else "Comin Soon"
+
 }
 
 export type Link = {

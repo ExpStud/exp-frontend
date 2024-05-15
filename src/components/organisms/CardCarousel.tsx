@@ -4,6 +4,7 @@ import { Carousel, Client, clients } from "@constants";
 import { Button } from "@components";
 import { useRouter } from "next/router";
 import { PanInfo, motion } from "framer-motion";
+import { useWindowSize } from "src/hooks";
 
 // interface Card {
 //   name: string;
@@ -27,6 +28,9 @@ const CardCarousel: FC<Props> = (props: Props) => {
   const [scrollLeft, setScrollLeft] = useState(0);
 
   const sliderRef = useRef<HTMLDivElement>(null);
+
+  const [winWidth] = useWindowSize();
+  const isMobile = winWidth < 640;
 
   const data: (Carousel | undefined)[] = [
     clients[0]?.carousel?.[1],
@@ -63,6 +67,7 @@ const CardCarousel: FC<Props> = (props: Props) => {
   };
 
   const handleScroll = () => {
+    // isMobile
     if (sliderRef.current) {
       const scrollPosition = sliderRef.current.scrollLeft;
       const fullWidth = sliderRef.current.scrollWidth;
@@ -90,10 +95,7 @@ const CardCarousel: FC<Props> = (props: Props) => {
         msOverflowStyle: "none",
       }}
     >
-      <div
-        className="flex gap-2 items-end  cursor-pointer "
-        style={{ width: "100%" }}
-      >
+      <div className="flex gap-2 items-end  cursor-pointer w-full">
         <style>
           {`
               ::-webkit-scrollbar {
@@ -130,16 +132,17 @@ const CarouselItem: FC<CarouselItemProps> = (props: CarouselItemProps) => {
 
   return (
     <div
-      className={`relative h-[600px]  flex items-end justify-between   rounded-lg ${
+      className={`relative min-w-[330px] sm:min-w-[940px] md:min-w-[1040px] h-[600px] sm:h-[600px]  flex items-end justify-between   rounded-lg ${
         data.backgroundColor
-      } ${index === 0 ? "ml-4 md:ml-10" : "ml-4"}`}
-      style={{ minWidth: 1040 }}
+      } ${index === 0 ? "ml-4 md:ml-10" : "ml-1 sm:ml-4"}`}
     >
       <div
         className={`flex flex-col gap-1 justify-center p-10 max-w-[380px] ${data.textColor}`}
       >
         <p className="text-opacity-75 text-xl pl-0.5">{data.name}</p>
-        <h3 className="text-5xl whitespace-nowrap ">{data.title}</h3>
+        <h3 className="text-4xl sm:text-5xl whitespace-nowrap ">
+          {data.title}
+        </h3>
         <Button
           title={data.href ? "Visit Website" : "Coming Soon"}
           // link={data.href}
@@ -151,8 +154,16 @@ const CarouselItem: FC<CarouselItemProps> = (props: CarouselItemProps) => {
           callback={() => handleClick()}
         />
       </div>
+      <Image
+        src={data?.srcMobile ?? data.src}
+        alt={`Slide ${index}`}
+        // fill
+        width={300}
+        height={400}
+        className=" sm:hidden absolute top-0 left-1/2 transform -translate-x-1/2"
+      />
       <div
-        className={`absolute overflow-hidden z-10 w-[608px] h-[560px] ${
+        className={`hidden sm:flex absolute overflow-hidden z-10 w-[608px] h-[560px] ${
           data.name === "Scum"
             ? " -bottom-[23px] -right-[19px] "
             : "-bottom-[24px] -right-[20px] "

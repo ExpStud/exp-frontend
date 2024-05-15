@@ -139,6 +139,7 @@ export const clients: Client[] = [
         fillColor: "!fill-slimes-text",
         title: "My Slimes",
         src: "/images/carousel/slimes.png",
+        srcMobile: "/images/carousel/slimes-sm.png",
         href: "https://slimes.xyz/",
       },
       {
@@ -149,6 +150,7 @@ export const clients: Client[] = [
         fillColor: "!fill-somos-text",
         title: "Somos Axolotl",
         src: "/images/carousel/somos.png",
+        srcMobile: "/images/carousel/somos-sm.png",
         href: "https://somosaxolotl.com",
       },
     ]
@@ -171,6 +173,7 @@ export const clients: Client[] = [
       fillColor: "!fill-robbie-text",
       title: "Publique World",
       src: "/images/carousel/publique.png",
+      srcMobile: "/images/carousel/publique-sm.png",
       href: "https://publique.world/",
     }]
   },
