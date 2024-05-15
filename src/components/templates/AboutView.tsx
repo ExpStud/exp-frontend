@@ -79,7 +79,7 @@ const AboutView: FC<Props> = (props: Props) => {
   }, [projectsCount, showProjectsCounter]);
 
   return (
-    <div className="relative w-full h-full items-center justify-center pr-5">
+    <div className="relative w-full h-full items-center justify-center">
       <BackgroundImage setAssets={setAssets} />
 
       <div className="relative z-10">
@@ -92,7 +92,9 @@ const AboutView: FC<Props> = (props: Props) => {
           <div className="left-margin mt-20 flex flex-col lg:flex-row justify-between max-w-[1220px]">
             <div className="font-medium">
               <p className="text-5xl text-custom-gray mb-3">Our journey.</p>
-              <p className="text-4xl md:text-5xl">Perfeggcionism freaks.</p>
+              <p className="text-4xl md:text-5xl pb-10">
+                Perfeggcionism freaks.
+              </p>
             </div>
 
             <div className="lg:w-1/2 text-xl max-w-[608px]">

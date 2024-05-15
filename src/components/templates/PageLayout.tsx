@@ -58,11 +58,7 @@ const PageLayout: FC<Props> = (props: Props) => {
           <main
             className={`flex flex-col h-full w-full overflow-y-auto ${mainClass}`}
           >
-            <motion.div
-              ref={scrollRef}
-              className="pt-16 lg:pt-0"
-              {...enterAnimation}
-            >
+            <motion.div ref={scrollRef} {...enterAnimation}>
               {children}
             </motion.div>
             <Footer />

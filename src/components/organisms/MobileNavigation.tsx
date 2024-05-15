@@ -56,74 +56,6 @@ const MobileNavigation: FC<Props> = (props: Props) => {
 
   const [open, setOpen] = useState(false);
 
-  const [animateHeader, setAnimateHeader] = useState<boolean>(false);
-  const [winWidth] = useWindowSize();
-
-  //scroll variables
-  const counterRef = useRef<number>();
-  const { scrollY, scrollYProgress } = useScroll({ container: scrollRef });
-
-  const height = 104;
-  const headerVariants: Variants = {
-    show: {
-      y: 0,
-      transition: {
-        delay: 0.25,
-        duration: 0.4,
-        ease: "easeInOut",
-      },
-    },
-    hidden: {
-      y: -height,
-      transition: {
-        delay: 0.25,
-        duration: 0.4,
-        ease: "easeInOut",
-      },
-    },
-  };
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    // console.log("Scroll", latest);
-
-    // if (latest > 0.95) setAnimateHeader(true);
-    if (latest < 0.01) setAnimateHeader(true);
-  });
-
-  //hide header on scroll down, show on scroll up
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    // console.log("Scroll", latest);
-
-    //first instance
-    if (counterRef.current === undefined) {
-      setAnimateHeader(false);
-      counterRef.current = latest;
-      return;
-    }
-
-    //scroll down
-    if (counterRef.current < latest) {
-      if (counterRef.current + 30 < latest) {
-        setAnimateHeader(false);
-        counterRef.current = latest;
-      }
-      return;
-    }
-
-    //scroll up
-    if (counterRef.current > latest) {
-      if (counterRef.current > latest + 30) {
-        setAnimateHeader(true);
-        counterRef.current = latest;
-      }
-      return;
-    }
-  });
-
-  useEffect(() => {
-    setAnimateHeader(showHeader);
-  }, [showHeader]);
-
   // stop page scroll (when modal or menu open)
   useEffect(() => {
     if (open) document.body.style.overflow = "hidden";
@@ -131,91 +63,93 @@ const MobileNavigation: FC<Props> = (props: Props) => {
   }, [open]);
 
   return (
-    <header
-      className={`top-0 z-50 w-full h-0 ${type === "scroll" ? "fixed" : type} ${
-        componentProps.className ?? ""
-      } `}
-    >
+    // <header
+    //   className={`top-0 z-50 w-full h-0 ${type === "scroll" ? "fixed" : type} ${
+    //     componentProps.className ?? ""
+    //   } `}
+    // >
+    <>
       <motion.div
-        variants={headerVariants}
-        initial={showHeader ? "show" : "hidden"}
-        animate={animateHeader ? "show" : "hidden"}
-        className="h-16 w-screen bg-custom-black flex justify-between px-5 md:px-10 items-center "
+        // variants={headerVariants}
+        // initial={showHeader ? "show" : "hidden"}
+        // animate={animateHeader ? "show" : "hidden"}
+        className="fixed right-3 top-3 z-50 h-14 w-14 bg-background-black rounded-full flex items-center justify-center"
       >
-        <ExpIcon className="scale-90 md:scale-100 " animate={false} />
+        {/* <ExpIcon className="scale-90 md:scale-100 " animate={false} /> */}
         <TwoLinesIcon animate={open} onClick={() => setOpen(!open)} />
-        <AnimatePresence>
-          {open && (
+      </motion.div>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="fixed inset-x-0 top-0 bottom-0 bg-custom-black z-10"
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          >
             <motion.div
-              className="fixed inset-x-0 top-10 bottom-0 bg-custom-black -z-10"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="flex flex-col gap-4 items-start h-full ml-5 lg:ml-10 mt-20"
+              variants={parentVariants}
+              initial="hidden"
+              animate="show"
             >
-              <motion.div
-                className="flex flex-col gap-4 items-start h-full ml-5 lg:ml-10 mt-20"
-                variants={parentVariants}
-                initial="hidden"
-                animate="show"
-              >
-                <MobileNavigationItem href="/">Home</MobileNavigationItem>
-                <MobileNavigationItem href="/projects">
-                  Our work
-                </MobileNavigationItem>
-                <MobileNavigationItem href="/services">
-                  What we do
-                </MobileNavigationItem>
-                <MobileNavigationItem href="/about">
-                  About us
-                </MobileNavigationItem>
-                <MobileNavigationItem href="/contact">
-                  Contact us
-                </MobileNavigationItem>
-                <motion.div variants={item2Variants}>
-                  <Image
-                    src="/images/exp-corner.svg"
-                    alt="exp"
-                    width={673}
-                    height={637}
-                    className="absolute rotate-90 bottom-0 right-0 -z-10"
-                  />
-                </motion.div>
-                <motion.div className="flex flex-col gap-0 pt-12 text-lg">
-                  <motion.p
-                    className="opacity-60 text-white/60"
-                    variants={item2Variants}
-                  >
-                    Follow us
-                  </motion.p>
-                  <motion.a
-                    href="https://www.instagram.com/expstudio_/"
-                    rel="noreferrer"
-                    target="_blank"
-                    variants={item2Variants}
-                  >
-                    Instagram
-                  </motion.a>
-                  <motion.a
-                    href="https://twitter.com/rulebreakers___"
-                    rel="noreferrer"
-                    target="_blank"
-                    variants={item2Variants}
-                  >
-                    LinkdIn
-                  </motion.a>
-                  <motion.a
-                    href="https://twitter.com/exp_studio_"
-                    rel="noreferrer"
-                    target="_blank"
-                    variants={item2Variants}
-                  >
-                    X
-                  </motion.a>
-                </motion.div>
+              <MobileNavigationItem href="/">Home</MobileNavigationItem>
+              <MobileNavigationItem href="/projects">
+                Our work
+              </MobileNavigationItem>
+              <MobileNavigationItem href="/services">
+                What we do
+              </MobileNavigationItem>
+              <MobileNavigationItem href="/about">
+                About us
+              </MobileNavigationItem>
+              <MobileNavigationItem href="/contact">
+                Contact us
+              </MobileNavigationItem>
+              <motion.div variants={item2Variants}>
+                <Image
+                  src="/images/exp-corner.svg"
+                  alt="exp"
+                  width={673}
+                  height={637}
+                  className="absolute rotate-90 bottom-0 right-0 -z-10"
+                />
               </motion.div>
+              <motion.div className="flex flex-col gap-0 pt-12 text-lg">
+                <motion.p
+                  className="opacity-60 text-white/60"
+                  variants={item2Variants}
+                >
+                  Follow us
+                </motion.p>
+                <motion.a
+                  href="https://www.instagram.com/expstudio_/"
+                  rel="noreferrer"
+                  target="_blank"
+                  variants={item2Variants}
+                >
+                  Instagram
+                </motion.a>
+                <motion.a
+                  href="https://twitter.com/rulebreakers___"
+                  rel="noreferrer"
+                  target="_blank"
+                  variants={item2Variants}
+                >
+                  LinkdIn
+                </motion.a>
+                <motion.a
+                  href="https://twitter.com/exp_studio_"
+                  rel="noreferrer"
+                  target="_blank"
+                  variants={item2Variants}
+                >
+                  X
+                </motion.a>
+              </motion.div>
+            </motion.div>
 
-              {/* <motion.div
+            {/* <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ deduration: 0.5, ease: "easeInOut" }}
@@ -229,11 +163,11 @@ const MobileNavigation: FC<Props> = (props: Props) => {
                   className="absolute rotate-90 bottom-0 right-0 -z-10"
                 />
               </motion.div> */}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
-    </header>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+    // </header>
   );
 };
 

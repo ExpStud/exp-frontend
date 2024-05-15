@@ -5,7 +5,7 @@ interface Props {}
 
 const LandingView: FC<Props> = (props: Props) => {
   return (
-    <div className="left-margin top-margin pr-5">
+    <div className="left-margin top-margin">
       <p className="text-5xl text-custom-gray mb-3">About ourselves.</p>
       <p className="text-4xl md:text-5xl">Perfeggcionism freaks.</p>
 
