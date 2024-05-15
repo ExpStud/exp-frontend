@@ -7,7 +7,7 @@ export const menuItemVariants: Variants = {
   animate: { 
     opacity: 1,
      transition: { 
-      delay: 0.5,
+      delay: 0.3,
       duration: 0.5, 
       ease: "easeInOut" 
     }, 
@@ -27,13 +27,13 @@ export const openMenuVariants = (closedWidth: number, openWidth: number) => ({
     width: closedWidth,
     transition: { 
       delay: 0.2,
-      duration: 0.4 
+      duration: 0.3 
     },
   },
   open: { 
     width: openWidth, 
     transition: { 
-      duration: 0.8 
+      duration: 0.5 
     } 
   },
 });
@@ -137,12 +137,12 @@ export const backgroundAnimations = {
 
 //dropdown
 export const dropdownAnimations: Variants = {
-  hidden: { y: -25, opacity: 0 },
+  hidden: { y: 500, opacity: 0 },
   show: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       // delay: 0.5,
       staggerChildren: 0.1,
       ease: "easeInOut",

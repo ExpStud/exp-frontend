@@ -57,7 +57,7 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
               </motion.div>
             )}
           </AnimatePresence>
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             {open ? (
               <motion.div
                 className="flex flex-col gap-8 h-full pl-16 md:pl-32 z-0"
