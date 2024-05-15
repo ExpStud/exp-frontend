@@ -30,7 +30,7 @@ const Dropdown: FC<Props> = ({ className, options, onSelectionChange }) => {
 
   return (
     <div
-      className={`input relative flex justify-between items-center cursor-pointer ${
+      className={`input relative flex justify-between items-center cursor-pointer z-20 ${
         className ?? ""
       }`}
       onClick={() => setOpenMenu(!openMenu)}

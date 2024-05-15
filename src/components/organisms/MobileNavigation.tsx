@@ -65,9 +65,10 @@ const MobileNavigation: FC<Props> = (props: Props) => {
   return (
     <>
       <motion.div
-        className={`fixed right-3 top-3 z-50 h-14 w-14 bg-background-black rounded-full flex items-center justify-center ${componentProps.className}`}
+        className={`cursor-pointer fixed right-3 top-3 z-50 h-14 w-14 bg-background-black rounded-full flex items-center justify-center ${componentProps.className}`}
+        onClick={() => setOpen(!open)}
       >
-        <TwoLinesIcon animate={open} onClick={() => setOpen(!open)} />
+        <TwoLinesIcon animate={open} />
       </motion.div>
       <AnimatePresence>
         {open && (
@@ -103,7 +104,7 @@ const MobileNavigation: FC<Props> = (props: Props) => {
                   alt="exp"
                   width={673}
                   height={637}
-                  className="absolute rotate-90 bottom-0 right-0 -z-10"
+                  className="absolute rotate-90 bottom-0 right-0 -z-20"
                 />
               </motion.div>
               <motion.div className="flex flex-col gap-0 pt-12 text-lg">

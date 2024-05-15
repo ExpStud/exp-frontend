@@ -16,7 +16,7 @@ const ContactView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   return (
-    <div className="relative w-full h-full items-center justify-center overflow-hidden">
+    <div className="relative w-full h-full items-center justify-center overflow-hidden mb-10 ">
       <BackgroundImage setAssets={setAssets} />
 
       <div className="relative z-10">

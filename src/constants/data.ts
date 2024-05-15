@@ -22,37 +22,6 @@ import { Client, Project } from "./types";
 
 export const projects: Project[] = [
   {
-    name: "Slimes",
-    published: 2023,
-    description: "A modern blend of animations, art, and functionality. The My Slimes website boasts a set of complex parallaxing & scrolling elements that help bring the site to life through the screen. Paired with a robust data-base system that stores assets for fans, holders, and explorers to save for themselves.",
-    services: ["Asset Library", "Cloud Storage", "Complex Animations", "Hot-Links Page (Mobile)", "E-Commerce Store", "Blockchain Integration"],
-    links: [
-      {
-        name: "Website",
-        url: "https://slimes.xyz/",
-      },{
-        name: "Twitter",
-        url: "https://twitter.com/SCUMSOL",
-      }
-    ],
-    image: "/images/projects/slimes.jpg",
-  }, {
-    name: "Zen0",
-    published: 2023,
-    description: "Glyphscapes is a series of algorithmically generated maps created from a shared set of primitive 1-bit tiles. On this build, we built tools for his fans & holders to explore these maps, and learn more about Zen0's additional body of work on Solana.",
-    services: ["Development","Responsiveness"],
-    links: [
-      {
-        name: "Website",
-        url: "https://zen0.art/rarity",
-      },{
-        name: "Twitter",
-        url: "https://twitter.com/zen0m",
-      }
-    ],
-    image: "/images/projects/zen0.jpg",
-  }, 
-  {
     name: "CyberFrogs",
     published: null, //if null "Coming Soon"
     description: "Our first 10k community. CyberFrogs puts our experience in Web 3 on display. Equipped with a rarity tool to display NFT's, several blockchain solutions, and a commercial system for selling NFT's. A deeper look under the hood of what's possible with EXP.",
@@ -66,39 +35,7 @@ export const projects: Project[] = [
         url: "https://twitter.com/CyberFrogsNFT",
       }
     ],
-    image: "/images/projects/cyberfrogs.jpg",
-  },
-  {
-    name: "Calder Moore",
-    published: null,
-    description: "ISO - In Search Of; a look into the next generation of EXP websites. High fidelity design paired with a seamless desktop & mobile experience. Aimed to deliver an assortment of art, audio, and comics in one place.",
-    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", "Asset Library", "Media Player"],
-    links: [
-      {
-        name: "Website",
-        url: "",
-      },{
-        name: "Twitter",
-        url: "https://twitter.com/CalderMoore_",
-      }
-    ],
-    image: "/images/projects/caldermoore.jpg",
-  },
-  {
-    name: "Somos Axolotl",
-    published: 2024,
-    description: "In partnership with Solana, Sphere & Somos Axolotl, we've broken ground on one our favorite projects. An initiative to preserve the near extinct Axolotl Population, while drumming awareness for the increasingly poor conditions of the water in Lake Xochimilco, Mexico City.",
-    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", "Media Player"],
-    links: [
-      {
-        name: "Website",
-        url: "https://somosaxolotl.com/",
-      },{
-        name: "Instagram",
-        url: "https://www.instagram.com/somos_axolotl/",
-      }
-    ],
-    image: "/images/projects/.jpg",
+    image: "/images/projects/cyberfrogs.png",
   },
   {
     name: "Hot Heads",
@@ -114,7 +51,89 @@ export const projects: Project[] = [
         url: "https://twitter.com/HotHeadsNFT",
       }
     ],
-    image: "/images/projects/.jpg",
+    image: "/images/projects/hotheads.png",
+  },
+  {
+    name: "Calder Moore",
+    published: null,
+    description: "ISO - In Search Of; a look into the next generation of EXP websites. High fidelity design paired with a seamless desktop & mobile experience. Aimed to deliver an assortment of art, audio, and comics in one place.",
+    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", "Asset Library", "Media Player"],
+    links: [
+      {
+        name: "Website",
+        url: "",
+      },{
+        name: "Twitter",
+        url: "https://twitter.com/CalderMoore_",
+      }
+    ],
+    image: "/images/projects/calder.png",
+  },
+  {
+    name: "Slimes",
+    published: 2023,
+    description: "A modern blend of animations, art, and functionality. The My Slimes website boasts a set of complex parallaxing & scrolling elements that help bring the site to life through the screen. Paired with a robust data-base system that stores assets for fans, holders, and explorers to save for themselves.",
+    services: ["Asset Library", "Cloud Storage", "Complex Animations", "Hot-Links Page (Mobile)", "E-Commerce Store", "Blockchain Integration"],
+    links: [
+      {
+        name: "Website",
+        url: "https://slimes.xyz/",
+      },{
+        name: "Twitter",
+        url: "https://twitter.com/SCUMSOL",
+      }
+    ],
+    image: "/images/projects/slimes.png",
+  },
+  {
+    name: "Somos Axolotl",
+    published: 2024,
+    description: "In partnership with Solana, Sphere & Somos Axolotl, we've broken ground on one our favorite projects. An initiative to preserve the near extinct Axolotl Population, while drumming awareness for the increasingly poor conditions of the water in Lake Xochimilco, Mexico City.",
+    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", "Media Player"],
+    links: [
+      {
+        name: "Website",
+        url: "https://somosaxolotl.com/",
+      },{
+        name: "Instagram",
+        url: "https://www.instagram.com/somos_axolotl/",
+      }
+    ],
+    image: "/images/projects/somos.png",
+  }, {
+    name: "Zen0",
+    published: 2023,
+    description: "Glyphscapes is a series of algorithmically generated maps created from a shared set of primitive 1-bit tiles. On this build, we built tools for his fans & holders to explore these maps, and learn more about Zen0's additional body of work on Solana.",
+    services: ["Development","Responsiveness"],
+    links: [
+      {
+        name: "Website",
+        url: "https://zen0.art/rarity",
+      },{
+        name: "Twitter",
+        url: "https://twitter.com/zen0m",
+      }
+    ],
+    image: "/images/projects/zen0.png",
+  }, 
+  {
+    name: "Robbie Shilstone",
+    published: 2024,
+    description: "A visual masterpiece. Robbie combines animation, music, and illustration to turn his entire site into a symphony as you navigate through out. In partnership with Solana, we brought this cinematic vision to life in effort to bridge his followers from Web 2 to Web 3.",
+    services: ["Asset Compression","Cloud Storage"," Blockchain Integration","Responsiveness","Complex Animations","Media Player"],
+    links: [
+      {
+        name: "Website",
+        url: "https://publique.world/",
+      },{
+        name: "Twitter",
+        url: "https://twitter.com/shilstone_arts",
+      },{
+        name: "Instagram",
+        url: "https://www.instagram.com/shilstone_arts/",
+      }
+    ],
+    image: "/images/projects/publique.png",
   },
 ]
 

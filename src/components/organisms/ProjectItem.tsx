@@ -23,7 +23,14 @@ const ProjectItem: FC<Props> = (props: Props) => {
         className="left-margin top-margin flex flex-col lg:flex-row lg:items-center justify-between py-4 lg:pr-10 xl:pr-[10vw] max-w-[1680px]"
         ref={ref}
       >
-        <div className="flex flex-col h-full gap-14">
+        <Image
+          src={project.image}
+          alt="project"
+          width={912}
+          height={759}
+          className="lg:hidden mb-6 rounded-md"
+        />
+        <div className="flex flex-col h-full gap-14 lg:pr-8">
           <div className="flex flex-col gap-3 ">
             <h3 className="text-white text-4xl lg:text-5xl">{project.name}</h3>
             <p className="text-white/60 text-lg lg:text-xl">
@@ -68,11 +75,11 @@ const ProjectItem: FC<Props> = (props: Props) => {
         </div>
 
         <Image
-          src=""
+          src={project.image}
           alt="project"
-          width={608}
-          height={480}
-          className="top-margin px-6 lg:px-20 2xl:px-0 bg-white rounded-md max-w-[320px] md:max-w-[608px] aspect-[608/480]"
+          width={912}
+          height={759}
+          className="hidden lg:block mt-2  px-6 lg:px-20 2xl:px-0  rounded-md self-start"
         />
         {/* <div className="top-margin lg:hidden">
         <Button title="View project" link="/about" />
