@@ -21,14 +21,14 @@ interface Props {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;
 }
 
-const yearsActive = 3;
-const projectsCompleted = 14;
+const yearsActive = 8;
+const projectsCompleted = 17;
 
 const AboutView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
   const { showView } = useContext(ViewContext);
 
-  const [showYearsCounter, setShowYearsCounter] = useState(false);
+  const [showCounter, setCounter] = useState(false);
   const [showProjectsCounter, setShowProjectsCounter] = useState(false);
 
   const [yearsCount, setYearsCount] = useState<number>(0);
@@ -47,10 +47,10 @@ const AboutView: FC<Props> = (props: Props) => {
   //years active counter
   useEffect(() => {
     const timer = setInterval(() => {
-      if (showYearsCounter && yearsCount < yearsActive) {
+      if (showCounter && yearsCount < yearsActive) {
         setYearsCount((prevNumber) => prevNumber + 1);
       }
-    }, 200);
+    }, 125);
 
     if (yearsCount === yearsActive) {
       clearInterval(timer);
@@ -59,7 +59,7 @@ const AboutView: FC<Props> = (props: Props) => {
     return () => {
       clearInterval(timer);
     };
-  }, [projectsCount, showYearsCounter, yearsCount]);
+  }, [projectsCount, showCounter, yearsCount]);
 
   //projects completed counter
   useEffect(() => {
@@ -67,7 +67,7 @@ const AboutView: FC<Props> = (props: Props) => {
       if (showProjectsCounter && projectsCount < projectsCompleted) {
         setProjectsCount((prevNumber) => prevNumber + 1);
       }
-    }, 100);
+    }, 125);
 
     if (projectsCount === projectsCompleted) {
       clearInterval(timer);
@@ -85,7 +85,7 @@ const AboutView: FC<Props> = (props: Props) => {
       <div className="relative z-10">
         <AnimateWrapper
           animate={showView}
-          onAnimationComplete={() => setShowYearsCounter(true)}
+          onAnimationComplete={() => setCounter(true)}
         >
           <WelcomeSection title1="About us." />
 
