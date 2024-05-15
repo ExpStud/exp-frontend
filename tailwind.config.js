@@ -32,21 +32,27 @@ module.exports = {
         "form-background": "#2d2d2d",
         "footer-border": "#423171",
         //carousel
-        "slimes-text": "#1A3A46",
-        "somos-text": "#2A48AF",
-        "robbie-text": "#1C1C1C",
-        "calder-text": "#511F23",
-        "andy-text": "#E62E05",
-        "zen0-text": "#1A3A46",
-        "sike-text": "#EFB41C",
-        "calder-gradient": "#EDD1D3",
 
-        "slimes-gradient": "#F9D6C7",
-        "somos-gradient": "#F8B23C",
-        "robbie-gradient": "#8F8F8F",
-        "zen0-gradient": "#75FBC6",
-        "andy-gradient": "#224632",
-        "sike-gradient": "",
+        "somos-text": "#1B160B",
+        "somos-bg": "#F8B23C",
+
+        "slimes-text": "#1A3A46",
+        "slimes-bg": "#F9D6C7",
+
+        "robbie-bg": "#BABABA",
+        "robbie-text": "#1C1C1C",
+
+        "calder-text": "#511F23",
+        "calder-bg": "#EDD1D3",
+
+        "andy-text": "#E62E05",
+        "andy-bg": "#224632",
+
+        "zen0-text": "#1A3A46",
+        "zen0-bg": "#75FBC6",
+
+        "sike-text": "#EFB41C",
+        "sike-bg": "",
       },
       screens: {
         "2xs": "320px",

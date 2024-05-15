@@ -30,8 +30,8 @@ const CardCarousel: FC<Props> = (props: Props) => {
 
   const data: (Carousel | undefined)[] = [
     clients[0]?.carousel?.[1],
-    clients[1]?.carousel?.[0],
     clients[0]?.carousel?.[0],
+    clients[1]?.carousel?.[0],
   ].filter(Boolean);
 
   const startDragging = (e: React.MouseEvent | React.TouchEvent) => {
@@ -139,7 +139,7 @@ const CarouselItem: FC<CarouselItemProps> = (props: CarouselItemProps) => {
         className={`flex flex-col gap-1 justify-center p-10 max-w-[380px] ${data.textColor}`}
       >
         <p className="text-opacity-75 text-xl pl-0.5">{data.name}</p>
-        <h3 className="text-5xl">{data.title}</h3>
+        <h3 className="text-5xl whitespace-nowrap ">{data.title}</h3>
         <Button
           title={data.href ? "Visit Website" : "Coming Soon"}
           // link={data.href}
@@ -151,7 +151,13 @@ const CarouselItem: FC<CarouselItemProps> = (props: CarouselItemProps) => {
           callback={() => handleClick()}
         />
       </div>
-      <div className="absolute -bottom-[24px] -right-[20px] overflow-hidden z-10 w-[608px] h-[560px]">
+      <div
+        className={`absolute overflow-hidden z-10 w-[608px] h-[560px] ${
+          data.name === "Scum"
+            ? " -bottom-[23px] -right-[19px] "
+            : "-bottom-[24px] -right-[20px] "
+        }`}
+      >
         <Image
           src={data.src}
           alt={`Slide ${index}`}

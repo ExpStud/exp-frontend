@@ -133,7 +133,7 @@ export const clients: Client[] = [
     carousel : [
       {
         name: "Scum",
-        backgroundColor: "!bg-slimes-gradient",
+        backgroundColor: "!bg-slimes-bg",
         textColor: "!text-slimes-text",
         borderColor: "!border-slimes-text",
         fillColor: "!fill-slimes-text",
@@ -142,8 +142,8 @@ export const clients: Client[] = [
         href: "https://slimes.xyz/",
       },
       {
-        name: "Scum",
-        backgroundColor: "!bg-somos-gradient",
+        name: "Matt Martinez",
+        backgroundColor: "!bg-somos-bg",
         textColor: "!text-somos-text",
         borderColor: "!border-somos-text",
         fillColor: "!fill-somos-text",
@@ -165,7 +165,7 @@ export const clients: Client[] = [
     exchangeArt: "https://exchange.art/shilstone-arts/series",
     carousel : [{
       name: "Robbie Shilstone",
-      backgroundColor: "!bg-robbie-gradient",
+      backgroundColor: "!bg-robbie-bg",
       textColor: "!text-robbie-text",
       borderColor: "!border-robbie-text",
       fillColor: "!fill-robbie-text",
@@ -186,7 +186,7 @@ export const clients: Client[] = [
     exchangeArt: "https://exchange.art/caldermoore/series",
     carousel : [{
       name: "Calder Moore",
-      backgroundColor: "!bg-calder-gradient",
+      backgroundColor: "!bg-calder-bg",
       textColor: "!text-calder-text",
       borderColor: "!border-calder-text",
       fillColor: "!fill-calder-text",
@@ -207,7 +207,7 @@ export const clients: Client[] = [
     tensor: "https://www.tensor.trade/trade/cyber_frogs",
     carousel : [{
       name: "Andy Rew",
-      backgroundColor: "!bg-andy-gradient",
+      backgroundColor: "!bg-andy-bg",
       textColor: "!text-andy-text",
       borderColor: "!border-andy-text",
       fillColor: "!fill-andy-text",
@@ -228,7 +228,7 @@ export const clients: Client[] = [
     exchangeArt: "https://exchange.art/zen0/series",
     carousel : [{
       name: "Zen0",
-      backgroundColor: "!bg-zen0-gradient",
+      backgroundColor: "!bg-zen0-bg",
       textColor: "!text-zen0-text",
       borderColor: "!border-zen0-text",
       fillColor: "!fill-zen0-text",
@@ -247,7 +247,7 @@ export const clients: Client[] = [
     exchangeArt: "https://exchange.art/hot-heads/nfts",
     carousel : [{
       name: "Sikedelic",
-      backgroundColor: "!bg-sike-gradient",
+      backgroundColor: "!bg-sike-bg",
       textColor: "!text-sike-text",
       borderColor: "!border-sike-text",
       fillColor: "!fill-sike-text",
