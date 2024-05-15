@@ -15,7 +15,7 @@ import {
 } from "@components";
 import Image from "next/image";
 import { ViewContext } from "src/contexts";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 interface Props {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;

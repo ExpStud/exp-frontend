@@ -12,6 +12,26 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useWindowSize } from "src/hooks";
 
+const parentVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1, // This will delay the animation of each child by 0.2 seconds
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: -5, x: 20 },
+  show: { opacity: 1, y: 0, x: 0, transition: { duration: 0.3 } },
+};
+
+const item2Variants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.5 } },
+};
+
 const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   const { ...componentProps } = props;
 
@@ -60,47 +80,60 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
           <AnimatePresence mode="wait">
             {open ? (
               <motion.div
-                className="flex flex-col gap-8 h-full pl-16 md:pl-32 z-0"
                 {...menuItemVariants}
+                className=" h-full pl-16 md:pl-32 z-0"
               >
-                <NavigationItem href="/">Home</NavigationItem>
-                <NavigationItem href="/projects">Our work</NavigationItem>
-                <NavigationItem href="/services">What we do</NavigationItem>
-                <NavigationItem href="/about">About us</NavigationItem>
-                <NavigationItem href="/contact">Contact us</NavigationItem>
+                <motion.div
+                  className="flex flex-col gap-8"
+                  // {...menuItemVariants}
+                  variants={parentVariants}
+                  initial="hidden"
+                  animate="show"
+                >
+                  <NavigationItem href="/">Home</NavigationItem>
+                  <NavigationItem href="/projects">Our work</NavigationItem>
+                  <NavigationItem href="/services">What we do</NavigationItem>
+                  <NavigationItem href="/about">About us</NavigationItem>
+                  <NavigationItem href="/contact">Contact us</NavigationItem>
 
-                <div className="flex flex-col gap-2 pt-12">
-                  <p className="opacity-60">Follow us</p>
-                  <a
-                    href="https://www.instagram.com/expstudio_/"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Instagram
-                  </a>
-                  <a
-                    href="https://twitter.com/rulebreakers___"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    LinkdIn
-                  </a>
-                  <a
-                    href="https://twitter.com/exp_studio_"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    X
-                  </a>
-                </div>
-                {/*  corner image */}
-                <Image
-                  src="/images/exp-corner.svg"
-                  alt="exp"
-                  width={673}
-                  height={637}
-                  className="absolute top-0 right-0 -z-10 w-3/4 lg:w-auto"
-                />
+                  <div className="flex flex-col gap-2 pt-12">
+                    <motion.p variants={item2Variants} className="opacity-60">
+                      Follow us
+                    </motion.p>
+                    <motion.a
+                      variants={item2Variants}
+                      href="https://www.instagram.com/expstudio_/"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Instagram
+                    </motion.a>
+                    <motion.a
+                      variants={item2Variants}
+                      href="https://twitter.com/rulebreakers___"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      LinkdIn
+                    </motion.a>
+                    <motion.a
+                      variants={item2Variants}
+                      href="https://twitter.com/exp_studio_"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      X
+                    </motion.a>
+                  </div>
+                  {/*  corner image */}
+                  <Image
+                    src="/images/exp-corner.svg"
+                    alt="exp"
+                    width={673}
+                    height={637}
+                    className="absolute top-0 right-0 -z-10 w-3/4 lg:w-auto"
+                  />
+                </motion.div>
               </motion.div>
             ) : (
               <></>
@@ -137,14 +170,16 @@ const NavigationItem: FC<NavigationItemProps> = (
   const active = router.asPath === href;
 
   return (
-    <Link
-      href={href}
-      className={`text-4xl lg:text-5xl transition-200 hover:opacity-100 ${
-        active ? "opacity-100" : "opacity-60"
-      }`}
-    >
-      {children}
-    </Link>
+    <motion.div variants={itemVariants}>
+      <Link
+        href={href}
+        className={`text-4xl lg:text-5xl transition-200 hover:opacity-100 ${
+          active ? "opacity-100" : "opacity-60"
+        }`}
+      >
+        {children}
+      </Link>
+    </motion.div>
   );
 };
 

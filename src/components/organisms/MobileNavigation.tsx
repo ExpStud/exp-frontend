@@ -63,19 +63,8 @@ const MobileNavigation: FC<Props> = (props: Props) => {
   }, [open]);
 
   return (
-    // <header
-    //   className={`top-0 z-50 w-full h-0 ${type === "scroll" ? "fixed" : type} ${
-    //     componentProps.className ?? ""
-    //   } `}
-    // >
     <>
-      <motion.div
-        // variants={headerVariants}
-        // initial={showHeader ? "show" : "hidden"}
-        // animate={animateHeader ? "show" : "hidden"}
-        className="fixed right-3 top-3 z-50 h-14 w-14 bg-background-black rounded-full flex items-center justify-center"
-      >
-        {/* <ExpIcon className="scale-90 md:scale-100 " animate={false} /> */}
+      <motion.div className="fixed right-3 top-3 z-50 h-14 w-14 bg-background-black rounded-full flex items-center justify-center">
         <TwoLinesIcon animate={open} onClick={() => setOpen(!open)} />
       </motion.div>
       <AnimatePresence>
@@ -148,21 +137,6 @@ const MobileNavigation: FC<Props> = (props: Props) => {
                 </motion.a>
               </motion.div>
             </motion.div>
-
-            {/* <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ deduration: 0.5, ease: "easeInOut" }}
-                variants={item2Variants}
-              >
-                <Image
-                  src="/images/exp-corner.svg"
-                  alt="exp"
-                  width={673}
-                  height={637}
-                  className="absolute rotate-90 bottom-0 right-0 -z-10"
-                />
-              </motion.div> */}
           </motion.div>
         )}
       </AnimatePresence>
