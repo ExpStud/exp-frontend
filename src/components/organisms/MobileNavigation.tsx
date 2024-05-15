@@ -64,7 +64,9 @@ const MobileNavigation: FC<Props> = (props: Props) => {
 
   return (
     <>
-      <motion.div className="fixed right-3 top-3 z-50 h-14 w-14 bg-background-black rounded-full flex items-center justify-center">
+      <motion.div
+        className={`fixed right-3 top-3 z-50 h-14 w-14 bg-background-black rounded-full flex items-center justify-center ${componentProps.className}`}
+      >
         <TwoLinesIcon animate={open} onClick={() => setOpen(!open)} />
       </motion.div>
       <AnimatePresence>

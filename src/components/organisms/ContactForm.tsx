@@ -1,5 +1,5 @@
 import { FC, useCallback, useEffect, useState } from "react";
-import { Button } from "@components";
+import { Button, Dropdown } from "@components";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { AnimatePresence, motion } from "framer-motion";
@@ -155,7 +155,7 @@ const ContactForm: FC<Props> = (props: Props) => {
             placeholder="Message"
             rows={6}
           ></textarea>
-          <input
+          {/* <input
             type="text"
             id="budgetRange"
             name="budgetRange"
@@ -164,7 +164,16 @@ const ContactForm: FC<Props> = (props: Props) => {
             className="input w-full"
             placeholder="Budget Range"
             maxLength={250}
-          />
+          /> */}
+          <Dropdown
+            options={["$2,500 - $5,000", "$5,000 - $10,000", "$10,000+"]}
+            onSelectionChange={(selectedOption) =>
+              setFormData({
+                ...formData,
+                budgetRange: selectedOption,
+              })
+            }
+          />{" "}
           <Button
             title="Send message"
             callback={() => handleSubmit()}

@@ -7,6 +7,7 @@ const MenuIcon = dynamic(() => import("./@icons/MenuIcon"));
 const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const ExpIcon = dynamic(() => import("./@icons/ExpIcon"));
 const TwoLinesIcon = dynamic(() => import("./@icons/TwoLinesIcon"));
+const ArrowIcon = dynamic(() => import("./@icons/ArrowIcon"));
 //atoms
 const Button = dynamic(() => import("./atoms/Button"));
 const AnimateWrapper = dynamic(() => import("./atoms/AnimateWrapper"));
@@ -16,6 +17,7 @@ const ServiceListItem = dynamic(() => import("./molecules/ServiceListItem"));
 const ProductListItem = dynamic(() => import("./molecules/ProductListItem"));
 const LetsWorkLink = dynamic(() => import("./molecules/LetsWorkLink"));
 const BackgroundImage = dynamic(() => import("./molecules/BackgroundImage"));
+const Dropdown = dynamic(() => import("./molecules/Dropdown"));
 //organisms
 const SplashScreen = dynamic(() => import("./organisms/SplashScreen"));
 const Header = dynamic(() => import("./organisms/Header"));
@@ -68,5 +70,7 @@ export {
   RightArrowIcon,
   AnimateWrapper,
   MobileNavigation,
-  TwoLinesIcon
+  TwoLinesIcon,
+  Dropdown,
+  ArrowIcon
 };
