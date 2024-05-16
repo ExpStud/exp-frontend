@@ -22,7 +22,7 @@ const WelcomeSection: FC<Props> = (props: Props) => {
       </div>
 
       <div className="py-5 text-sm text-custom-gray">
-        <p className="text-white">Open for Business</p>
+        <p className="text-white">Need a website?</p>
         <p>We&apos;re open for business and new collaborations</p>
         <p>
           as of now.{" "}
