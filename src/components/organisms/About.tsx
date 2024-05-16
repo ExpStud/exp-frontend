@@ -7,24 +7,22 @@ const LandingView: FC<Props> = (props: Props) => {
   return (
     <div className="left-margin top-margin">
       <p className="text-5xl text-custom-gray mb-3">About ourselves.</p>
-      <p className="text-4xl md:text-5xl">Perfeggcionism freaks.</p>
+      <p className="text-4xl md:text-5xl">Building EXP-erience.</p>
 
       <div className="lg:w-1/2 mt-10 text-xl  max-w-[608px]">
         <p>
-          At EXP, we specialise in building cutting-edge identity systems to
-          help professional service providers increase their value and gain a
-          competitive advantage from branding & websites.
+          At EXP, we pride ourselves in crafting experiences to help artists,
+          creators, and professionals increase their online impact through
+          branding & websites.
         </p>
         <br></br>
         <p>
-          We&apos;ve worked with some of the Canberra region&apos;s finest
-          builders, architects and interior designers and take pride in our
-          expansive portfolio. We will continue to complete work on time and
-          within budget - without compromising quality or safety.
+          {/* Using our vast experience in multiple industries to influence timeless
+          web solutions. */}
         </p>
       </div>
 
-      <div className="top-margin">
+      <div className="mt-8">
         <Button title="About us" link="/about" />
       </div>
     </div>

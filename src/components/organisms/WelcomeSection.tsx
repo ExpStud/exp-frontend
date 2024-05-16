@@ -25,7 +25,7 @@ const WelcomeSection: FC<Props> = (props: Props) => {
         <p className="text-white">Availability</p>
         <p>We&apos;re open for business and new collaborations</p>
         <p>
-          from Q3 2023.{" "}
+          as of now.{" "}
           {router.asPath !== "/contact" && (
             <Link href="/contact">
               <span className="text-gray-300 underline">Get in touch</span>

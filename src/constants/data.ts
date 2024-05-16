@@ -24,7 +24,7 @@ export const projects: Project[] = [
   {
     name: "CyberFrogs",
     published: null, //if null "Coming Soon"
-    description: "Our first 10k community. CyberFrogs puts our experience in Web 3 on display. Equipped with a rarity tool to display NFT's, several blockchain solutions, and a commercial system for selling NFT's. A deeper look under the hood of what's possible with EXP.",
+    description: "Our first 10k community. CyberFrogs puts our experience in Web 3 on display. Equipped with a rarity tool to display NFT's and several other blockchain solutions.",
     services: ["Interface Design", "Development", "Advisory"],
     links: [
       {
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     name: "Hot Heads",
     published: 2023,
     description: "One of EXP's first clients, and vetted communities on Solana. The Hot Heads website features blockchain technology, asset libraries, and more. A nod to 90's retro gaming, with custom pixelated components built in all over the site.",
-    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", "Media Player"],
+    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", ],
     links: [
       {
         name: "Website",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     name: "Calder Moore",
     published: null,
     description: "ISO - In Search Of; a look into the next generation of EXP websites. High fidelity design paired with a seamless desktop & mobile experience. Aimed to deliver an assortment of art, audio, and comics in one place.",
-    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", "Asset Library", "Media Player"],
+    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", "Asset Library", ],
     links: [
       {
         name: "Website",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     name: "Somos Axolotl",
     published: 2024,
     description: "In partnership with Solana, Sphere & Somos Axolotl, we've broken ground on one our favorite projects. An initiative to preserve the near extinct Axolotl Population, while drumming awareness for the increasingly poor conditions of the water in Lake Xochimilco, Mexico City.",
-    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", "Media Player"],
+    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", ],
     links: [
       {
         name: "Website",
@@ -120,7 +120,7 @@ export const projects: Project[] = [
     name: "Robbie Shilstone",
     published: 2024,
     description: "A visual masterpiece. Robbie combines animation, music, and illustration to turn his entire site into a symphony as you navigate through out. In partnership with Solana, we brought this cinematic vision to life in effort to bridge his followers from Web 2 to Web 3.",
-    services: ["Asset Compression","Cloud Storage"," Blockchain Integration","Responsiveness","Complex Animations","Media Player"],
+    services: ["Asset Compression","Cloud Storage"," Blockchain Integration","Responsiveness","Complex Animations",],
     links: [
       {
         name: "Website",
@@ -146,7 +146,7 @@ export const clients: Client[] = [
     company: "My Slimes",
     image: "/images/testimonials/1-scum.jpg",
     testimonial:
-      "The team was always contactable, honest in their opinions, and patient to work through challenges as they arose. Very collaborative, listening to the client's needs, but also coming up with usability solutions that we didn't know about.",
+      `It doesn't matter how big the idea is, EXP meets every new challenge with excitement. Truly embodying the rare attitude of "WHY NOT." I feel confident that no matter where my journey takes me, every new website and web-based experience I pursue, will go through EXP.`,
     twitter: "https://twitter.com/SCUMSOL",
     exchangeArt: "https://exchange.art/scum/series",
     carousel : [

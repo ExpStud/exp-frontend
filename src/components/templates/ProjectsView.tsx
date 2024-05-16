@@ -30,7 +30,7 @@ const ProjectsView: FC<Props> = (props: Props) => {
       <BackgroundImage setAssets={setAssets} />
       <AnimateWrapper animate={showView}>
         <WelcomeSection title1="Projects." />
-        <hr className="border-white border-opacity-10 top-margin"></hr>
+        <hr className="border-white border-opacity-10 mt-16 md:mt-28"></hr>
       </AnimateWrapper>
 
       {projects.map((project, index) => (

@@ -1,9 +1,8 @@
 import React, { useState, useRef, FC } from "react";
 import Image from "next/image";
-import { Carousel, Client, clients } from "@constants";
+import { Carousel, clients } from "@constants";
 import { Button } from "@components";
 import { useRouter } from "next/router";
-import { PanInfo, motion } from "framer-motion";
 import { useWindowSize } from "src/hooks";
 
 // interface Card {
@@ -72,7 +71,7 @@ const CardCarousel: FC<Props> = (props: Props) => {
       const scrollPosition = sliderRef.current.scrollLeft;
       const fullWidth = sliderRef.current.scrollWidth;
       const scrollPercentage = (scrollPosition / fullWidth) * 100;
-      const scrollPercentSlider = scrollPercentage * 0.01 * 155; //~width of slider
+      const scrollPercentSlider = scrollPercentage * 0.01 * 220; //~width of slider
       setSliderValue(scrollPercentSlider);
     }
   };
@@ -134,7 +133,7 @@ const CarouselItem: FC<CarouselItemProps> = (props: CarouselItemProps) => {
     <div
       className={`relative min-w-[330px] sm:min-w-[940px] md:min-w-[1040px] h-[600px] sm:h-[600px]  flex items-end justify-between   rounded-lg ${
         data.backgroundColor
-      } ${index === 0 ? "ml-4 md:ml-10" : "ml-1 sm:ml-4"}`}
+      } ${index === 0 ? "ml-4 md:ml-10" : "ml-1 sm:ml-4 "}`}
     >
       <div
         className={`flex flex-col gap-1 justify-center p-10 max-w-[380px] ${data.textColor}`}

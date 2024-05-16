@@ -31,7 +31,13 @@ const parentVariants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1, // This will delay the animation of each child by 0.2 seconds
+      staggerChildren: 0.1, // This will delay the animation of each child by 0.1 seconds
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      staggerChildren: -0.1, // This will reverse the order of the stagger on exit
     },
   },
 };
@@ -75,9 +81,15 @@ const MobileNavigation: FC<Props> = (props: Props) => {
           <motion.div
             className="fixed inset-x-0 top-0 bottom-0 bg-custom-black z-10"
             initial={{ opacity: 0, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.4, ease: "easeInOut" },
+            }}
+            exit={{
+              opacity: 0,
+              transition: { duration: 0.4, ease: "easeInOut" },
+            }}
           >
             <motion.div
               className="flex flex-col gap-4 items-start h-full ml-5 lg:ml-10 mt-20"

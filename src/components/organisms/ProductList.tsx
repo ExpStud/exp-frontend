@@ -15,20 +15,20 @@ const ProductList: FC<Props> = (props: Props) => {
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-4 mt-8 lg:mt-20 max-w-[1250px]">
         <div>
           <ul className="list-none p-0">
-            <ProductListItem number="1" title="Design" />
-            <ProductListItem number="2" title="Development" />
+            <ProductListItem number="1" title="Development" />
+            <ProductListItem number="2" title="Custom Design" />
             <ProductListItem
               number="3"
-              title="Minting Tools"
+              title="Blockchain Solutions"
               style="md:border-b"
             />
           </ul>
         </div>
         <div>
           <ul className="list-none p-0">
-            <ProductListItem number="4" title="Discord Management" />
-            <ProductListItem number="5" title="Tech Support" />
-            <ProductListItem number="6" title="E-Commerce" style="border-b" />
+            <ProductListItem number="4" title="Third Party Integrations" />
+            <ProductListItem number="5" title="Discord Services" />
+            <ProductListItem number="6" title="Tech Support" style="border-b" />
           </ul>
         </div>
       </div>

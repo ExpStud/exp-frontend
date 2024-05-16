@@ -20,7 +20,7 @@ const ProjectItem: FC<Props> = (props: Props) => {
   return (
     <AnimateWrapper animate={showView && isInView}>
       <div
-        className="left-margin top-margin flex flex-col lg:flex-row lg:items-center justify-between py-4 lg:pr-10 xl:pr-[10vw] max-w-[1680px]"
+        className="left-margin top-margin flex flex-col lg:flex-row lg:items-start justify-between py-4 lg:pr-10 xl:pr-[10vw] max-w-[1680px]"
         ref={ref}
       >
         <Image
@@ -56,15 +56,19 @@ const ProjectItem: FC<Props> = (props: Props) => {
             <div className="flex flex-col gap-0">
               <p className="text-white/60">Links</p>
               {project.links.map((link, index) => (
-                <a
-                  className="text-white/ "
-                  key={index}
-                  href={link.url}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  {link.name}
-                </a>
+                <>
+                  {link.url !== "" && (
+                    <a
+                      className="text-white/ "
+                      key={index}
+                      href={link.url}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      {link.name}
+                    </a>
+                  )}
+                </>
               ))}
             </div>
           </div>

@@ -51,7 +51,10 @@ const LandingView: FC<Props> = (props: Props) => {
       <BackgroundImage setAssets={setAssets} />
 
       <AnimateWrapper animate={showView} className="relative">
-        <WelcomeSection title1="Think. Design." title2="Develop. Launch." />
+        <WelcomeSection
+          title1="Modern designs. "
+          title2="Timeless solutions."
+        />
         <CardCarousel
           sliderValue={sliderValue}
           setSliderValue={setSliderValue}

@@ -10,7 +10,7 @@ const Testimonials: FC = () => {
   );
 
   return (
-    <div className="left-margin mt-20 max-w-[1265px] pr-6">
+    <div className="left-margin mt-20 max-w-[1265px] lg:pr-6">
       <p className="text-custom-gray text-5xl mb-3">Testimonials.</p>
       <p className="text-4xl md:text-5xl">Our wall of love.</p>
 
@@ -54,7 +54,7 @@ const TestimonialItem: FC<Props> = (props: Props) => {
   const { selectedTestimonial } = props;
   return (
     <motion.div
-      className="flex flex-col lg:flex-row items-start mt-10 pr-10 gap-10 "
+      className="flex flex-col lg:flex-row items-start mt-10 pr-5 lg:pr-10 gap-10 "
       {...fastExitAnimation}
     >
       <div className="flex flex-col-reverse md:flex-row gap-8">
