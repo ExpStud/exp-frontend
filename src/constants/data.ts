@@ -21,53 +21,38 @@ import { Client, Project } from "./types";
 */
 
 export const projects: Project[] = [
+  // {
+  //   name: "CyberFrogs",
+  //   published: null, //if null "Coming Soon"
+  //   description: "Our first 10k community. CyberFrogs puts our experience in Web 3 on display. Equipped with a rarity tool to display NFT's and several other blockchain solutions.",
+  //   services: ["Interface Design", "Development", "Advisory"],
+  //   links: [
+  //     {
+  //       name: "Website",
+  //       url: "https://cyberfrogs.io/",
+  //     },{
+  //       name: "Twitter",
+  //       url: "https://twitter.com/CyberFrogsNFT",
+  //     }
+  //   ],
+  //   image: "/images/projects/cyberfrogs.png",
+  // },
+
   {
-    name: "CyberFrogs",
-    published: null, //if null "Coming Soon"
-    description: "Our first 10k community. CyberFrogs puts our experience in Web 3 on display. Equipped with a rarity tool to display NFT's and several other blockchain solutions.",
-    services: ["Interface Design", "Development", "Advisory"],
-    links: [
-      {
-        name: "Website",
-        url: "https://cyberfrogs.io/",
-      },{
-        name: "Twitter",
-        url: "https://twitter.com/CyberFrogsNFT",
-      }
-    ],
-    image: "/images/projects/cyberfrogs.png",
-  },
-  {
-    name: "Hot Heads",
-    published: 2023,
-    description: "One of EXP's first clients, and vetted communities on Solana. The Hot Heads website features blockchain technology, asset libraries, and more. A nod to 90's retro gaming, with custom pixelated components built in all over the site.",
+    name: "Somos Axolotl",
+    published: 2024,
+    description: "In partnership with Solana, Sphere & Somos Axolotl, we've broken ground on a special project to preserve the near extinct Axolotl population in Lake Xochimilco, Mexico City.",
     services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", ],
     links: [
       {
         name: "Website",
-        url: "https://hotheads.art/",
+        url: "https://somosaxolotl.com/",
       },{
-        name: "Twitter",
-        url: "https://twitter.com/HotHeadsNFT",
+        name: "Instagram",
+        url: "https://www.instagram.com/somos_axolotl/",
       }
     ],
-    image: "/images/projects/hotheads.png",
-  },
-  {
-    name: "Calder Moore",
-    published: null,
-    description: "ISO - In Search Of; a look into the next generation of EXP websites. High fidelity design paired with a seamless desktop & mobile experience. Aimed to deliver an assortment of art, audio, and comics in one place.",
-    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", "Asset Library", ],
-    links: [
-      {
-        name: "Website",
-        url: "",
-      },{
-        name: "Twitter",
-        url: "https://twitter.com/CalderMoore_",
-      }
-    ],
-    image: "/images/projects/calder.png",
+    image: "/images/projects/somos.png",
   },
   {
     name: "Slimes",
@@ -86,37 +71,6 @@ export const projects: Project[] = [
     image: "/images/projects/slimes.png",
   },
   {
-    name: "Somos Axolotl",
-    published: 2024,
-    description: "In partnership with Solana, Sphere & Somos Axolotl, we've broken ground on a special project to preserve the near extinct Axolotl population in Lake Xochimilco, Mexico City.",
-    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", ],
-    links: [
-      {
-        name: "Website",
-        url: "https://somosaxolotl.com/",
-      },{
-        name: "Instagram",
-        url: "https://www.instagram.com/somos_axolotl/",
-      }
-    ],
-    image: "/images/projects/somos.png",
-  }, {
-    name: "Zen0",
-    published: 2023,
-    description: "This build includes tools for Zen0's fans & holders to explore the Glyphscapes collection, and learn more about his additional work on Solana.",
-    services: ["Development",],
-    links: [
-      {
-        name: "Website",
-        url: "https://zen0.art/rarity",
-      },{
-        name: "Twitter",
-        url: "https://twitter.com/zen0m",
-      }
-    ],
-    image: "/images/projects/zen0.png",
-  }, 
-  {
     name: "Robbie Shilstone",
     published: 2024,
     description: "A visual masterpiece. Robbie combines animation, music, and illustration to turn his site into a film-like experience. ",
@@ -134,6 +88,53 @@ export const projects: Project[] = [
       }
     ],
     image: "/images/projects/publique.png",
+  },
+  {
+    name: "Calder Moore",
+    published: null,
+    description: "ISO - In Search Of; a look into the next generation of EXP websites. High fidelity design paired with a seamless desktop & mobile experience. Aimed to deliver an assortment of art, audio, and comics in one place.",
+    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", "Asset Library", ],
+    links: [
+      {
+        name: "Website",
+        url: "",
+      },{
+        name: "Twitter",
+        url: "https://twitter.com/CalderMoore_",
+      }
+    ],
+    image: "/images/projects/calder.png",
+  }, {
+    name: "Zen0",
+    published: 2023,
+    description: "This build includes tools for Zen0's fans & holders to explore the Glyphscapes collection, and learn more about his additional work on Solana.",
+    services: ["Development",],
+    links: [
+      {
+        name: "Website",
+        url: "https://zen0.art/rarity",
+      },{
+        name: "Twitter",
+        url: "https://twitter.com/zen0m",
+      }
+    ],
+    image: "/images/projects/zen0.png",
+  }, 
+  {
+    name: "Hot Heads",
+    published: 2023,
+    description: "One of EXP's first clients, and vetted communities on Solana. The Hot Heads website features blockchain technology, asset libraries, and more. A nod to 90's retro gaming, with custom pixelated components built in all over the site.",
+    services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", ],
+    links: [
+      {
+        name: "Website",
+        url: "https://hotheads.art/",
+      },{
+        name: "Twitter",
+        url: "https://twitter.com/HotHeadsNFT",
+      }
+    ],
+    image: "/images/projects/hotheads.png",
   },
 ]
 
