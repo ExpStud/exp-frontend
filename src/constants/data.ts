@@ -103,8 +103,8 @@ export const projects: Project[] = [
   }, {
     name: "Zen0",
     published: 2023,
-    description: "Glyphscapes is a series of algorithmically generated maps created from a shared set of primitive 1-bit tiles. On this build, we built tools for his fans & holders to explore these maps, and learn more about Zen0's additional body of work on Solana.",
-    services: ["Development","Responsiveness"],
+    description: "This build includes tools for Zen0's fans & holders to explore the Glyphscapes collection, and learn more about his additional work on Solana.",
+    services: ["Development",],
     links: [
       {
         name: "Website",
@@ -119,8 +119,8 @@ export const projects: Project[] = [
   {
     name: "Robbie Shilstone",
     published: 2024,
-    description: "A visual masterpiece. Robbie combines animation, music, and illustration to turn his entire site into a symphony as you navigate through out. In partnership with Solana, we brought this cinematic vision to life in effort to bridge his followers from Web 2 to Web 3.",
-    services: ["Asset Compression","Cloud Storage"," Blockchain Integration","Responsiveness","Complex Animations",],
+    description: "A visual masterpiece. Robbie combines animation, music, and illustration to turn his site into a film-like experience. ",
+    services: ["Asset Compression","Cloud Storage"," Blockchain Integration","Parallax Animations",],
     links: [
       {
         name: "Website",

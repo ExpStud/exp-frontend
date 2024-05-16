@@ -77,7 +77,6 @@ const ProjectItem: FC<Props> = (props: Props) => {
           <Button title="View project" link="/about" />
         </div> */}
         </div>
-
         <Image
           src={project.image}
           alt="project"
