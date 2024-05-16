@@ -65,7 +65,7 @@ const ServicesView: FC<Props> = (props: Props) => {
         ></div>
       </AnimateWrapper>
 
-      <AnimateWrapper animate={listInView}>
+      <AnimateWrapper animate={showView && listInView}>
         <div className="left-margin z-10">
           <div className="!opacity-100" ref={listRef}>
             <p className="text-5xl text-custom-gray mb-3">Our services.</p>

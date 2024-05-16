@@ -184,6 +184,7 @@ const ContactForm: FC<Props> = (props: Props) => {
               !formData.message ||
               !formData.budgetRange
             }
+            className="!w-full sm:!w-1/2 !max-w-none md:!max-w-[220px] "
           />
         </motion.form>
       )}
