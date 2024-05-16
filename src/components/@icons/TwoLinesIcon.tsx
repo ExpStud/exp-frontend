@@ -10,7 +10,7 @@ const TwoLinesIcon: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={`relative flex-gap-2 w-7 h-7 cursor-pointer  ${
+      className={`stroke-white/60 hover:stroke-white transition-200 relative flex-gap-2 w-7 h-7 cursor-pointer  ${
         props.className ?? ""
       }`}
       onClick={props.onClick}
@@ -28,7 +28,6 @@ const TwoLinesIcon: FC<Props> = (props: Props) => {
         <path
           // d={animate ? "M0.75 7H13.25" : "M0.75 4.5H13.25"}
           d="M0.75 7H13.25"
-          stroke="white"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
@@ -46,7 +45,6 @@ const TwoLinesIcon: FC<Props> = (props: Props) => {
         <path
           // d={animate ? "M0.75 7H13.25" : "M0.75 9.5H13.25"}
           d={"M0.75 7H13.25"}
-          stroke="white"
           strokeLinecap="round"
           strokeLinejoin="round"
         />

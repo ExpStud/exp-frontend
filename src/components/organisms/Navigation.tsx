@@ -1,41 +1,24 @@
 import Link from "next/link";
 import { FC, HTMLAttributes, useEffect, useState } from "react";
-import { CloseIcon, ExpIcon, MenuIcon } from "@components";
-import { AnimatePresence, motion } from "framer-motion";
+import { CloseIcon, ExpIcon, MenuIcon, TwoLinesIcon } from "@components";
+import { AnimatePresence, motion, useCycle } from "framer-motion";
 import {
-  fastExitAnimation,
-  menuItemVariants,
+  menuChild2Variants,
+  dekstopMenuParent,
   midExitAnimation,
   openMenuVariants,
+  mobileMenuParent,
+  menuChildVariants,
+  fastExitAnimation,
 } from "@constants";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useWindowSize } from "src/hooks";
 
-const parentVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1, // This will delay the animation of each child by 0.2 seconds
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: -5, x: 20 },
-  show: { opacity: 1, y: 0, x: 0, transition: { duration: 0.3 } },
-};
-
-const item2Variants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.5 } },
-};
-
 const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   const { ...componentProps } = props;
 
-  const [open, setOpen] = useState(false);
+  const [open, cycleOpen] = useCycle(false, true);
   const [winWidth] = useWindowSize();
 
   //stop page scroll (when modal or menu open)
@@ -57,75 +40,46 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
             winWidth < 768 ? 48 : 64,
             winWidth < 900 ? winWidth : 800
           )}
-          initial="closed"
-          animate={open ? "open" : "closed"}
+          initial="hidden"
+          animate={open ? "show" : "closed"}
         >
           <AnimatePresence mode="wait">
             {!open ? (
               <motion.div key="closed">
                 <MenuIcon
-                  onClick={() => setOpen(!open)}
+                  onClick={() => cycleOpen()}
                   className="scale-90 md:scale-100 z-50"
                 />
               </motion.div>
             ) : (
               <motion.div key="opened" {...fastExitAnimation}>
                 <CloseIcon
-                  onClick={() => setOpen(!open)}
+                  onClick={() => cycleOpen()}
                   className="scale-90 md:scale-100 z-50"
                 />
               </motion.div>
             )}
           </AnimatePresence>
+          {/* <TwoLinesIcon animate={open} onClick={() => cycleOpen()} /> */}
+
           <AnimatePresence mode="wait">
             {open ? (
-              <motion.div
-                {...menuItemVariants}
-                className=" h-full pl-16 md:pl-32 z-0"
+              <motion.nav
+                variants={dekstopMenuParent}
+                initial={"hidden"}
+                animate={"show"}
+                exit={"closed"}
+                className=" h-full pl-16 md:pl-32 z-0 flex flex-col gap-8 0"
+                key="nav"
               >
-                <motion.div
-                  className="flex flex-col gap-8"
-                  // {...menuItemVariants}
-                  variants={parentVariants}
-                  initial="hidden"
-                  animate="show"
-                >
-                  <NavigationItem href="/">Home</NavigationItem>
-                  <NavigationItem href="/projects">Our work</NavigationItem>
-                  <NavigationItem href="/services">What we do</NavigationItem>
-                  <NavigationItem href="/about">About us</NavigationItem>
-                  <NavigationItem href="/contact">Contact us</NavigationItem>
+                <NavigationItem href="/">Home</NavigationItem>
+                <NavigationItem href="/projects">Our work</NavigationItem>
+                <NavigationItem href="/services">What we do</NavigationItem>
+                <NavigationItem href="/about">About us</NavigationItem>
+                <NavigationItem href="/contact">Contact us</NavigationItem>
 
-                  <div className="flex flex-col gap-2 pt-12">
-                    <motion.p variants={item2Variants} className="opacity-60">
-                      Follow us
-                    </motion.p>
-                    <motion.a
-                      variants={item2Variants}
-                      href="https://www.instagram.com/expstudio_/"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      Instagram
-                    </motion.a>
-                    <motion.a
-                      variants={item2Variants}
-                      href="https://twitter.com/rulebreakers___"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      LinkdIn
-                    </motion.a>
-                    <motion.a
-                      variants={item2Variants}
-                      href="https://twitter.com/exp_studio_"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      X
-                    </motion.a>
-                  </div>
-                  {/*  corner image */}
+                {/*  corner image */}
+                <motion.div variants={menuChild2Variants} className=" -z-20">
                   <Image
                     src="/images/exp-corner.svg"
                     alt="exp"
@@ -134,7 +88,39 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
                     className="absolute top-0 right-0 -z-10 w-3/4 lg:w-auto"
                   />
                 </motion.div>
-              </motion.div>
+                <div className="flex flex-col gap-2 pt-12">
+                  <motion.p
+                    variants={menuChild2Variants}
+                    className="opacity-60"
+                  >
+                    Follow us
+                  </motion.p>
+                  <motion.a
+                    variants={menuChild2Variants}
+                    href="https://www.instagram.com/expstudio_/"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Instagram
+                  </motion.a>
+                  <motion.a
+                    variants={menuChild2Variants}
+                    href="https://twitter.com/rulebreakers___"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    LinkdIn
+                  </motion.a>
+                  <motion.a
+                    variants={menuChild2Variants}
+                    href="https://twitter.com/exp_studio_"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    X
+                  </motion.a>
+                </div>
+              </motion.nav>
             ) : (
               <></>
             )}
@@ -148,7 +134,7 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
         {open && (
           <motion.div
             className="z-0 fixed inset-0 bg-background-black bg-opacity-80 "
-            onClick={() => setOpen(false)}
+            onClick={() => cycleOpen()}
             {...midExitAnimation}
           />
         )}
@@ -170,7 +156,7 @@ const NavigationItem: FC<NavigationItemProps> = (
   const active = router.asPath === href;
 
   return (
-    <motion.div variants={itemVariants}>
+    <motion.div variants={menuChildVariants}>
       <Link
         href={href}
         className={`text-4xl lg:text-5xl transition-200 hover:opacity-100 ${
