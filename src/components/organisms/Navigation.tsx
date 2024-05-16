@@ -43,7 +43,7 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
           initial="hidden"
           animate={open ? "show" : "closed"}
         >
-          <AnimatePresence mode="wait">
+          {/* <AnimatePresence mode="wait">
             {!open ? (
               <motion.div key="closed">
                 <MenuIcon
@@ -59,8 +59,8 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
                 />
               </motion.div>
             )}
-          </AnimatePresence>
-          {/* <TwoLinesIcon animate={open} onClick={() => cycleOpen()} /> */}
+          </AnimatePresence> */}
+          <TwoLinesIcon animate={open} onClick={() => cycleOpen()} />
 
           <AnimatePresence mode="wait">
             {open ? (
