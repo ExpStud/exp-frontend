@@ -72,8 +72,8 @@ export const projects: Project[] = [
   {
     name: "Slimes",
     published: 2023,
-    description: "A modern blend of animations, art, and functionality. The My Slimes website boasts a set of complex parallaxing & scrolling elements that help bring the site to life through the screen. Paired with a robust data-base system that stores assets for fans, holders, and explorers to save for themselves.",
-    services: ["Asset Library", "Cloud Storage", "Complex Animations", "Hot-Links Page (Mobile)", "E-Commerce Store", "Blockchain Integration"],
+    description: "The My Slimes website boasts parallax & animated scrolling elements that help bring the interface to life. Utilizing a robust data system that stores assets for fans, holders, and explorers alike.",
+    services: ["Asset Library", "Cloud Storage", "Parallax Animations", "Hyperlink Directory", "Blockchain Integration"],
     links: [
       {
         name: "Website",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
   {
     name: "Somos Axolotl",
     published: 2024,
-    description: "In partnership with Solana, Sphere & Somos Axolotl, we've broken ground on one our favorite projects. An initiative to preserve the near extinct Axolotl Population, while drumming awareness for the increasingly poor conditions of the water in Lake Xochimilco, Mexico City.",
+    description: "In partnership with Solana, Sphere & Somos Axolotl, we've broken ground on a special project to preserve the near extinct Axolotl population in Lake Xochimilco, Mexico City.",
     services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", ],
     links: [
       {

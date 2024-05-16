@@ -59,7 +59,7 @@ const ProjectItem: FC<Props> = (props: Props) => {
                 <>
                   {link.url !== "" && (
                     <a
-                      className="text-white/ "
+                      className="text-white hover:underline"
                       key={index}
                       href={link.url}
                       rel="noreferrer"
