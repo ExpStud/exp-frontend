@@ -110,13 +110,13 @@ const MobileNavigation: FC<Props> = (props: Props) => {
               <MobileNavigationItem href="/contact">
                 Contact us
               </MobileNavigationItem>
-              <motion.div variants={item2Variants}>
+              <motion.div variants={item2Variants} className=" -z-20">
                 <Image
                   src="/images/exp-corner.svg"
                   alt="exp"
                   width={673}
                   height={637}
-                  className="absolute rotate-90 bottom-0 right-0 -z-20"
+                  className="absolute rotate-90 bottom-0 right-0"
                 />
               </motion.div>
               <motion.div className="flex flex-col gap-0 pt-12 text-lg">
