@@ -28,7 +28,7 @@ const ProductList: FC<Props> = (props: Props) => {
           <ul className="list-none p-0">
             <ProductListItem number="4" title="Third Party Integrations" />
             <ProductListItem number="5" title="Discord Services" />
-            <ProductListItem number="6" title="Tech Support" style="border-b" />
+            <ProductListItem number="6" title="Advisory" style="border-b" />
           </ul>
         </div>
       </div>

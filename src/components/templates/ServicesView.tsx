@@ -79,36 +79,28 @@ const ServicesView: FC<Props> = (props: Props) => {
 
           <div className="top-margin max-w-[1256px] ">
             <ServiceListItem
-              title="UI/UX Web & Mobile Design"
-              description="Immerse your audience in a seamless digital experience with our meticulously crafted UI/UX designs for web and mobile platforms. Our designs embody sophistication and user-centric principles."
+              title="All-Encompassing Development Solutions"
+              description="From conceptualization to execution, we bring ideas to life, delivering solutions that transcend expectations."
             />
             <ServiceListItem
-              title="Brand Design"
-              description="Make a lasting impression with our bespoke brand design services. We meticulously shape your brand identity, ensuring it resonates with authenticity and leaves a distinctive mark in the market."
-            />
-            <ServiceListItem
-              title="Marketing & SEO"
-              description="Drive your digital presence to new heights with our tailored marketing and SEO strategies. We craft campaigns that not only captivate but also optimize your visibility in the vast digital landscape."
+              title="Mobile & Web Design"
+              description="Immerse your audience in a seamless digital experience with our meticulously crafted designs for mobile and web platforms."
             />
             <ServiceListItem
               title="Blockchain Development on Solana"
-              description="Step into the future with our cutting-edge blockchain development solutions on the Solana ecosystem. Our expertise combines innovation and precision, ensuring your projects thrive in the decentralized world."
+              description="Step into the future with our cutting-edge blockchain development solutions on the Solana ecosystem. "
             />
             <ServiceListItem
-              title="Community Management with Discord"
-              description="Foster meaningful connections through our expert community management services on Discord. We curate engaging and interactive spaces, fostering a sense of community around your brand."
+              title="Third Party Integrations"
+              description="Embark on a seamless online journey with multiple integrated options."
             />
             <ServiceListItem
-              title="Web 3 Advisory"
-              description="Navigate the complexities of the Web 3.0 era with our strategic advisory services. We provide insights and guidance to ensure your digital strategies align with the ever-evolving landscape."
+              title="Discord Services"
+              description="Creating organized and secure communal spaces on Discord for online communities."
             />
             <ServiceListItem
-              title="E-Commerce Services"
-              description="Embark on a seamless online retail journey with our E-commerce services. Whether through Shopify or custom solutions, we tailor e-commerce experiences that transcend transactions, creating lasting customer connections."
-            />
-            <ServiceListItem
-              title="All-Encompassing Development Solutions"
-              description="Experience the synergy of creativity and technology with our all-encompassing development solutions. From conceptualization to execution, we bring ideas to life, delivering solutions that transcend expectations."
+              title="Advisory"
+              description="Navigate the complexities of Web 3 with our advisory services as we provide insights and guidance into the ever-evolving landscape."
             />
           </div>
         </div>
