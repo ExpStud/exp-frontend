@@ -76,6 +76,14 @@ const CardCarousel: FC<Props> = (props: Props) => {
     }
   };
 
+  // In CardCarousel component
+  const scrollToCard = (index: number) => {
+    if (sliderRef.current) {
+      const cardWidth = isMobile ? 330 : 930; // Replace with your card width
+      sliderRef.current.scrollLeft = cardWidth * index;
+    }
+  };
+
   return (
     <div
       className="relative py-10 lg:py-20 flex flex-col items-center overflow-x-auto "
@@ -108,6 +116,7 @@ const CardCarousel: FC<Props> = (props: Props) => {
             index={index}
             //@ts-ignore
             data={item}
+            scrollToCard={scrollToCard}
           />
         ))}
       </div>
@@ -118,15 +127,21 @@ const CardCarousel: FC<Props> = (props: Props) => {
 interface CarouselItemProps {
   data: Carousel;
   index: number;
+  scrollToCard: (index: number) => void;
 }
 
 const CarouselItem: FC<CarouselItemProps> = (props: CarouselItemProps) => {
   const { data, index } = props;
   const router = useRouter();
 
+  // In CarouselItem component
   const handleClick = (): void => {
     if (data.href) window.open(data.href, "_blank");
     else router.push("/projects");
+  };
+  // In CarouselItem component
+  const handleParentClick = (): void => {
+    props.scrollToCard(index);
   };
 
   return (
@@ -134,6 +149,7 @@ const CarouselItem: FC<CarouselItemProps> = (props: CarouselItemProps) => {
       className={`relative min-w-[330px] sm:min-w-[940px] md:min-w-[1040px] h-[600px] sm:h-[600px]  flex items-end justify-between   rounded-lg ${
         data.backgroundColor
       } ${index === 0 ? "ml-4 md:ml-10" : "ml-1 sm:ml-4 "}`}
+      onClick={handleParentClick}
     >
       <div
         className={`flex flex-col gap-1 justify-center p-10 max-w-[380px] ${data.textColor}`}
