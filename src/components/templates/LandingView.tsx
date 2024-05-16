@@ -70,7 +70,7 @@ const LandingView: FC<Props> = (props: Props) => {
         ref={productRef}
       />
 
-      <AnimateWrapper animate={productInView}>
+      <AnimateWrapper animate={showView && productInView}>
         <ProductList />
       </AnimateWrapper>
 
@@ -78,7 +78,7 @@ const LandingView: FC<Props> = (props: Props) => {
         className="border-white border-opacity-10 mt-12 lg:mt-20"
         ref={testRef}
       />
-      <AnimateWrapper animate={testInView}>
+      <AnimateWrapper animate={showView && testInView}>
         <Testimonials />
       </AnimateWrapper>
 
@@ -86,7 +86,7 @@ const LandingView: FC<Props> = (props: Props) => {
         className="border-white border-opacity-10 mt-12 lg:mt-20"
         ref={aboutRef}
       />
-      <AnimateWrapper animate={aboutInView}>
+      <AnimateWrapper animate={showView && aboutInView}>
         <About />
       </AnimateWrapper>
 
