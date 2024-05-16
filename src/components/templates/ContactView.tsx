@@ -33,11 +33,18 @@ const ContactView: FC<Props> = (props: Props) => {
           <div className="left-margin top-margin  flex flex-col lg:flex-row lg:gap-20">
             <div className="lg:w-1/3 pr-10 max-w-[350px] mb-10">
               <p className="text-white text-opacity-60 text-xl">
-                Working together takes some practice to get in sync, but once we
-                find our rhythm, the result can be magical!
+                Collaboration is our expertise, feel free to reach out with any
+                questions.
               </p>
               <p className="mt-10">Hate contact forms?</p>
-              <p>hello@expstudio.co</p>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="mailto:miguel@expstud.io"
+                className="hover:underline"
+              >
+                miguel@expstud.io
+              </a>
             </div>
 
             <div className="lg:w-2/3 max-w-[835px] mb-20 pr-5">

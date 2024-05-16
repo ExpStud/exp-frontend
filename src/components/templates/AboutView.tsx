@@ -103,7 +103,7 @@ const AboutView: FC<Props> = (props: Props) => {
                 decade-long partnership between Miguel Corzo and Wallace Palmer.
                 Having spent over ten years working together, our collaborative
                 journey began in diverse industries. Transitioning from SaaS
-                engineers to trailblazers in the web 3 space, we bring authentic
+                engineers to trailblazers in the Web 3 space, we bring authentic
                 expertise to the table.
               </p>
             </div>
@@ -131,7 +131,7 @@ const AboutView: FC<Props> = (props: Props) => {
         <AnimateWrapper animate={teamInView}>
           <div className="left-margin mt-20 text-5xl font-medium" ref={teamRef}>
             <p className="text-5xl text-custom-gray mb-3">Our team.</p>
-            <p className="text-4xl md:text-5xl">Perfeggcionism freaks.</p>
+            <p className="text-4xl md:text-5xl"> Chemistry personified.</p>
 
             <p className="text-xl lg:w-1/2 mt-10 font-normal">
               What sets us apart is not just our services but the passion and
@@ -198,9 +198,8 @@ const AboutView: FC<Props> = (props: Props) => {
 
               <p className="mt-5">Web 3 Experience</p>
               <div className="text-custom-gray">
-                <p>Lead Developer at DeGods & y00ts(1 year)</p>
-                <p>Liberty Square (1 year)</p>
-                <p>EXP (2 years)</p>
+                <p>Lead Developer at DeGods & y00ts (1 year)</p>
+                <p>Blockchain Freelancing (3 year)</p>
               </div>
 
               <p className="mt-5">Web 2 Experience</p>
