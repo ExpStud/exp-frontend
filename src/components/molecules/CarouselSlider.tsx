@@ -35,6 +35,11 @@ const CarouselSlider: FC<CarouselSliderProps> = (
         className="absolute bg-white w-[60px] h-[2px]"
         initial={{ left: 0 }}
         animate={{ left: sliderValue }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 30,
+        }}
         // drag="x"
         // dragConstraints={containerRef}
         // onDrag={handleDrag}
