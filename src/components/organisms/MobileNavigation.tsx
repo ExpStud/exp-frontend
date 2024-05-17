@@ -36,7 +36,7 @@ const MobileNavigation: FC<Props> = (props: Props) => {
   return (
     <>
       <motion.div
-        className={`cursor-pointer fixed right-3 top-3 z-50 h-14 w-14 bg-background-black rounded-full flex items-center justify-center ${componentProps.className}`}
+        className={`cursor-pointer fixed right-3 top-3 z-50 h-14 w-14 bg-custom-black shadow-xl rounded-full flex items-center justify-center ${componentProps.className}`}
         onClick={() => cycleOpen()}
       >
         <TwoLinesIcon animate={open} />
