@@ -19,17 +19,15 @@ const ContactView: FC<Props> = (props: Props) => {
     <div className="relative w-full h-full items-center justify-center overflow-hidden mb-10 ">
       <BackgroundImage setAssets={setAssets} />
 
-      <div className="relative z-10">
-        <AnimateWrapper animate={showView} opacity={true}>
+      <AnimateWrapper animate={showView}>
+        <div className="relative z-10">
           <WelcomeSection
             title1="How can we help?"
             title2="Let's work together."
           />
-        </AnimateWrapper>
 
-        <hr className="border-white border-opacity-10 top-margin"></hr>
+          <hr className="border-white border-opacity-10 top-margin"></hr>
 
-        <AnimateWrapper animate={showView} opacity={true}>
           <div className="left-margin top-margin  flex flex-col lg:flex-row lg:gap-20">
             <div className="lg:w-1/3 pr-10 max-w-[350px] mb-10">
               <p className="text-white text-opacity-60 text-xl">
@@ -59,8 +57,8 @@ const ContactView: FC<Props> = (props: Props) => {
               <ContactForm />
             </div>
           </div>
-        </AnimateWrapper>
-      </div>
+        </div>
+      </AnimateWrapper>
     </div>
   );
 };
