@@ -16,7 +16,7 @@ import { Client, Project } from "./types";
         url: "",
       }
     ],
-    image: "/images/projects/.jpg",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/.jpg`,
   },
 */
 
@@ -35,7 +35,7 @@ export const projects: Project[] = [
   //       url: "https://twitter.com/CyberFrogsNFT",
   //     }
   //   ],
-  //   image: "/images/projects/cyberfrogs.png",
+  //   image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/cyberfrogs.png`,
   // },
 
   {
@@ -52,7 +52,7 @@ export const projects: Project[] = [
         url: "https://www.instagram.com/somos_axolotl/",
       }
     ],
-    image: "/images/projects/somos.png",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/somos.png`,
   },
   {
     name: "Slimes",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
         url: "https://twitter.com/SCUMSOL",
       }
     ],
-    image: "/images/projects/slimes.png",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/slimes.png`,
   },
   {
     name: "Robbie Shilstone",
@@ -87,7 +87,7 @@ export const projects: Project[] = [
         url: "https://www.instagram.com/shilstone_arts/",
       }
     ],
-    image: "/images/projects/publique.png",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/publique.png`,
   },
   {
     name: "Calder Moore",
@@ -103,7 +103,7 @@ export const projects: Project[] = [
         url: "https://twitter.com/CalderMoore_",
       }
     ],
-    image: "/images/projects/calder.png",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/calder.png`,
   }, {
     name: "Zen0",
     published: 2023,
@@ -118,7 +118,7 @@ export const projects: Project[] = [
         url: "https://twitter.com/zen0m",
       }
     ],
-    image: "/images/projects/zen0.png",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/zen0.png`,
   }, 
   {
     name: "Hot Heads",
@@ -134,7 +134,7 @@ export const projects: Project[] = [
         url: "https://twitter.com/HotHeadsNFT",
       }
     ],
-    image: "/images/projects/hotheads.png",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/hotheads.png`,
   },
 ]
 
@@ -145,7 +145,7 @@ export const clients: Client[] = [
     name: "SCUM",
     title: "Founder of My Slimes",
     company: "My Slimes",
-    image: "/images/testimonials/1-scum.jpg",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/testimonials/1-scum.jpg`,
     testimonial:
       `It doesn't matter how big the idea is, EXP meets every new challenge with excitement. Truly embodying the rare attitude of "WHY NOT." I feel confident that no matter where my journey takes me, every new website and web-based experience I pursue, will go through EXP.`,
     twitter: "https://twitter.com/SCUMSOL",
@@ -158,8 +158,8 @@ export const clients: Client[] = [
         borderColor: "!border-slimes-text",
         fillColor: "!fill-slimes-text",
         title: "My Slimes",
-        src: "/images/carousel/slimes.png",
-        srcMobile: "/images/carousel/slimes-sm.png",
+        src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/slimes.png`,
+        srcMobile: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/slimes-sm.png`,
         href: "https://slimes.xyz/",
       },
       {
@@ -169,8 +169,8 @@ export const clients: Client[] = [
         borderColor: "!border-somos-text",
         fillColor: "!fill-somos-text",
         title: "Somos Axolotl",
-        src: "/images/carousel/somos.png",
-        srcMobile: "/images/carousel/somos-sm.png",
+        src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/somos.png`,
+        srcMobile: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/somos-sm.png`,
         href: "https://somosaxolotl.com",
       },
     ]
@@ -180,7 +180,7 @@ export const clients: Client[] = [
     name: "Robbie Shilstone",
     title: "Founder of Publique",
     company: "Publique",
-    image: "/images/testimonials/robbie.jpg",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/testimonials/robbie.jpg`,
     testimonial:
       "EXP went above and beyond to make Publique a success. No idea ever felt to big to implement. They were perfectly suited to create this experience exactly how I envisioned it.",
     twitter: "https://twitter.com/shilstone_arts",
@@ -192,8 +192,8 @@ export const clients: Client[] = [
       borderColor: "!border-robbie-text",
       fillColor: "!fill-robbie-text",
       title: "Publique World",
-      src: "/images/carousel/publique.png",
-      srcMobile: "/images/carousel/publique-sm.png",
+      src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/publique.png`,
+      srcMobile: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/publique-sm.png`,
       href: "https://publique.world/",
     }]
   },
@@ -202,7 +202,7 @@ export const clients: Client[] = [
     name: "Calder Moore",
     title: "In Search Of",
     company: "In Search Of",
-    image: "/images/testimonials/calder.gif",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/testimonials/calder.gif`,
     testimonial:
       "Commissioning EXP Studios was a great decision. They were super upfront about costs and worked with my budget to suit my needs. They provided works in progress along the way which I was always absolutely in love with. Will definitely be returning to expand the website once it is ready to do so.",
     twitter: "https://twitter.com/CalderMoore_",
@@ -214,7 +214,7 @@ export const clients: Client[] = [
       borderColor: "!border-calder-text",
       fillColor: "!fill-calder-text",
       title: "In Search Of Substance",
-      src: "/images/carousel/calder.png",
+      src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/calder.png`,
       href: "",
     }]
   },
@@ -223,7 +223,7 @@ export const clients: Client[] = [
     name: "Andy Rew",
     title: "Founder of CyberFrogs",
     company: "CyberFrogs",
-    image: "/images/testimonials/39-andres.jpg",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/testimonials/39-andres.jpg`,
     testimonial:
       'Working with EXP has felt like working with an extension of my core team. Their attentiveness, attention to detail and their understanding of complex systems and web3 intricacies has made our contracted work not only pain free, but enjoyable. The EXP team just "gets it" and they have helped amplify our products in ways I previously thought unobtainable with outside contractors. They approached our contract as if they were working on their own project.',
     twitter: "https://twitter.com/CyberFrogsNFT",
@@ -235,7 +235,7 @@ export const clients: Client[] = [
       borderColor: "!border-andy-text",
       fillColor: "!fill-andy-text",
       title: "CyberFrogs",
-      src: "/images/carousel/andy.png",
+      src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/andy.png`,
       href: "https://cyberfrogs.io/",
     }]
   },
@@ -244,7 +244,7 @@ export const clients: Client[] = [
     name: "Zen0",
     title: "Founder of Monster Friends",
     company: "Monster Friends",
-    image: "/images/testimonials/zen0.gif",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/testimonials/zen0.gif`,
     testimonial:
       "EXP did an awesome job at building a showcase for my art releases, as well as a rarity explorer for my Glyphscapes collection. They were efficient and designed everything accurately to my spec, as well as being flexible when changes needed to be made. I look forward to working together again in the future! :)",
     twitter: "https://twitter.com/zen0m",
@@ -256,7 +256,7 @@ export const clients: Client[] = [
       borderColor: "!border-zen0-text",
       fillColor: "!fill-zen0-text",
       title: "Collections & Rarity",
-      src: "/images/carousel/zen0.png",
+      src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/zen0.png`,
       href: "https://zen0.art/rarity/",
     }]
   },
@@ -275,7 +275,7 @@ export const clients: Client[] = [
       borderColor: "!border-sike-text",
       fillColor: "!fill-sike-text",
       title: "Hot Heads",
-      src: "/images/carousel/sike.png",
+      src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/sike.png`,
       href: "https://hotheads.art/",
     }]
   },

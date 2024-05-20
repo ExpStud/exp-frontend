@@ -62,7 +62,7 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
                 {/*  corner image */}
                 <motion.div variants={menuChild2Variants} className=" -z-20">
                   <Image
-                    src="/images/exp-corner.svg"
+                    src={`${process.env.CLOUDFLARE_STORAGE}/images/exp-corner.svg`}
                     alt="exp"
                     width={673}
                     height={637}

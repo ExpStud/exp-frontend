@@ -152,7 +152,7 @@ const TestimonialItem: FC<Props> = (props: Props) => {
       <div className="lg:ml-8 lg:w-1/2">
         <div className="relative">
           <Image
-            src="/images/quote.png"
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/quote.png`}
             alt="quote"
             width={68}
             height={65}

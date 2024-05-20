@@ -142,7 +142,7 @@ const AboutView: FC<Props> = (props: Props) => {
           </div>
           <div className="left-margin mt-20 flex flex-col lg:flex-row gap-2">
             <Image
-              src="/images/about/14-nacho.jpg"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/about/14-nacho.jpg`}
               alt="Miguel"
               width={608}
               height={608}
@@ -211,7 +211,7 @@ const AboutView: FC<Props> = (props: Props) => {
             </div>
 
             <Image
-              src="/images/about/33-nino.jpg"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/about/33-nino.jpg`}
               alt="Wallace"
               width={608}
               height={608}

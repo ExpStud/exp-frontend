@@ -50,7 +50,7 @@ const ServicesView: FC<Props> = (props: Props) => {
         {/* bg image */}
         <div className="hidden 2xs:block absolute -top-0 2xl:top-0 -left-0 lg:left-0 xl:-left-20 2xl:-left-28 -z-[2] w-[100vw] h-[800px] lg:h-[900px] 2xl:h-[980px] ">
           <Image
-            src="/images/services/final.png"
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/services/final.png`}
             alt="Services"
             fill
             className="hidden lg:block object-cover -z-[10]"
@@ -58,7 +58,7 @@ const ServicesView: FC<Props> = (props: Props) => {
             onLoad={() => setAssets && handleAssetLoad(0, setAssets)}
           />
           <Image
-            src="/images/services/final_mobile.png"
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/services/final_mobile.png`}
             alt="Services"
             fill
             className="lg:hidden object-cover -z-[10]"

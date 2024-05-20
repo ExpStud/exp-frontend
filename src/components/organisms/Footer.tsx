@@ -49,14 +49,14 @@ const Footer: FC = () => {
       <hr className="border-footer-border mt-3"></hr>
       <div className="relative w-full h-auto">
         <Image
-          src="/images/footer/footer-blem.jpg"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/footer/footer-blem.jpg`}
           alt="footer"
           width={1536}
           height={180}
           className="hidden lg:block w-full h-auto aspect-[2/1] md:aspect-[6/1] lg:aspect-[9/1] object-cover"
         />
         <Image
-          src="/images/footer/footer-blem.jpg"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/footer/footer-blem.jpg`}
           alt="footer"
           width={1536}
           height={180}

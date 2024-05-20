@@ -116,7 +116,7 @@ const HeaderItems: FC = () => {
             className="cursor-pointer mr-2 lg:mr-4 "
           >
             <Image
-              src="/images/icons/menu.png"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/icons/menu.png`}
               height={216 / 4}
               width={216 / 4}
               alt="menu"
@@ -130,7 +130,7 @@ const HeaderItems: FC = () => {
             {...menuAnimation}
           >
             <Image
-              src="/images/icons/close.png"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/icons/close.png`}
               height={216 / 3.3}
               width={216 / 3.3}
               alt="menu"

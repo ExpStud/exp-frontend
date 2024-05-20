@@ -6,15 +6,6 @@ import { useRouter } from "next/router";
 import { useWindowSize } from "src/hooks";
 import { isMobile } from "react-device-detect";
 
-// interface Card {
-//   name: string;
-// }
-// const cards = [
-//   { image: "/images/slider1.svg", width: 1040, height: 600 },
-//   { image: "/images/slider1.svg", width: 1040, height: 600 },
-//   { image: "/images/slider1.svg", width: 1040, height: 600 },
-// ];
-
 interface Props {
   sliderValue: number;
   setSliderValue: (value: number) => void;
