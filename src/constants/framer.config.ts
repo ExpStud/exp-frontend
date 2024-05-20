@@ -65,7 +65,7 @@ export const openMenuVariants = (closedWidth: number, openWidth: number) => ({
   closed: {
     width: closedWidth,
     transition: { 
-      delay: 0.5,
+      delay: 0.25,
       duration: 0.5 
     },
   },

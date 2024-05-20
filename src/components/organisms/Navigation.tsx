@@ -1,15 +1,13 @@
 import Link from "next/link";
-import { FC, HTMLAttributes, useEffect, useState } from "react";
-import { CloseIcon, ExpIcon, MenuIcon, TwoLinesIcon } from "@components";
+import { FC, HTMLAttributes, useEffect } from "react";
+import { ExpIcon, TwoLinesIcon } from "@components";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 import {
   menuChild2Variants,
   dekstopMenuParent,
   midExitAnimation,
   openMenuVariants,
-  mobileMenuParent,
   menuChildVariants,
-  fastExitAnimation,
 } from "@constants";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -43,23 +41,6 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
           initial="hidden"
           animate={open ? "show" : "closed"}
         >
-          {/* <AnimatePresence mode="wait">
-            {!open ? (
-              <motion.div key="closed">
-                <MenuIcon
-                  onClick={() => cycleOpen()}
-                  className="scale-90 md:scale-100 z-50"
-                />
-              </motion.div>
-            ) : (
-              <motion.div key="opened" {...fastExitAnimation}>
-                <CloseIcon
-                  onClick={() => cycleOpen()}
-                  className="scale-90 md:scale-100 z-50"
-                />
-              </motion.div>
-            )}
-          </AnimatePresence> */}
           <TwoLinesIcon animate={open} onClick={() => cycleOpen()} />
 
           <AnimatePresence mode="wait">
@@ -69,7 +50,7 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
                 initial={"hidden"}
                 animate={"show"}
                 exit={"closed"}
-                className=" h-full pl-16 md:pl-32 z-0 flex flex-col gap-8 0"
+                className="h-full pl-16 md:pl-32 z-0 flex flex-col gap-8 0"
                 key="nav"
               >
                 <NavigationItem href="/">Home</NavigationItem>
@@ -126,7 +107,10 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
             )}
           </AnimatePresence>
 
-          <ExpIcon className="scale-90 md:scale-100 fixed bottom-7" />
+          <ExpIcon
+            className="scale-90 md:scale-100 fixed bottom-7"
+            animate={open}
+          />
         </motion.div>
       )}
       {/* background shadow */}
