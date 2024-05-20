@@ -33,7 +33,7 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
         componentProps.className ?? ""
       }`}
     >
-      {winWidth && (
+      {winWidth > 0 && (
         <motion.div
           className="z-20 fixed top-0 left-0 bottom-0 bg-black flex flex-col items-start justify-between py-7 px-2 md:px-4"
           variants={openMenuVariants(

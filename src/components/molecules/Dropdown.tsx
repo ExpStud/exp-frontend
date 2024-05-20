@@ -41,7 +41,7 @@ const Dropdown: FC<Props> = ({ className, options, onSelectionChange }) => {
       </div>
       <ArrowIcon animate={openMenu} />
       <AnimatePresence>
-        {openMenu && (
+        {openMenu === true && (
           <motion.div
             className="absolute top-[44px] w-full left-0 rounded-lg  bg-form-background mt-0 z-50 flex flex-col py-1.5 gap-0"
             {...fastExitAnimation}

@@ -42,7 +42,7 @@ const MobileNavigation: FC<Props> = (props: Props) => {
         <TwoLinesIcon animate={open} />
       </motion.div>
       <AnimatePresence>
-        {open && (
+        {open === true && (
           <motion.nav
             className="fixed inset-x-0 top-0 bottom-0 bg-custom-black z-10 flex flex-col gap-4 items-start h-full pl-5 lg:pl-10 pt-20"
             variants={mobileMenuParent}

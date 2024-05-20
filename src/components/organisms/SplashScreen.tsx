@@ -65,7 +65,7 @@ const SplashScreen: FC<Props> = (props: Props) => {
     <AnimatePresence mode="wait">
       {showAnimation && (
         <motion.div
-          className={`opacity-0 bg-custom-black ${
+          className={` bg-custom-black ${
             showAnimation ? "fixed z-10 inset-0" : "hidden -z-50"
           }`}
           initial={{ opacity: 1 }}
@@ -76,7 +76,7 @@ const SplashScreen: FC<Props> = (props: Props) => {
             ease: "easeInOut",
           }}
         >
-          <BackgroundImage />
+          {/* <BackgroundImage /> */}
         </motion.div>
       )}
     </AnimatePresence>
