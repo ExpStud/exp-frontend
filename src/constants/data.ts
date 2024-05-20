@@ -204,7 +204,7 @@ export const clients: Client[] = [
     company: "In Search Of",
     image: "/images/testimonials/calder.gif",
     testimonial:
-      "Commissioning EXP Studios was a great decision. They were super upfront about costs and worked with my budget to suit my needs. They provided works in progress along the way which I was always in absolutely in love with what they had done. Will definitely be returning to expand the website once it is ready to do so.",
+      "Commissioning EXP Studios was a great decision. They were super upfront about costs and worked with my budget to suit my needs. They provided works in progress along the way which I was always absolutely in love with. Will definitely be returning to expand the website once it is ready to do so.",
     twitter: "https://twitter.com/CalderMoore_",
     exchangeArt: "https://exchange.art/caldermoore/series",
     carousel : [{

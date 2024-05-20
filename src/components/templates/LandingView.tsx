@@ -52,8 +52,9 @@ const LandingView: FC<Props> = (props: Props) => {
 
       <AnimateWrapper animate={showView} className="relative">
         <WelcomeSection
-          title1="Modern designs. "
-          title2="Timeless solutions."
+          title1="Timeless designs. "
+          title2="Seamless
+          solutions."
         />
         <CardCarousel
           sliderValue={sliderValue}

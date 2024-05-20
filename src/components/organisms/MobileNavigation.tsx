@@ -91,7 +91,7 @@ const MobileNavigation: FC<Props> = (props: Props) => {
                 target="_blank"
                 variants={menuChild2Variants}
               >
-                LinkdIn
+                LinkedIn
               </motion.a>
               <motion.a
                 href="https://twitter.com/exp_studio_"

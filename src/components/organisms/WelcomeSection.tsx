@@ -23,9 +23,10 @@ const WelcomeSection: FC<Props> = (props: Props) => {
 
       <div className="py-5 text-sm text-custom-gray">
         <p className="text-white">Need a website?</p>
-        <p>We&apos;re open for business and new collaborations</p>
+        <p>We&apos;re currently accepting new </p>
         <p>
-          as of now.{" "}
+          {" "}
+          collaborations.{" "}
           {router.asPath !== "/contact" && (
             <Link href="/contact">
               <span className="text-gray-300 underline">Get in touch</span>

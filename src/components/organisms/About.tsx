@@ -13,7 +13,7 @@ const LandingView: FC<Props> = (props: Props) => {
         <p>
           At EXP, we pride ourselves in crafting experiences to help artists,
           creators, and professionals increase their online impact through
-          branding & websites.
+          design & websites.
         </p>
         <br></br>
         <p>

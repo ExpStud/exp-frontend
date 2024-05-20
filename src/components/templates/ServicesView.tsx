@@ -42,7 +42,7 @@ const ServicesView: FC<Props> = (props: Props) => {
         <WelcomeSection />
         <div className="left-margin mt-0 sm:mt-12 md:mt-10 lg:mt-0 text-4xl sm:text-6xl xl:text-7xl font-medium ">
           <p
-            className={`mb-3 text-3xl sm:text-4xl md:text-5xl lg:!text-6xl 2xl:!text-7xl max-w-[1256px] pr-4`}
+            className={`mb-3 text-[40px] md:text-5xl lg:!text-6xl 2xl:!text-7xl max-w-[1256px] pr-4`}
           >
             We guide companies through moments of transformation.
           </p>
@@ -89,12 +89,13 @@ const ServicesView: FC<Props> = (props: Props) => {
         <div className="top-margin max-w-[1256px] ">
           <ServiceListItem
             title="All-Encompassing Development Solutions"
-            description="From conceptualization to execution, we bring ideas to life, delivering solutions that transcend expectations."
+            description="No idea is too large, work with our development studio to bring any of your website needs to life."
+            // description="From conceptualization to execution, we bring ideas to life, delivering solutions that transcend expectations."
             showView={showView}
           />
           <ServiceListItem
             title="Mobile & Web Design"
-            description="Immerse your audience in a seamless digital experience with our meticulously crafted designs for mobile and web platforms."
+            description="Immerse your audience in a seamless web experience with our carefully crafted designs for mobile and web platforms."
             showView={showView}
           />
           <ServiceListItem
@@ -104,7 +105,7 @@ const ServicesView: FC<Props> = (props: Props) => {
           />
           <ServiceListItem
             title="Third Party Integrations"
-            description="Embark on a seamless online journey with multiple integrated options."
+            description="Embark on your online journey with multiple integrated options such as Shopify, Stripe, Solana Pay and more."
             showView={showView}
           />
           <ServiceListItem
@@ -113,8 +114,8 @@ const ServicesView: FC<Props> = (props: Props) => {
             showView={showView}
           />
           <ServiceListItem
-            title="Advisory"
-            description="Navigate the complexities of Web 3 with our advisory services as we provide insights and guidance into the ever-evolving landscape."
+            title="Web 3 Consultation"
+            description="Navigate the complexities of Web 3 with our consultation services as we provide insights and guidance into the ever-evolving landscape."
             showView={showView}
           />
         </div>

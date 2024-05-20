@@ -109,7 +109,7 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
                     rel="noreferrer"
                     target="_blank"
                   >
-                    LinkdIn
+                    LinkedIn
                   </motion.a>
                   <motion.a
                     variants={menuChild2Variants}

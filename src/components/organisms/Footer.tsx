@@ -34,7 +34,7 @@ const Footer: FC = () => {
             target="_blank"
             className="transition-300 hover:text-white hover:text-opacity-80"
           >
-            Linkedin
+            LinkedIn
           </a>
           <a
             href="https://twitter.com/exp_studio_"

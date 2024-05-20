@@ -93,7 +93,7 @@ const AboutView: FC<Props> = (props: Props) => {
             <div className="font-medium">
               <p className="text-5xl text-custom-gray mb-3">Our journey.</p>
               <p className="text-4xl md:text-5xl pb-10">
-                Perfeggcionism freaks.
+                Perfectionism freaks.
               </p>
             </div>
 
@@ -101,10 +101,10 @@ const AboutView: FC<Props> = (props: Props) => {
               <p>
                 Founded in January 2023, EXP Studio emerged from the nearly
                 decade-long partnership between Miguel Corzo and Wallace Palmer.
-                Having spent over ten years working together, our collaborative
-                journey began in diverse industries. Transitioning from SaaS
-                engineers to trailblazers in the Web 3 space, we bring authentic
-                expertise to the table.
+                Having spent over eight years working together, our
+                collaborative journey began in diverse industries. Transitioning
+                from SaaS engineers to trailblazers in the Web 3 space, we bring
+                authentic expertise to the table.
               </p>
             </div>
           </div>
@@ -199,12 +199,12 @@ const AboutView: FC<Props> = (props: Props) => {
               <p className="mt-5">Web 3 Experience</p>
               <div className="text-custom-gray">
                 <p>Lead Developer at DeGods & y00ts (1 year)</p>
-                <p>Blockchain Freelancing (3 year)</p>
+                <p>Blockchain Freelancing (3 years)</p>
               </div>
 
               <p className="mt-5">Web 2 Experience</p>
               <div className="text-custom-gray">
-                <p>Mobile Application Development Lead (5 year)</p>
+                <p>Mobile Application Development Lead (5 years)</p>
                 <p>Full Stack Web Developer (2 years)</p>
                 <p>Technical Support (2 years)</p>
               </div>
