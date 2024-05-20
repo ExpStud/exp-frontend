@@ -20,7 +20,7 @@ const BackgroundImage: FC<Props> = (props: Props) => {
   return (
     <div className="absolute top-0 left-0 w-full -z-[1] overflow-hidden">
       <Image
-        src={`${process.env.CLOUDFLARE_STORAGE}/images/bg-image-sm.png`}
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/bg-image-xs.png`}
         alt="quote"
         width={608}
         height={400}
