@@ -47,6 +47,20 @@ const SplashScreen: FC<Props> = (props: Props) => {
     else document.body.style.overflow = "auto";
   }, [showAnimation]);
 
+  //limit splash screen to 3 seconds
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (showAnimation) {
+  //       setShowAnimation(false);
+  //       setShowView(true);
+  //     }
+  //   }, 3000);
+
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [debouncer, setShowView, showAnimation]);
+
   return (
     <AnimatePresence mode="wait">
       {showAnimation && (

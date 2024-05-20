@@ -10,6 +10,7 @@ import ServiceListItem from "../molecules/ServiceListItem";
 import { ViewContext } from "src/contexts";
 import { useInView } from "framer-motion";
 import { handleAssetLoad } from "@utils";
+import { useTimeout } from "src/hooks";
 
 interface Props {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;
@@ -23,6 +24,14 @@ const ServicesView: FC<Props> = (props: Props) => {
 
   const listInView = useInView(listRef, {
     once: true,
+  });
+
+  // set assets after 2 seconds
+  useTimeout({
+    callback: () => {
+      setAssets && setAssets([true]);
+    },
+    delay: 2000,
   });
 
   return (
