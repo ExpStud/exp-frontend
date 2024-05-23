@@ -21,8 +21,8 @@ interface Props {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;
 }
 
-const yearsActive = 8;
-const projectsCompleted = 17;
+const yearsActive = 10;
+const projectsCompleted = 20;
 
 const AboutView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
@@ -162,20 +162,20 @@ const AboutView: FC<Props> = (props: Props) => {
               <p className="mt-5">Web 3 Experience</p>
               <div className="text-custom-gray">
                 <p>
-                  My Slimes & All in Time Project Manager (2 years and counting)
+                  My Slimes & All in Time Project Manager
                 </p>
-                <p>Slimes Studio Project Manager (1 year and counting)</p>
-                <p>Project Manager at DeGods & y00ts (1 year) </p>
-                <p>Project Manager at Hot Heads (1 year)</p>
+                <p>Slimes Studio Project Manager</p>
+                <p>Project Manager at DeGods & y00ts</p>
+                <p>Project Manager at Hot Heads</p>
               </div>
 
               <p className="mt-5">Web 2 Experience</p>
               <div className="text-custom-gray">
-                <p>Account Support & Customer Service (1 year)</p>
-                <p>Technical Support (1 year)</p>
-                <p>Mobile Application Specialist (3 years)</p>
-                <p>Product Owner & Manager (1 year)</p>
-                <p>Software Sales (1 year) </p>
+                <p>Account Support & Customer Service</p>
+                <p>Technical Support</p>
+                <p>Mobile Application Specialist</p>
+                <p>Product Owner & Manager</p>
+                <p>Software Sales</p>
               </div>
             </div>
           </div>

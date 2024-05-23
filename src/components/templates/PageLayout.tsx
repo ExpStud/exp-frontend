@@ -47,8 +47,8 @@ const PageLayout: FC<Props> = (props: Props) => {
         }`}
       >
         <PageHead
-          title="EXP STUDIO"
-          description="Providing innovative web design and development solutions"
+          title="All-In-One Design and Development Studio"
+          description="Providing cutting-edge web design and development solutions"
           url="https://expstud.io/"
           twitter="expstudio_"
         />
