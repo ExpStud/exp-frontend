@@ -189,7 +189,7 @@ const AboutView: FC<Props> = (props: Props) => {
             <div className="flex flex-col lg:w-1/2 max-w-[608px]">
               <p>Wallace Palmer</p>
               <p className="text-custom-gray">
-                As EXP&apos;s lead developer, Wallace is the driving force
+                As EXP&apos;s lead developer, Wallace (Darth) is the driving force
                 behind the technical brilliance at EXP Studio. With over 10
                 years development experience in various industries he has
                 evolved from SaaS web & mobile engineering to pioneering modern
@@ -198,15 +198,15 @@ const AboutView: FC<Props> = (props: Props) => {
 
               <p className="mt-5">Web 3 Experience</p>
               <div className="text-custom-gray">
-                <p>Lead Developer at DeGods & y00ts (1 year)</p>
-                <p>Blockchain Freelancing (3 years)</p>
+                <p>Lead Developer at DeGods & y00ts</p>
+                <p>Blockchain Freelancing</p>
               </div>
 
               <p className="mt-5">Web 2 Experience</p>
               <div className="text-custom-gray">
-                <p>Mobile Application Development Lead (5 years)</p>
-                <p>Full Stack Web Developer (2 years)</p>
-                <p>Technical Support (2 years)</p>
+                <p>Mobile Application Development Lead</p>
+                <p>Full Stack Web Developer</p>
+                <p>Technical Support</p>
               </div>
             </div>
 
