@@ -187,9 +187,9 @@ const AboutView: FC<Props> = (props: Props) => {
             ref={darthRef}
           >
             <div className="flex flex-col lg:w-1/2 max-w-[608px]">
-              <p>Wallace Palmer</p>
+              <p>Wallace Palme (Darth)</p>
               <p className="text-custom-gray">
-                As EXP&apos;s lead developer, Wallace (Darth) is the driving force
+                As EXP&apos;s lead developer, Wallace is the driving force
                 behind the technical brilliance at EXP Studio. With over 10
                 years development experience in various industries he has
                 evolved from SaaS web & mobile engineering to pioneering modern
