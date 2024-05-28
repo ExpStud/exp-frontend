@@ -141,13 +141,14 @@ const AboutView: FC<Props> = (props: Props) => {
             </p>
           </div>
           <div className="left-margin mt-20 flex flex-col lg:flex-row gap-2">
+          <a href="https://x.com/otablem"rel="noreferrer" target="_blank">
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/about/14-nacho.jpg`}
               alt="Miguel"
               width={608}
               height={608}
               className="rounded-md grayscale-image"
-            />
+            /></a>
 
             <div className="flex flex-col justify-items-start lg:w-1/2 max-w-[608px] lg:ml-10">
               <p>Miguel Corzo (Otablem)</p>
@@ -187,7 +188,7 @@ const AboutView: FC<Props> = (props: Props) => {
             ref={darthRef}
           >
             <div className="flex flex-col lg:w-1/2 max-w-[608px]">
-              <p>Wallace Palme (Darth)</p>
+              <p>Wallace Palmer (Darth)</p>
               <p className="text-custom-gray">
                 As EXP&apos;s lead developer, Wallace is the driving force
                 behind the technical brilliance at EXP Studio. With over 10
@@ -210,6 +211,7 @@ const AboutView: FC<Props> = (props: Props) => {
               </div>
             </div>
 
+            <a href="https://x.com/darthdegen"rel="noreferrer" target="_blank">
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/about/33-nino.jpg`}
               alt="Wallace"
@@ -217,6 +219,8 @@ const AboutView: FC<Props> = (props: Props) => {
               height={608}
               className="rounded-md grayscale-image transition-300"
             />
+            </a> 
+
           </div>
         </AnimateWrapper>
 
