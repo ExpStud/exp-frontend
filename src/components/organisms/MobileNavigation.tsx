@@ -78,7 +78,7 @@ const MobileNavigation: FC<Props> = (props: Props) => {
                 Follow us
               </motion.p>
               <motion.a
-                href="https://www.instagram.com/nernhrhirnkjctejeenvnrnjik/"
+                href="https://www.instagram.com/exp_studio_/"
                 rel="noreferrer"
                 target="_blank"
                 variants={menuChild2Variants}

@@ -21,7 +21,7 @@ const Footer: FC = () => {
         <div className="flex flex-col gap-1 text-sm lg:text-base">
           <p className="text-copyright-purple">Follow us</p>
           <a
-            href="https://www.instagram.com/expstudio_/"
+            href="https://www.instagram.com/exp_studio_/"
             rel="noreferrer"
             target="_blank"
             className="transition-300 hover:text-white hover:text-opacity-80"
