@@ -41,7 +41,9 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
           initial="hidden"
           animate={open ? "show" : "closed"}
         >
-          <TwoLinesIcon animate={open} onClick={() => cycleOpen()} />
+          <div className="w-[50px] h-[40px]">
+            <TwoLinesIcon animate={open} onClick={() => cycleOpen()} />
+          </div>
 
           <AnimatePresence mode="wait">
             {open ? (
