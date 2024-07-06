@@ -15,7 +15,7 @@ const Footer: FC = () => {
           <FooterItem href="/about">About us</FooterItem>
           <FooterItem href="/contact">Contact us</FooterItem>
           <p className="text-xs font-normal text-copyright-purple mt-14">
-            ©{year} EXP STUDIO™
+            ©{year} SANDBOX STUDIO™
           </p>
         </div>
         <div className="flex flex-col gap-1 text-sm lg:text-base">

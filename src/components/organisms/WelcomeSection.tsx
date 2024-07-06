@@ -17,7 +17,7 @@ const WelcomeSection: FC<Props> = (props: Props) => {
     <div className="left-margin">
       <div className="border-b border-custom-dark-gray inline-block">
         <h1 className="py-5 text-2xl font-medium">
-          <Link href="/">EXP STUDIO</Link>{" "}
+          <Link href="/">SANDBOX STUDIO</Link>{" "}
         </h1>
       </div>
 
