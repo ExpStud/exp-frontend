@@ -99,7 +99,7 @@ const AboutView: FC<Props> = (props: Props) => {
 
             <div className="lg:w-1/2 text-xl max-w-[608px]">
               <p>
-                Founded in January 2023, EXP Studio emerged from the nearly
+                Founded in January 2023, Sandbox Studio emerged from the nearly
                 decade-long partnership between Miguel Corzo and Wallace Palmer.
                 Having spent over eight years working together, our
                 collaborative journey began in diverse industries. Transitioning
@@ -191,7 +191,7 @@ const AboutView: FC<Props> = (props: Props) => {
               <p>Wallace Palmer (Darth)</p>
               <p className="text-custom-gray">
                 As EXP&apos;s lead developer, Wallace is the driving force
-                behind the technical brilliance at EXP Studio. With over 10
+                behind the technical brilliance at Sandbox Studio. With over 10
                 years development experience in various industries he has
                 evolved from SaaS web & mobile engineering to pioneering modern
                 solutions on the Solana Blockchain.

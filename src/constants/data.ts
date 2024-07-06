@@ -92,7 +92,7 @@ export const projects: Project[] = [
   {
     name: "Calder Moore",
     published: null,
-    description: "ISO - In Search Of; a look into the next generation of EXP websites. High fidelity design paired with a seamless desktop & mobile experience. Aimed to deliver an assortment of art, audio, and comics in one place.",
+    description: "ISO - In Search Of; a look into the next generation of Sandbox Studio websites. High fidelity design paired with a seamless desktop & mobile experience. Aimed to deliver an assortment of art, audio, and comics in one place.",
     services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", "Asset Library", ],
     links: [
       {
@@ -123,7 +123,7 @@ export const projects: Project[] = [
   {
     name: "Hot Heads",
     published: 2023,
-    description: "One of EXP's first clients, and vetted communities on Solana. The Hot Heads website features blockchain technology, asset libraries, and more. A nod to 90's retro gaming, with custom pixelated components built in all over the site.",
+    description: "One of Sandbox Studio's first clients, and vetted communities on Solana. The Hot Heads website features blockchain technology, asset libraries, and more. A nod to 90's retro gaming, with custom pixelated components built in all over the site.",
     services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", ],
     links: [
       {
@@ -147,7 +147,7 @@ export const clients: Client[] = [
     company: "My Slimes",
     image: `${process.env.CLOUDFLARE_STORAGE}/images/testimonials/1-scum.jpg`,
     testimonial:
-      `It doesn't matter how big the idea is, EXP meets every new challenge with excitement. Truly embodying the rare attitude of "WHY NOT." I feel confident that no matter where my journey takes me, every new website and web-based experience I pursue, will go through EXP.`,
+      `It doesn't matter how big the idea is, Sandbox Studio meets every new challenge with excitement. Truly embodying the rare attitude of "WHY NOT." I feel confident that no matter where my journey takes me, every new website and web-based experience I pursue, will go through Sandbox Studio.`,
     twitter: "https://twitter.com/SCUMSOL",
     exchangeArt: "https://exchange.art/scum/series",
     carousel : [
@@ -182,7 +182,7 @@ export const clients: Client[] = [
     company: "Publique",
     image: `${process.env.CLOUDFLARE_STORAGE}/images/testimonials/robbie.jpg`,
     testimonial:
-      "EXP went above and beyond to make Publique a success. No idea ever felt to big to implement. They were perfectly suited to create this experience exactly how I envisioned it.",
+      "Sandbox Studio went above and beyond to make Publique a success. No idea ever felt to big to implement. They were perfectly suited to create this experience exactly how I envisioned it.",
     twitter: "https://twitter.com/shilstone_arts",
     exchangeArt: "https://exchange.art/shilstone-arts/series",
     carousel : [{
@@ -204,7 +204,7 @@ export const clients: Client[] = [
     company: "In Search Of",
     image: `${process.env.CLOUDFLARE_STORAGE}/images/testimonials/calder.gif`,
     testimonial:
-      "Commissioning EXP Studios was a great decision. They were super upfront about costs and worked with my budget to suit my needs. They provided works in progress along the way which I was always absolutely in love with. Will definitely be returning to expand the website once it is ready to do so.",
+      "Commissioning Sandbox Studio was a great decision. They were super upfront about costs and worked with my budget to suit my needs. They provided works in progress along the way which I was always absolutely in love with. Will definitely be returning to expand the website once it is ready to do so.",
     twitter: "https://twitter.com/CalderMoore_",
     exchangeArt: "https://exchange.art/caldermoore/series",
     carousel : [{
@@ -225,7 +225,7 @@ export const clients: Client[] = [
     company: "CyberFrogs",
     image: `${process.env.CLOUDFLARE_STORAGE}/images/testimonials/39-andres.jpg`,
     testimonial:
-      'Working with EXP has felt like working with an extension of my core team. Their attentiveness, attention to detail and their understanding of complex systems and web3 intricacies has made our contracted work not only pain free, but enjoyable. The EXP team just "gets it" and they have helped amplify our products in ways I previously thought unobtainable with outside contractors. They approached our contract as if they were working on their own project.',
+      'Working with Sandbox Studio has felt like working with an extension of my core team. Their attentiveness, attention to detail and their understanding of complex systems and web3 intricacies has made our contracted work not only pain free, but enjoyable. The Sandbox Studio team just "gets it" and they have helped amplify our products in ways I previously thought unobtainable with outside contractors. They approached our contract as if they were working on their own project.',
     twitter: "https://twitter.com/CyberFrogsNFT",
     tensor: "https://www.tensor.trade/trade/cyber_frogs",
     carousel : [{
@@ -246,7 +246,7 @@ export const clients: Client[] = [
     company: "Monster Friends",
     image: `${process.env.CLOUDFLARE_STORAGE}/images/testimonials/zen0.gif`,
     testimonial:
-      "EXP did an awesome job at building a showcase for my art releases, as well as a rarity explorer for my Glyphscapes collection. They were efficient and designed everything accurately to my spec, as well as being flexible when changes needed to be made. I look forward to working together again in the future! :)",
+      "Sandbox Studio did an awesome job at building a showcase for my art releases, as well as a rarity explorer for my Glyphscapes collection. They were efficient and designed everything accurately to my spec, as well as being flexible when changes needed to be made. I look forward to working together again in the future! :)",
     twitter: "https://twitter.com/zen0m",
     exchangeArt: "https://exchange.art/zen0/series",
     carousel : [{

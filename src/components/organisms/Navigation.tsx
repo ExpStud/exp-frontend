@@ -96,7 +96,7 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
                   </motion.a>
                   <motion.a
                     variants={menuChild2Variants}
-                    href="https://twitter.com/exp_studio_"
+                    href="https://twitter.com/sandbox_studio_"
                     rel="noreferrer"
                     target="_blank"
                   >
