@@ -29,10 +29,10 @@ const CarouselSlider: FC<CarouselSliderProps> = (
   return (
     <div
       ref={containerRef}
-      className="relative flex justify-center gap-2 mt-4 h-[2px] w-[176px] bg-white bg-opacity-20"
+      className="relative flex justify-center gap-2 mt-4 h-[4px] w-[176px] bg-white bg-opacity-20"
     >
       <motion.div
-        className="absolute bg-white w-[60px] h-[2px]"
+        className="absolute bg-white w-[77px] h-[4px] cursor-pointer"
         initial={{ left: 0 }}
         animate={{ left: sliderValue }}
         transition={{
@@ -40,9 +40,10 @@ const CarouselSlider: FC<CarouselSliderProps> = (
           stiffness: 100,
           damping: 30,
         }}
-        // drag="x"
+        drag="x"
         // dragConstraints={containerRef}
-        // onDrag={handleDrag}
+        dragConstraints={{ left: 0, right: 0 }}
+        onDrag={handleDrag}
       />
     </div>
   );
