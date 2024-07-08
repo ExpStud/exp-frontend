@@ -3,10 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["images.expstud.io"],
+    domains: ["images.sandboxstud.io"],
   },
   env: {
-    CLOUDFLARE_STORAGE: "https://images.expstud.io",
+    CLOUDFLARE_STORAGE: "https://images.sandboxstud.io",
   },
 };
 
