@@ -15,11 +15,9 @@ const MenuIcon: FC<Props> = (props: Props) => {
       className={`icon-hover ${componentProps.className}`}
       onClick={componentProps.onClick}
     >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M0 0H32V3H0V0ZM0 7H24V10H0V7ZM28 14H0V17H28V14Z"
-      />
+      <path fillRule="evenodd" clipRule="evenodd" d="M0 0H32V3H0V0Z" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M0 7H24V10H0V7Z" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M28 14H0V17H28V14Z" />
     </svg>
   );
 };

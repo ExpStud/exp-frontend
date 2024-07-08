@@ -82,7 +82,7 @@ const ProjectItem: FC<Props> = (props: Props) => {
           alt="project"
           width={912}
           height={759}
-          className="hidden lg:block mt-2  px-6 lg:px-20 2xl:px-0  rounded-md self-start"
+          className="hidden lg:block mt-2  mx-6 lg:mx-20 2xl:mx-0  rounded-md self-start max-w-[640px]"
         />
         {/* <div className="top-margin lg:hidden">
         <Button title="View project" link="/about" />

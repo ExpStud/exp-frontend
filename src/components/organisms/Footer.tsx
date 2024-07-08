@@ -15,13 +15,13 @@ const Footer: FC = () => {
           <FooterItem href="/about">About us</FooterItem>
           <FooterItem href="/contact">Contact us</FooterItem>
           <p className="text-xs font-normal text-copyright-purple mt-14">
-            ©{year} EXP STUDIO™
+            ©{year} SANDBOX STUDIO™
           </p>
         </div>
         <div className="flex flex-col gap-1 text-sm lg:text-base">
           <p className="text-copyright-purple">Follow us</p>
           <a
-            href="https://www.instagram.com/expstudio_/"
+            href="https://www.instagram.com/exp_studio_/"
             rel="noreferrer"
             target="_blank"
             className="transition-300 hover:text-white hover:text-opacity-80"
@@ -34,7 +34,7 @@ const Footer: FC = () => {
             target="_blank"
             className="transition-300 hover:text-white hover:text-opacity-80"
           >
-            Linkedin
+            LinkedIn
           </a>
           <a
             href="https://twitter.com/exp_studio_"
@@ -49,14 +49,14 @@ const Footer: FC = () => {
       <hr className="border-footer-border mt-3"></hr>
       <div className="relative w-full h-auto">
         <Image
-          src="/images/footer/footer-blem.jpg"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/footer/footer-blem.jpg`}
           alt="footer"
           width={1536}
           height={180}
           className="hidden lg:block w-full h-auto aspect-[2/1] md:aspect-[6/1] lg:aspect-[9/1] object-cover"
         />
         <Image
-          src="/images/footer/footer-blem.jpg"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/footer/footer-blem.jpg`}
           alt="footer"
           width={1536}
           height={180}

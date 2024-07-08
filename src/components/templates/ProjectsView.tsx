@@ -29,7 +29,7 @@ const ProjectsView: FC<Props> = (props: Props) => {
     <div className="relative w-full h-full">
       <BackgroundImage setAssets={setAssets} />
       <AnimateWrapper animate={showView}>
-        <WelcomeSection title1="Projects." />
+        <WelcomeSection title1="Our work." />
         <hr className="border-white border-opacity-10 mt-16 md:mt-28"></hr>
       </AnimateWrapper>
 

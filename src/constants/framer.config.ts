@@ -1,36 +1,75 @@
 import { Variants } from "framer-motion";
 
 
-
-export const menuItemVariants: Variants = {
-  initial: { opacity: 0 },
-  animate: { 
+export const mobileMenuParent = {
+  hidden: { opacity: 0 },
+  show: {
     opacity: 1,
-     transition: { 
-      delay: 0.3,
-      duration: 0.5, 
-      ease: "easeInOut" 
-    }, 
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.1, // This will delay the animation of each child by 0.1 seconds
+      delayChildren: 0.4,
+      staggerDirection: 1,
+    },
   },
-  exit: { 
+  closed: {
+    opacity: 0,
+    transition: {
+      delay: 1,
+      duration: 0.5,
+      staggerChildren: 0.1, // This will reverse the order of the stagger on exit
+      staggerDirection: -1,
+    },
+  },
+};
+
+
+export const dekstopMenuParent: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.1, // This will delay the animation of each child by 0.1 seconds
+      delayChildren: 0.2,
+      staggerDirection: 1,
+    },
+  },
+  closed: { 
     opacity: 0,
      transition: { 
-      duration: 0.3, 
-      ease: "easeInOut" 
+      delay: 0,
+      duration: 1, 
+      ease: "easeInOut" ,
+      staggerChildren: 0.05, 
+      staggerDirection: -1,
     }, 
   },
  
 };
+export const menuChildVariants = {
+  hidden: { opacity: 0, y: -5, x: 20 },
+  show: { opacity: 1, y: 0, x: 0, transition: { duration: 0.3 } },
+  closed: { opacity: 0, y: -5, x: 20, transition: { duration: 0.15 } },
+};
+
+export const menuChild2Variants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.5 } },
+  closed: { opacity: 0, transition: { duration: 0.2 } },
+};
+
 
 export const openMenuVariants = (closedWidth: number, openWidth: number) => ({
+  hidden: {  width: closedWidth },
   closed: {
     width: closedWidth,
     transition: { 
-      delay: 0.2,
-      duration: 0.3 
+      delay: 0.25,
+      duration: 0.5 
     },
   },
-  open: { 
+  show: { 
     width: openWidth, 
     transition: { 
       duration: 0.5 

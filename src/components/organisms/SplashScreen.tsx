@@ -47,11 +47,25 @@ const SplashScreen: FC<Props> = (props: Props) => {
     else document.body.style.overflow = "auto";
   }, [showAnimation]);
 
+  //limit splash screen to 3 seconds
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (showAnimation) {
+  //       setShowAnimation(false);
+  //       setShowView(true);
+  //     }
+  //   }, 3000);
+
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [debouncer, setShowView, showAnimation]);
+
   return (
     <AnimatePresence mode="wait">
       {showAnimation && (
         <motion.div
-          className={`opacity-0 bg-custom-black ${
+          className={` bg-custom-black ${
             showAnimation ? "fixed z-10 inset-0" : "hidden -z-50"
           }`}
           initial={{ opacity: 1 }}
@@ -62,7 +76,7 @@ const SplashScreen: FC<Props> = (props: Props) => {
             ease: "easeInOut",
           }}
         >
-          <BackgroundImage />
+          {/* <BackgroundImage /> */}
         </motion.div>
       )}
     </AnimatePresence>

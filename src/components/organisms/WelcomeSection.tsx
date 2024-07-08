@@ -17,15 +17,16 @@ const WelcomeSection: FC<Props> = (props: Props) => {
     <div className="left-margin">
       <div className="border-b border-custom-dark-gray inline-block">
         <h1 className="py-5 text-2xl font-medium">
-          <Link href="/">EXP STUDIO</Link>{" "}
+          <Link href="/">SANDBOX STUDIO</Link>{" "}
         </h1>
       </div>
 
       <div className="py-5 text-sm text-custom-gray">
-        <p className="text-white">Availability</p>
-        <p>We&apos;re open for business and new collaborations</p>
+        <p className="text-white">Need a website?</p>
+        <p>We&apos;re currently accepting new </p>
         <p>
-          as of now.{" "}
+          {" "}
+          collaborations.{" "}
           {router.asPath !== "/contact" && (
             <Link href="/contact">
               <span className="text-gray-300 underline">Get in touch</span>

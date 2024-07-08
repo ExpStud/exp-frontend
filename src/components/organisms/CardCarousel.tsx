@@ -1,18 +1,10 @@
-import React, { useState, useRef, FC } from "react";
+import React, { useState, useRef, FC, useEffect } from "react";
 import Image from "next/image";
 import { Carousel, clients } from "@constants";
 import { Button } from "@components";
 import { useRouter } from "next/router";
 import { useWindowSize } from "src/hooks";
-
-// interface Card {
-//   name: string;
-// }
-// const cards = [
-//   { image: "/images/slider1.svg", width: 1040, height: 600 },
-//   { image: "/images/slider1.svg", width: 1040, height: 600 },
-//   { image: "/images/slider1.svg", width: 1040, height: 600 },
-// ];
+import { isMobile } from "react-device-detect";
 
 interface Props {
   sliderValue: number;
@@ -29,7 +21,7 @@ const CardCarousel: FC<Props> = (props: Props) => {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const [winWidth] = useWindowSize();
-  const isMobile = winWidth < 640;
+  const isMobileSize = winWidth < 640;
 
   const data: (Carousel | undefined)[] = [
     clients[0]?.carousel?.[1],
@@ -55,6 +47,7 @@ const CardCarousel: FC<Props> = (props: Props) => {
   };
 
   const onDrag = (e: React.MouseEvent | React.TouchEvent) => {
+    if (isMobile) return;
     if (!isDragging || !sliderRef.current) return;
     e.preventDefault();
     const clientX = e.type.includes("mouse")
@@ -65,28 +58,52 @@ const CardCarousel: FC<Props> = (props: Props) => {
     sliderRef.current.scrollLeft = scrollLeft - walk;
   };
 
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
   const handleScroll = () => {
-    // isMobile
     if (sliderRef.current) {
       const scrollPosition = sliderRef.current.scrollLeft;
       const fullWidth = sliderRef.current.scrollWidth;
-      const scrollPercentage = (scrollPosition / fullWidth) * 100;
-      const scrollPercentSlider = scrollPercentage * 0.01 * 220; //~width of slider
-      setSliderValue(scrollPercentSlider);
+      const visibleWidth = sliderRef.current.clientWidth;
+
+      const scrollRightWidth = (scrollPosition + visibleWidth) / fullWidth;
+      const scrollLeftWidth = scrollPosition / fullWidth;
+
+      // Determine scroll direction
+      const scrollDirection = scrollPosition > prevScrollPos ? "right" : "left";
+
+      //width of slider by scroll percentage
+      const sliderWidth = 126; //slider minus slider bar (176 - 50)
+      const value =
+        sliderWidth *
+        (scrollDirection === "right" ? scrollRightWidth : scrollLeftWidth);
+
+      setSliderValue(value);
+      // Update previous scroll position
+      setPrevScrollPos(scrollPosition);
     }
   };
 
   // In CardCarousel component
   const scrollToCard = (index: number) => {
     if (sliderRef.current) {
-      const cardWidth = isMobile ? 330 : 930; // Replace with your card width
+      const cardWidth = isMobileSize ? 330 : 930; // Replace with your card width
       sliderRef.current.scrollLeft = cardWidth * index;
     }
   };
 
+  // useEffect(() => {
+  //   if (sliderRef.current) {
+  //     const maxScrollValue =
+  //       sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+  //     const maxSliderValue = 126; // Width of the slider minus the width of the slider bar
+  //     const newScrollPosition = (sliderValue / maxSliderValue) * maxScrollValue;
+  //     sliderRef.current.scrollLeft = newScrollPosition;
+  //   }
+  // }, [sliderValue]);
+
   return (
     <div
-      className="relative py-10 lg:py-20 flex flex-col items-center overflow-x-auto "
+      className="relative my-10 lg:my-20 flex flex-col items-center overflow-x-auto h-[630px]"
       ref={sliderRef}
       onMouseDown={startDragging}
       onMouseLeave={stopDragging}
@@ -146,7 +163,7 @@ const CarouselItem: FC<CarouselItemProps> = (props: CarouselItemProps) => {
 
   return (
     <div
-      className={`relative min-w-[330px] sm:min-w-[940px] md:min-w-[1040px] h-[600px] sm:h-[600px]  flex items-end justify-between   rounded-lg ${
+      className={`relative min-w-[330px] sm:min-w-[940px] md:min-w-[1040px] h-[600px] flex items-end justify-between cursor-pointer  rounded-lg ${
         data.backgroundColor
       } ${index === 0 ? "ml-4 md:ml-10" : "ml-1 sm:ml-4 "}`}
       onClick={handleParentClick}

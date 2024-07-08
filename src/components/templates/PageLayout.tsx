@@ -47,10 +47,10 @@ const PageLayout: FC<Props> = (props: Props) => {
         }`}
       >
         <PageHead
-          title="EXP Studio"
-          description="Web Development Solutions"
-          url="https://expstud.io/"
-          twitter="expstudio_"
+          title="Sandbox Studio | Design & Development Studio"
+          description="Providing cutting-edge web design and development solutions"
+          url="https://sandboxstud.io/"
+          twitter="sandbox_studio_"
         />
         <MobileNavigation className="lg:hidden" scrollRef={scrollRef} />
         <Navigation className="hidden lg:flex" />

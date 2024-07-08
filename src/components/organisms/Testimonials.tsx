@@ -9,6 +9,13 @@ const Testimonials: FC = () => {
     clients[0]
   );
 
+  const [isToggled, setIsToggled] = useState(false);
+
+  const handleTestimonialChange = (testimonial: Client) => {
+    setIsToggled(!isToggled);
+    setSelectedTestimonial(testimonial);
+  };
+
   return (
     <div className="left-margin mt-20 max-w-[1265px] lg:pr-6">
       <p className="text-custom-gray text-5xl mb-3">Testimonials.</p>
@@ -25,7 +32,7 @@ const Testimonials: FC = () => {
                     ? "border-white"
                     : "border-custom-black text-custom-gray hover:text-white"
                 }`}
-                onClick={() => setSelectedTestimonial(testimonial)}
+                onClick={() => handleTestimonialChange(testimonial)}
               >
                 <p>{testimonial.name}</p>
                 <p>{testimonial.company}</p>
@@ -52,10 +59,28 @@ interface Props {
 
 const TestimonialItem: FC<Props> = (props: Props) => {
   const { selectedTestimonial } = props;
+
+  const slide = {
+    hidden: { opacity: 0, x: 150 }, // start from the right
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { delay: 0.2, duration: 0.4, ease: "linear" },
+    }, // move to the center
+    exit: {
+      opacity: 0,
+      x: -150,
+      transition: { duration: 0.4, ease: "linear" },
+    }, // exit to the left
+  };
   return (
     <motion.div
       className="flex flex-col lg:flex-row items-start mt-10 pr-5 lg:pr-10 gap-10 "
-      {...fastExitAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      variants={slide}
+      key={selectedTestimonial.name}
     >
       <div className="flex flex-col-reverse md:flex-row gap-8">
         <Image
@@ -127,7 +152,7 @@ const TestimonialItem: FC<Props> = (props: Props) => {
       <div className="lg:ml-8 lg:w-1/2">
         <div className="relative">
           <Image
-            src="/images/quote.png"
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/quote.png`}
             alt="quote"
             width={68}
             height={65}

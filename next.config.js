@@ -3,7 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["www.arweave.net", "arweave.net", "shdw-drive.genesysgo.net"],
+    domains: ["images.sandboxstud.io"],
+  },
+  env: {
+    CLOUDFLARE_STORAGE: "https://images.sandboxstud.io",
   },
 };
 

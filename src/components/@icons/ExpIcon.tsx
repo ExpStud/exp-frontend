@@ -19,7 +19,7 @@ const ExpIcon: FC<Props> = (props: Props) => {
         xmlns="http://www.w3.org/2000/svg"
         className={`transition-500 hover:rotate-90 ${
           componentProps.className
-        } ${animate ? "-rotate-90 hover:rotate-0" : ""}`}
+        } ${animate ? "rotate-90 hover:rotate-0" : ""}`}
       >
         <rect
           y="23.8571"
