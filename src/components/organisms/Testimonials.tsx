@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { FC, useState } from "react";
-import { Client, clients, fastExitAnimation } from "@constants";
+import { FC, useEffect, useState } from "react";
+import { Client, clients } from "@constants";
 import { TwitterIcon } from "@components";
 import Image from "next/image";
 
@@ -8,13 +8,26 @@ const Testimonials: FC = () => {
   const [selectedTestimonial, setSelectedTestimonial] = useState<Client>(
     clients[0]
   );
-
-  const [isToggled, setIsToggled] = useState(false);
+  const [previousId, setPreviousId] = useState<number>(clients[0].id);
+  const [animationDirection, setAnimationDirection] = useState<
+    "left" | "right"
+  >("right");
 
   const handleTestimonialChange = (testimonial: Client) => {
-    setIsToggled(!isToggled);
+    setPreviousId(selectedTestimonial.id); // Store the current ID before changing
     setSelectedTestimonial(testimonial);
   };
+
+  useEffect(() => {
+    // Determine the animation direction based on ID comparison
+    const direction =
+      selectedTestimonial.id === previousId
+        ? "right"
+        : selectedTestimonial.id > previousId
+        ? "right"
+        : "left";
+    setAnimationDirection(direction);
+  }, [selectedTestimonial.id, previousId]);
 
   return (
     <div className="left-margin mt-20 max-w-[1265px] lg:pr-6">
@@ -46,6 +59,7 @@ const Testimonials: FC = () => {
           <TestimonialItem
             selectedTestimonial={selectedTestimonial}
             key={selectedTestimonial.id}
+            animationDirection={animationDirection}
           />
         </AnimatePresence>
       </div>
@@ -55,24 +69,41 @@ const Testimonials: FC = () => {
 
 interface Props {
   selectedTestimonial: Client;
+  animationDirection: "left" | "right";
 }
 
 const TestimonialItem: FC<Props> = (props: Props) => {
-  const { selectedTestimonial } = props;
+  const { selectedTestimonial, animationDirection } = props;
 
-  const slide = {
-    hidden: { opacity: 0, x: 150 }, // start from the right
-    show: {
-      opacity: 1,
-      x: 0,
-      transition: { delay: 0.2, duration: 0.4, ease: "linear" },
-    }, // move to the center
-    exit: {
-      opacity: 0,
-      x: -150,
-      transition: { duration: 0.4, ease: "linear" },
-    }, // exit to the left
-  };
+  const slide =
+    animationDirection === "right"
+      ? {
+          hidden: { opacity: 0, x: 150 },
+          show: {
+            opacity: 1,
+            x: 0,
+            transition: { delay: 0.2, duration: 0.4, ease: "linear" },
+          },
+          exit: {
+            opacity: 0,
+            x: -150,
+            transition: { duration: 0.4, ease: "linear" },
+          },
+        }
+      : {
+          hidden: { opacity: 0, x: -150 },
+          show: {
+            opacity: 1,
+            x: 0,
+            transition: { delay: 0.2, duration: 0.4, ease: "linear" },
+          },
+          exit: {
+            opacity: 0,
+            x: 150,
+            transition: { duration: 0.4, ease: "linear" },
+          },
+        };
+
   return (
     <motion.div
       className="flex flex-col lg:flex-row items-start mt-10 pr-5 lg:pr-10 gap-10 "
