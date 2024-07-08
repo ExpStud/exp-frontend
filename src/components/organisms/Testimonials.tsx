@@ -74,7 +74,12 @@ interface Props {
 
 const TestimonialItem: FC<Props> = (props: Props) => {
   const { selectedTestimonial, animationDirection } = props;
-
+  console.log(
+    animationDirection,
+    selectedTestimonial.id,
+    clients.length,
+    selectedTestimonial.id === clients.length - 1
+  );
   const slide =
     animationDirection === "right"
       ? {
@@ -86,7 +91,7 @@ const TestimonialItem: FC<Props> = (props: Props) => {
           },
           exit: {
             opacity: 0,
-            x: -150,
+            x: selectedTestimonial.id === clients.length - 1 ? 150 : -150,
             transition: { duration: 0.4, ease: "linear" },
           },
         }
@@ -99,7 +104,7 @@ const TestimonialItem: FC<Props> = (props: Props) => {
           },
           exit: {
             opacity: 0,
-            x: 150,
+            x: selectedTestimonial.id === 1 ? -150 : 150,
             transition: { duration: 0.4, ease: "linear" },
           },
         };
