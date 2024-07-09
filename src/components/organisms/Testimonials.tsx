@@ -74,12 +74,7 @@ interface Props {
 
 const TestimonialItem: FC<Props> = (props: Props) => {
   const { selectedTestimonial, animationDirection } = props;
-  console.log(
-    animationDirection,
-    selectedTestimonial.id,
-    clients.length,
-    selectedTestimonial.id === clients.length - 1
-  );
+
   const slide =
     animationDirection === "right"
       ? {

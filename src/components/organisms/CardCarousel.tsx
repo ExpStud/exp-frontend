@@ -7,8 +7,9 @@ import { useWindowSize } from "src/hooks";
 import { isMobile } from "react-device-detect";
 
 interface Props {
+  carouselValue: number;
+  setCarouselValue: (value: number) => void;
   sliderValue: number;
-  setSliderValue: (value: number) => void;
 }
 
 const carouselData: (Carousel | undefined)[] = [
@@ -18,45 +19,12 @@ const carouselData: (Carousel | undefined)[] = [
 ].filter(Boolean);
 
 const CardCarousel: FC<Props> = (props: Props) => {
-  const { sliderValue, setSliderValue } = props;
-
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+  const { carouselValue, setCarouselValue, sliderValue } = props;
 
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const [winWidth] = useWindowSize();
   const isMobileSize = winWidth < 640;
-
-  const startDragging = (e: React.MouseEvent | React.TouchEvent) => {
-    if (sliderRef.current) {
-      setIsDragging(true);
-      const clientX = e.type.includes("mouse")
-        ? (e as React.MouseEvent).pageX
-        : (e as React.TouchEvent).touches[0].pageX;
-      setStartX(clientX - sliderRef.current.offsetLeft);
-      setScrollLeft(sliderRef.current.scrollLeft);
-    }
-  };
-
-  const stopDragging = () => {
-    if (isDragging) {
-      setIsDragging(false);
-    }
-  };
-
-  const onDrag = (e: React.MouseEvent | React.TouchEvent) => {
-    if (isMobile) return;
-    if (!isDragging || !sliderRef.current) return;
-    e.preventDefault();
-    const clientX = e.type.includes("mouse")
-      ? (e as React.MouseEvent).pageX
-      : (e as React.TouchEvent).touches[0].pageX;
-    const x = clientX - sliderRef.current.offsetLeft;
-    const walk = (x - startX) * 3;
-    sliderRef.current.scrollLeft = scrollLeft - walk;
-  };
 
   // const [prevScrollPos, setPrevScrollPos] = useState(0);
   const handleScroll = () => {
@@ -65,32 +33,36 @@ const CardCarousel: FC<Props> = (props: Props) => {
       const fullWidth = sliderRef.current.scrollWidth;
       const visibleWidth = sliderRef.current.clientWidth;
       const scrollPercentage = scrollPosition / (fullWidth - visibleWidth);
-
-      // console.log(scrollPercentage);
-      setSliderValue(scrollPercentage * 100); // Assuming setSliderValue expects a percentage
-      // setPrevScrollPos(scrollPosition);
+      console.log("setCarouselValue", scrollPercentage * 100);
+      setCarouselValue(scrollPercentage * 100);
     }
   };
 
   const scrollToCard = (index: number) => {
     if (sliderRef.current) {
       const cardWidth = isMobileSize ? 330 : 930; //card width 330 vs 930
-      // console.log("*** cardWidth ", cardWidth * index);
       sliderRef.current.scrollLeft = cardWidth * index;
     }
   };
+
+  useEffect(() => {
+    if (sliderRef.current) {
+      // console.log("carouselValue", carouselValue);
+      const fullWidth =
+        sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+      const newScrollLeft = Math.round((sliderValue / 100) * fullWidth); // Round to nearest whole number
+
+      // Check if the new scroll position is significantly different to avoid feedback loop
+      if (Math.abs(sliderRef.current.scrollLeft - newScrollLeft) > 1) {
+        sliderRef.current.scrollLeft = newScrollLeft;
+      }
+    }
+  }, [sliderValue]);
 
   return (
     <div
       className="relative my-10 lg:my-20 flex flex-col items-center overflow-x-auto h-[630px]"
       ref={sliderRef}
-      // onMouseDown={startDragging}
-      // onMouseLeave={stopDragging}
-      // onMouseUp={stopDragging}
-      // onMouseMove={onDrag}
-      // onTouchStart={startDragging}
-      // onTouchEnd={stopDragging}
-      // onTouchMove={onDrag}
       onScroll={handleScroll}
       style={{
         scrollBehavior: "smooth",
@@ -147,7 +119,9 @@ const CarouselItem: FC<CarouselItemProps> = (props: CarouselItemProps) => {
   const handleParentClick = (): void => {
     props.scrollToCard(index);
   };
-  console.log(scrollPercentage, index, carouselData.length - 1);
+
+  // console.log(scrollPercentage, index, carouselData.length - 1);
+
   return (
     <div
       className={`bg-gray-700  relative min-w-[330px] sm:min-w-[940px] md:min-w-[1040px] h-[600px] rounded-lg  ${

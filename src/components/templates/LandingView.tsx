@@ -5,6 +5,7 @@ import {
   useContext,
   useRef,
   useState,
+  useEffect,
 } from "react";
 import {
   Button,
@@ -30,6 +31,7 @@ const LandingView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   const [sliderValue, setSliderValue] = useState(0);
+  const [carouselValue, setCarouselValue] = useState(0);
 
   const productRef = useRef<HTMLHRElement>(null);
   const testRef = useRef<HTMLHRElement>(null);
@@ -46,6 +48,10 @@ const LandingView: FC<Props> = (props: Props) => {
     once: true,
   });
 
+  useEffect(() => {
+    setSliderValue(carouselValue);
+  }, [carouselValue]);
+
   return (
     <div className="relative w-full h-full">
       <BackgroundImage setAssets={setAssets} />
@@ -57,8 +63,9 @@ const LandingView: FC<Props> = (props: Props) => {
           solutions."
         />
         <CardCarousel
+          carouselValue={carouselValue}
+          setCarouselValue={setCarouselValue}
           sliderValue={sliderValue}
-          setSliderValue={setSliderValue}
         />
         <div className="flex w-full lg:justify-center -mt-10 lg:-mt-14 mb-14 pl-5 lg:pl-0">
           <CarouselSlider
