@@ -4,12 +4,12 @@ import { Carousel, clients } from "@constants";
 import { Button } from "@components";
 import { useRouter } from "next/router";
 import { useWindowSize } from "src/hooks";
-import { isMobile } from "react-device-detect";
 
 interface Props {
-  carouselValue: number;
-  setCarouselValue: (value: number) => void;
   sliderValue: number;
+  setSliderValue: (value: number) => void;
+  fromSlider: boolean;
+  setFromSlider: (value: boolean) => void;
 }
 
 const carouselData: (Carousel | undefined)[] = [
@@ -19,7 +19,7 @@ const carouselData: (Carousel | undefined)[] = [
 ].filter(Boolean);
 
 const CardCarousel: FC<Props> = (props: Props) => {
-  const { carouselValue, setCarouselValue, sliderValue } = props;
+  const { setSliderValue, sliderValue, fromSlider, setFromSlider } = props;
 
   const sliderRef = useRef<HTMLDivElement>(null);
 
@@ -28,13 +28,14 @@ const CardCarousel: FC<Props> = (props: Props) => {
 
   // const [prevScrollPos, setPrevScrollPos] = useState(0);
   const handleScroll = () => {
-    if (sliderRef.current) {
+    if (sliderRef.current && !fromSlider) {
       const scrollPosition = sliderRef.current.scrollLeft;
       const fullWidth = sliderRef.current.scrollWidth;
       const visibleWidth = sliderRef.current.clientWidth;
       const scrollPercentage = scrollPosition / (fullWidth - visibleWidth);
-      console.log("setCarouselValue", scrollPercentage * 100);
-      setCarouselValue(scrollPercentage * 100);
+      console.log("setSliderValue");
+      setFromSlider(false);
+      setSliderValue(scrollPercentage * 100);
     }
   };
 
