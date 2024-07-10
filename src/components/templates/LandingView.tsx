@@ -48,9 +48,6 @@ const LandingView: FC<Props> = (props: Props) => {
     once: true,
   });
 
-  // console.log("fromSlider ", fromSlider);
-  console.log("sliderValue ", fromSlider, Math.round(sliderValue));
-
   return (
     <div className="relative w-full h-full">
       <BackgroundImage setAssets={setAssets} />

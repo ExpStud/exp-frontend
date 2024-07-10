@@ -26,7 +26,6 @@ const CardCarousel: FC<Props> = (props: Props) => {
   const [winWidth] = useWindowSize();
   const isMobileSize = winWidth < 640;
 
-  // const [prevScrollPos, setPrevScrollPos] = useState(0);
   const handleScroll = () => {
     if (sliderRef.current && !fromSlider) {
       const scrollPosition = sliderRef.current.scrollLeft;
@@ -126,8 +125,6 @@ const CarouselItem: FC<CarouselItemProps> = (props: CarouselItemProps) => {
   const handleParentClick = (): void => {
     props.scrollToCard(index);
   };
-
-  // console.log(scrollPercentage, index, carouselData.length - 1);
 
   return (
     <div
