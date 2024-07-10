@@ -33,14 +33,20 @@ const CardCarousel: FC<Props> = (props: Props) => {
       const fullWidth = sliderRef.current.scrollWidth;
       const visibleWidth = sliderRef.current.clientWidth;
       const scrollPercentage = scrollPosition / (fullWidth - visibleWidth);
-      console.log("setSliderValue");
-      setFromSlider(false);
-      setSliderValue(scrollPercentage * 100);
+
+      if (!fromSlider) {
+        // User-initiated scroll
+        setSliderValue(scrollPercentage * 100);
+      } else {
+        // Programmatic scroll - reset flag
+        setFromSlider(false);
+      }
     }
   };
 
   const scrollToCard = (index: number) => {
     if (sliderRef.current) {
+      setFromSlider(false);
       const cardWidth = isMobileSize ? 330 : 930; //card width 330 vs 930
       sliderRef.current.scrollLeft = cardWidth * index;
     }

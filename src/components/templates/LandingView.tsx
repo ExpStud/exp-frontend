@@ -48,6 +48,9 @@ const LandingView: FC<Props> = (props: Props) => {
     once: true,
   });
 
+  // console.log("fromSlider ", fromSlider);
+  console.log("sliderValue ", fromSlider, Math.round(sliderValue));
+
   return (
     <div className="relative w-full h-full">
       <BackgroundImage setAssets={setAssets} />
@@ -69,6 +72,7 @@ const LandingView: FC<Props> = (props: Props) => {
             sliderValue={sliderValue}
             setSliderValue={setSliderValue}
             setFromSlider={setFromSlider}
+            fromSlider={fromSlider}
           />
         </div>
         <Button title="Our work" link="/projects" className="left-margin" />

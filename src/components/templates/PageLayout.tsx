@@ -47,7 +47,7 @@ const PageLayout: FC<Props> = (props: Props) => {
         }`}
       >
         <PageHead
-          title="Sandbox Studio | Web Design & Development"
+          title="Sandbox | Design & Development Studio"
           description="Providing cutting-edge web design and development solutions"
           url="https://sandboxstud.io/"
           twitter="sandbox_studio_"
