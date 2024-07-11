@@ -34,13 +34,13 @@ const CarouselSlider: FC<CarouselSliderProps> = ({
 const Thumb = (props: any, state: any) => (
   <div
     {...props}
-    className="absolute top-4 bg-white w-[50px] h-[5px] cursor-grab active:cursor-grabbing focus:outline-none"
+    className="absolute top-4 bg-white w-[50px] h-[10px] lg:h-[5px] cursor-grab active:cursor-grabbing focus:outline-none"
   />
 );
 const Track = (props: any, state: any) => (
   <div
     {...props}
-    className="relative flex justify-center gap-2 mt-4 h-[5px] bg-white bg-opacity-20"
+    className="relative flex justify-center gap-2 mt-4 h-[10px] lg:h-[5px] bg-white bg-opacity-20"
   />
 );
 

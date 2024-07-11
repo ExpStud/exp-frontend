@@ -75,6 +75,9 @@ const CardCarousel: FC<Props> = (props: Props) => {
         scrollbarWidth: "none",
         msOverflowStyle: "none",
       }}
+      onMouseDown={() => setFromSlider(false)}
+      onMouseEnter={() => setFromSlider(false)}
+      onTouchStart={() => setFromSlider(false)}
     >
       <div className="flex gap-2 items-end w-full">
         <style>
