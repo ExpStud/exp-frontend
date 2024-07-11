@@ -1,50 +1,47 @@
-import React, { useRef, FC } from "react";
 import { motion } from "framer-motion";
+import React, { useState, useRef, FC, useEffect } from "react";
+import { useWindowSize } from "@hooks";
+import ReactSlider from "react-slider";
 
 interface CarouselSliderProps {
   sliderValue: number;
   setSliderValue: (value: number) => void;
+  fromSlider: boolean;
+  setFromSlider: (value: boolean) => void;
 }
 
-const CarouselSlider: FC<CarouselSliderProps> = (
-  props: CarouselSliderProps
-) => {
-  const { sliderValue, setSliderValue } = props;
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const handleDrag = (e: MouseEvent | TouchEvent, info: any) => {
-    if (containerRef.current) {
-      const newSliderValue = Math.max(
-        0,
-        Math.min(
-          info.point.x,
-          containerRef.current.offsetWidth // Don't subtract the width of the slider
-        )
-      );
-      console.log("newSliderValue ", newSliderValue);
-      setSliderValue(newSliderValue);
-    }
-  };
-
+const CarouselSlider: FC<CarouselSliderProps> = ({
+  sliderValue,
+  setSliderValue,
+  fromSlider,
+  setFromSlider,
+}) => {
   return (
-    <div
-      ref={containerRef}
-      className="relative flex justify-center gap-2 mt-4 h-[2px] w-[176px] bg-white bg-opacity-20"
-    >
-      <motion.div
-        className="absolute bg-white w-[60px] h-[2px]"
-        initial={{ left: 0 }}
-        animate={{ left: sliderValue }}
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 30,
-        }}
-        // drag="x"
-        // dragConstraints={containerRef}
-        // onDrag={handleDrag}
-      />
-    </div>
+    <ReactSlider
+      defaultValue={0}
+      renderTrack={Track}
+      renderThumb={Thumb}
+      className={" w-[176px]"}
+      onChange={(value: number) => {
+        setFromSlider(true);
+        setSliderValue(value);
+      }}
+      value={fromSlider ? undefined : sliderValue}
+    />
   );
 };
+
+const Thumb = (props: any, state: any) => (
+  <div
+    {...props}
+    className="absolute top-4 bg-white w-[50px] h-[10px] lg:h-[5px] cursor-grab active:cursor-grabbing focus:outline-none"
+  />
+);
+const Track = (props: any, state: any) => (
+  <div
+    {...props}
+    className="relative flex justify-center gap-2 mt-4 h-[10px] lg:h-[5px] bg-white bg-opacity-20"
+  />
+);
+
 export default CarouselSlider;

@@ -184,7 +184,7 @@ const AboutView: FC<Props> = (props: Props) => {
 
         <AnimateWrapper animate={darthInView}>
           <div
-            className="left-margin mt-10 flex flex-col-reverse lg:flex-row items-end gap-2"
+            className="left-margin mt-10 flex flex-col-reverse lg:flex-row lg:items-end gap-2"
             ref={darthRef}
           >
             <div className="flex flex-col lg:w-1/2 max-w-[608px]">

@@ -5,6 +5,7 @@ import {
   useContext,
   useRef,
   useState,
+  useEffect,
 } from "react";
 import {
   Button,
@@ -30,6 +31,7 @@ const LandingView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   const [sliderValue, setSliderValue] = useState(0);
+  const [fromSlider, setFromSlider] = useState(false);
 
   const productRef = useRef<HTMLHRElement>(null);
   const testRef = useRef<HTMLHRElement>(null);
@@ -59,11 +61,15 @@ const LandingView: FC<Props> = (props: Props) => {
         <CardCarousel
           sliderValue={sliderValue}
           setSliderValue={setSliderValue}
+          fromSlider={fromSlider}
+          setFromSlider={setFromSlider}
         />
         <div className="flex w-full lg:justify-center -mt-10 lg:-mt-14 mb-14 pl-5 lg:pl-0">
           <CarouselSlider
             sliderValue={sliderValue}
             setSliderValue={setSliderValue}
+            setFromSlider={setFromSlider}
+            fromSlider={fromSlider}
           />
         </div>
         <Button title="Our work" link="/projects" className="left-margin" />
