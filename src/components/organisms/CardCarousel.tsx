@@ -14,7 +14,7 @@ interface Props {
 
 const carouselData: (Carousel | undefined)[] = [
   clients[0]?.carousel?.[1],
-  clients[0]?.carousel?.[0],
+  clients[3]?.carousel?.[0],
   clients[1]?.carousel?.[0],
 ].filter(Boolean);
 

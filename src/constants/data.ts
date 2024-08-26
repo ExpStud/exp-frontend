@@ -21,23 +21,22 @@ import { Client, Project } from "./types";
 */
 
 export const projects: Project[] = [
-  // {
-  //   name: "CyberFrogs",
-  //   published: null, //if null "Coming Soon"
-  //   description: "Our first 10k community. CyberFrogs puts our experience in Web 3 on display. Equipped with a rarity tool to display NFT's and several other blockchain solutions.",
-  //   services: ["Interface Design", "Development", "Advisory"],
-  //   links: [
-  //     {
-  //       name: "Website",
-  //       url: "https://cyberfrogs.io/",
-  //     },{
-  //       name: "Twitter",
-  //       url: "https://twitter.com/CyberFrogsNFT",
-  //     }
-  //   ],
-  //   image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/cyberfrogs.png`,
-  // },
-
+  {
+    name: "CyberFrogs",
+    published: 2024, //if null "Coming Soon"
+    description: "Our first 10k community. CyberFrogs puts our experience in Web 3 on display. Equipped with a rarity tool to display NFT's and several other blockchain solutions.",
+    services: ["Interface Design", "Development", "Advisory"],
+    links: [
+      {
+        name: "Website",
+        url: "https://cyberfrogs.io/",
+      },{
+        name: "Twitter",
+        url: "https://twitter.com/CyberFrogsNFT",
+      }
+    ],
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/frogs-1.png`,
+  },
   {
     name: "Somos Axolotl",
     published: 2024,
@@ -235,7 +234,7 @@ export const clients: Client[] = [
       borderColor: "!border-andy-text",
       fillColor: "!fill-andy-text",
       title: "CyberFrogs",
-      src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/andy.png`,
+      src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/frogs-2.png`,
       href: "https://cyberfrogs.io/",
     }]
   },

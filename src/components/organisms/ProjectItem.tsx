@@ -77,13 +77,14 @@ const ProjectItem: FC<Props> = (props: Props) => {
           <Button title="View project" link="/about" />
         </div> */}
         </div>
-        <Image
-          src={project.image}
-          alt="project"
-          width={912}
-          height={759}
+        <a
+          href={project.links[0].url}
+          target="_blank"
+          rel="noreferrer"
           className="hidden lg:block mt-2  mx-6 lg:mx-20 2xl:mx-0  rounded-md self-start max-w-[640px]"
-        />
+        >
+          <Image src={project.image} alt="project" width={912} height={759} />
+        </a>
         {/* <div className="top-margin lg:hidden">
         <Button title="View project" link="/about" />
       </div> */}

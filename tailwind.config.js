@@ -45,8 +45,8 @@ module.exports = {
         "calder-text": "#511F23",
         "calder-bg": "#EDD1D3",
 
-        "andy-text": "#E62E05",
-        "andy-bg": "#224632",
+        "andy-text": "#fff",
+        "andy-bg": "#33684B",
 
         "zen0-text": "#1A3A46",
         "zen0-bg": "#75FBC6",
