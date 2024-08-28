@@ -235,6 +235,7 @@ export const clients: Client[] = [
       fillColor: "!fill-andy-text",
       title: "CyberFrogs",
       src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/frogs-2.png`,
+      srcMobile: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/frogs-2-sm.png`,
       href: "https://cyberfrogs.io/",
     }]
   },
