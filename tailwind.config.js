@@ -36,8 +36,8 @@ module.exports = {
         "somos-text": "#1B160B",
         "somos-bg": "#F8B23C",
 
-        "slimes-text": "#1A3A46",
-        "slimes-bg": "#F9D6C7",
+        "slimes-text": "#2C2524",
+        "slimes-bg": "#F6EFD3",
 
         "robbie-bg": "#BABABA",
         "robbie-text": "#1C1C1C",

@@ -94,19 +94,20 @@ const ContactForm: FC<Props> = (props: Props) => {
     }
   };
 
-  // const fetchLeads = useCallback(async () => {
-  //   // try {
-  //   //   const response = await axios.get("/api/get-leads");
-  //   //   console.log("response ", response.data.leads.rows);
-  //   // } catch (error) {
-  //   //   console.error(error);
-  //   // }
-  // }, []);
+  const fetchLeads = useCallback(async () => {
+    try {
+      const response = await axios.get("/api/get-leads");
+      console.log("response ", response.data.leads.rows);
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
 
-  // useEffect(() => {
-  //   // toast.loading("Submitting...");
-  //   fetchLeads();
-  // }, [fetchLeads]);
+  useEffect(() => {
+    if (process.env.NODE_ENV === "development") {
+      fetchLeads();
+    }
+  }, [fetchLeads]);
 
   return (
     <AnimatePresence mode="wait">

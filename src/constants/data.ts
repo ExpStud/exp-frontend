@@ -54,20 +54,20 @@ export const projects: Project[] = [
     image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/somos.png`,
   },
   {
-    name: "Slimes",
-    published: 2023,
-    description: "The My Slimes website boasts parallax & animated scrolling elements that help bring the interface to life. Utilizing a robust data system that stores assets for fans, holders, and explorers alike.",
-    services: ["Asset Library", "Cloud Storage", "Parallax Animations", "Hyperlink Directory", "Blockchain Integration"],
+    name: "Scum",
+    published: 2024,
+    description: "The My Slimes websites features a sleek & modern re-design to help elevate the user interface and provide a seamless experience for each visitor.",
+    services: ["Asset Library", "Cloud Storage", "Hyperlink Directory"],
     links: [
       {
         name: "Website",
-        url: "https://slimes.xyz/",
+        url: "https://scum.art/",
       },{
         name: "Twitter",
         url: "https://twitter.com/SCUMSOL",
       }
     ],
-    image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/slimes.png`,
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/slimes-project-1.png`,
   },
   {
     name: "Robbie Shilstone",
@@ -157,8 +157,8 @@ export const clients: Client[] = [
         borderColor: "!border-slimes-text",
         fillColor: "!fill-slimes-text",
         title: "My Slimes",
-        src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/slimes.png`,
-        srcMobile: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/slimes-sm.png`,
+        src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/slimes-carousel.png`,
+        srcMobile: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/slimes-carousel-sm.png`,
         href: "https://slimes.xyz/",
       },
       {
