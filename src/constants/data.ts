@@ -159,7 +159,7 @@ export const clients: Client[] = [
         title: "My Slimes",
         src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/slimes-carousel.png`,
         srcMobile: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/slimes-carousel-sm.png`,
-        href: "https://slimes.xyz/",
+        href: "https://scum.art/",
       },
       {
         name: "Matt Martinez",
