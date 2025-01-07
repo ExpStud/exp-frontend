@@ -88,7 +88,7 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
                   </motion.a>
                   <motion.a
                     variants={menuChild2Variants}
-                    href="https://twitter.com/rulebreakers___"
+                    href="https://www.linkedin.com/company/104833153/"
                     rel="noreferrer"
                     target="_blank"
                   >
