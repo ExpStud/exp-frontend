@@ -39,10 +39,10 @@ const ContactView: FC<Props> = (props: Props) => {
                 <a
                   rel="noreferrer"
                   target="_blank"
-                  href="mailto:miguel@expstud.io"
+                  href="mailto:info@sandboxstud.io"
                   className="hover:underline"
                 >
-                  miguel@expstud.io
+                  info@sandboxstud.io
                 </a>
               </div>
             </div>
@@ -63,10 +63,10 @@ const ContactView: FC<Props> = (props: Props) => {
               <a
                 rel="noreferrer"
                 target="_blank"
-                href="mailto:miguel@expstud.io"
+                href="mailto:info@sandboxstud.io"
                 className="hover:underline"
               >
-                miguel@expstud.io
+                info@sandboxstud.io
               </a>
             </div>
           </div>
