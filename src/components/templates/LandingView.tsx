@@ -18,7 +18,7 @@ import {
   About,
   AnimateWrapper,
 } from "@components";
-import { ViewContext } from "src/contexts";
+import { useViewStore } from "src/contexts";
 import { useInView } from "framer-motion";
 import CarouselSlider from "../molecules/CarouselSlider";
 
@@ -28,7 +28,7 @@ interface Props {
 
 const LandingView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
-  const { showView } = useContext(ViewContext);
+  const { showView } = useViewStore();
 
   const [sliderValue, setSliderValue] = useState(0);
   const [fromSlider, setFromSlider] = useState(false);

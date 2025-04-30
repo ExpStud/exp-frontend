@@ -1,8 +1,7 @@
 import { FC, useCallback, useContext, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ViewContext } from "@contexts";
+import { useViewStore } from "@contexts";
 import debounce from "lodash.debounce";
-import { BackgroundImage } from "..";
 
 interface Props {
   assets?: boolean[];
@@ -10,7 +9,7 @@ interface Props {
 
 const SplashScreen: FC<Props> = (props: Props) => {
   const { assets = [] } = props;
-  const { setShowView } = useContext(ViewContext);
+  const { setShowView } = useViewStore();
   //splash screen animation
   const [showAnimation, setShowAnimation] = useState<boolean>(true); // shows/hides SplashScreen animation
   const animationDelay = 750;

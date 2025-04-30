@@ -8,7 +8,7 @@ import {
   Header,
 } from "@components";
 import { enterAnimation } from "@constants";
-import { ViewContext } from "@contexts";
+import { useViewStore } from "@contexts";
 import { motion } from "framer-motion";
 
 interface Props {
@@ -31,44 +31,32 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  //context for splash screen & modals
-  const [showView, setShowView] = useState<boolean>(false);
-
-  const value = {
-    showView,
-    setShowView,
-  };
-
   return (
-    <ViewContext.Provider value={value}>
-      <div
-        className={`flex flex-col lg:min-h-screen h-full bg-background-black ${
-          fixed ? "fixed inset-0" : ""
-        }`}
-      >
-        <PageHead
-          title="Sandbox | Design & Development Studio"
-          description="Providing cutting-edge web design and development solutions"
-          url="https://sandboxstud.io/"
-          twitter="sandbox_studio_"
-        />
-        <MobileNavigation className="lg:hidden" scrollRef={scrollRef} />
-        <Navigation className="hidden lg:flex" />
-        <div className="z-0 flex flex-col h-full left-padding relative">
-          <main
-            className={`flex flex-col h-full w-full overflow-y-auto ${mainClass}`}
-          >
-            <motion.div ref={scrollRef} {...enterAnimation}>
-              {children}
-            </motion.div>
-            <Footer />
-          </main>
-        </div>
-
-        {/* modals */}
-        {assets && <SplashScreen assets={assets} />}
+    <div
+      className={`flex flex-col lg:min-h-screen h-full bg-background-black ${
+        fixed ? "fixed inset-0" : ""
+      }`}
+    >
+      <PageHead
+        title="Sandbox | Design & Development Studio"
+        description="Providing cutting-edge web design and development solutions"
+        url="https://sandboxstud.io/"
+        twitter="sandbox_studio_"
+      />
+      <div className="z-0 flex flex-col h-full relative">
+        <main
+          className={`flex flex-col h-full w-full overflow-y-auto ${mainClass}`}
+        >
+          <motion.div ref={scrollRef} {...enterAnimation}>
+            {children}
+          </motion.div>
+          {footer && <Footer />}
+        </main>
       </div>
-    </ViewContext.Provider>
+
+      {/* modals */}
+      {assets && <SplashScreen assets={assets} />}
+    </div>
   );
 };
 export default PageLayout;

@@ -7,7 +7,7 @@ import {
 } from "@components";
 import Image from "next/image";
 import ServiceListItem from "../molecules/ServiceListItem";
-import { ViewContext } from "src/contexts";
+import { useViewStore } from "src/contexts";
 import { useInView } from "framer-motion";
 import { handleAssetLoad } from "@utils";
 import { useTimeout } from "src/hooks";
@@ -18,7 +18,7 @@ interface Props {
 
 const ServicesView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
-  const { showView } = useContext(ViewContext);
+  const { showView } = useViewStore();
 
   const listRef = useRef<HTMLHRElement>(null);
 

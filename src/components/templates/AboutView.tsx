@@ -14,7 +14,7 @@ import {
   AnimateWrapper,
 } from "@components";
 import Image from "next/image";
-import { ViewContext } from "src/contexts";
+import { useViewStore } from "src/contexts";
 import { useInView } from "framer-motion";
 
 interface Props {
@@ -26,7 +26,7 @@ const projectsCompleted = 20;
 
 const AboutView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
-  const { showView } = useContext(ViewContext);
+  const { showView } = useViewStore();
 
   const [showCounter, setCounter] = useState(false);
   const [showProjectsCounter, setShowProjectsCounter] = useState(false);
@@ -141,14 +141,15 @@ const AboutView: FC<Props> = (props: Props) => {
             </p>
           </div>
           <div className="left-margin mt-20 flex flex-col lg:flex-row gap-2">
-          <a href="https://x.com/otablem"rel="noreferrer" target="_blank">
-            <Image
-              src={`${process.env.CLOUDFLARE_STORAGE}/images/about/14-nacho.jpg`}
-              alt="Miguel"
-              width={608}
-              height={608}
-              className="rounded-md grayscale-image"
-            /></a>
+            <a href="https://x.com/otablem" rel="noreferrer" target="_blank">
+              <Image
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/about/14-nacho.jpg`}
+                alt="Miguel"
+                width={608}
+                height={608}
+                className="rounded-md grayscale-image"
+              />
+            </a>
 
             <div className="flex flex-col justify-items-start lg:w-1/2 max-w-[608px] lg:ml-10">
               <p>Miguel Corzo (Otablem)</p>
@@ -162,9 +163,7 @@ const AboutView: FC<Props> = (props: Props) => {
 
               <p className="mt-5">Web 3 Experience</p>
               <div className="text-custom-gray">
-                <p>
-                  My Slimes & All in Time Project Manager
-                </p>
+                <p>My Slimes & All in Time Project Manager</p>
                 <p>Slimes Studio Project Manager</p>
                 <p>Project Manager at DeGods & y00ts</p>
                 <p>Project Manager at Hot Heads</p>
@@ -211,16 +210,15 @@ const AboutView: FC<Props> = (props: Props) => {
               </div>
             </div>
 
-            <a href="https://x.com/darthdegen"rel="noreferrer" target="_blank">
-            <Image
-              src={`${process.env.CLOUDFLARE_STORAGE}/images/about/33-nino.jpg`}
-              alt="Wallace"
-              width={608}
-              height={608}
-              className="rounded-md grayscale-image transition-300"
-            />
-            </a> 
-
+            <a href="https://x.com/darthdegen" rel="noreferrer" target="_blank">
+              <Image
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/about/33-nino.jpg`}
+                alt="Wallace"
+                width={608}
+                height={608}
+                className="rounded-md grayscale-image transition-300"
+              />
+            </a>
           </div>
         </AnimateWrapper>
 

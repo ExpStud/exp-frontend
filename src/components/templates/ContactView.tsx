@@ -5,7 +5,7 @@ import {
   BackgroundImage,
   AnimateWrapper,
 } from "@components";
-import { ViewContext } from "src/contexts";
+import { useViewStore } from "src/contexts";
 
 interface Props {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;
@@ -13,7 +13,7 @@ interface Props {
 
 const ContactView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
-  const { showView } = useContext(ViewContext);
+  const { showView } = useViewStore();
 
   return (
     <div className="relative w-full h-full items-center justify-center overflow-hidden mb-10 ">
