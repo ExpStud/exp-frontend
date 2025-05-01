@@ -12,9 +12,29 @@ module.exports = {
         //gradients
       },
       fontFamily: {
-        primary: ["Barlow"],
+        primary: "gabarito",
+      },
+      fontWeight: {
+        light: 300,
+        normal: 400,
+        medium: 500,
+        semibold: 600,
+        bold: 700,
+        extrabold: 800,
+        black: 900,
+      },
+      fontStyle: {
+        italic: "italic", // Add "italic" style to the font family
       },
       colors: {
+        //new
+        sand: {
+          DEFAULT: "#FFF1B4",
+          300: "#F0E3AA",
+        },
+        batman: "#181818",
+
+        //old
         "exp-gray": {
           200: "#2D2D2D",
           600: "#353535",

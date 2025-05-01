@@ -1,4 +1,4 @@
-import { FC, ReactNode, createRef, useRef, useState } from "react";
+import { FC, ReactNode, useRef } from "react";
 import {
   PageHead,
   Footer,
@@ -8,33 +8,32 @@ import {
   Header,
 } from "@components";
 import { enterAnimation } from "@constants";
-import { useViewStore } from "@contexts";
 import { motion } from "framer-motion";
 
 interface Props {
   children: ReactNode;
   footer?: boolean;
   fixed?: boolean;
+  absolute?: boolean;
   headerType?: string;
-  mainClass?: string;
   assets?: boolean[];
 }
 
 const PageLayout: FC<Props> = (props: Props) => {
   const {
     footer = true,
-    fixed = true,
+    fixed = false,
+    absolute = false,
+    headerType = "scroll",
     children,
-    mainClass = "",
     assets = [],
   } = props;
 
   const scrollRef = useRef<HTMLDivElement>(null);
-
   return (
     <div
-      className={`flex flex-col lg:min-h-screen h-full bg-background-black ${
-        fixed ? "fixed inset-0" : ""
+      className={`flex flex-col min-h-[100svh] h-full justify-between overflow-none overflow-x-clip ${
+        fixed ? "fixed inset-0" : absolute ? "absolute inset-0" : "relative"
       }`}
     >
       <PageHead
@@ -43,18 +42,17 @@ const PageLayout: FC<Props> = (props: Props) => {
         url="https://sandboxstud.io/"
         twitter="sandbox_studio_"
       />
-      <div className="z-0 flex flex-col h-full relative">
-        <main
-          className={`flex flex-col h-full w-full overflow-y-auto ${mainClass}`}
-        >
-          <motion.div ref={scrollRef} {...enterAnimation}>
-            {children}
-          </motion.div>
-          {footer && <Footer />}
-        </main>
-      </div>
+      <Header headerType={headerType} />
+      <motion.main
+        className="flex flex-col h-full w-full overflow-y-auto"
+        ref={scrollRef}
+      >
+        <div {...enterAnimation} ref={scrollRef}>
+          {children}
+        </div>
+      </motion.main>
 
-      {/* modals */}
+      {footer && <Footer />}
       {assets && <SplashScreen assets={assets} />}
     </div>
   );

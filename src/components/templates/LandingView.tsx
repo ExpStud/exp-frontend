@@ -49,10 +49,10 @@ const LandingView: FC<Props> = (props: Props) => {
   });
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full pt-20">
       <BackgroundImage setAssets={setAssets} />
 
-      <AnimateWrapper animate={showView} className="relative">
+      {/* <AnimateWrapper animate={showView} className="relative">
         <WelcomeSection
           title1="Timeless designs. "
           title2="Seamless
@@ -73,7 +73,7 @@ const LandingView: FC<Props> = (props: Props) => {
           />
         </div>
         <Button title="Our work" link="/projects" className="left-margin" />
-      </AnimateWrapper>
+      </AnimateWrapper> */}
 
       <hr
         className="border-white border-opacity-10 mt-12 lg:mt-20"
