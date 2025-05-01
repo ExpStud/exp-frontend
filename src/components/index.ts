@@ -19,6 +19,7 @@ const ProductListItem = dynamic(() => import("./molecules/ProductListItem"));
 const LetsWorkLink = dynamic(() => import("./molecules/LetsWorkLink"));
 const BackgroundImage = dynamic(() => import("./molecules/BackgroundImage"));
 const Dropdown = dynamic(() => import("./molecules/Dropdown"));
+const HeroVideo = dynamic(() => import("./molecules/HeroVideo"));
 //organisms
 const SplashScreen = dynamic(() => import("./organisms/SplashScreen"));
 const Header = dynamic(() => import("./organisms/Header"));
@@ -83,5 +84,6 @@ export {
   NavigationMenu,
   CarouselSlider,
   LandingScreen,
-  Logo
+  Logo,
+  HeroVideo
 };

@@ -1,4 +1,4 @@
-import { Logo } from "@components";
+import { HeroVideo, Logo } from "@components";
 import { FC } from "react";
 
 interface Props {}
@@ -13,7 +13,8 @@ const LandingScreen: FC<Props> = (props: Props) => {
       <p className="text-3xl lg:text-4xl ">
         proof is in the pudding, click play below
       </p>
-      <div className="bg-black rounded-t-3xl w-[800px] 2xl:w-[900px] aspect-video"></div>
+      {/* <div className="bg-black rounded-t-3xl w-[800px] 2xl:w-[900px] aspect-video"></div> */}
+      <HeroVideo />
     </div>
   );
 };

@@ -11,6 +11,7 @@
     "seed": "node -r dotenv/config ./scripts/seed.js"
   },
   "dependencies": {
+    "@cloudflare/stream-react": "^1.9.3",
     "@metaplex-foundation/js": "^0.18.1",
     "@metaplex-foundation/mpl-token-metadata": "^2.8.3",
     "@solana/wallet-adapter-base": "^0.9.20",
