@@ -29,7 +29,6 @@ const PageLayout: FC<Props> = (props: Props) => {
     assets = [],
   } = props;
 
-  const scrollRef = useRef<HTMLDivElement>(null);
   return (
     <div
       className={`flex flex-col min-h-[100svh] h-full justify-between overflow-none overflow-x-clip ${
@@ -43,13 +42,8 @@ const PageLayout: FC<Props> = (props: Props) => {
         twitter="sandbox_studio_"
       />
       <Header headerType={headerType} />
-      <motion.main
-        className="flex flex-col h-full w-full overflow-y-auto"
-        ref={scrollRef}
-      >
-        <div {...enterAnimation} ref={scrollRef}>
-          {children}
-        </div>
+      <motion.main className="flex flex-col h-full w-full overflow-y-auto">
+        {children}
       </motion.main>
 
       {footer && <Footer />}

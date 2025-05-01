@@ -5,6 +5,7 @@ import { useTimeout } from "@hooks";
 
 interface Props {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;
+  children?: React.ReactNode;
 }
 const BackgroundImage: FC<Props> = (props: Props) => {
   const { setAssets } = props;
@@ -22,9 +23,8 @@ const BackgroundImage: FC<Props> = (props: Props) => {
       <Image
         src={`${process.env.CLOUDFLARE_STORAGE}/images/bg-image-xs.png`}
         alt="quote"
-        width={608}
-        height={400}
-        className="w-full object-cover grayscale"
+        width={0}
+        height={0}
         onLoad={() => setAssets && handleAssetLoad(0, setAssets)}
       />
     </div>
