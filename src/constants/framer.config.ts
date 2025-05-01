@@ -1,6 +1,22 @@
 import { Variants } from "framer-motion";
 
 
+export const introContainerVariants = {
+  hidden: {}, // Initial state
+  show: {
+    transition: {
+      staggerChildren: 0.25, // Delay between child animations
+      delayChildren: 0.3, // Delay before starting child animations
+    },
+  },
+};
+
+export const introItemVariants = {
+  hidden: { opacity: 0, y: 30 }, // Start off-screen (below)
+  show: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.6 } }, // Animate into view
+};
+
+
 export const mobileMenuParent = {
   hidden: { opacity: 0 },
   show: {

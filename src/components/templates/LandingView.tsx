@@ -1,12 +1,4 @@
-import {
-  Dispatch,
-  SetStateAction,
-  FC,
-  useContext,
-  useRef,
-  useState,
-  useEffect,
-} from "react";
+import { Dispatch, SetStateAction, FC, useRef } from "react";
 import {
   LetsWorkLink,
   BackgroundImage,

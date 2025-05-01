@@ -1,21 +1,44 @@
 import { HeroVideo, Logo } from "@components";
 import { FC } from "react";
+import { motion } from "framer-motion";
+import { useViewStore } from "@contexts";
+import { introContainerVariants, introItemVariants } from "@constants";
 
 interface Props {}
 
 const LandingScreen: FC<Props> = (props: Props) => {
+  const { showView } = useViewStore(); // Access `showView` from the store
+
   return (
-    <div className="min-h-[100svh] w-screen flex flex-col items-center justify-end gap-5 lg:gap-10">
-      <Logo />
-      <div className="col-centered uppercase w-[350px] h-[49px] lg:text-lg text-sand-300 bg-sand/10 border border-exp-gray-100 font-bold rounded-3xl">
+    <motion.div
+      className="min-h-[100svh] w-screen flex flex-col items-center justify-end gap-5 lg:gap-10"
+      variants={introContainerVariants}
+      initial="hidden" // Start in the "hidden" state
+      animate={showView ? "show" : "hidden"} // Animate to "show" only when `showView` is true
+    >
+      {/* Logo */}
+      <motion.div variants={introItemVariants}>
+        <Logo />
+      </motion.div>
+
+      {/* Tagline */}
+      <motion.div
+        variants={introItemVariants}
+        className="col-centered uppercase w-[350px] h-[49px] lg:text-lg text-sand-300 bg-sand/10 border border-exp-gray-100 font-bold rounded-3xl"
+      >
         Design & Development Studio
-      </div>
-      <p className="text-3xl lg:text-4xl ">
+      </motion.div>
+
+      {/* Subtitle */}
+      <motion.p variants={introItemVariants} className="text-3xl lg:text-4xl">
         proof is in the pudding, click play below
-      </p>
-      {/* <div className="bg-black rounded-t-3xl w-[800px] 2xl:w-[900px] aspect-video"></div> */}
-      <HeroVideo />
-    </div>
+      </motion.p>
+
+      {/* Hero Video */}
+      <motion.div variants={introItemVariants}>
+        <HeroVideo />
+      </motion.div>
+    </motion.div>
   );
 };
 

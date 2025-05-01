@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { TwoLinesIcon, NavigationMenu } from "@components";
+import { midEnterAnimation } from "@constants";
 
 interface Props {
   showHeader?: boolean; //used to show header if isStatic is false
@@ -24,7 +25,6 @@ const Header: FC<Props> = (props: Props) => {
 
   //hide header on scroll down, show on scroll up
   useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log("scrollY ", latest);
     //first instance
     if (scrollRef.current === undefined) {
       setAnimateHeader(false);
@@ -76,7 +76,10 @@ const HeaderItems: FC = () => {
   const [open, cycleOpen] = useCycle(false, true);
 
   return (
-    <div className="flex items-center justify-between w-full px-4 md:px-6 py-4 md:py-6 z-20 bg-transparent">
+    <motion.div
+      className="flex items-center justify-between w-full px-4 md:px-6 py-4 md:py-6 z-20 bg-transparent"
+      {...midEnterAnimation}
+    >
       <Link href="/" className="text-sand-300 text-2xl md:text-3xl font-bold">
         sandbox
       </Link>
@@ -86,7 +89,7 @@ const HeaderItems: FC = () => {
         className="z-[100]"
       />
       <NavigationMenu open={open} toggleMenu={cycleOpen} />
-    </div>
+    </motion.div>
   );
 };
 export default Header;
