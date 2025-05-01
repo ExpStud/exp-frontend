@@ -42,9 +42,9 @@ const PageLayout: FC<Props> = (props: Props) => {
         twitter="sandbox_studio_"
       />
       <Header headerType={headerType} />
-      <motion.main className="flex flex-col h-full w-full overflow-y-auto">
+      <main className="flex flex-col h-full w-full overflow-y-auto">
         {children}
-      </motion.main>
+      </main>
 
       {footer && <Footer />}
       {assets && <SplashScreen assets={assets} />}

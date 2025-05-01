@@ -36,6 +36,7 @@ module.exports = {
 
         //old
         "exp-gray": {
+          100: "#5C5C5C",
           200: "#2D2D2D",
           600: "#353535",
         },
