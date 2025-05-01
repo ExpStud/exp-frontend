@@ -27,11 +27,11 @@ export const mobileMenuParent = {
 export const dekstopMenuParent: Variants = {
   hidden: { opacity: 0 },
   show: {
-    opacity: 1,
+    opacity: 1, 
     transition: {
       duration: 0.5,
       staggerChildren: 0.1, // This will delay the animation of each child by 0.1 seconds
-      delayChildren: 0.2,
+      delayChildren: 0.5,
       staggerDirection: 1,
     },
   },
@@ -48,9 +48,9 @@ export const dekstopMenuParent: Variants = {
  
 };
 export const menuChildVariants = {
-  hidden: { opacity: 0, y: -5, x: 20 },
+  hidden: { opacity: 0, y: -3, x: 10 },
   show: { opacity: 1, y: 0, x: 0, transition: { duration: 0.3 } },
-  closed: { opacity: 0, y: -5, x: 20, transition: { duration: 0.15 } },
+  closed: { opacity: 0, y: -3, x: 10, transition: { duration: 0.15 } },
 };
 
 export const menuChild2Variants = {
@@ -71,6 +71,22 @@ export const openMenuVariants = (closedWidth: number, openWidth: number) => ({
   },
   show: { 
     width: openWidth, 
+    transition: { 
+      duration: 0.5 
+    } 
+  },
+});
+export const openNewMenuVariants = (width: number) => ({
+  hidden: {  width: 0 },
+  closed: {
+    width: 0,
+    transition: { 
+      delay: 0,
+      duration: 0.5 
+    },
+  },
+  show: { 
+    width: width, 
     transition: { 
       duration: 0.5 
     } 

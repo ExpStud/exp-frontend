@@ -31,6 +31,7 @@ const Testimonials = dynamic(() => import("./organisms/Testimonials"));
 const ProductList = dynamic(() => import("./organisms/ProductList"));
 const About = dynamic(() => import("./organisms/About"));
 const MobileNavigation = dynamic(() => import("./organisms/MobileNavigation"));
+const NavigationMenu = dynamic(() => import("./organisms/NavigationMenu"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -72,5 +73,6 @@ export {
   MobileNavigation,
   TwoLinesIcon,
   Dropdown,
-  ArrowIcon
+  ArrowIcon,
+  NavigationMenu
 };

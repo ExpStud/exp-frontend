@@ -1,13 +1,12 @@
 import { FC, useEffect, useRef, useState } from "react";
 import {
-  AnimatePresence,
   motion,
   useCycle,
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
 import Link from "next/link";
-import { TwoLinesIcon } from "@components";
+import { TwoLinesIcon, NavigationMenu } from "@components";
 
 interface Props {
   showHeader?: boolean; //used to show header if isStatic is false
@@ -77,12 +76,18 @@ const Header: FC<Props> = (props: Props) => {
 
 const HeaderItems: FC = () => {
   const [open, cycleOpen] = useCycle(false, true);
+
   return (
     <div className="flex items-center justify-between w-full px-4 md:px-6 py-4 md:py-6 z-20 bg-transparent">
       <Link href="/" className="text-sand-300 text-2xl md:text-3xl font-bold">
         sandbox
       </Link>
-      <TwoLinesIcon animate={open} onClick={() => cycleOpen()} />
+      <TwoLinesIcon
+        animate={open}
+        onClick={() => cycleOpen()}
+        className="z-[100]"
+      />
+      <NavigationMenu open={open} toggleMenu={cycleOpen} />
     </div>
   );
 };

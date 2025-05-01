@@ -10,7 +10,7 @@ const TwoLinesIcon: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={`stroke-white/60 hover:stroke-white transition-200 relative flex-gap-2 w-7 h-7 cursor-pointer  ${
+      className={`stroke-white/60 hover:stroke-white transition-200 relative flex-gap-2 w-7 h-7 cursor-pointer   ${
         props.className ?? ""
       }`}
       onClick={props.onClick}
