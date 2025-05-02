@@ -1,9 +1,7 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { FC, useEffect, useState } from "react";
-import { Client, clients, introItemVariants } from "@constants";
-import { TestimonialsItem, TwitterIcon } from "@components";
-import Image from "next/image";
-
+import { AnimatePresence } from "framer-motion";
+import { FC, useState } from "react";
+import { Client, clients } from "@constants";
+import { TestimonialsItem } from "@components";
 const Testimonials: FC = () => {
   const [selectedTestimonial, setSelectedTestimonial] = useState<Client>(
     clients[0]
