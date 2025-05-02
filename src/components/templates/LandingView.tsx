@@ -43,9 +43,7 @@ const LandingView: FC<Props> = (props: Props) => {
       {/*
         <Button title="Our work" link="/projects" className="left-margin" />> */}
 
-      <AnimateWrapper animate={showView && productInView}>
-        <ProductList />
-      </AnimateWrapper>
+      <ProductList />
 
       <hr
         className="border-white border-opacity-10 mt-12 lg:mt-20"

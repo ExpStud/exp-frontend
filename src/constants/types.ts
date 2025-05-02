@@ -1,3 +1,8 @@
+export interface ProductList {
+  icon: string;
+  title: string;
+}
+
 export type Carousel = {
   name: string;
   backgroundColor: string;

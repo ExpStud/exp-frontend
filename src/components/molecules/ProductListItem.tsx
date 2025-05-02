@@ -1,28 +1,26 @@
+import Image from "next/image";
 import { FC } from "react";
 
 interface Props {
+  icon: string;
   title: string;
-  number: string;
-  style?: string;
 }
 
 const ProductListItem: FC<Props> = (props: Props) => {
-  const { title, number, style } = props;
-
-  const defaultStyle =
-    "flex items-center border-t border-white border-opacity-40 border-dotted p-5";
-
-  const mergedStyles = `${defaultStyle} ${style}`;
+  const { icon, title } = props;
 
   return (
-    <li className={mergedStyles}>
-      <span className="mr-2 text-custom-dark-purple text-4xl md:text-5xl w-[26px]">
-        {number}
-      </span>
-      <span className="text-white text-xl md:text-2xl ml-3 md:ml-10 ">
+    <div className="flex items-center gap-5 border-b border-white border-opacity-40 border-dotted p-5 w-[260px] xl:w-[363px]">
+      <Image
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/icons/${icon}`}
+        alt={title}
+        width={24}
+        height={24}
+      />
+      <p className="text-white text-xl md:text-2xl font-normal tracking-wide">
         {title}
-      </span>
-    </li>
+      </p>
+    </div>
   );
 };
 

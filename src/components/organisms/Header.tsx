@@ -63,7 +63,7 @@ const Header: FC<Props> = (props: Props) => {
         <HeaderItems />
       ) : (
         <motion.div
-          className={`transition-200 ${animateHeader ? "" : "bg-black/90"} `}
+          className={`transition-200 ${animateHeader ? "" : "bg-black"} `}
         >
           <HeaderItems />
         </motion.div>

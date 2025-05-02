@@ -2,7 +2,7 @@
 @tailwind components; 
 @tailwind utilities;
 
-
+/* gabarito */
 @font-face {
   font-family: 'gabarito';
   src: url('../public/fonts/gabarito/Gabarito-Regular.ttf') format('truetype');
@@ -25,7 +25,7 @@
   font-family: 'gabarito';
   src: url('../public/fonts/gabarito/Gabarito-Bold.ttf') format('truetype');
   font-weight: 700;
-  font-style: normal;
+  font-style:normal;
 }
 @font-face {
   font-family: 'gabarito';
@@ -33,7 +33,37 @@
   font-weight: 800;
   font-style: normal;
 }
-
+/* barlow */
+@font-face {
+  font-family: 'barlow';
+  src: url('../public/fonts/barlow/Barlow-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('../public/fonts/barlow/Barlow-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('../public/fonts/barlow/Barlow-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('../public/fonts/barlow/Barlow-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style:normal;
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('../public/fonts/barlow/Barlow-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -51,6 +81,9 @@ a {
 
 html {
   scroll-behavior: smooth;
+}
+p {
+  @apply tracking-wide;
 }
 
 @keyframes shimmer {

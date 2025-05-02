@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 import { useViewStore } from "@contexts";
 import { introContainerVariants, introItemVariants } from "@constants";
 
-interface Props {}
-
-const LandingScreen: FC<Props> = (props: Props) => {
+const LandingScreen: FC = () => {
   const { showView } = useViewStore(); // Access `showView` from the store
 
   return (
