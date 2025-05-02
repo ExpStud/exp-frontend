@@ -24,7 +24,7 @@ const fadeInUp = {
 
 const ProductList: FC = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-25% 0px" });
+  const isInView = useInView(ref, { once: true, margin: "-50% 0px" });
   const { showView } = useViewStore();
 
   return (
@@ -36,36 +36,25 @@ const ProductList: FC = () => {
       animate={isInView && showView ? "visible" : "hidden"}
     >
       <div className="flex flex-col xl:flex-row items-start justify-center gap-14 xl:gap-40 2xl:gap-64 py-10">
-        <motion.div
-          className="flex flex-col gap-5 md:w-[410px] h-full justify-between"
-          variants={containerVariants}
-        >
+        <div className="flex flex-col gap-5 md:w-[410px] h-full justify-between">
           <div className="flex flex-col gap-8">
-            <motion.p
-              className="text-4xl md:text-5xl font-normal !leading-[1.3] tracking-wide md:min-w-[380px]"
-              variants={fadeInUp}
-            >
+            <p className="text-4xl md:text-5xl font-normal !leading-[1.3] tracking-wide md:min-w-[380px]">
               Design-led digital products.
-            </motion.p>
-            <motion.p
-              className="text-custom-gray text-lg xl:text-xl font-regular !tracking-wide font-barlow"
-              variants={fadeInUp}
-            >
+            </p>
+            <p className="text-custom-gray text-lg xl:text-xl font-regular !tracking-wide font-barlow">
               Founded in January 2023, Sandbox Studio emerged from the nearly
               decade-long partnership between Miguel Corzo and Wallace Palmer.
               Having spent over ten years working together, our collaborative
               journey began in diverse industries.
-            </motion.p>
+            </p>
           </div>
 
-          <motion.div variants={fadeInUp}>
-            <Button
-              title="Check full list of services"
-              link="/services"
-              className="!min-w-[306px] h-[48px]"
-            />
-          </motion.div>
-        </motion.div>
+          <Button
+            title="Check full list of services"
+            link="/services"
+            className="!min-w-[306px] h-[48px]"
+          />
+        </div>
 
         <motion.div
           className="flex flex-col gap-10 w-full"

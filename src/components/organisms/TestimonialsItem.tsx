@@ -105,12 +105,9 @@ const TestimonialsItem: FC<Props> = (props: Props) => {
               fill="#FFF1B4"
             />
           </svg>
-          <motion.p
-            className="ml-4 text-xl md:text-2xl xl:text-3xl font-light"
-            variants={childVariants} // Animate the testimonial text
-          >
+          <p className="ml-4 text-xl md:text-2xl xl:text-3xl font-light">
             {selectedTestimonial.testimonial}
-          </motion.p>
+          </p>
         </div>
       </motion.div>
     </motion.div>
