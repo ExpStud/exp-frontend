@@ -22,28 +22,6 @@ const fadeInUp = {
   },
 };
 
-// Parent container animation
-// const containerVariants = {
-//   hidden: { opacity: 0 },
-//   show: {
-//     opacity: 1,
-//     transition: {
-//       staggerChildren: 0.2, // Delay between child animations
-//       delayChildren: 0.3, // Delay before starting child animations
-//     },
-//   },
-// };
-
-// // Child element animation
-// const childVariants = {
-//   hidden: { opacity: 0, y: 30 },
-//   show: {
-//     opacity: 1,
-//     y: 0,
-//     transition: { duration: 0.6, ease: "easeOut" },
-//   },
-// };
-
 const ProductList: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-25% 0px" });
@@ -52,7 +30,7 @@ const ProductList: FC = () => {
   return (
     <motion.div
       ref={ref}
-      className="min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] w-full col-centered px-5 xl:px-0"
+      className="min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] w-full col-centered px-5 xl:px-0 border-b border-white border-opacity-10"
       variants={containerVariants}
       initial="hidden"
       animate={isInView && showView ? "visible" : "hidden"}
@@ -64,7 +42,7 @@ const ProductList: FC = () => {
         >
           <div className="flex flex-col gap-8">
             <motion.p
-              className="text-4xl md:text-5xl font-normal !leading-[1.3] tracking-wide"
+              className="text-4xl md:text-5xl font-normal !leading-[1.3] tracking-wide md:min-w-[380px]"
               variants={fadeInUp}
             >
               Design-led digital products.

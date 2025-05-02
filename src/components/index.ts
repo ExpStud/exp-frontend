@@ -8,6 +8,8 @@ const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const ExpIcon = dynamic(() => import("./@icons/ExpIcon"));
 const TwoLinesIcon = dynamic(() => import("./@icons/TwoLinesIcon"));
 const ArrowIcon = dynamic(() => import("./@icons/ArrowIcon"));
+const TensorIcon = dynamic(() => import("./@icons/TensorIcon"));
+const ExchangeArtIcon = dynamic(() => import("./@icons/ExchangeArtIcon"));
 //atoms
 const Button = dynamic(() => import("./atoms/Button"));
 const AnimateWrapper = dynamic(() => import("./atoms/AnimateWrapper"));
@@ -32,6 +34,7 @@ const ProductList = dynamic(() => import("./organisms/ProductList"));
 const About = dynamic(() => import("./organisms/About"));
 const NavigationMenu = dynamic(() => import("./organisms/NavigationMenu"));
 const LandingScreen = dynamic(() => import("./organisms/LandingScreen"));
+const TestimonialsItem = dynamic(() => import("./organisms/TestimonialsItem"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -85,5 +88,8 @@ export {
   CarouselSlider,
   LandingScreen,
   Logo,
-  HeroVideo
+  HeroVideo,
+  TestimonialsItem,
+  TensorIcon,
+  ExchangeArtIcon,
 };

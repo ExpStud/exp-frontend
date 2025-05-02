@@ -1,0 +1,26 @@
+import { FC } from "react";
+
+interface Props {
+  href: string;
+}
+
+const TensorIcon: FC<Props> = ({ href }) => {
+  return (
+    <a href={href} rel="noreferrer" target="_blank">
+      <svg
+        width="24"
+        height="20"
+        viewBox="0 0 24 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.0353 0L0 10.0656H4.38729L7.1407 7.31215V17.1054L10.0353 20V0ZM13.2527 0L23.288 10.0656H18.9007L16.1473 7.31215V17.1054L13.2527 20V0Z"
+          fill="#FFF1B4"
+        />
+      </svg>
+    </a>
+  );
+};
+
+export default TensorIcon;

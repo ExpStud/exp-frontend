@@ -134,6 +134,7 @@ const NavigationMenu: FC<Props> = (props: Props) => {
                     href={link.href}
                     rel="noreferrer"
                     target="_blank"
+                    className="text-white/70 transition-200 hover:text-white/100"
                   >
                     {link.label}
                   </a>

@@ -38,25 +38,9 @@ const LandingView: FC<Props> = (props: Props) => {
     <div className="relative w-full h-full">
       <BackgroundImage setAssets={setAssets} />
       <LandingScreen />
-      <hr className="border-white border-opacity-10" ref={productRef} />
-
-      {/*
-        <Button title="Our work" link="/projects" className="left-margin" />> */}
-
       <ProductList />
+      <Testimonials />
 
-      <hr
-        className="border-white border-opacity-10 mt-12 lg:mt-20"
-        ref={testRef}
-      />
-      <AnimateWrapper animate={showView && testInView}>
-        <Testimonials />
-      </AnimateWrapper>
-
-      <hr
-        className="border-white border-opacity-10 mt-12 lg:mt-20"
-        ref={aboutRef}
-      />
       <AnimateWrapper animate={showView && aboutInView}>
         <About />
       </AnimateWrapper>
