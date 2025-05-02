@@ -1,18 +1,32 @@
 import { AnimatePresence } from "framer-motion";
-import { FC, useState } from "react";
+import { FC, useRef, useState } from "react";
 import { Client, clients } from "@constants";
 import { TestimonialsItem } from "@components";
+
 const Testimonials: FC = () => {
   const [selectedTestimonial, setSelectedTestimonial] = useState<Client>(
     clients[0]
   );
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleTestimonialChange = (testimonial: Client) => {
+  const handleTestimonialChange = (testimonial: Client, index: number) => {
     setSelectedTestimonial(testimonial);
+
+    // Scroll the selected testimonial into view
+    const container = containerRef.current;
+    const selectedElement = container?.children[index] as HTMLElement;
+
+    if (selectedElement) {
+      selectedElement.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center", // Ensures horizontal scrolling
+      });
+    }
   };
 
   return (
-    <div className="min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] w-full flex flex-col items-center border-b border-white border-opacity-10 font-barlow">
+    <div className="min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] lg:flex justify-center border-b border-white border-opacity-10 font-barlow">
       <div className=" px-5 xl:px-0 max-w-[1256px] py-10 xl:py-20">
         <p className="text-custom-gray text-5xl mb-3 font-barlow">
           Testimonials.
@@ -21,8 +35,11 @@ const Testimonials: FC = () => {
           Our wall of love.
         </p>
 
-        <div className="mt-20 flex border-b border-white/20 overflow-x-auto">
-          {clients.map((testimonial) => {
+        <div
+          className="mt-20 flex border-b border-white/20 overflow-x-auto"
+          ref={containerRef}
+        >
+          {clients.map((testimonial, index) => {
             if (testimonial.testimonial) {
               return (
                 <div
@@ -32,7 +49,7 @@ const Testimonials: FC = () => {
                       ? "border-sand"
                       : "border-custom-black text-custom-gray hover:text-white"
                   }`}
-                  onClick={() => handleTestimonialChange(testimonial)}
+                  onClick={() => handleTestimonialChange(testimonial, index)}
                 >
                   <p>{testimonial.name}</p>
                   <p>{testimonial.company}</p>
