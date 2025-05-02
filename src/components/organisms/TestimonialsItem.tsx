@@ -1,5 +1,5 @@
 import { ExchangeArtIcon, TensorIcon, TwitterIcon } from "@components";
-import { Client, introItemVariants } from "@constants";
+import { Client } from "@constants";
 import { motion } from "framer-motion";
 import { FC } from "react";
 import Image from "next/image";
@@ -7,6 +7,27 @@ import Image from "next/image";
 interface Props {
   selectedTestimonial: Client;
 }
+
+// Parent container animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Delay between child animations
+    },
+  },
+};
+
+// Child element animation variants
+const childVariants = {
+  hidden: { opacity: 0, y: 30 }, // Start off-screen (below)
+  show: {
+    opacity: 1,
+    y: 0, // Animate into position
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 const TestimonialsItem: FC<Props> = (props: Props) => {
   const { selectedTestimonial } = props;
@@ -17,10 +38,14 @@ const TestimonialsItem: FC<Props> = (props: Props) => {
       initial="hidden"
       animate="show"
       exit="hidden"
-      variants={introItemVariants}
+      variants={containerVariants} // Apply staggered animation to the parent container
       key={selectedTestimonial.name}
     >
-      <div className="flex flex-col-reverse md:flex-row gap-8">
+      {/* Left Section */}
+      <motion.div
+        className="flex flex-col-reverse md:flex-row gap-8"
+        variants={childVariants} // Animate the left section as a child
+      >
         <Image
           src={selectedTestimonial.image}
           alt={selectedTestimonial.name}
@@ -30,12 +55,23 @@ const TestimonialsItem: FC<Props> = (props: Props) => {
         />
 
         <div className="flex flex-col items-start">
-          <div className="text-2xl">{selectedTestimonial.name}</div>
-          <div className="text-custom-gray text-2xl">
+          <motion.div
+            className="text-2xl"
+            variants={childVariants} // Animate the name
+          >
+            {selectedTestimonial.name}
+          </motion.div>
+          <motion.div
+            className="text-custom-gray text-2xl"
+            variants={childVariants} // Animate the title
+          >
             {selectedTestimonial.title}
-          </div>
+          </motion.div>
 
-          <div className="flex mt-6">
+          <motion.div
+            className="flex mt-6"
+            variants={childVariants} // Animate the icons
+          >
             <span className="mr-2">
               <TwitterIcon href={selectedTestimonial.twitter} />
             </span>
@@ -45,11 +81,15 @@ const TestimonialsItem: FC<Props> = (props: Props) => {
             {selectedTestimonial?.tensor && (
               <TensorIcon href={selectedTestimonial.tensor} />
             )}
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="lg:ml-8 lg:w-1/2">
+      {/* Right Section */}
+      <motion.div
+        className="lg:ml-8 lg:w-1/2"
+        variants={childVariants} // Animate the right section as a child
+      >
         <div className="relative">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -65,11 +105,14 @@ const TestimonialsItem: FC<Props> = (props: Props) => {
               fill="#FFF1B4"
             />
           </svg>
-          <p className="ml-4 text-xl md:text-2xl xl:text-3xl font-light">
+          <motion.p
+            className="ml-4 text-xl md:text-2xl xl:text-3xl font-light"
+            variants={childVariants} // Animate the testimonial text
+          >
             {selectedTestimonial.testimonial}
-          </p>
+          </motion.p>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
