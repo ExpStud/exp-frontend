@@ -40,6 +40,9 @@ const LandingView: FC<Props> = (props: Props) => {
       <LandingScreen />
       <hr className="border-white border-opacity-10" ref={productRef} />
 
+      {/*
+        <Button title="Our work" link="/projects" className="left-margin" />> */}
+
       <AnimateWrapper animate={showView && productInView}>
         <ProductList />
       </AnimateWrapper>

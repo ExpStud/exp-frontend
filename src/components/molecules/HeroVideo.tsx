@@ -60,7 +60,7 @@ const HeroVideo = () => {
   }, [isPlaying]);
 
   return (
-    <div className="relative aspect -video w-[700px] h-[475px] rounded-t-3xl max-w-4xl mx-auto bg-black/70 overflow-hidden">
+    <div className="relative w-[700px] h-[475px] rounded-t-3xl max-w-4xl mx-auto bg-black/70 overflow-hidden">
       {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <button
@@ -76,7 +76,7 @@ const HeroVideo = () => {
       {isPlaying && (
         <video
           ref={videoNodeRef}
-          className="video-js vjs-default-skin w-full h-full rounded-t-3xl object-scale-down"
+          className="video-js vjs-default-skin w-[700px] h-[475px] rounded-t-3xl object-scale-down"
           controls
         />
       )}

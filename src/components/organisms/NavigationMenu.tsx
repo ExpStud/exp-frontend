@@ -123,25 +123,22 @@ const NavigationMenu: FC<Props> = (props: Props) => {
                 />
               </motion.div>
               {/* Social Links */}
-              <div className="flex flex-col gap-2 pt-12">
-                <motion.p
-                  variants={childVariants}
-                  className="text-custom-dark-gray"
-                >
-                  Follow us
-                </motion.p>
+              <motion.div
+                className="flex flex-col gap-2 pt-12"
+                variants={childVariants}
+              >
+                <p className="text-custom-dark-gray">Follow us</p>
                 {socialLinks.map((link, index) => (
-                  <motion.a
+                  <a
                     key={index}
-                    variants={childVariants}
                     href={link.href}
                     rel="noreferrer"
                     target="_blank"
                   >
                     {link.label}
-                  </motion.a>
+                  </a>
                 ))}
-              </div>
+              </motion.div>
             </motion.nav>
           </motion.aside>
         )}
