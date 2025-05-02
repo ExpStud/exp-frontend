@@ -52,12 +52,12 @@ const ProductList: FC = () => {
   return (
     <motion.div
       ref={ref}
-      className="min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] w-full col-centered px-5 lg:px-0"
+      className="min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] w-full col-centered px-5 xl:px-0"
       variants={containerVariants}
       initial="hidden"
       animate={isInView && showView ? "visible" : "hidden"}
     >
-      <div className="flex flex-col lg:flex-row items-start justify-center gap-14 xl:gap-40 2xl:gap-64 py-10">
+      <div className="flex flex-col xl:flex-row items-start justify-center gap-14 xl:gap-40 2xl:gap-64 py-10">
         <motion.div
           className="flex flex-col gap-5 md:w-[410px] h-full justify-between"
           variants={containerVariants}
@@ -70,7 +70,7 @@ const ProductList: FC = () => {
               Design-led digital products.
             </motion.p>
             <motion.p
-              className="text-custom-gray text-lg lg:text-xl font-regular !tracking-wide font-barlow"
+              className="text-custom-gray text-lg xl:text-xl font-regular !tracking-wide font-barlow"
               variants={fadeInUp}
             >
               Founded in January 2023, Sandbox Studio emerged from the nearly
@@ -90,17 +90,17 @@ const ProductList: FC = () => {
         </motion.div>
 
         <motion.div
-          className="flex flex-col gap-10"
+          className="flex flex-col gap-10 w-full"
           variants={containerVariants}
         >
           <motion.p
-            className="text-white/60 text-xl lg:text-3xl font-regular !tracking-wide font-barlow"
+            className="text-white/60 text-xl xl:text-3xl font-regular !tracking-wide font-barlow"
             variants={fadeInUp}
           >
             Our services.
           </motion.p>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full">
             {PRODUCT_LIST.map((item, index) => (
               <motion.div key={index} variants={fadeInUp}>
                 <ProductListItem icon={item.icon} title={item.title} />
