@@ -10,15 +10,19 @@ export const PRODUCT_LIST: ProductList[] = [
     title: "Development",
   },
   {
-    icon: "minting-tools.svg",
-    title: "Minting Tools",
+    icon: "e-commerce.svg",
+    title: "E-Commerce",
+  },
+  {
+    icon: "discord-management.svg",
+    title: "Project Managment",
   },
   {
     icon: "tech-support.svg",
     title: "Tech Support",
   },
   {
-    icon: "e-commerce.svg",
-    title: "E-Commerce",
-  }
+    icon: "minting-tools.svg",
+    title: "Digital Sales",
+  },
 ]
