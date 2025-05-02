@@ -60,7 +60,7 @@ const HeroVideo = () => {
   }, [isPlaying]);
 
   return (
-    <div className="relative w-[700px] h-[475px] rounded-t-3xl max-w-4xl mx-auto bg-black/70 overflow-hidden">
+    <div className="relative w-screen md:w-[700px] h-[475px] rounded-t-3xl max-w-4xl mx-auto bg-black/70 overflow-hidden">
       {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <button

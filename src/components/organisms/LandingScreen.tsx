@@ -9,7 +9,7 @@ const LandingScreen: FC = () => {
 
   return (
     <motion.div
-      className="min-h-[100svh] w-screen flex flex-col items-center justify-end gap-5 lg:gap-10 border-b border-white border-opacity-10"
+      className="min-h-[100svh] w-screen flex flex-col items-center justify-end gap-5 lg:gap-10 border-b border-white border-opacity-10 px-5 lg:px-0"
       variants={introContainerVariants}
       initial="hidden" // Start in the "hidden" state
       animate={showView ? "show" : "hidden"} // Animate to "show" only when `showView` is true
@@ -28,7 +28,10 @@ const LandingScreen: FC = () => {
       </motion.div>
 
       {/* Subtitle */}
-      <motion.p variants={introItemVariants} className="text-3xl lg:text-4xl">
+      <motion.p
+        variants={introItemVariants}
+        className="text-3xl lg:text-4xl text-center md:text-start"
+      >
         proof is in the pudding, click play below
       </motion.p>
 

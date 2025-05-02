@@ -10,7 +10,7 @@ const ProductListItem: FC<Props> = (props: Props) => {
   const { icon, title } = props;
 
   return (
-    <div className="flex items-center gap-5 border-b border-white border-opacity-40 border-dotted py-5 w-[260px] xl:w-[363px]">
+    <div className="flex items-center gap-5 border-b border-white border-opacity-40 border-dotted py-5 w-[260px] md:w-[363px]">
       <Image
         src={`${process.env.CLOUDFLARE_STORAGE}/images/icons/${icon}`}
         alt={title}

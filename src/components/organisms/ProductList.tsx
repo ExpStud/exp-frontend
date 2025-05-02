@@ -52,14 +52,14 @@ const ProductList: FC = () => {
   return (
     <motion.div
       ref={ref}
-      className="min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] w-screen col-centered"
+      className="min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] w-full col-centered px-5 lg:px-0"
       variants={containerVariants}
       initial="hidden"
       animate={isInView && showView ? "visible" : "hidden"}
     >
-      <div className="flex flex-col lg:flex-row items-start justify-center gap-14 xl:gap-40 2xl:gap-64 px-4 lg:px-0 py-10">
+      <div className="flex flex-col lg:flex-row items-start justify-center gap-14 xl:gap-40 2xl:gap-64 py-10">
         <motion.div
-          className="flex flex-col gap-5 w-[410px] h-full justify-between"
+          className="flex flex-col gap-5 md:w-[410px] h-full justify-between"
           variants={containerVariants}
         >
           <div className="flex flex-col gap-8">
