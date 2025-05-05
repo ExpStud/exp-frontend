@@ -26,14 +26,10 @@ const Testimonials: FC = () => {
   };
 
   return (
-    <div className="min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] lg:flex justify-center border-b border-white border-opacity-10 font-barlow">
-      <div className=" px-5 xl:px-0 max-w-[1256px] py-10 xl:py-20">
-        <p className="text-custom-gray text-5xl mb-3 font-barlow">
-          Testimonials.
-        </p>
-        <p className="text-4xl md:text-5xl text-sand font-barlow">
-          Our wall of love.
-        </p>
+    <div className="landing-container lg:flex justify-center font-barlow">
+      <div className="max-w-[1256px] py-10 xl:py-20">
+        <h2 className="mb-3">Testimonials.</h2>
+        <h2 className="text-sand">Our wall of love. (gay)</h2>
 
         <div
           className="mt-20 flex border-b border-white/20 overflow-x-auto"

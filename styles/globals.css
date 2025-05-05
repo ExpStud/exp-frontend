@@ -92,6 +92,10 @@ p {
   @apply tracking-wide;
 }
 
+h2 {
+  @apply text-custom-gray text-4xl md:text-5xl font-barlow;
+}
+
 @keyframes shimmer {
   0% {
     background-position: 0% 0%;
@@ -165,6 +169,13 @@ p {
 .input {
   @apply border bg-form-background border-white border-opacity-10 rounded-lg px-3 py-2 focus:border-custom-purple active:border-custom-purple focus:outline-none active:outline-none;
 }
+ 
+/* Additional Utility Classes */
+.landing-container {
+  @apply min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] w-full border-b border-white border-opacity-10 px-5 xl:px-0;
+
+}
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

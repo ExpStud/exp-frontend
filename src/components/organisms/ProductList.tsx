@@ -24,13 +24,13 @@ const fadeInUp = {
 
 const ProductList: FC = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50% 0px" });
+  const isInView = useInView(ref, { once: true, margin: "-40% 0px" });
   const { showView } = useViewStore();
 
   return (
     <motion.div
       ref={ref}
-      className="min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] w-full col-centered px-5 xl:px-0 border-b border-white border-opacity-10"
+      className="landing-container col-centered"
       variants={containerVariants}
       initial="hidden"
       animate={isInView && showView ? "visible" : "hidden"}

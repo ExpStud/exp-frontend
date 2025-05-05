@@ -17,22 +17,6 @@ interface Props {
 
 const LandingView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
-  const { showView } = useViewStore();
-
-  const productRef = useRef<HTMLHRElement>(null);
-  const testRef = useRef<HTMLHRElement>(null);
-  const aboutRef = useRef<HTMLHRElement>(null);
-  const workRef = useRef<HTMLHRElement>(null);
-
-  const productInView = useInView(productRef, {
-    once: true,
-  });
-  const testInView = useInView(testRef, {
-    once: true,
-  });
-  const aboutInView = useInView(aboutRef, {
-    once: true,
-  });
 
   return (
     <div className="relative w-full h-full">
@@ -41,14 +25,8 @@ const LandingView: FC<Props> = (props: Props) => {
       <ProductList />
       <Testimonials />
 
-      <AnimateWrapper animate={showView && aboutInView}>
-        <About />
-      </AnimateWrapper>
+      <About />
 
-      <hr
-        className="border-white border-opacity-10 mt-12 lg:mt-20"
-        ref={workRef}
-      />
       <LetsWorkLink />
     </div>
   );
