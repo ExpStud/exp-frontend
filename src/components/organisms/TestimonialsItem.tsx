@@ -34,7 +34,7 @@ const TestimonialsItem: FC<Props> = (props: Props) => {
 
   return (
     <motion.div
-      className="flex flex-col lg:flex-row items-start mt-10 lg:pr-10 gap-10 font-barlow"
+      className="flex flex-col xl:flex-row items-start mt-10 xl:pr-10 gap-10 font-barlow"
       initial="hidden"
       animate="show"
       exit="hidden"
@@ -87,7 +87,7 @@ const TestimonialsItem: FC<Props> = (props: Props) => {
 
       {/* Right Section */}
       <motion.div
-        className="lg:ml-8 lg:w-1/2"
+        className="xl:ml-8 xl:w-1/2"
         variants={childVariants} // Animate the right section as a child
       >
         <div className="relative">

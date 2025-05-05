@@ -29,7 +29,7 @@ const Testimonials: FC = () => {
 
   return (
     <div className="landing-container lg:flex justify-center font-barlow">
-      <div className="max-w-[1256px] py-10 xl:py-20">
+      <div className="max-w-[1256px] py-32 xl:py-20">
         <h2 className="mb-3">See what </h2>
         <h2 className="text-sand">our clients say.</h2>
 

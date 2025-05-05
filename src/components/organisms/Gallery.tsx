@@ -12,7 +12,7 @@ import { useWindowSize } from "@hooks";
 import { ArrowButtonIcon } from "@components";
 
 interface GalleryProps extends HTMLAttributes<HTMLDivElement> {
-  // children: ReactNode[]; // All items to render
+  children: ReactNode[]; // All items to render
   itemWidth?: number; // px
   itemGap?: number; // px
   visibleCountDesktop?: number;
@@ -34,9 +34,9 @@ const Gallery: FC<GalleryProps> = ({
   const [winWidth] = useWindowSize();
   const isMobile = winWidth < 640;
 
-  // useEffect(() => {
-  //   setItems([...children, ...children]);
-  // }, [children]);
+  useEffect(() => {
+    setItems([...children, ...children]);
+  }, [children]);
 
   const scrollLeftEdge = () => {
     const container = containerRef.current;
@@ -52,25 +52,25 @@ const Gallery: FC<GalleryProps> = ({
   };
 
   const handlePrevious = () => {
-    // setGalleryIndex((prev) => {
-    //   const newIndex = prev === 0 ? items.length - 1 : prev - 1;
-    //   if (newIndex === items.length - 1) {
-    //     setItems((prevItems) => [...children, ...prevItems]);
-    //   }
-    //   prevIndex.current = prev;
-    //   return newIndex;
-    // });
+    setGalleryIndex((prev) => {
+      const newIndex = prev === 0 ? items.length - 1 : prev - 1;
+      if (newIndex === items.length - 1) {
+        setItems((prevItems) => [...children, ...prevItems]);
+      }
+      prevIndex.current = prev;
+      return newIndex;
+    });
   };
 
   const handleNext = () => {
-    // setGalleryIndex((prev) => {
-    //   const newIndex = prev + 1;
-    //   // Append if approaching end
-    //   if (newIndex >= items.length - (isMobile ? 1 : 3)) {
-    //     setItems((prevItems) => [...prevItems, ...children]);
-    //   }
-    //   return newIndex;
-    // });
+    setGalleryIndex((prev) => {
+      const newIndex = prev + 1;
+      // Append if approaching end
+      if (newIndex >= items.length - (isMobile ? 1 : 3)) {
+        setItems((prevItems) => [...prevItems, ...children]);
+      }
+      return newIndex;
+    });
   };
 
   const calculateOffset = (index: number) => {
@@ -78,11 +78,16 @@ const Gallery: FC<GalleryProps> = ({
   };
 
   return (
-    <div className={`flex flex-col items-center gap-6 ${className ?? ""}`}>
-      <div className="relative w-full h-full flex justify-center items-center gap-4">
+    <div
+      className={`flex flex-col w-full items-center gap-6 ${className ?? ""}`}
+    >
+      <div className="row-end gap-5 w-full pr-5 lg:pr-8 xl:pr-8">
         <ArrowButtonIcon direction="left" onClick={handlePrevious} />
+        <ArrowButtonIcon direction="right" onClick={handleNext} />
+      </div>
+      <div className="relative w-full h-full flex justify-center items-center gap-4">
         <div ref={containerRef} className="overflow-hidden w-full">
-          <div className="flex gap-[20px] transition-transform duration-500 ease-out">
+          <div className="flex gap-5 transition-transform duration-500 ease-out">
             {items.map((item, index) => (
               <GalleryItem key={index} offset={calculateOffset(galleryIndex)}>
                 {item}
@@ -90,7 +95,6 @@ const Gallery: FC<GalleryProps> = ({
             ))}
           </div>
         </div>
-        <ArrowButtonIcon direction="right" onClick={handleNext} />
       </div>
     </div>
   );
