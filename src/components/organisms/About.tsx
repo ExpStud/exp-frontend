@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { Button } from "@components";
+import Image from "next/image";
 
 const LandingView: FC = () => {
   return (
     <div className="landing-container col-centered">
-      <div className="row-centered max-w-[1256px]">
+      <div className="flex flex-col xl:flex-row gap-16 xl:gap-32 max-w-[1256px]">
         <div className="flex flex-col gap-10 xl:gap-14 max-w-[608px]">
           <div>
             <h2 className="mb-3">About ourselves.</h2>
@@ -24,6 +25,14 @@ const LandingView: FC = () => {
             </p>
           </div>
           <Button title="About us" link="/about" />
+        </div>
+        <div className="w-[90vw] md:w-[608px] xl:w-[780px] aspect-video relative xl:-mr-64">
+          <Image
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/logo-art.jpg`}
+            alt="Sandbox Art"
+            fill
+            className="border-art object-cover"
+          />
         </div>
       </div>
     </div>

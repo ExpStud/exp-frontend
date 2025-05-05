@@ -34,7 +34,7 @@ const TestimonialsItem: FC<Props> = (props: Props) => {
 
   return (
     <motion.div
-      className="flex flex-col lg:flex-row items-start mt-10 pr-5 lg:pr-10 gap-10 font-barlow"
+      className="flex flex-col lg:flex-row items-start mt-10 lg:pr-10 gap-10 font-barlow"
       initial="hidden"
       animate="show"
       exit="hidden"
