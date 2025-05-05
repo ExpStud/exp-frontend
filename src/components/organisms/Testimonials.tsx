@@ -2,12 +2,14 @@ import { AnimatePresence } from "framer-motion";
 import { FC, useRef, useState } from "react";
 import { Client, clients } from "@constants";
 import { TestimonialsItem } from "@components";
+import { useWindowSize } from "@hooks";
 
 const Testimonials: FC = () => {
   const [selectedTestimonial, setSelectedTestimonial] = useState<Client>(
     clients[0]
   );
   const containerRef = useRef<HTMLDivElement>(null);
+  const [winWidth] = useWindowSize();
 
   const handleTestimonialChange = (testimonial: Client, index: number) => {
     setSelectedTestimonial(testimonial);
@@ -16,7 +18,7 @@ const Testimonials: FC = () => {
     const container = containerRef.current;
     const selectedElement = container?.children[index] as HTMLElement;
 
-    if (selectedElement) {
+    if (selectedElement && winWidth < 640) {
       selectedElement.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
@@ -28,8 +30,8 @@ const Testimonials: FC = () => {
   return (
     <div className="landing-container lg:flex justify-center font-barlow">
       <div className="max-w-[1256px] py-10 xl:py-20">
-        <h2 className="mb-3">Testimonials.</h2>
-        <h2 className="text-sand">Our wall of love. (gay)</h2>
+        <h2 className="mb-3">See what </h2>
+        <h2 className="text-sand">our clients say.</h2>
 
         <div
           className="mt-20 flex border-b border-white/20 overflow-x-auto"

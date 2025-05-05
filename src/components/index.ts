@@ -10,6 +10,7 @@ const TwoLinesIcon = dynamic(() => import("./@icons/TwoLinesIcon"));
 const ArrowIcon = dynamic(() => import("./@icons/ArrowIcon"));
 const TensorIcon = dynamic(() => import("./@icons/TensorIcon"));
 const ExchangeArtIcon = dynamic(() => import("./@icons/ExchangeArtIcon"));
+const ArrowButtonIcon = dynamic(() => import("./@icons/ArrowButtonIcon"));
 //atoms
 const Button = dynamic(() => import("./atoms/Button"));
 const AnimateWrapper = dynamic(() => import("./atoms/AnimateWrapper"));
@@ -35,6 +36,8 @@ const About = dynamic(() => import("./organisms/About"));
 const NavigationMenu = dynamic(() => import("./organisms/NavigationMenu"));
 const LandingScreen = dynamic(() => import("./organisms/LandingScreen"));
 const TestimonialsItem = dynamic(() => import("./organisms/TestimonialsItem"));
+const ProjectGallery = dynamic(() => import("./organisms/ProjectGallery"));
+const Gallery = dynamic(() => import("./organisms/Gallery"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -92,4 +95,7 @@ export {
   TestimonialsItem,
   TensorIcon,
   ExchangeArtIcon,
+  ProjectGallery,
+  ArrowButtonIcon,
+  Gallery,
 };

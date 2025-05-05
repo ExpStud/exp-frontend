@@ -1,0 +1,117 @@
+"use client";
+
+import {
+  FC,
+  HTMLAttributes,
+  useState,
+  useEffect,
+  useRef,
+  ReactNode,
+} from "react";
+import { useWindowSize } from "@hooks";
+import { ArrowButtonIcon } from "@components";
+
+interface GalleryProps extends HTMLAttributes<HTMLDivElement> {
+  // children: ReactNode[]; // All items to render
+  itemWidth?: number; // px
+  itemGap?: number; // px
+  visibleCountDesktop?: number;
+  visibleCountMobile?: number;
+}
+
+const Gallery: FC<GalleryProps> = ({
+  children,
+  className,
+  itemWidth = 300,
+  itemGap = 20,
+  visibleCountDesktop = 3,
+  visibleCountMobile = 1,
+}) => {
+  const [galleryIndex, setGalleryIndex] = useState(0);
+  const [items, setItems] = useState<ReactNode[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const prevIndex = useRef<number>(galleryIndex);
+  const [winWidth] = useWindowSize();
+  const isMobile = winWidth < 640;
+
+  // useEffect(() => {
+  //   setItems([...children, ...children]);
+  // }, [children]);
+
+  const scrollLeftEdge = () => {
+    const container = containerRef.current;
+    return container?.scrollLeft ?? 0 <= 10;
+  };
+
+  const scrollRightEdge = () => {
+    const container = containerRef.current;
+    return (
+      container &&
+      container.scrollLeft + container.clientWidth >= container.scrollWidth - 10
+    );
+  };
+
+  const handlePrevious = () => {
+    // setGalleryIndex((prev) => {
+    //   const newIndex = prev === 0 ? items.length - 1 : prev - 1;
+    //   if (newIndex === items.length - 1) {
+    //     setItems((prevItems) => [...children, ...prevItems]);
+    //   }
+    //   prevIndex.current = prev;
+    //   return newIndex;
+    // });
+  };
+
+  const handleNext = () => {
+    // setGalleryIndex((prev) => {
+    //   const newIndex = prev + 1;
+    //   // Append if approaching end
+    //   if (newIndex >= items.length - (isMobile ? 1 : 3)) {
+    //     setItems((prevItems) => [...prevItems, ...children]);
+    //   }
+    //   return newIndex;
+    // });
+  };
+
+  const calculateOffset = (index: number) => {
+    return -(index * (itemWidth + itemGap));
+  };
+
+  return (
+    <div className={`flex flex-col items-center gap-6 ${className ?? ""}`}>
+      <div className="relative w-full h-full flex justify-center items-center gap-4">
+        <ArrowButtonIcon direction="left" onClick={handlePrevious} />
+        <div ref={containerRef} className="overflow-hidden w-full">
+          <div className="flex gap-[20px] transition-transform duration-500 ease-out">
+            {items.map((item, index) => (
+              <GalleryItem key={index} offset={calculateOffset(galleryIndex)}>
+                {item}
+              </GalleryItem>
+            ))}
+          </div>
+        </div>
+        <ArrowButtonIcon direction="right" onClick={handleNext} />
+      </div>
+    </div>
+  );
+};
+
+interface GalleryItemProps {
+  offset: number;
+  children: ReactNode;
+}
+
+const GalleryItem: FC<GalleryItemProps> = ({ offset, children }) => {
+  return (
+    <div
+      className="shrink-0 transition-transform duration-500 ease-out"
+      style={{
+        transform: `translateX(${offset}px)`,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
+export default Gallery;

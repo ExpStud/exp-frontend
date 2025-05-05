@@ -8,8 +8,8 @@ const LandingView: FC = () => {
       <div className="flex flex-col xl:flex-row gap-16 xl:gap-32 max-w-[1256px]">
         <div className="flex flex-col gap-10 xl:gap-14 max-w-[608px]">
           <div>
-            <h2 className="mb-3">About ourselves.</h2>
-            <h2 className="text-sand">Chad Lord Supremes.</h2>
+            <h2 className="mb-3">Learn more</h2>
+            <h2 className="text-sand">about the team.</h2>
           </div>
           <div>
             <p className="font-barlow font-light text-lg xl:text-xl mb-5">

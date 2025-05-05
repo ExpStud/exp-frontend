@@ -5,11 +5,9 @@ import {
   Testimonials,
   ProductList,
   About,
-  AnimateWrapper,
+  ProjectGallery,
   LandingScreen,
 } from "@components";
-import { useViewStore } from "src/contexts";
-import { useInView } from "framer-motion";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
@@ -22,9 +20,9 @@ const LandingView: FC<Props> = (props: Props) => {
     <div className="relative w-full h-full">
       <BackgroundImage setAssets={setAssets} />
       <LandingScreen />
+      <ProjectGallery />
       <ProductList />
       <Testimonials />
-
       <About />
 
       <LetsWorkLink />

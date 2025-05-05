@@ -172,7 +172,9 @@ h2 {
   
 .landing-container {
   @apply min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] w-full border-b border-white border-opacity-10 px-5 xl:px-0;
-
+}
+.landing-container-left {
+  @apply min-h-[100svh] xl:min-h-full xl:h-[100svh] max-h-[1080px] w-full border-b border-white border-opacity-10 pl-5 lg:pl-14 xl:pl-32;
 }
 .border-art {
   border-radius: 21px;
