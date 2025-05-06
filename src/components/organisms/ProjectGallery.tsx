@@ -1,7 +1,15 @@
 "use client";
 
 import { FC } from "react";
-import { Button, Gallery } from "@components";
+import { Button, Gallery, GalleryItem } from "@components";
+import { GalleryType, clients } from "@constants";
+
+const carouselData: GalleryType[] = [
+  clients[0].carousel![0],
+  clients[0].carousel![1],
+  clients[3].carousel![0],
+  clients[1].carousel![0],
+];
 
 const ProjectGallery: FC = () => {
   return (
@@ -12,14 +20,8 @@ const ProjectGallery: FC = () => {
           <h2 className="text-sand">our work.</h2>
         </div>
         <Gallery itemWidth={608}>
-          {Array.from({ length: 5 }).map((_, i) => (
-            <div
-              key={i}
-              className="w-[608px] h-[555px] bg-red-200 rounded-3xl p-10"
-            >
-              <h3 className="font-bold text-lg mb-2">Project {i + 1}</h3>
-              <p className="text-sm text-gray-600">In Search Of Substance</p>
-            </div>
+          {carouselData.map((item, i) => (
+            <GalleryItem key={i} data={item} />
           ))}
         </Gallery>
         <Button

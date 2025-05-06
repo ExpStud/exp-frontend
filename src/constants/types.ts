@@ -1,3 +1,15 @@
+export interface GalleryType {
+  name: string;
+  backgroundColor: string;
+  textColor: string;
+  borderColor: string;
+  fillColor: string;
+  title: string;
+  src: string;
+  srcMobile?: string;
+  href: string; //if href "Visit Website" else "Comin Soon"
+}
+
 export interface ProductList {
   icon: string;
   title: string;

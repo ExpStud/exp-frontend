@@ -38,6 +38,7 @@ const LandingScreen = dynamic(() => import("./organisms/LandingScreen"));
 const TestimonialsItem = dynamic(() => import("./organisms/TestimonialsItem"));
 const ProjectGallery = dynamic(() => import("./organisms/ProjectGallery"));
 const Gallery = dynamic(() => import("./organisms/Gallery"));
+const GalleryItem = dynamic(() => import("./organisms/GalleryItem"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -98,4 +99,5 @@ export {
   ProjectGallery,
   ArrowButtonIcon,
   Gallery,
+  GalleryItem
 };

@@ -217,3 +217,19 @@ body {
 body {
   -ms-overflow-style: none;
 }
+
+
+/* Hide scrollbar for WebKit-based browsers (Chrome, Safari) */
+.invisible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.invisible-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Optional: Ensure the element is scrollable */
+.invisible-scrollbar {
+  overflow: auto;
+}

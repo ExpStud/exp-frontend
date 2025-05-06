@@ -24,8 +24,6 @@ const Gallery: FC<GalleryProps> = ({
   className,
   itemWidth = 300,
   itemGap = 20,
-  visibleCountDesktop = 3,
-  visibleCountMobile = 1,
 }) => {
   const [galleryIndex, setGalleryIndex] = useState(0);
   const [items, setItems] = useState<ReactNode[]>([]);
@@ -37,19 +35,6 @@ const Gallery: FC<GalleryProps> = ({
   useEffect(() => {
     setItems([...children, ...children]);
   }, [children]);
-
-  const scrollLeftEdge = () => {
-    const container = containerRef.current;
-    return container?.scrollLeft ?? 0 <= 10;
-  };
-
-  const scrollRightEdge = () => {
-    const container = containerRef.current;
-    return (
-      container &&
-      container.scrollLeft + container.clientWidth >= container.scrollWidth - 10
-    );
-  };
 
   const handlePrevious = () => {
     setGalleryIndex((prev) => {
@@ -65,10 +50,12 @@ const Gallery: FC<GalleryProps> = ({
   const handleNext = () => {
     setGalleryIndex((prev) => {
       const newIndex = prev + 1;
-      // Append if approaching end
+
+      // Append items if the user is approaching the end of the array
       if (newIndex >= items.length - (isMobile ? 1 : 3)) {
         setItems((prevItems) => [...prevItems, ...children]);
       }
+
       return newIndex;
     });
   };
@@ -76,6 +63,30 @@ const Gallery: FC<GalleryProps> = ({
   const calculateOffset = (index: number) => {
     return -(index * (itemWidth + itemGap));
   };
+
+  // Add scroll-based data population
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+
+      // Load more items when scrolling to the right end
+      if (scrollLeft + clientWidth >= scrollWidth - 10) {
+        setItems((prevItems) => [...prevItems, ...children]);
+      }
+
+      // Load more items when scrolling to the left end
+      if (scrollLeft <= 10) {
+        setItems((prevItems) => [...children, ...prevItems]);
+        container.scrollLeft += children.length * (itemWidth + itemGap); // Adjust scroll position
+      }
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [children, itemWidth, itemGap]);
 
   return (
     <div
@@ -85,27 +96,32 @@ const Gallery: FC<GalleryProps> = ({
         <ArrowButtonIcon direction="left" onClick={handlePrevious} />
         <ArrowButtonIcon direction="right" onClick={handleNext} />
       </div>
-      <div className="relative w-full h-full flex justify-center items-center gap-4">
-        <div ref={containerRef} className="overflow-hidden w-full">
-          <div className="flex gap-5 transition-transform duration-500 ease-out">
-            {items.map((item, index) => (
-              <GalleryItem key={index} offset={calculateOffset(galleryIndex)}>
-                {item}
-              </GalleryItem>
-            ))}
-          </div>
-        </div>
+      <div
+        ref={containerRef}
+        className="invisible-scrollbar rounded-l-3xl overflow-hidden w-full flex gap-5 transition-transform duration-500 ease-out"
+      >
+        {items.map((item, index) => (
+          <GalleryItemWrapper
+            key={index}
+            offset={calculateOffset(galleryIndex)}
+          >
+            {item}
+          </GalleryItemWrapper>
+        ))}
       </div>
     </div>
   );
 };
 
-interface GalleryItemProps {
+interface GalleryItemWrapperProps {
   offset: number;
   children: ReactNode;
 }
 
-const GalleryItem: FC<GalleryItemProps> = ({ offset, children }) => {
+const GalleryItemWrapper: FC<GalleryItemWrapperProps> = ({
+  offset,
+  children,
+}) => {
   return (
     <div
       className="shrink-0 transition-transform duration-500 ease-out"
