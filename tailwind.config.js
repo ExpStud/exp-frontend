@@ -32,6 +32,8 @@ module.exports = {
         sand: {
           DEFAULT: "#FFF1B4",
           300: "#F0E3AA",
+          600: "#7f785a",
+          800: "#666048",
         },
         batman: "#181818",
 

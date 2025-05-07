@@ -1,14 +1,13 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const Footer: FC = () => {
   const year = new Date().getFullYear();
 
   return (
     <footer className={`relative bg-sand`}>
-      <div className="flex justify-between gap-2 md:gap-4 mx-5 md:mx-10 pt-10">
+      <div className="page-px flex justify-between gap-2 md:gap-4 pt-10">
         <div className="flex flex-col text-xl gap-1.5">
           <FooterItem href="/">Home</FooterItem>
           <FooterItem href="/projects">Our work</FooterItem>
@@ -22,23 +21,26 @@ const Footer: FC = () => {
         <div className="flex flex-col gap-1 text-sm lg:text-base text-black">
           <p>Follow us</p>
           <a
-            href="https://www.instagram.com/exp_studio_/"
+            href="https://www.instagram.com/sandbox_studio_/"
             rel="noreferrer"
             target="_blank"
+            className="transition-300 text-black hover:text-sand-800"
           >
             Instagram
           </a>
           <a
-            href="https://www.linkedin.com/company/exp-studio-llc"
+            href="https://www.linkedin.com/company/sandbox-studio-web/"
             rel="noreferrer"
             target="_blank"
+            className="transition-300 text-black hover:text-sand-800"
           >
             LinkedIn
           </a>
           <a
-            href="https://twitter.com/exp_studio_"
+            href="https://x.com/sandbox_studio_"
             rel="noreferrer"
             target="_blank"
+            className="transition-300 text-black hover:text-sand-800"
           >
             X
           </a>
@@ -75,40 +77,12 @@ const FooterItem: FC<FooterItemProps> = (props: FooterItemProps) => {
   const { children, href } = props;
 
   return (
-    <UnderlineAnimation underlineColor="black">
-      <Link
-        href={href}
-        className={`text-lg md:text-xl transition-300 text-black opacity-100`}
-      >
-        {children}
-      </Link>
-    </UnderlineAnimation>
+    <Link
+      href={href}
+      className={`text-lg md:text-xl transition-300 text-black hover:text-sand-800`}
+    >
+      {children}
+    </Link>
   );
 };
-
-interface UnderlineAnimationProps {
-  children: ReactNode; // The text or content to display
-  underlineColor?: string; // Color of the underline (default: black)
-  className?: string; // Additional classes for styling
-}
-
-const UnderlineAnimation: FC<UnderlineAnimationProps> = ({
-  children,
-  underlineColor = "black",
-  className = "",
-}) => {
-  return (
-    <div className={`relative inline-block ${className}`}>
-      <span className="relative z-10">{children}</span>
-      <motion.div
-        className="absolute bottom-0 left-0 h-[2px]"
-        style={{ backgroundColor: underlineColor }}
-        initial={{ width: 0 }}
-        whileHover={{ width: "100%" }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-      />
-    </div>
-  );
-};
-
 export default Footer;
