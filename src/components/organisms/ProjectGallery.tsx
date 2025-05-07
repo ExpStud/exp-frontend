@@ -13,8 +13,8 @@ const carouselData: GalleryType[] = [
 
 const ProjectGallery: FC = () => {
   return (
-    <div className="landing-container-left py-10 flex flex-col justify-center">
-      <div className="flex flex-col items-start justify-center gap-0 h-full max-w-[1920px]">
+    <div className="landing-container-left py-10 flex flex-col justify-center 2010:items-center">
+      <div className="flex flex-col items-start justify-center gap-0 h-full max-w-[1864px]">
         <div>
           <h2 className="mb-3">Check out</h2>
           <h2 className="text-sand">our work.</h2>

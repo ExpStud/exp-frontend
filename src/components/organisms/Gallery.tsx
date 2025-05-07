@@ -125,13 +125,13 @@ const Gallery: FC<GalleryProps> = ({
     <div
       className={`flex flex-col w-full items-center gap-6 ${className ?? ""}`}
     >
-      <div className="row-end gap-5 w-full pr-5 lg:pr-8 xl:pr-8">
+      <div className="row-end gap-5 w-full pr-5 lg:pr-8 xl:pr-8 2010:pr-0">
         <ArrowButtonIcon direction="left" onClick={handlePrevious} />
         <ArrowButtonIcon direction="right" onClick={handleNext} />
       </div>
       <div
         ref={containerRef}
-        className="invisible-scrollbar rounded-l-3xl overflow-hidden w-full flex gap-5 transition-transform duration-500 ease-out"
+        className="invisible-scrollbar rounded-l-3xl 2010:rounded-r-3xl overflow-hidden w-full flex gap-5 transition-transform duration-500 ease-out"
       >
         {items.map((item, index) => (
           <GalleryItemWrapper
