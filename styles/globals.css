@@ -164,7 +164,7 @@ h2 {
   @apply lg:pl-16;
 }
 .left-margin {
-  @apply mx-5 md:ml-10;
+  @apply mx-5 md:mx-10 2xl:mx-16 3xl:mx-[5%];
 }
 .top-margin {
   @apply mt-12 md:mt-20;
@@ -181,6 +181,12 @@ h2 {
 }
 .page-px {
   @apply px-5 md:px-10 2xl:px-16 3xl:px-[5%];
+}
+.page-py {
+  @apply pt-24 xl:pt-32;
+}
+.page-my {
+  @apply mt-24 xl:mt-32;
 }
 .border-art {
   border-radius: 21px;

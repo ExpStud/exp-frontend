@@ -16,7 +16,7 @@ const ContactView: FC<Props> = (props: Props) => {
   const { showView } = useViewStore();
 
   return (
-    <div className="relative w-full h-full items-center justify-center overflow-hidden mb-10 ">
+    <div className="page-py relative w-full h-full items-center justify-center overflow-hidden mb-10 ">
       <BackgroundImage setAssets={setAssets} />
 
       <AnimateWrapper animate={showView}>

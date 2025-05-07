@@ -21,8 +21,8 @@ interface Props {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;
 }
 
-const yearsActive = 10;
-const projectsCompleted = 20;
+const yearsActive = 3;
+const projectsCompleted = 12;
 
 const AboutView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
@@ -79,7 +79,7 @@ const AboutView: FC<Props> = (props: Props) => {
   }, [projectsCount, showProjectsCounter]);
 
   return (
-    <div className="relative w-full h-full items-center justify-center">
+    <div className="page-py relative w-full h-full items-center justify-center z-0">
       <BackgroundImage setAssets={setAssets} />
 
       <div className="relative z-10">

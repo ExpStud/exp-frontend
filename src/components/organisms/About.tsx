@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Button } from "@components";
 import Image from "next/image";
 
-const LandingView: FC = () => {
+const About: FC = () => {
   return (
     <div className="landing-container col-centered">
       <div className="flex flex-col xl:flex-row gap-16 xl:gap-32 max-w-[1256px]">
@@ -39,4 +39,4 @@ const LandingView: FC = () => {
   );
 };
 
-export default LandingView;
+export default About;

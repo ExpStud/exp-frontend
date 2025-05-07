@@ -1,12 +1,4 @@
-import {
-  Dispatch,
-  SetStateAction,
-  FC,
-  useContext,
-  Fragment,
-  useCallback,
-  useState,
-} from "react";
+import { Dispatch, SetStateAction, FC } from "react";
 import {
   WelcomeSection,
   ProjectItem,
@@ -26,7 +18,7 @@ const ProjectsView: FC<Props> = (props: Props) => {
   const { showView } = useViewStore();
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full page-py">
       <BackgroundImage setAssets={setAssets} />
       <AnimateWrapper animate={showView}>
         <WelcomeSection title1="Our work." />
