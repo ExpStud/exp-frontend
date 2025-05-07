@@ -57,7 +57,7 @@ const ProductList: FC = () => {
         </div>
 
         <motion.div
-          className="flex flex-col gap-10 w-full"
+          className="flex flex-col gap-6 md:gap-10 w-full"
           variants={containerVariants}
         >
           <motion.p

@@ -9,7 +9,7 @@ const LandingScreen: FC = () => {
 
   return (
     <motion.div
-      className="min-h-[100svh] w-screen flex flex-col items-center justify-end gap-5 lg:gap-10 border-b border-white border-opacity-10 px-5 lg:px-0"
+      className="min-h-[100svh] w-screen flex flex-col items-center justify-center md:justify-end gap-8 md:gap-10 border-b border-white border-opacity-10 px-5 lg:px-0"
       variants={introContainerVariants}
       initial="hidden"
       animate={showView ? "show" : "hidden"}

@@ -65,7 +65,7 @@ const HeroVideo = () => {
 
   return (
     <div
-      className="relative w-screen md:w-[700px] 3xl:w-[926px] aspect-video rounded-t-3xl max-w-4xl mx-auto bg-black/70 overflow-hidden"
+      className="relative w-screen md:w-[700px] 3xl:w-[926px] aspect-video md:rounded-t-3xl max-w-4xl mx-auto bg-black/70 overflow-hidden"
       onClick={() => {
         if (!isPlaying) setPlaying(true);
       }}
@@ -102,7 +102,7 @@ const HeroVideo = () => {
       {isPlaying && (
         <video
           ref={videoNodeRef}
-          className="video-js vjs-default-skin w-[700px] aspect-video rounded-t-3xl object-scale-down"
+          className="video-js vjs-default-skin w-[700px] aspect-video md:rounded-t-3xl object-scale-down"
           controls
         />
       )}
