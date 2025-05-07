@@ -36,7 +36,7 @@ const ServicesView: FC<Props> = (props: Props) => {
 
   return (
     <div className="margin-left w-full h-full relative overflow-x-hidden">
-      {/* <BackgroundImage /> */}
+      <BackgroundImage />
 
       <div className="page-my margin-left w-full h-full relative overflow-x-hidden">
         <AnimateWrapper animate={showView}>
@@ -49,7 +49,7 @@ const ServicesView: FC<Props> = (props: Props) => {
             </p>
           </div>
           {/* bg image */}
-          <div className="hidden 2xs:block absolute -top-0 2xl:top-0 -left-0 lg:left-0 xl:-left-20 2xl:-left-28 -z-[2] w-[100vw] h-[800px] lg:h-[900px] 2xl:h-[980px] ">
+          {/* <div className="hidden 2xs:block absolute -top-0 2xl:top-0 -left-0 lg:left-0 xl:-left-20 2xl:-left-28 -z-[2] w-[100vw] h-[800px] lg:h-[900px] 2xl:h-[980px] ">
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/services/final.png`}
               alt="Services"
@@ -66,16 +66,16 @@ const ServicesView: FC<Props> = (props: Props) => {
               priority
               onLoad={() => setAssets && handleAssetLoad(0, setAssets)}
             />
-          </div>
+          </div> */}
           {/* invisible container */}
           {/* xs:mt-10 hidden 2xs:block relative aspect-[5/4] xs:aspect-[2/1] sm:aspect-[3/1] lg:aspect-[3.5/1] w-full bg- bg-opacity-50 */}
-          <div
+          {/* <div
             className="relative opacity-10 hidden 2xs:block
           h-[360px] xs:h-[400px] md:h-[360px] lg:h-[400px] xl:h-[440px] 2xl:h-[520px] aspect-[8/7] xs:aspect-[5/3]  md:aspect-[3/1] lg:aspect-[3.5/1] "
-          ></div>
+          ></div> */}
         </AnimateWrapper>
 
-        <div className="left-margin z-10">
+        <div className="left-margin z-10 mt-10 lg:mt-24">
           <AnimateWrapper animate={showView && listInView}>
             <div className="!opacity-100" ref={listRef}>
               <p className="text-5xl text-custom-gray mb-3">Our services.</p>
