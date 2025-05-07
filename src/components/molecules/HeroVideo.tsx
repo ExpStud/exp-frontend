@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import videojs from "video.js";
-import { set } from "video.js/dist/types/tech/middleware";
 import "video.js/dist/video-js.css";
 import "videojs-contrib-quality-levels";
 
 // Replace with your real Cloudflare Stream UID
-const CLOUDFLARE_VIDEO_ID = "83963f0ba210184052a39ba1678f81ff";
+const CLOUDFLARE_VIDEO_ID = "106166d3a21dc8e4bd59958653f32f80";
 
 const HeroVideo = () => {
   const videoNodeRef = useRef<HTMLVideoElement | null>(null);
