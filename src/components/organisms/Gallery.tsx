@@ -37,21 +37,28 @@ const Gallery: FC<GalleryProps> = ({
   }, [children]);
 
   const handlePrevious = () => {
+    if (items.length === 0) return; // Fail-safe: Do nothing if there are no items
+
     setGalleryIndex((prev) => {
       const newIndex = prev === 0 ? items.length - 1 : prev - 1;
+
+      // Prepend items if moving to the left and at the start
       if (newIndex === items.length - 1) {
         setItems((prevItems) => [...children, ...prevItems]);
       }
+
       prevIndex.current = prev;
       return newIndex;
     });
   };
 
   const handleNext = () => {
+    if (items.length === 0) return; // Fail-safe: Do nothing if there are no items
+
     setGalleryIndex((prev) => {
       const newIndex = prev + 1;
 
-      // Append items if the user is approaching the end of the array
+      // Append items if moving to the right and at the end
       if (newIndex >= items.length - (isMobile ? 1 : 3)) {
         setItems((prevItems) => [...prevItems, ...children]);
       }
@@ -59,6 +66,32 @@ const Gallery: FC<GalleryProps> = ({
       return newIndex;
     });
   };
+
+  // Add scroll-based data population with fail-safe
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      if (items.length === 0) return; // Fail-safe: Do nothing if there are no items
+
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+
+      // Load more items when scrolling to the right end
+      if (scrollLeft + clientWidth >= scrollWidth - 10) {
+        setItems((prevItems) => [...prevItems, ...children]);
+      }
+
+      // Load more items when scrolling to the left end
+      if (scrollLeft <= 10) {
+        setItems((prevItems) => [...children, ...prevItems]);
+        container.scrollLeft += children.length * (itemWidth + itemGap); // Adjust scroll position
+      }
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [children, itemWidth, itemGap, items.length]);
 
   const calculateOffset = (index: number) => {
     return -(index * (itemWidth + itemGap));

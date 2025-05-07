@@ -1,11 +1,11 @@
 import { FC } from "react";
 
 interface ArrowButtonIconProps extends React.SVGProps<SVGSVGElement> {
-  direction: "left" | "right";
+  direction?: "left" | "right";
 }
 
 const ArrowButtonIcon: FC<ArrowButtonIconProps> = ({
-  direction,
+  direction = "right",
   ...svgProps
 }) => {
   return (
@@ -28,12 +28,12 @@ const ArrowButtonIcon: FC<ArrowButtonIconProps> = ({
       {direction === "left" ? (
         <path
           d="M17.2472 24L18.0852 23.169L13.142 18.233H25.5V17.0398H13.142L18.0852 12.1037L17.2472 11.2727L10.8835 17.6364L17.2472 24Z"
-          fill="#FFF1B4"
+          fill={svgProps.fill ?? "#FFF1B4"}
         />
       ) : (
         <path
           d="M18.7528 24L17.9148 23.169L22.858 18.233H10.5V17.0398H22.858L17.9148 12.1037L18.7528 11.2727L25.1165 17.6364L18.7528 24Z"
-          fill="#FFF1B4"
+          fill={svgProps.fill ?? "#FFF1B4"}
         />
       )}
     </svg>

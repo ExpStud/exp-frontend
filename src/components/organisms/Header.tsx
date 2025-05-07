@@ -25,9 +25,10 @@ const Header: FC<Props> = (props: Props) => {
 
   //hide header on scroll down, show on scroll up
   useMotionValueEvent(scrollY, "change", (latest) => {
+    // console.log("scrollY", latest);
     //first instance
     if (scrollRef.current === undefined) {
-      setAnimateHeader(false);
+      // setAnimateHeader(false);
       scrollRef.current = latest;
       return;
     }
@@ -52,6 +53,8 @@ const Header: FC<Props> = (props: Props) => {
   useEffect(() => {
     setAnimateHeader(showHeader);
   }, [showHeader]);
+
+  useEffect(() => {}, []);
 
   return (
     <header

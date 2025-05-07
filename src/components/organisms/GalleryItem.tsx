@@ -1,4 +1,4 @@
-import { Button } from "@components";
+import { ArrowButtonIcon, Button } from "@components";
 import { GalleryType } from "@constants";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -20,23 +20,26 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
 
   return (
     <div
-      className={`relative w-[608px] h-[555px] flex items-end justify-between transition-200 rounded-3xl ${data.backgroundColor}`}
+      className={`relative w-[608px] h-[555px] flex items-end justify-between transition-200 rounded-3xl font-barlow p-10 ${data.backgroundColor}`}
     >
-      <div
-        className={`flex flex-col gap-1 justify-center p-10 max-w-[380px] ${data.textColor}`}
-      >
-        <p className="text-opacity-75 text-xl pl-0.5">{data.name}</p>
-        <h3 className="text-4xl sm:text-5xl whitespace-nowrap ">
-          {data.title}
-        </h3>
-        <Button
-          title={data.href ? "Visit Website" : "Coming Soon"}
-          className={`mt-8 !min-w-[180px] !max-w-[180px] !h-[42px] !pr-1 !text-base !border-opacity-20 hover:!border-opacity-80 
-            ${data.borderColor} ${data.textColor}`}
-          circleClass={` ${data.fillColor}`}
-          pathClass={` ${data.fillColor}`}
-          svgClass="-rotate-45"
-          callback={() => handleClick()}
+      <div className="flex w-full justify-between items-end">
+        <div
+          className={`flex flex-col gap-1 justify-center max-w-[380px] ${data.textColor}`}
+        >
+          <p className="text-opacity-75 text-lg md:text-xl pl-0.5">
+            {data.name}
+          </p>
+          <h3 className="text-3xl md:text-4xl whitespace-nowrap ">
+            {data.title}
+          </h3>
+        </div>
+
+        <ArrowButtonIcon
+          className={`!border-opacity-20 hover:!border-opacity-80 ${data.borderColor} ${data.textColor}`}
+          fill={data.fillColor}
+          // circleClass={` ${data.fillColor}`}
+          // pathClass={` ${data.fillColor}`}
+          onClick={() => handleClick()}
         />
       </div>
       {/* <Image
