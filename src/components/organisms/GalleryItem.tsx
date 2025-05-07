@@ -20,7 +20,7 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
 
   return (
     <div
-      className={`relative w-[608px] h-[555px] flex items-end justify-between transition-200 rounded-3xl font-barlow p-10 ${data.backgroundColor}`}
+      className={`relative w-[608px] h-[555px] flex items-end justify-between transition-200 rounded-3xl  p-10 ${data.backgroundColor}`}
     >
       <div className="flex w-full justify-between items-end">
         <div

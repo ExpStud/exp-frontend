@@ -70,7 +70,7 @@ const ProjectGallery: FC = () => {
         <motion.div variants={itemVariants}>
           <Button
             title="See more projects"
-            link="/services"
+            link="/projects"
             className="!min-w-[240px] !min-h-[48px] mt-5 2xl:mt-10"
           />
         </motion.div>

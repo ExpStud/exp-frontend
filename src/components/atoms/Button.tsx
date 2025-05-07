@@ -34,7 +34,7 @@ const Button: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={`group min-w-[192px] h-[48px] max-w-[220px] whitespace-nowrap cursor-pointer inline-flex items-center justify-between font-barlow
+      className={`group min-w-[192px] h-[48px] max-w-[220px] whitespace-nowrap cursor-pointer inline-flex items-center justify-between 
       transition-300 text-sand text-xl font-regukar pl-5 pr-1.5 rounded-full border border-white border-opacity-20 ${
         disabled ? " cursor-not-allowed opacity-40" : "hover:border-opacity-40"
       } ${componentProps.className} `}

@@ -41,7 +41,7 @@ const ProductList: FC = () => {
             <p className="text-4xl md:text-5xl font-normal !leading-[1.3] tracking-wide md:min-w-[380px]">
               Design-led digital products.
             </p>
-            <p className="text-custom-gray text-lg xl:text-xl font-regular !tracking-wide font-barlow">
+            <p className="text-custom-gray text-lg xl:text-xl font-regular !tracking-wide ">
               Founded in January 2023, Sandbox Studio emerged from the nearly
               decade-long partnership between Miguel Corzo and Wallace Palmer.
               Having spent over ten years working together, our collaborative
@@ -61,7 +61,7 @@ const ProductList: FC = () => {
           variants={containerVariants}
         >
           <motion.p
-            className="text-white/60 text-xl xl:text-3xl font-regular !tracking-wide font-barlow"
+            className="text-white/60 text-xl xl:text-3xl font-regular !tracking-wide "
             variants={fadeInUp}
           >
             Our services.

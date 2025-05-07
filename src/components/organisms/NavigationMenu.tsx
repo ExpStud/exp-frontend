@@ -28,7 +28,7 @@ const menuItems = [
 
 const socialLinks = [
   {
-    href: "https://www.instagram.com/exp_studio_/",
+    href: "https://www.instagram.com/sandbox_studio_/",
     label: "Instagram",
   },
   {

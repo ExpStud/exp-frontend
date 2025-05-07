@@ -12,12 +12,12 @@ const About: FC = () => {
             <h2 className="text-sand">about the team.</h2>
           </div>
           <div>
-            <p className="font-barlow font-light text-lg xl:text-xl mb-5">
+            <p className=" font-light text-lg xl:text-xl mb-5">
               At EXP, we specialise in building cutting-edge identity systems to
               help professional service providers increase their value and gain
               a competitive advantage from branding & websites.
             </p>
-            <p className="font-barlow font-light text-lg xl:text-xl">
+            <p className=" font-light text-lg xl:text-xl">
               We&apos;ve worked with some of the Canberra region&apos;s finest
               builders, architects and interior designers and take pride in our
               expansive portfolio. We will continue to complete work on time and

@@ -13,9 +13,7 @@ const Footer: FC = () => {
           <FooterItem href="/services">What we do</FooterItem>
           <FooterItem href="/about">About us</FooterItem>
           <FooterItem href="/contact">Contact us</FooterItem>
-          <p className="text-xs font-barlow text-black mt-14">
-            ©{year} SANDBOX STUDIO™
-          </p>
+          <p className="text-xs  text-black mt-14">©{year} SANDBOX STUDIO™</p>
         </div>
         <div className="flex flex-col gap-1 text-sm lg:text-base text-black">
           <p>Follow us</p>

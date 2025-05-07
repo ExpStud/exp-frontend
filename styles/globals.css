@@ -93,7 +93,7 @@ p {
 }
 
 h2 {
-  @apply text-custom-gray text-4xl md:text-5xl font-barlow;
+  @apply text-custom-gray text-4xl md:text-5xl ;
 }
 
 @keyframes shimmer {
