@@ -20,8 +20,23 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
 
   return (
     <div
-      className={`relative w-[608px] h-[555px] flex items-end justify-between transition-200 rounded-3xl  p-10 ${data.backgroundColor}`}
+      className={`relative w-[608px] h-[555px] flex flex-col items-end justify-between transition-200 rounded-3xl  p-10 ${data.backgroundColor}`}
     >
+      {/* add video */}
+      <div className="w-[560px] h-[356px] bg-white/40 rounded-3xl overflow-hidden">
+        <video
+          src="https://customer-smg5fd8i8anqiexe.cloudflarestream.com/cec7ccf4f3a6b358eb229be0409b64af/watch"
+          className="w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          crossOrigin="anonymous"
+        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       <div className="flex w-full justify-between items-end">
         <div
           className={`flex flex-col gap-1 justify-center max-w-[380px] ${data.textColor}`}
@@ -37,8 +52,6 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
         <ArrowButtonIcon
           className={`!border-opacity-20 hover:!border-opacity-80 ${data.borderColor} ${data.textColor}`}
           fill={data.fillColor}
-          // circleClass={` ${data.fillColor}`}
-          // pathClass={` ${data.fillColor}`}
           onClick={() => handleClick()}
         />
       </div>
