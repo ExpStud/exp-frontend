@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import videojs from "video.js";
-import "video.js/dist/video-js.css";
-import "videojs-contrib-quality-levels";
 
 // Replace with your real Cloudflare Stream UID
 const CLOUDFLARE_VIDEO_ID = "106166d3a21dc8e4bd59958653f32f80";
