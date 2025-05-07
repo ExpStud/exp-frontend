@@ -1,5 +1,4 @@
 import { FC } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 const Footer: FC = () => {
@@ -7,7 +6,7 @@ const Footer: FC = () => {
 
   return (
     <footer className={`relative bg-sand`}>
-      <div className="page-px flex justify-between gap-2 md:gap-4 pt-10">
+      <div className="page-px flex justify-between gap-2 md:gap-4 py-5 md:py-10 2xl:py-16">
         <div className="flex flex-col text-xl gap-1.5">
           <FooterItem href="/">Home</FooterItem>
           <FooterItem href="/projects">Our work</FooterItem>
@@ -45,25 +44,6 @@ const Footer: FC = () => {
             X
           </a>
         </div>
-      </div>
-      <hr className="border-footer-border mt-3"></hr>
-      <div className="relative w-full h-auto">
-        {/* <Image
-          src={`${process.env.CLOUDFLARE_STORAGE}/images/footer/footer-blem.jpg`}
-          alt="footer"
-          width={1536}
-          height={180}
-          className="hidden lg:block w-full h-auto aspect-[2/1] md:aspect-[6/1] lg:aspect-[9/1] object-cover"
-        />
-        <Image
-          src={`${process.env.CLOUDFLARE_STORAGE}/images/footer/footer-blem.jpg`}
-          alt="footer"
-          width={1536}
-          height={180}
-          className="lg:hidden w-full h-auto aspect-[1.75/1] md:aspect-[6/1] lg:aspect-[9/1] object-cover"
-        /> */}
-        {/* Adjust the background color and opacity here */}
-        {/* <div className="absolute top-0 left-0 w-full h-full bg-[#6242cb] opacity-60 mix-blend-overlay"></div> */}
       </div>
     </footer>
   );
