@@ -286,4 +286,22 @@ export const clients: Client[] = [
       href: "https://hotheads.art/",
     }]
   },
+  {
+    id: 7,
+    name: "folio.works",
+    title: "Folio",
+    company: "Hot Headss",
+    image: "",
+    twitter: "", 
+    gallery: [{
+      name: "folio.works",
+      backgroundColor: "!bg-folio-bg",
+      textColor: "!text-folio-text",
+      borderColor: "!border-folio-text",
+      fillColor: "!fill-folio-text",
+      title: "Folio",
+      videoId: "775744d1681404a304926b63acab98cd", 
+      href: "https://hotheads.art/",
+    }]
+  },
 ];

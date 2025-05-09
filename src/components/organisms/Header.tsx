@@ -6,7 +6,7 @@ import {
   useScroll,
 } from "framer-motion";
 import Link from "next/link";
-import { TwoLinesIcon, NavigationMenu } from "@components";
+import { TwoLinesIcon, NavigationMenu, Logo } from "@components";
 import { midEnterAnimation } from "@constants";
 
 interface Props {
@@ -84,7 +84,7 @@ const HeaderItems: FC = () => {
       {...midEnterAnimation}
     >
       <Link href="/" className="text-sand-300 text-2xl md:text-3xl font-bold">
-        sandbox
+        <Logo type="small" />
       </Link>
       <TwoLinesIcon
         animate={open}

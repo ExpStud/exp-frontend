@@ -37,6 +37,11 @@ const CloudflareVideoPlayer = ({
             preload: "auto",
             responsive: false,
             fluid: false,
+            html5: {
+              vhs: {
+                overrideNative: true, // force videojs HTTP streaming for HLS
+              },
+            },
             sources: [
               {
                 src: `https://videodelivery.net/${videoId}/manifest/video.m3u8`,

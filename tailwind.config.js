@@ -77,6 +77,9 @@ module.exports = {
 
         "sike-text": "#EFB41C",
         "sike-bg": "",
+
+        "folio-text": "#2C2524",
+        "folio-bg": "#FF9F72",
       },
       screens: {
         "2xs": "320px",

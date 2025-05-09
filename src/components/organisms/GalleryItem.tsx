@@ -25,7 +25,7 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
       <div className="w-[560px] h-[356px] bg-white/40 rounded-3xl overflow-hidden">
         <CloudflareVideoPlayer
           videoId={data.videoId}
-          quality={720}
+          quality={480}
           autoplay
           muted
           loop
