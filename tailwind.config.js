@@ -12,8 +12,8 @@ module.exports = {
         //gradients
       },
       fontFamily: {
-        primary: "gabarito",
-        barlow: "barlow",
+        primary: ["gabarito", "Arial", "sans-serif"], // Add fallback fonts
+        barlow: ["barlow", "Helvetica", "sans-serif"], // Add fallback fonts
       },
       fontWeight: {
         light: 300,

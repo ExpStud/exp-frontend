@@ -1,60 +1,11 @@
-import { useEffect, useRef, useState } from "react";
-import videojs from "video.js";
+import { useEffect, useState } from "react";
+import { CloudflareVideoPlayer } from "@components";
 
 // Replace with your real Cloudflare Stream UID
 const CLOUDFLARE_VIDEO_ID = "106166d3a21dc8e4bd59958653f32f80";
 
 const HeroVideo = () => {
-  const videoNodeRef = useRef<HTMLVideoElement | null>(null);
-  const playerRef = useRef<any>(null);
   const [isPlaying, setPlaying] = useState(false);
-
-  useEffect(() => {
-    if (isPlaying && videoNodeRef.current && !playerRef.current) {
-      const player = videojs(videoNodeRef.current, {
-        autoplay: true,
-        controls: true,
-        preload: "auto",
-        responsive: true,
-        fluid: true,
-        muted: false,
-        sources: [
-          {
-            src: `https://videodelivery.net/${CLOUDFLARE_VIDEO_ID}/manifest/video.m3u8`,
-            type: "application/x-mpegURL",
-          },
-        ],
-      });
-
-      // Try to set highest quality
-      player.ready(() => {
-        //@ts-ignore
-        const qualityLevels = player.qualityLevels?.();
-        if (qualityLevels) {
-          qualityLevels.on("addqualitylevel", () => {
-            for (let i = 0; i < qualityLevels.length; i++) {
-              qualityLevels[i].enabled = false;
-            }
-
-            // Enable the highest quality level
-            const max = [...qualityLevels].reduce((a, b) =>
-              a.height > b.height ? a : b
-            );
-            max.enabled = true;
-          });
-        }
-      });
-
-      playerRef.current = player;
-    }
-
-    return () => {
-      if (playerRef.current) {
-        playerRef.current.dispose();
-        playerRef.current = null;
-      }
-    };
-  }, [isPlaying]);
 
   useEffect(() => {
     setPlaying(false);
@@ -62,16 +13,16 @@ const HeroVideo = () => {
 
   return (
     <div
-      className="relative w-screen md:w-[700px] 3xl:w-[926px] aspect-video md:rounded-t-3xl max-w-4xl mx-auto bg-black/70 overflow-hidden"
+      className="relative w-screen md:w-[700px] 3xl:w-[926px] aspect-video md:rounded-t-3xl bg-black/70 overflow-hidden"
       onClick={() => {
         if (!isPlaying) setPlaying(true);
       }}
     >
-      {!isPlaying && (
+      {!isPlaying ? (
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <button
             onClick={() => setPlaying(true)}
-            className="group absolute flex items-center justify-center  rounded-full"
+            className="group absolute flex items-center justify-center rounded-full"
             aria-label="Play Video"
           >
             <svg
@@ -94,14 +45,19 @@ const HeroVideo = () => {
             </svg>
           </button>
         </div>
-      )}
-
-      {isPlaying && (
-        <video
-          ref={videoNodeRef}
-          className="video-js vjs-default-skin w-[700px] aspect-video md:rounded-t-3xl object-scale-down"
-          controls
+      ) : (
+        <CloudflareVideoPlayer
+          videoId="dd20e765bdeb6307d8b0c1a1399c8b83"
+          autoplay={true}
+          muted={false}
+          quality={720}
+          className="!rounded-t-3xl object-scale-down"
         />
+        // <video
+        //   ref={videoNodeRef}
+        //   className="video-js vjs-default-skin w-screen md:w-[700px] md:h-[394px] 3xl:w-[926px] 3xl:h-[522px] rounded-t-3xl"
+        //   controls
+        // />
       )}
     </div>
   );

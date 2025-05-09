@@ -22,7 +22,8 @@ const ProductListItem = dynamic(() => import("./molecules/ProductListItem"));
 const LetsWorkLink = dynamic(() => import("./molecules/LetsWorkLink"));
 const BackgroundImage = dynamic(() => import("./molecules/BackgroundImage"));
 const Dropdown = dynamic(() => import("./molecules/Dropdown"));
-const HeroVideo = dynamic(() => import("./molecules/HeroVideo"));
+const HeroVideo = dynamic(() => import("./molecules/HeroVideo"), { ssr: false });
+const CloudflareVideoPlayer = dynamic(() => import("./molecules/CloudflareVideoPlayer"));
 //organisms
 const SplashScreen = dynamic(() => import("./organisms/SplashScreen"));
 const Header = dynamic(() => import("./organisms/Header"));
@@ -99,5 +100,6 @@ export {
   ProjectGallery,
   ArrowButtonIcon,
   Gallery,
-  GalleryItem
+  GalleryItem,
+  CloudflareVideoPlayer
 };

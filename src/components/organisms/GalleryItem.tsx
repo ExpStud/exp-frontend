@@ -1,6 +1,5 @@
-import { ArrowButtonIcon, Button } from "@components";
+import { ArrowButtonIcon } from "@components";
 import { GalleryType } from "@constants";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { FC } from "react";
 
@@ -24,17 +23,12 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
     >
       {/* add video */}
       <div className="w-[560px] h-[356px] bg-white/40 rounded-3xl overflow-hidden">
-        <video
-          src="https://customer-smg5fd8i8anqiexe.cloudflarestream.com/cec7ccf4f3a6b358eb229be0409b64af/watch"
-          className="w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          crossOrigin="anonymous"
-        >
-          Your browser does not support the video tag.
-        </video>
+        <iframe
+          src="https://iframe.videodelivery.net/cec7ccf4f3a6b358eb229be0409b64af?autoplay=true&muted=true"
+          allow="autoplay; encrypted-media; picture-in-picture;"
+          allowFullScreen
+          className="w-full h-full rounded-3xl"
+        />
       </div>
 
       <div className="flex w-full justify-between items-end">
