@@ -8,6 +8,7 @@ interface CloudflareVideoPlayerProps extends React.HTMLProps<HTMLVideoElement> {
   autoplay?: boolean;
   muted?: boolean;
   loop?: boolean;
+  controls?: boolean;
   quality?: 480 | 720 | 1080;
 }
 
@@ -16,6 +17,7 @@ const CloudflareVideoPlayer = ({
   autoplay = false,
   muted = false,
   loop = false,
+  controls = false,
   quality = 1080,
   ...videoProps
 }: CloudflareVideoPlayerProps) => {
@@ -33,7 +35,7 @@ const CloudflareVideoPlayer = ({
             autoplay,
             muted,
             loop,
-            controls: true,
+            controls,
             preload: "auto",
             responsive: false,
             fluid: false,
@@ -60,21 +62,21 @@ const CloudflareVideoPlayer = ({
             //@ts-ignore
             const qualityLevels = player.qualityLevels?.();
 
-            console.log("Quality levels object:", qualityLevels);
-            console.log("Available quality levels:", qualityLevels.levels_);
-            console.log(
-              "Selected quality index:",
-              qualityLevels.selectedIndex_
-            );
+            // console.log("Quality levels object:", qualityLevels);
+            // console.log("Available quality levels:", qualityLevels.levels_);
+            // console.log(
+            //   "Selected quality index:",
+            //   qualityLevels.selectedIndex_
+            // );
 
             if (qualityLevels) {
-              console.log("Quality levels available:", qualityLevels);
+              // console.log("Quality levels available:", qualityLevels);
               qualityLevels.on("addqualitylevel", () => {
                 for (let i = 0; i < qualityLevels.length; i++) {
                   const level = qualityLevels[i];
                   level.enabled = false;
 
-                  console.log("level:", level.height);
+                  // console.log("level:", level.height);
                   if (!quality || level.height === quality) {
                     level.enabled = true;
                   }
@@ -90,7 +92,12 @@ const CloudflareVideoPlayer = ({
 
     return () => {
       if (playerRef.current) {
-        playerRef.current.dispose();
+        try {
+          playerRef.current.dispose();
+        } catch (error) {
+          console.error("Error disposing video.js player:", error);
+        }
+        playerRef.current = null; // Reset the reference
       }
       cancelAnimationFrame(animationFrameId);
     };

@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { CloudflareVideoPlayer } from "@components";
 
-// Replace with your real Cloudflare Stream UID
-const CLOUDFLARE_VIDEO_ID = "106166d3a21dc8e4bd59958653f32f80";
-
 const HeroVideo = () => {
   const [isPlaying, setPlaying] = useState(false);
 
@@ -48,16 +45,11 @@ const HeroVideo = () => {
       ) : (
         <CloudflareVideoPlayer
           videoId="dd20e765bdeb6307d8b0c1a1399c8b83"
-          autoplay={true}
-          muted={false}
+          autoplay
+          controls
           quality={1080}
           className="!rounded-t-3xl object-scale-down"
         />
-        // <video
-        //   ref={videoNodeRef}
-        //   className="video-js vjs-default-skin w-screen md:w-[700px] md:h-[394px] 3xl:w-[926px] 3xl:h-[522px] rounded-t-3xl"
-        //   controls
-        // />
       )}
     </div>
   );

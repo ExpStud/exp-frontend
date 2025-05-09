@@ -16,25 +16,17 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
     if (data.href) window.open(data.href, "_blank");
     else router.push("/projects");
   };
-
   return (
     <div
       className={`relative w-[608px] h-[555px] flex flex-col items-end justify-between transition-200 rounded-3xl p-5 ${data.backgroundColor}`}
     >
-      {/* add video */}
-      <div className="w-[560px] h-[356px] bg-white/40 rounded-3xl overflow-hidden">
+      <div className="w-[560px] h-[378.5px] bg-white/40 rounded-3xl overflow-hidden">
         <CloudflareVideoPlayer
           videoId={data.videoId}
           quality={480}
-          autoplay
+          autoplay={true}
           muted
           loop
-        />
-        <iframe
-          src="https://iframe.videodelivery.net/cec7ccf4f3a6b358eb229be0409b64af?autoplay=true&muted=true"
-          allow="autoplay; encrypted-media; picture-in-picture;"
-          allowFullScreen
-          className="w-full h-full rounded-3xl"
         />
       </div>
 
@@ -56,19 +48,6 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
           onClick={() => handleClick()}
         />
       </div>
-      {/* <Image
-        src={data?.srcMobile ?? data.src}
-        alt={data.name}
-        width={300}
-        height={400}
-        className=" sm:hidden absolute top-0 left-1/2 transform -translate-x-1/2"
-      /> */}
-      {/* <Image
-          src={data.src}
-          alt={data.name}
-          fill
-          className="object-cover overflow-hidden"
-        /> */}
     </div>
   );
 };

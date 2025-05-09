@@ -67,59 +67,59 @@ const Gallery: FC<GalleryProps> = ({
     });
   };
 
-  // Add scroll-based data population with fail-safe
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const handleScroll = () => {
-      if (items.length === 0) return; // Fail-safe: Do nothing if there are no items
-
-      const { scrollLeft, scrollWidth, clientWidth } = container;
-
-      // Load more items when scrolling to the right end
-      if (scrollLeft + clientWidth >= scrollWidth - 10) {
-        setItems((prevItems) => [...prevItems, ...children]);
-      }
-
-      // Load more items when scrolling to the left end
-      if (scrollLeft <= 10) {
-        setItems((prevItems) => [...children, ...prevItems]);
-        container.scrollLeft += children.length * (itemWidth + itemGap); // Adjust scroll position
-      }
-    };
-
-    container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, [children, itemWidth, itemGap, items.length]);
-
   const calculateOffset = (index: number) => {
     return -(index * (itemWidth + itemGap));
   };
 
-  // Add scroll-based data population
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+  // // Add scroll-based data population with fail-safe
+  // useEffect(() => {
+  //   const container = containerRef.current;
+  //   if (!container) return;
 
-    const handleScroll = () => {
-      const { scrollLeft, scrollWidth, clientWidth } = container;
+  //   const handleScroll = () => {
+  //     if (items.length === 0) return; // Fail-safe: Do nothing if there are no items
 
-      // Load more items when scrolling to the right end
-      if (scrollLeft + clientWidth >= scrollWidth - 10) {
-        setItems((prevItems) => [...prevItems, ...children]);
-      }
+  //     const { scrollLeft, scrollWidth, clientWidth } = container;
 
-      // Load more items when scrolling to the left end
-      if (scrollLeft <= 10) {
-        setItems((prevItems) => [...children, ...prevItems]);
-        container.scrollLeft += children.length * (itemWidth + itemGap); // Adjust scroll position
-      }
-    };
+  //     // Load more items when scrolling to the right end
+  //     if (scrollLeft + clientWidth >= scrollWidth - 10) {
+  //       setItems((prevItems) => [...prevItems, ...children]);
+  //     }
 
-    container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, [children, itemWidth, itemGap]);
+  //     // Load more items when scrolling to the left end
+  //     if (scrollLeft <= 10) {
+  //       setItems((prevItems) => [...children, ...prevItems]);
+  //       container.scrollLeft += children.length * (itemWidth + itemGap); // Adjust scroll position
+  //     }
+  //   };
+
+  //   container.addEventListener("scroll", handleScroll);
+  //   return () => container.removeEventListener("scroll", handleScroll);
+  // }, [children, itemWidth, itemGap, items.length]);
+
+  // // Add scroll-based data population
+  // useEffect(() => {
+  //   const container = containerRef.current;
+  //   if (!container) return;
+
+  //   const handleScroll = () => {
+  //     const { scrollLeft, scrollWidth, clientWidth } = container;
+
+  //     // Load more items when scrolling to the right end
+  //     if (scrollLeft + clientWidth >= scrollWidth - 10) {
+  //       setItems((prevItems) => [...prevItems, ...children]);
+  //     }
+
+  //     // Load more items when scrolling to the left end
+  //     if (scrollLeft <= 10) {
+  //       setItems((prevItems) => [...children, ...prevItems]);
+  //       container.scrollLeft += children.length * (itemWidth + itemGap); // Adjust scroll position
+  //     }
+  //   };
+
+  //   container.addEventListener("scroll", handleScroll);
+  //   return () => container.removeEventListener("scroll", handleScroll);
+  // }, [children, itemWidth, itemGap]);
 
   return (
     <div

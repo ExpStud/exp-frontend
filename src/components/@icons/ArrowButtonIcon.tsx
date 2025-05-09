@@ -2,10 +2,12 @@ import { FC } from "react";
 
 interface ArrowButtonIconProps extends React.SVGProps<SVGSVGElement> {
   direction?: "left" | "right";
+  disabled?: boolean;
 }
 
 const ArrowButtonIcon: FC<ArrowButtonIconProps> = ({
   direction = "right",
+  disabled = false,
   ...svgProps
 }) => {
   return (
@@ -16,7 +18,9 @@ const ArrowButtonIcon: FC<ArrowButtonIconProps> = ({
       viewBox="0 0 36 36"
       fill="none"
       {...svgProps}
-      className="group cursor-pointer min-w-[36px]"
+      className={`group min-w-[36px] ${
+        disabled ? "opacity-50 cursor-not-allowed" : " cursor-pointer"
+      }`}
     >
       <circle
         cx="18"
