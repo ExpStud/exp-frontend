@@ -50,7 +50,7 @@ const HeroVideo = () => {
           videoId="dd20e765bdeb6307d8b0c1a1399c8b83"
           autoplay={true}
           muted={false}
-          quality={720}
+          quality={1080}
           className="!rounded-t-3xl object-scale-down"
         />
         // <video

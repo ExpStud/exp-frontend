@@ -5,9 +5,8 @@ export interface GalleryType {
   borderColor: string;
   fillColor: string;
   title: string;
-  src: string;
-  srcMobile?: string;
-  href: string; //if href "Visit Website" else "Comin Soon"
+  videoId: string;
+  href: string;  
 }
 
 export interface ProductList {
@@ -53,4 +52,5 @@ export type Client = {
   exchangeArt?: string;
   tensor?: string;
   carousel?: Carousel[];
+  gallery?: GalleryType[];
 };

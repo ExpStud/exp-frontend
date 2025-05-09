@@ -31,11 +31,14 @@ const itemVariants = {
   },
 };
 
-const carouselData: GalleryType[] = [
-  clients[0].carousel![0],
-  clients[0].carousel![1],
-  clients[3].carousel![0],
-  clients[1].carousel![0],
+// Folio
+// Somos
+// Scum
+// Cyber
+const galleryData: GalleryType[] = [
+  clients[0].gallery![0],
+  clients[0].gallery![1],
+  clients[3].gallery![0],
 ];
 
 const ProjectGallery: FC = () => {
@@ -60,7 +63,7 @@ const ProjectGallery: FC = () => {
         {/* Gallery */}
         <motion.div variants={itemVariants} className="w-full">
           <Gallery itemWidth={608}>
-            {carouselData.map((item, i) => (
+            {galleryData.map((item, i) => (
               <GalleryItem key={i} data={item} />
             ))}
           </Gallery>

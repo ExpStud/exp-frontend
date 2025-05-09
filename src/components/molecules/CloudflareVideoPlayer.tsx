@@ -7,6 +7,7 @@ interface CloudflareVideoPlayerProps extends React.HTMLProps<HTMLVideoElement> {
   videoId: string;
   autoplay?: boolean;
   muted?: boolean;
+  loop?: boolean;
   quality?: 480 | 720 | 1080;
 }
 
@@ -14,6 +15,7 @@ const CloudflareVideoPlayer = ({
   videoId,
   autoplay = false,
   muted = false,
+  loop = false,
   quality = 1080,
   ...videoProps
 }: CloudflareVideoPlayerProps) => {
@@ -30,6 +32,7 @@ const CloudflareVideoPlayer = ({
           const player = videojs(videoElement, {
             autoplay,
             muted,
+            loop,
             controls: true,
             preload: "auto",
             responsive: false,

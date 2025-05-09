@@ -1,4 +1,4 @@
-import { ArrowButtonIcon } from "@components";
+import { ArrowButtonIcon, CloudflareVideoPlayer } from "@components";
 import { GalleryType } from "@constants";
 import { useRouter } from "next/router";
 import { FC } from "react";
@@ -19,10 +19,17 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
 
   return (
     <div
-      className={`relative w-[608px] h-[555px] flex flex-col items-end justify-between transition-200 rounded-3xl  p-10 ${data.backgroundColor}`}
+      className={`relative w-[608px] h-[555px] flex flex-col items-end justify-between transition-200 rounded-3xl p-5 ${data.backgroundColor}`}
     >
       {/* add video */}
       <div className="w-[560px] h-[356px] bg-white/40 rounded-3xl overflow-hidden">
+        <CloudflareVideoPlayer
+          videoId={data.videoId}
+          quality={720}
+          autoplay
+          muted
+          loop
+        />
         <iframe
           src="https://iframe.videodelivery.net/cec7ccf4f3a6b358eb229be0409b64af?autoplay=true&muted=true"
           allow="autoplay; encrypted-media; picture-in-picture;"
