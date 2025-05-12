@@ -54,7 +54,14 @@ const Header: FC<Props> = (props: Props) => {
     setAnimateHeader(showHeader);
   }, [showHeader]);
 
-  useEffect(() => {}, []);
+  // Check initial scroll position on mount
+  useEffect(() => {
+    if (scrollY.get() > 30) {
+      setAnimateHeader(false); // Hide header if already scrolled down
+    } else {
+      setAnimateHeader(true); // Show header if near the top
+    }
+  }, [scrollY]);
 
   return (
     <header

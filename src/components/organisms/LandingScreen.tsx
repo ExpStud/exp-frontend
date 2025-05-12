@@ -9,20 +9,20 @@ const LandingScreen: FC = () => {
 
   return (
     <motion.div
-      className="min-h-[100svh] w-screen flex flex-col items-center justify-center md:justify-end gap-8 md:gap-10 border-b border-white border-opacity-10 px-5 lg:px-0"
+      className="min-h-[100svh] w-screen flex flex-col items-center justify-end gap-8 md:gap-10 border-b border-white border-opacity-10 px-5 lg:px-0"
       variants={introContainerVariants}
       initial="hidden"
       animate={showView ? "show" : "hidden"}
     >
       {/* Logo */}
       <motion.div variants={introItemVariants}>
-        <Logo />
+        <Logo className="scale-75 lg:scale-100" />
       </motion.div>
 
       {/* Tagline */}
       <motion.div
         variants={introItemVariants}
-        className="col-centered uppercase w-[350px] h-[49px] lg:text-lg text-sand-300 bg-sand/10 border border-exp-gray-100 font-bold rounded-3xl"
+        className="col-centered uppercase w-[280px] md:w-[350px] h-[49px] text-sm md:text-lg text-sand-300 bg-sand/10 border border-exp-gray-100 font-bold rounded-3xl"
       >
         Design & Development Studio
       </motion.div>
@@ -30,9 +30,9 @@ const LandingScreen: FC = () => {
       {/* Subtitle */}
       <motion.p
         variants={introItemVariants}
-        className="text-3xl lg:text-4xl text-center md:text-start"
+        className="text-2xl lg:text-4xl text-center md:text-start"
       >
-        proof is in the pudding, click play below
+        Proof is in the pudding, click play below:
       </motion.p>
 
       {/* Hero Video */}

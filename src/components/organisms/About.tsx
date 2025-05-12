@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const About: FC = () => {
   return (
-    <div className="landing-container col-centered max-w-screen overflow-hidden">
+    <div className="landing-container col-centered max-w-screen overflow-hidden py-16 lg:py-10">
       <div className="flex flex-col xl:flex-row gap-16 xl:gap-32 max-w-[1256px]">
         <div className="flex flex-col gap-10 xl:gap-14 max-w-[608px]">
           <div>
