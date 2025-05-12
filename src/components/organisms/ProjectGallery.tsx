@@ -58,8 +58,8 @@ const ProjectGallery: FC = () => {
       <div className="flex flex-col items-start justify-center gap-0 h-full max-w-[1864px]">
         {/* Heading */}
         <motion.div variants={itemVariants}>
-          <h2 className="mb-3">Check out</h2>
-          <h2 className="text-sand">our work.</h2>
+          <h2 className="mb-3">Our work.</h2>
+          <h2 className="text-sand">See our favorites.</h2>
         </motion.div>
         {/* Gallery */}
         <motion.div variants={itemVariants} className="w-full">

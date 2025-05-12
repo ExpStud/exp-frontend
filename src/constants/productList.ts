@@ -3,26 +3,26 @@ import { ProductList } from "@constants";
 export const PRODUCT_LIST: ProductList[] = [
   {
     icon: "design.svg",
-    title: "Design",
+    title: "Web Design",
+  },
+  {
+    icon: "minting-tools.svg",
+    title: "Brand Design",
   },
   {
     icon: "development.svg",
-    title: "Development",
-  },
-  {
-    icon: "e-commerce.svg",
-    title: "E-Commerce",
+    title: "Custom Development",
   },
   {
     icon: "discord-management.svg",
     title: "Project Managment",
   },
+  // {
+  //   icon: "e-commerce.svg",
+  //   title: "Digital Sales",
+  // },
   {
     icon: "tech-support.svg",
-    title: "Tech Support",
-  },
-  {
-    icon: "minting-tools.svg",
-    title: "Digital Sales",
+    title: "Consultation",
   },
 ]

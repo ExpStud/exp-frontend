@@ -30,8 +30,8 @@ const Testimonials: FC = () => {
   return (
     <div className="landing-container lg:flex justify-center overflow-hidden  vertical-padding">
       <div className="max-w-[1256px] ">
-        <h2 className="mb-3">See what </h2>
-        <h2 className="text-sand">our clients say.</h2>
+        <h2 className="mb-3">Testimonials.</h2>
+        <h2 className="text-sand">Our wall of love.</h2>
 
         <div
           className="mt-20 flex border-b border-white/20 overflow-x-auto"
