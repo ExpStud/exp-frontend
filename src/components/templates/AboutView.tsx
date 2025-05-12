@@ -110,16 +110,12 @@ const AboutView: FC<Props> = (props: Props) => {
 
           <div className="left-margin mt-20 flex flex-row text-xl text-custom-gray">
             <div>
-              <p className="text-9xl font-light text-custom-purple">
-                {yearsCount}
-              </p>
+              <p className="text-9xl font-light text-sand">{yearsCount}</p>
               <p>Years active</p>
             </div>
 
             <div className="ml-20">
-              <p className="text-9xl font-light text-custom-purple">
-                {projectsCount}
-              </p>
+              <p className="text-9xl font-light text-sand">{projectsCount}</p>
               <p>Projects completed</p>
             </div>
           </div>
@@ -139,36 +135,32 @@ const AboutView: FC<Props> = (props: Props) => {
               that exceed expectations.
             </p>
           </div>
-          <div className="left-margin mt-20 flex flex-col lg:flex-row gap-2">
-            <a href="https://x.com/otablem" rel="noreferrer" target="_blank">
+          <div className="left-margin mt-20 flex flex-col lg:flex-row gap-10">
+            <a
+              href="https://www.linkedin.com/in/miguel-andres-corzo/"
+              rel="noreferrer"
+              target="_blank"
+            >
               <Image
-                src={`${process.env.CLOUDFLARE_STORAGE}/images/about/14-nacho.jpg`}
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/about/mig.jpeg`}
                 alt="Miguel"
-                width={608}
-                height={608}
+                width={500}
+                height={500}
                 className="rounded-md grayscale-image"
               />
             </a>
 
             <div className="flex flex-col justify-items-start lg:w-1/2 max-w-[608px] lg:ml-10">
-              <p>Miguel Corzo (Otablem)</p>
+              <p className="font-primary">Miguel Corzo (Otablem)</p>
               <p className="text-custom-gray">
                 With a decade-long career, Miguel brings a wealth of experience
-                to the table. As EXP&apos;s project manager and founder, Miguel
-                orchestrates seamless collaborations, and development cycles
-                ensuring your vision comes to life with precision and
-                creativity.
+                to the table. As Sandbox Studio&apos;s project manager and
+                founder, Miguel orchestrates seamless collaborations, and
+                development cycles ensuring your vision comes to life with
+                precision and creativity.
               </p>
 
-              <p className="mt-5">Web 3 Experience</p>
-              <div className="text-custom-gray">
-                <p>My Slimes & All in Time Project Manager</p>
-                <p>Slimes Studio Project Manager</p>
-                <p>Project Manager at DeGods & y00ts</p>
-                <p>Project Manager at Hot Heads</p>
-              </div>
-
-              <p className="mt-5">Web 2 Experience</p>
+              <p className="mt-5 font-primary">Web 2 Experience</p>
               <div className="text-custom-gray">
                 <p>Account Support & Customer Service</p>
                 <p>Technical Support</p>
@@ -176,45 +168,55 @@ const AboutView: FC<Props> = (props: Props) => {
                 <p>Product Owner & Manager</p>
                 <p>Software Sales</p>
               </div>
+
+              <p className="mt-5 font-primary">Web 3 Experience</p>
+              <div className="text-custom-gray">
+                <p>Slimes Studio Project Manager</p>
+                <p>Project Manager at DeGods & y00ts</p>
+                <p>Project Manager at Hot Heads</p>
+              </div>
             </div>
           </div>
         </AnimateWrapper>
 
         <AnimateWrapper animate={darthInView}>
           <div
-            className="left-margin mt-10 flex flex-col-reverse lg:flex-row lg:items-end gap-2"
+            className="left-margin mt-10 flex flex-col-reverse lg:flex-row lg:items-end gap-10"
             ref={darthRef}
           >
             <div className="flex flex-col lg:w-1/2 max-w-[608px]">
-              <p>Wallace Palmer (Darth)</p>
+              <p className="font-primary">Wallace Palmer (Darth)</p>
               <p className="text-custom-gray">
-                As EXP&apos;s lead developer, Wallace is the driving force
-                behind the technical brilliance at Sandbox Studio. With over 10
-                years development experience in various industries he has
-                evolved from SaaS web & mobile engineering to pioneering modern
-                solutions on the Solana Blockchain.
+                As the lead developer, Wallace is the driving force behind the
+                technical brilliance at Sandbox Studio. With over 10 years
+                development experience in various industries he has evolved from
+                SaaS web & mobile engineering to pioneering modern solutions.
               </p>
 
-              <p className="mt-5">Web 3 Experience</p>
-              <div className="text-custom-gray">
-                <p>Lead Developer at DeGods & y00ts</p>
-                <p>Blockchain Freelancing</p>
-              </div>
-
-              <p className="mt-5">Web 2 Experience</p>
+              <p className="mt-5 font-primary">Web 2 Experience</p>
               <div className="text-custom-gray">
                 <p>Mobile Application Development Lead</p>
                 <p>Full Stack Web Developer</p>
                 <p>Technical Support</p>
               </div>
+
+              <p className="mt-5 font-primary">Web 3 Experience</p>
+              <div className="text-custom-gray">
+                <p>Lead Developer at DeGods & y00ts</p>
+                <p>Blockchain Freelancing</p>
+              </div>
             </div>
 
-            <a href="https://x.com/darthdegen" rel="noreferrer" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/wallace-palmer-4b93473a/"
+              rel="noreferrer"
+              target="_blank"
+            >
               <Image
-                src={`${process.env.CLOUDFLARE_STORAGE}/images/about/33-nino.jpg`}
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/about/wmp.jpg`}
                 alt="Wallace"
-                width={608}
-                height={608}
+                width={500}
+                height={500}
                 className="rounded-md grayscale-image transition-300"
               />
             </a>

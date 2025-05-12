@@ -1,4 +1,11 @@
-import { Dispatch, SetStateAction, FC, useContext, useRef } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  FC,
+  useContext,
+  useRef,
+  useEffect,
+} from "react";
 import {
   WelcomeSection,
   LetsWorkLink,
@@ -26,13 +33,16 @@ const ServicesView: FC<Props> = (props: Props) => {
     once: true,
   });
 
-  // set assets after 2 seconds
-  useTimeout({
-    callback: () => {
-      setAssets && setAssets([true]);
-    },
-    delay: 2000,
-  });
+  // // set assets after 2 seconds
+  // useTimeout({
+  //   callback: () => {
+  //     setAssets && setAssets([true]);
+  //   },
+  //   delay: 2000,
+  // });
+  useEffect(() => {
+    if (setAssets) setAssets([true]);
+  }, [setAssets]);
 
   return (
     <div className="margin-left w-full h-full relative overflow-x-hidden">
@@ -111,13 +121,13 @@ const ServicesView: FC<Props> = (props: Props) => {
               showView={showView}
             />
             <ServiceListItem
-              title="Discord Services"
-              description="Creating organized and secure communal spaces on Discord for online communities."
+              title="Brand Design"
+              description="Organize your brand presence with an in depth brand kit and guideline."
               showView={showView}
             />
             <ServiceListItem
-              title="Web 3 Consultation"
-              description="Navigate the complexities of Web 3 with our consultation services as we provide insights and guidance into the ever-evolving landscape."
+              title="Consultation"
+              description="Navigate the technical complexities of your business as we provide insight and guidance into the ever-evolving modern era."
               showView={showView}
             />
           </div>

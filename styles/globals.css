@@ -118,7 +118,7 @@ p {
 }
 
 h2 {
-  @apply text-custom-gray text-4xl md:text-5xl ;
+  @apply text-custom-gray text-4xl md:text-5xl font-primary;
 }
 
 @keyframes shimmer {

@@ -55,7 +55,7 @@ const ProjectGallery: FC = () => {
       initial="hidden"
       animate={isInView && showView ? "visible" : "hidden"}
     >
-      <div className="flex flex-col items-start justify-center gap-0 h-full max-w-[1864px]">
+      <div className="flex flex-col items-start justify-center gap-6 h-full max-w-[1864px]">
         {/* Heading */}
         <motion.div variants={itemVariants}>
           <h2 className="mb-3">Our work.</h2>
