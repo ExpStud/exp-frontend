@@ -82,8 +82,9 @@ const ServicesView: FC<Props> = (props: Props) => {
               <p className="text-4xl md:text-5xl">The full list.</p>
             </div>
             <p className="md:w-1/2 mt-10 text-xl pr-3">
-              At EXP Studio, we curate a suite of refined and sophisticated
-              services to elevate your digital presence and business strategies.
+              At Sandbox Studio, we specialize in providing best-in-class web
+              design, brand design, and web development services, tailored to
+              our individual client needs.
             </p>
           </AnimateWrapper>
 

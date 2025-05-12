@@ -141,10 +141,10 @@ export const projects: Project[] = [
 export const clients: Client[] = [
   {
     id: 1,
-    name: "SCUM",
-    title: "Founder of My Slimes",
-    company: "My Slimes",
-    image: `${process.env.CLOUDFLARE_STORAGE}/images/testimonials/1-scum.jpg`,
+    name: "Matt Martinez",
+    title: "Founder of Somos Axolotl",
+    company: "Somos Axolotl",
+    image: `${process.env.CLOUDFLARE_STORAGE}/images/testimonials/scum.png`,
     testimonial:
       `It doesn't matter how big the idea is, Sandbox Studio meets every new challenge with excitement. Truly embodying the rare attitude of "WHY NOT." I feel confident that no matter where my journey takes me, every new website and web-based experience I pursue, will go through Sandbox Studio.`,
     twitter: "https://twitter.com/SCUMSOL",

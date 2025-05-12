@@ -10,14 +10,14 @@ const LetsWorkLink: FC<Props> = (props: Props) => {
   return (
     <Link href="/contact">
       <div
-        className={`page-px w-full py-10 md:py-20 text-[40px] md:text-5xl lg:text-8xl transition-300 cursor-pointer  ${
+        className={`page-px w-full py-10 md:py-20 text-[40px] md:text-5xl lg:text-8xl transition-300 cursor-pointer ${
           hover ? "bg-white  bg-opacity-[0.02] " : ""
         }`}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
         <p
-          className={`text-sand transition-300 ${
+          className={`text-sand transition-300 font-primary ${
             hover ? "opacity-90" : "opacity-70"
           }`}
         >

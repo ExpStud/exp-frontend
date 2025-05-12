@@ -38,17 +38,18 @@ const ProductList: FC = () => {
       <div className="flex flex-col xl:flex-row items-start justify-center gap-14 xl:gap-40 2xl:gap-64 vertical-padding">
         <div className="flex flex-col gap-5 md:w-[410px] h-full justify-between">
           <div className="flex flex-col gap-8">
-            <p className="text-4xl md:text-5xl font-normal !leading-[1.3] tracking-wide md:min-w-[380px]">
+            <p className="text-4xl md:text-5xl font-normal !leading-[1.3] tracking-wide md:min-w-[380px] font-primary">
               Aesthetic digital products.
             </p>
             <p className="text-custom-gray text-lg xl:text-xl font-regular !tracking-wide ">
-              Founded in January 2023, Sandbox Studio emerged from the nearly
-              decade-long partnership between Miguel Corzo and Wallace Palmer.
-              Having spent over ten years working together, our collaborative
-              journey began in diverse industries.
+              At Sandbox Studio, we specialize in providing best-in-class web
+              design, brand design, and web development services, tailored to
+              our individual client needs.
             </p>
           </div>
-
+          <p className="text-custom-gray text-lg xl:text-xl font-regular">
+            Curious to learn more?
+          </p>
           <Button
             title="Check full list of services"
             link="/services"
@@ -61,7 +62,7 @@ const ProductList: FC = () => {
           variants={containerVariants}
         >
           <motion.p
-            className="text-white/60 text-xl xl:text-3xl font-regular !tracking-wide "
+            className="text-white/60 text-xl xl:text-3xl font-regular !tracking-wide font-primary"
             variants={fadeInUp}
           >
             Our services.

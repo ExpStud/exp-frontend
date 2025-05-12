@@ -8,32 +8,32 @@ const About: FC = () => {
       <div className="flex flex-col xl:flex-row gap-16 xl:gap-32 max-w-[1256px]">
         <div className="flex flex-col gap-10 xl:gap-14 max-w-[608px]">
           <div>
-            <h2 className="mb-3">Learn more</h2>
-            <h2 className="text-sand">about the team.</h2>
+            <h2 className="mb-3">Our team.</h2>
+            <h2 className="text-sand">Learn more.</h2>
           </div>
           <div>
-            <p className=" font-light text-lg xl:text-xl mb-5">
-              At EXP, we specialise in building cutting-edge identity systems to
-              help professional service providers increase their value and gain
-              a competitive advantage from branding & websites.
+            <p className="font-regular text-lg xl:text-xl mb-5">
+              Founded in January 2023, Sandbox Studio emerged from the nearly
+              decade-long partnership between Miguel Corzo and Wallace Palmer.
+              Having spent over ten years in collaboration, our journey has
+              spanned diverse industries.
             </p>
-            <p className=" font-light text-lg xl:text-xl">
-              We&apos;ve worked with some of the Canberra region&apos;s finest
-              builders, architects and interior designers and take pride in our
-              expansive portfolio. We will continue to complete work on time and
-              within budget - without compromising quality or safety.
+            <p className=" font-regular text-lg xl:text-xl">
+              We&apos;ve worked with some of the finest artist, builders, and
+              graphic designers and take pride in our expansive portfolio.
             </p>
           </div>
           <Button title="About us" link="/about" />
         </div>
-        <div className="w-[90vw] md:w-[608px] xl:w-[780px]  relative xl:-mr-64">
-          <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/logo-art.png`}
-            alt="Sandbox Art"
-            fill
-            className="object-cover"
-          />
-        </div>
+        {/* <div className="w-[90vw] md:w-[608px] xl:!w-[780px] relative xl:-mr-64 aspect-[807/512]"> */}
+        <Image
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/logo-art.png`}
+          alt="Sandbox Art"
+          width={807}
+          height={512}
+          className="xl:-mr-64 object-cover scale-95"
+        />
+        {/* </div> */}
       </div>
     </div>
   );

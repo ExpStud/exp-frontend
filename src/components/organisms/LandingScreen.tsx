@@ -28,12 +28,12 @@ const LandingScreen: FC = () => {
       </motion.div>
 
       {/* Subtitle */}
-      <motion.p
+      <motion.h4
         variants={introItemVariants}
         className="text-2xl lg:text-4xl text-center md:text-start"
       >
         Built Different. See for Yourself.
-      </motion.p>
+      </motion.h4>
 
       {/* Hero Video */}
       <motion.div variants={introItemVariants}>

@@ -54,9 +54,9 @@ const TestimonialsItem: FC<Props> = (props: Props) => {
           className="rounded-md"
         />
 
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start font-barlow">
           <motion.div
-            className="text-2xl"
+            className="text-2xl bold"
             variants={childVariants} // Animate the name
           >
             {selectedTestimonial.name}
@@ -105,7 +105,7 @@ const TestimonialsItem: FC<Props> = (props: Props) => {
               fill="#FFF1B4"
             />
           </svg>
-          <p className="ml-4 text-xl md:text-2xl xl:text-3xl font-light">
+          <p className="ml-4 text-xl md:text-2xl xl:text-3xl font-light italic">
             {selectedTestimonial.testimonial}
           </p>
         </div>
