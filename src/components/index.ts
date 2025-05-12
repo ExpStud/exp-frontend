@@ -8,9 +8,13 @@ const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const ExpIcon = dynamic(() => import("./@icons/ExpIcon"));
 const TwoLinesIcon = dynamic(() => import("./@icons/TwoLinesIcon"));
 const ArrowIcon = dynamic(() => import("./@icons/ArrowIcon"));
+const TensorIcon = dynamic(() => import("./@icons/TensorIcon"));
+const ExchangeArtIcon = dynamic(() => import("./@icons/ExchangeArtIcon"));
+const ArrowButtonIcon = dynamic(() => import("./@icons/ArrowButtonIcon"));
 //atoms
 const Button = dynamic(() => import("./atoms/Button"));
 const AnimateWrapper = dynamic(() => import("./atoms/AnimateWrapper"));
+const Logo = dynamic(() => import("./atoms/Logo"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const ServiceListItem = dynamic(() => import("./molecules/ServiceListItem"));
@@ -18,19 +22,24 @@ const ProductListItem = dynamic(() => import("./molecules/ProductListItem"));
 const LetsWorkLink = dynamic(() => import("./molecules/LetsWorkLink"));
 const BackgroundImage = dynamic(() => import("./molecules/BackgroundImage"));
 const Dropdown = dynamic(() => import("./molecules/Dropdown"));
+const HeroVideo = dynamic(() => import("./molecules/HeroVideo"), { ssr: false });
+const CloudflareVideoPlayer = dynamic(() => import("./molecules/CloudflareVideoPlayer"));
 //organisms
 const SplashScreen = dynamic(() => import("./organisms/SplashScreen"));
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
-const Navigation = dynamic(() => import("./organisms/Navigation"));
 const WelcomeSection = dynamic(() => import("./organisms/WelcomeSection"));
 const ProjectItem = dynamic(() => import("./organisms/ProjectItem"));
 const ContactForm = dynamic(() => import("./organisms/ContactForm"));
-const CardCarousel = dynamic(() => import("./organisms/CardCarousel"));
 const Testimonials = dynamic(() => import("./organisms/Testimonials"));
 const ProductList = dynamic(() => import("./organisms/ProductList"));
 const About = dynamic(() => import("./organisms/About"));
-const MobileNavigation = dynamic(() => import("./organisms/MobileNavigation"));
+const NavigationMenu = dynamic(() => import("./organisms/NavigationMenu"));
+const LandingScreen = dynamic(() => import("./organisms/LandingScreen"));
+const TestimonialsItem = dynamic(() => import("./organisms/TestimonialsItem"));
+const ProjectGallery = dynamic(() => import("./organisms/ProjectGallery"));
+const Gallery = dynamic(() => import("./organisms/Gallery"));
+const GalleryItem = dynamic(() => import("./organisms/GalleryItem"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -38,6 +47,13 @@ const AboutView = dynamic(() => import("./templates/AboutView"));
 const ContactView = dynamic(() => import("./templates/ContactView"));
 const ServicesView = dynamic(() => import("./templates/ServicesView"));
 const ProjectsView = dynamic(() => import("./templates/ProjectsView"));
+
+//old
+const MobileNavigation = dynamic(() => import("./x-old/MobileNavigation"));
+const Navigation = dynamic(() => import("./x-old/Navigation"));
+const CardCarousel = dynamic(() => import("./x-old/CardCarousel"));
+const CarouselSlider = dynamic(() => import("./x-old/CarouselSlider"));
+
 
 export {
   PageHead,
@@ -72,5 +88,18 @@ export {
   MobileNavigation,
   TwoLinesIcon,
   Dropdown,
-  ArrowIcon
+  ArrowIcon,
+  NavigationMenu,
+  CarouselSlider,
+  LandingScreen,
+  Logo,
+  HeroVideo,
+  TestimonialsItem,
+  TensorIcon,
+  ExchangeArtIcon,
+  ProjectGallery,
+  ArrowButtonIcon,
+  Gallery,
+  GalleryItem,
+  CloudflareVideoPlayer
 };

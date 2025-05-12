@@ -2,11 +2,99 @@
 @tailwind components; 
 @tailwind utilities;
 
+/* gabarito */
 @font-face {
-  font-family: Barlow;
-  src: url('../public/fonts/Barlow.ttf') format('truetype');
+  font-family: 'gabarito';
+  src: url('https://images.sandboxstud.io/fonts/gabarito/Gabarito-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; 
 }
-
+@font-face {
+  font-family: 'gabarito';
+  src: url('https://images.sandboxstud.io/fonts/gabarito/Gabarito-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'gabarito';
+  src: url('https://images.sandboxstud.io/fonts/gabarito/Gabarito-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'gabarito';
+  src: url('https://images.sandboxstud.io/fonts/gabarito/Gabarito-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'gabarito';
+  src: url('https://images.sandboxstud.io/fonts/gabarito/Gabarito-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style:normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'gabarito';
+  src: url('https://images.sandboxstud.io/fonts/gabarito/Gabarito-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap; 
+}
+/* barlow */
+@font-face {
+  font-family: 'barlow';
+  src: url('https://images.sandboxstud.io/fonts/Barlow/Barlow-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('https://images.sandboxstud.io/fonts/Barlow/Barlow-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('https://images.sandboxstud.io/fonts/Barlow/Barlow-LightItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('https://images.sandboxstud.io/fonts/Barlow/Barlow-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('https://images.sandboxstud.io/fonts/Barlow/Barlow-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('https://images.sandboxstud.io/fonts/Barlow/Barlow-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style:normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('https://images.sandboxstud.io/fonts/Barlow/Barlow-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap; 
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -25,6 +113,13 @@ a {
 html {
   scroll-behavior: smooth;
 }
+p {
+  @apply tracking-wide font-barlow;
+}
+
+h2 {
+  @apply text-custom-gray text-4xl md:text-5xl font-primary;
+}
 
 @keyframes shimmer {
   0% {
@@ -36,6 +131,9 @@ html {
 }
 
 /*  Layout  */
+.vertical-padding {
+  @apply py-16 lg:py-24 ;
+}
 
 .row-centered {
   @apply flex items-center justify-center;
@@ -45,6 +143,9 @@ html {
 }
 .row-start {
   @apply flex items-start justify-start;
+}
+.row-end {
+  @apply flex items-end justify-end;
 }
 .row-evenly {
   @apply flex items-center justify-evenly;
@@ -91,13 +192,38 @@ html {
   @apply lg:pl-16;
 }
 .left-margin {
-  @apply mx-5 md:ml-10;
+  @apply mx-5 md:mx-10 2xl:mx-16 3xl:mx-[5%];
 }
 .top-margin {
   @apply mt-12 md:mt-20;
 }
 .input {
   @apply border bg-form-background border-white border-opacity-10 rounded-lg px-3 py-2 focus:border-custom-purple active:border-custom-purple focus:outline-none active:outline-none;
+}
+  
+.landing-container {
+  @apply min-h-[95svh] xl:min-h-full xl:h-[100svh] lg:max-h-[1080px] w-full border-b border-white border-opacity-10 px-5 xl:px-0;
+} 
+.landing-container-sm {
+  @apply h-full xl:min-h-full xl:h-[100svh] lg:max-h-[1080px] w-full border-b border-white border-opacity-10 px-5 xl:px-0;
+}
+.landing-container-left {
+  @apply min-h-[95svh]  xl:min-h-[100svh] lg:max-h-[1080px] w-full border-b border-white border-opacity-10 pl-5 lg:pl-14 xl:pl-32 2010:pl-0;
+}
+.page-px {
+  @apply px-5 md:px-10 2xl:px-16 3xl:px-[5%];
+}
+.page-py {
+  @apply pt-24 xl:pt-32;
+}
+.page-my {
+  @apply mt-24 xl:mt-32;
+}
+.border-art {
+  border-radius: 21px;
+  border: 10px solid #00D5DE;
+  background:   lightgray -197.435px -197.979px / 161.924% 173.745% no-repeat;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 input:-webkit-autofill,
@@ -130,4 +256,20 @@ body {
 /* For Internet Explorer and Edge */
 body {
   -ms-overflow-style: none;
+}
+
+
+/* Hide scrollbar for WebKit-based browsers (Chrome, Safari) */
+.invisible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.invisible-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Optional: Ensure the element is scrollable */
+.invisible-scrollbar {
+  overflow: auto;
 }

@@ -15,7 +15,7 @@ const WelcomeSection: FC<Props> = (props: Props) => {
 
   return (
     <div className="left-margin">
-      <div className="border-b border-custom-dark-gray inline-block">
+      {/* <div className="border-b border-custom-dark-gray inline-block">
         <h1 className="py-5 text-2xl font-medium">
           <Link href="/">SANDBOX STUDIO</Link>{" "}
         </h1>
@@ -33,7 +33,7 @@ const WelcomeSection: FC<Props> = (props: Props) => {
             </Link>
           )}
         </p>
-      </div>
+      </div> */}
 
       <div className="mt-12 md:mt-20 text-4xl sm:text-6xl xl:text-7xl font-medium ">
         <p className={`mb-3 ${title1Class}`}>{title1}</p>

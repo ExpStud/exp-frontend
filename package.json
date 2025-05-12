@@ -11,6 +11,7 @@
     "seed": "node -r dotenv/config ./scripts/seed.js"
   },
   "dependencies": {
+    "@cloudflare/stream-react": "^1.9.3",
     "@metaplex-foundation/js": "^0.18.1",
     "@metaplex-foundation/mpl-token-metadata": "^2.8.3",
     "@solana/wallet-adapter-base": "^0.9.20",
@@ -47,7 +48,10 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-slider": "^2.0.6",
-    "typescript": "4.8.4"
+    "typescript": "4.8.4",
+    "video.js": "^8.22.0",
+    "videojs-contrib-quality-levels": "^4.1.0",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",

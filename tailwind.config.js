@@ -12,10 +12,34 @@ module.exports = {
         //gradients
       },
       fontFamily: {
-        primary: ["Barlow"],
+        primary: ["gabarito", "Arial", "sans-serif"], // Add fallback fonts
+        barlow: ["barlow", "Helvetica", "sans-serif"], // Add fallback fonts
+      },
+      fontWeight: {
+        light: 300,
+        normal: 400,
+        medium: 500,
+        semibold: 600,
+        bold: 700,
+        extrabold: 800,
+        black: 900,
+      },
+      fontStyle: {
+        italic: "italic", // Add "italic" style to the font family
       },
       colors: {
+        //new
+        sand: {
+          DEFAULT: "#FFF1B4",
+          300: "#F0E3AA",
+          600: "#7f785a",
+          800: "#666048",
+        },
+        batman: "#181818",
+
+        //old
         "exp-gray": {
+          100: "#5C5C5C",
           200: "#2D2D2D",
           600: "#353535",
         },
@@ -53,10 +77,14 @@ module.exports = {
 
         "sike-text": "#EFB41C",
         "sike-bg": "",
+
+        "folio-text": "#2C2524",
+        "folio-bg": "#FF9F72",
       },
       screens: {
         "2xs": "320px",
         xs: "420px",
+        2010: "2010px",
         "3xl": "2160px",
         "4xl": "3000px",
       },

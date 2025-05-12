@@ -1,3 +1,19 @@
+export interface GalleryType {
+  name: string;
+  backgroundColor: string;
+  textColor: string;
+  borderColor: string;
+  fillColor: string;
+  title: string;
+  videoId: string;
+  href: string;  
+}
+
+export interface ProductList {
+  icon: string;
+  title: string;
+}
+
 export type Carousel = {
   name: string;
   backgroundColor: string;
@@ -36,4 +52,5 @@ export type Client = {
   exchangeArt?: string;
   tensor?: string;
   carousel?: Carousel[];
+  gallery?: GalleryType[];
 };
