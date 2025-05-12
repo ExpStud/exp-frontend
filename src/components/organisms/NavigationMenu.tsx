@@ -7,6 +7,7 @@ import {
   menuChild2Variants,
   menuChildVariants,
   midExitAnimation,
+  mobileMenuParent,
 } from "@constants";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -42,17 +43,13 @@ const socialLinks = [
 ];
 
 const NavigationMenu: FC<Props> = (props: Props) => {
-  const {
-    toggleMenu,
-    open,
-    menuVariants = dekstopMenuParent,
-    childVariants = menuChild2Variants,
-  } = props;
+  const { toggleMenu, open, childVariants = menuChild2Variants } = props;
   const [winWidth, winHeight] = useWindowSize();
   const timeoutRef = useRef<NodeJS.Timeout>();
   const ref = useRef(null);
 
   const isTablet: boolean = winWidth < 900;
+  const menuVariants = isTablet ? mobileMenuParent : dekstopMenuParent;
   //stop page scroll (when modal or menu open)
   useEffect(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);

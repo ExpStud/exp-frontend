@@ -9,7 +9,8 @@ interface CloudflareVideoPlayerProps extends React.HTMLProps<HTMLVideoElement> {
   muted?: boolean;
   loop?: boolean;
   controls?: boolean;
-  quality?: 480 | 720 | 1080;
+  playsInline?: boolean;
+  quality?: 360 | 480 | 720 | 1080;
 }
 
 const CloudflareVideoPlayer = ({
@@ -18,6 +19,7 @@ const CloudflareVideoPlayer = ({
   muted = false,
   loop = false,
   controls = false,
+  playsInline = false,
   quality = 1080,
   ...videoProps
 }: CloudflareVideoPlayerProps) => {
@@ -36,6 +38,7 @@ const CloudflareVideoPlayer = ({
             muted,
             loop,
             controls,
+            playsInline,
             preload: "auto",
             responsive: false,
             fluid: false,
@@ -108,6 +111,7 @@ const CloudflareVideoPlayer = ({
       ref={videoNodeRef}
       className={`video-js vjs-default-skin w-full h-full aspect-video ${videoProps.className}`}
       controls
+      playsInline
     />
   );
 };

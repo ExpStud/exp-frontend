@@ -20,13 +20,14 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
     <div
       className={`relative w-[320px] md:w-[608px] h-auto md:h-[555px] flex flex-col gap-10 items-end justify-between transition-200 rounded-3xl p-5 ${data.backgroundColor}`}
     >
-      <div className="w-full md:w-[560px] h-full aspect-video md:h-[378.5px] bg-white/40 rounded-3xl overflow-hidden">
+      <div className="w-[280px] md:w-[560px] h-[189px] md:h-[378.5px] bg-white/40 rounded-2xl overflow-hidden">
         <CloudflareVideoPlayer
           videoId={data.videoId}
           quality={480}
-          autoplay={true}
+          autoplay
           muted
           loop
+          playsInline
         />
       </div>
 

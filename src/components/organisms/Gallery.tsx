@@ -123,14 +123,29 @@ const Gallery: FC<GalleryProps> = ({ children, className, itemGap = 20 }) => {
   //   return () => container.removeEventListener("scroll", handleScroll);
   // }, [children, itemWidth, itemGap]);
 
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+  const getIsMobileDevice = (): boolean => {
+    if (typeof navigator === "undefined") return false; // Ensure this runs only on the client
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  };
+  // Detect if the device is mobile on the client side
+  useEffect(() => {
+    setIsMobileDevice(getIsMobileDevice()); // Use the utility function to detect mobile devices
+    console.log("isMobileDevice", getIsMobileDevice());
+  }, []);
+
   return (
     <div
-      className={`flex flex-col w-full items-center gap-6 ${className ?? ""}`}
+      className={`flex flex-col w-full items-center gap-6 ${className ?? ""} ${
+        isMobileDevice ? "pt-6" : ""
+      }`}
     >
-      <div className="row-end gap-5 w-full pr-5 lg:pr-8 xl:pr-8 2010:pr-0">
-        <ArrowButtonIcon direction="left" onClick={handlePrevious} />
-        <ArrowButtonIcon direction="right" onClick={handleNext} />
-      </div>
+      {!isMobileDevice && (
+        <div className="row-end gap-5 w-full pr-5 lg:pr-8 xl:pr-8 2010:pr-0">
+          <ArrowButtonIcon direction="left" onClick={handlePrevious} />
+          <ArrowButtonIcon direction="right" onClick={handleNext} />
+        </div>
+      )}
       <div
         ref={containerRef}
         className="invisible-scrollbar rounded-l-3xl 2010:rounded-r-3xl overflow-hidden w-full flex gap-5 transition-transform duration-500 ease-out"
