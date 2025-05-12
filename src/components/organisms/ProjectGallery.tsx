@@ -49,7 +49,7 @@ const ProjectGallery: FC = () => {
 
   return (
     <motion.div
-      className="landing-container-left py-10 flex flex-col justify-center 2010:items-center"
+      className="landing-container-left py-16 lg:py-10 flex flex-col justify-center 2010:items-center"
       ref={ref}
       variants={containerVariants}
       initial="hidden"
