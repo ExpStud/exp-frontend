@@ -19,18 +19,20 @@ interface GalleryProps extends HTMLAttributes<HTMLDivElement> {
   visibleCountMobile?: number;
 }
 
-const Gallery: FC<GalleryProps> = ({
-  children,
-  className,
-  itemWidth = 300,
-  itemGap = 20,
-}) => {
+const Gallery: FC<GalleryProps> = ({ children, className, itemGap = 20 }) => {
   const [galleryIndex, setGalleryIndex] = useState(0);
   const [items, setItems] = useState<ReactNode[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const prevIndex = useRef<number>(galleryIndex);
   const [winWidth] = useWindowSize();
   const isMobile = winWidth < 640;
+
+  const [itemWidth, setItemWidth] = useState<number>(320);
+
+  useEffect(() => {
+    if (isMobile) setItemWidth(320);
+    else setItemWidth(608);
+  }, [isMobile]);
 
   useEffect(() => {
     setItems([...children, ...children]);

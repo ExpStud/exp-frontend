@@ -63,7 +63,7 @@ const ProjectGallery: FC = () => {
         </motion.div>
         {/* Gallery */}
         <motion.div variants={itemVariants} className="w-full">
-          <Gallery itemWidth={608}>
+          <Gallery>
             {galleryData.map((item, i) => (
               <GalleryItem key={i} data={item} />
             ))}
