@@ -59,7 +59,7 @@ const ProjectGallery: FC = () => {
         {/* Heading */}
         <motion.div variants={itemVariants}>
           <h2 className="mb-3">Our work.</h2>
-          <h2 className="text-sand">See our favorites.</h2>
+          <h2 className="text-sand">Take a look.</h2>
         </motion.div>
         {/* Gallery */}
         <motion.div variants={itemVariants} className="w-full">
