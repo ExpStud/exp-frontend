@@ -18,9 +18,9 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
   };
   return (
     <div
-      className={`relative w-[608px] h-[555px] flex flex-col items-end justify-between transition-200 rounded-3xl p-5 ${data.backgroundColor}`}
+      className={`relative w-[90vw] md:w-[608px] h-[555px] flex flex-col items-end justify-between transition-200 rounded-3xl p-5 ${data.backgroundColor}`}
     >
-      <div className="w-[560px] h-[378.5px] bg-white/40 rounded-3xl overflow-hidden">
+      <div className="w-full md:w-[560px] h-full md:h-[378.5px] bg-white/40 rounded-3xl overflow-hidden">
         <CloudflareVideoPlayer
           videoId={data.videoId}
           quality={480}

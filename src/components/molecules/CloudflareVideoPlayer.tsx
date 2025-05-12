@@ -53,11 +53,11 @@ const CloudflareVideoPlayer = ({
           });
 
           player.ready(() => {
-            console.log(
-              "Quality plugin loaded?",
-              //@ts-ignore
-              typeof player?.qualityLevels === "function"
-            );
+            // console.log(
+            //   "Quality plugin loaded?",
+            //   //@ts-ignore
+            //   typeof player?.qualityLevels === "function"
+            // );
 
             //@ts-ignore
             const qualityLevels = player.qualityLevels?.();
