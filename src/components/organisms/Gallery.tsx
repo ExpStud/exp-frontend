@@ -131,7 +131,6 @@ const Gallery: FC<GalleryProps> = ({ children, className, itemGap = 20 }) => {
   // Detect if the device is mobile on the client side
   useEffect(() => {
     setIsMobileDevice(getIsMobileDevice()); // Use the utility function to detect mobile devices
-    console.log("isMobileDevice", getIsMobileDevice());
   }, []);
 
   return (

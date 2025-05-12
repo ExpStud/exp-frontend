@@ -28,7 +28,7 @@ const About: FC = () => {
         </div>
         <div className="w-[90vw] md:w-[608px] xl:w-[780px] aspect-video relative xl:-mr-64">
           <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/logo-art.jpg`}
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/logo-art.png`}
             alt="Sandbox Art"
             fill
             className="border-art object-cover"
