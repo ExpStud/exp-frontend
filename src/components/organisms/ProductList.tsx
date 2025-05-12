@@ -35,7 +35,7 @@ const ProductList: FC = () => {
       initial="hidden"
       animate={isInView && showView ? "visible" : "hidden"}
     >
-      <div className="flex flex-col xl:flex-row items-start justify-center gap-14 xl:gap-40 2xl:gap-64 py-16 lg:py-10">
+      <div className="flex flex-col xl:flex-row items-start justify-center gap-14 xl:gap-40 2xl:gap-64 vertical-padding">
         <div className="flex flex-col gap-5 md:w-[410px] h-full justify-between">
           <div className="flex flex-col gap-8">
             <p className="text-4xl md:text-5xl font-normal !leading-[1.3] tracking-wide md:min-w-[380px]">

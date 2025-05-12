@@ -32,7 +32,7 @@ const LandingScreen: FC = () => {
         variants={introItemVariants}
         className="text-2xl lg:text-4xl text-center md:text-start"
       >
-        Proof is in the pudding, click play below:
+        Built Different. See for Yourself.
       </motion.p>
 
       {/* Hero Video */}

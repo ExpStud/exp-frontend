@@ -117,6 +117,9 @@ h2 {
 }
 
 /*  Layout  */
+.vertical-padding {
+  @apply py-16 lg:py-24 ;
+}
 
 .row-centered {
   @apply flex items-center justify-center;
@@ -191,7 +194,7 @@ h2 {
   @apply h-full xl:min-h-full xl:h-[100svh] lg:max-h-[1080px] w-full border-b border-white border-opacity-10 px-5 xl:px-0;
 }
 .landing-container-left {
-  @apply min-h-[95svh] xl:min-h-full xl:h-[100svh] lg:max-h-[1080px] w-full border-b border-white border-opacity-10 pl-5 lg:pl-14 xl:pl-32 2010:pl-0;
+  @apply min-h-[95svh]  xl:min-h-[100svh] lg:max-h-[1080px] w-full border-b border-white border-opacity-10 pl-5 lg:pl-14 xl:pl-32 2010:pl-0;
 }
 .page-px {
   @apply px-5 md:px-10 2xl:px-16 3xl:px-[5%];
