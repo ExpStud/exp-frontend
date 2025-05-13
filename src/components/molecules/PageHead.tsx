@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { FC } from "react";
+import Script from "next/script";
 
 interface Props {
   title: string;
@@ -29,6 +30,21 @@ const PageHead: FC<Props> = (props: Props) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content="https://expstud.io/meta.jpg" />
+      {/* Google Ads Snippet */}
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-17079595054"
+      ></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17079595054');
+            `,
+        }}
+      />
     </Head>
   );
 };
