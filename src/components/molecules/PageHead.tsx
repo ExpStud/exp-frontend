@@ -22,14 +22,14 @@ const PageHead: FC<Props> = (props: Props) => {
       <meta name="twitter:site" content="@sandbox_studio_" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content="https://expstud.io/meta.jpg" />
-      <meta property="twitter:url" content={`https://expstud.io`} />
+      <meta name="twitter:image" content="https://sandboxstud.io/meta.jpg" />
+      <meta property="twitter:url" content={`https://sandboxstud.io`} />
       {/* <!-- Open Graph / Facebook --> */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://expstud.io" />
+      <meta property="og:url" content="https://sandboxstud.io" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content="https://expstud.io/meta.jpg" />
+      <meta property="og:image" content="https://sandboxstud.io/meta.jpg" />
       {/* Google Ads Snippet */}
       <script
         async
