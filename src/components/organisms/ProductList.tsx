@@ -35,10 +35,10 @@ const ProductList: FC = () => {
       initial="hidden"
       animate={isInView && showView ? "visible" : "hidden"}
     >
-      <div className="flex flex-col xl:flex-row items-start justify-center gap-14 xl:gap-40 2xl:gap-64 vertical-padding">
+      <div className="flex flex-col-reverse xl:flex-row items-start justify-center gap-14 xl:gap-40 2xl:gap-64 vertical-padding">
         <div className="flex flex-col gap-5 md:w-[410px] h-full justify-between">
           <div className="flex flex-col gap-8">
-            <p className="text-4xl md:text-5xl font-normal !leading-[1.3] tracking-wide md:min-w-[380px] font-primary">
+            <p className="text-4xl md:text-5xl font-normal !leading-[1.3] tracking-wide md:min-w-[380px] font-primary hidden xl:block">
               Aesthetic digital products.
             </p>
             <p className="text-custom-gray text-lg xl:text-xl font-regular !tracking-wide ">
@@ -61,8 +61,11 @@ const ProductList: FC = () => {
           className="flex flex-col gap-6 md:gap-10 w-full"
           variants={containerVariants}
         >
+          <p className="text-4xl md:text-5xl font-normal !leading-[1.3] tracking-wide md:min-w-[380px] font-primary  xl:hidden pb-4">
+            Aesthetic digital products.
+          </p>
           <motion.p
-            className="text-white/60 text-xl xl:text-3xl font-regular !tracking-wide font-primary"
+            className="text-white/60 text-xl xl:text-3xl font-regular !tracking-wide font-primary -mb-4 xl:mb-0"
             variants={fadeInUp}
           >
             Our services.
