@@ -19,7 +19,7 @@ const Footer: FC = () => {
         <div className="flex flex-col gap-1 text-sm lg:text-base text-black">
           <p>Follow us</p>
           <a
-            href="https://www.instagram.com/sandbox_studio_/"
+            href="https://www.instagram.com/sandbox_studios_/"
             rel="noreferrer"
             target="_blank"
             className="transition-300 text-black hover:text-sand-800"

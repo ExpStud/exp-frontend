@@ -80,7 +80,7 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
                   </motion.p>
                   <motion.a
                     variants={menuChild2Variants}
-                    href="https://www.instagram.com/sandbox_studio_/"
+                    href="https://www.instagram.com/sandbox_studios_/"
                     rel="noreferrer"
                     target="_blank"
                   >
