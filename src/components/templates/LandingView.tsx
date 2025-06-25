@@ -18,7 +18,7 @@ const LandingView: FC<Props> = (props: Props) => {
 
   return (
     <div className="relative w-full h-full">
-      <BackgroundImage setAssets={setAssets} />
+      <BackgroundImage setAssets={setAssets} fixed={false} />
       <LandingScreen />
       <ProjectGallery />
       <ProductList />

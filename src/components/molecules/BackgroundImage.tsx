@@ -6,9 +6,10 @@ import { useTimeout, useWindowSize } from "@hooks";
 interface Props {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;
   children?: React.ReactNode;
+  fixed?: boolean;
 }
 const BackgroundImage: FC<Props> = (props: Props) => {
-  const { setAssets } = props;
+  const { setAssets, fixed = true } = props;
 
   const [winWidth] = useWindowSize();
 
@@ -21,7 +22,11 @@ const BackgroundImage: FC<Props> = (props: Props) => {
   });
 
   return (
-    <div className="absolute inset-0 h-screen w-screen -z-[1] overflow-hidden">
+    <div
+      className={`${
+        fixed ? "fixed" : "absolute"
+      } inset-0 h-screen w-screen -z-[1] overflow-hidden`}
+    >
       <Image
         src={`${process.env.CLOUDFLARE_STORAGE}/images/landing/landing-bg-${
           winWidth > 1024 ? "xl" : winWidth > 640 ? "md" : "sm"
