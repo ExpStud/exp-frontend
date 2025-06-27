@@ -239,9 +239,9 @@ input:-webkit-autofill:active {
   transition: filter 300ms;
 }
 
-.grayscale-image:hover {
+/* .grayscale-image:hover {
   filter: grayscale(0%);
-}
+} */
 
 /* For Chrome, Safari and Opera */
 ::-webkit-scrollbar {

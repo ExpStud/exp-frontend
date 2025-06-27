@@ -213,11 +213,11 @@ const AboutView: FC<Props> = (props: Props) => {
               target="_blank"
             >
               <Image
-                src={`${process.env.CLOUDFLARE_STORAGE}/images/about/wmp.jpg`}
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/about/wmp-headshot.png`}
                 alt="Wallace"
                 width={500}
                 height={500}
-                className="rounded-md grayscale-image transition-300"
+                className="rounded-md grayscale-image"
               />
             </a>
           </div>
