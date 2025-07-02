@@ -125,10 +125,11 @@ export const projects: Project[] = [
     description: "One of Sandbox Studio's first clients, and vetted communities on Solana. The Hot Heads website features blockchain technology, asset libraries, and more. A nod to 90's retro gaming, with custom pixelated components built in all over the site.",
     services: ["Interface Design", "Development", "Blockchain Integration", "Cloud Storage", ],
     links: [
+      // {
+      //   name: "Website",
+      //   url: "https://hotheads.art/",
+      // },
       {
-        name: "Website",
-        url: "https://hotheads.art/",
-      },{
         name: "Twitter",
         url: "https://twitter.com/HotHeadsNFT",
       }
@@ -283,7 +284,7 @@ export const clients: Client[] = [
       title: "Hot Heads",
       videoId: "",
       // src: `${process.env.CLOUDFLARE_STORAGE}/images/carousel/sike.png`,
-      href: "https://hotheads.art/",
+      href: "",//"https://hotheads.art/",
     }]
   },
   {
