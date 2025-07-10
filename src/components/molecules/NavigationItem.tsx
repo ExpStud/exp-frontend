@@ -1,10 +1,10 @@
-import { MenuItem } from "@constants";
+import { NavigationLinks } from "@constants";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC } from "react";
 
 interface NavigationItemProps {
-  item: MenuItem;
+  item: NavigationLinks;
 }
 const NavigationItem: FC<NavigationItemProps> = (
   props: NavigationItemProps

@@ -55,8 +55,10 @@ export type Client = {
   gallery?: GalleryType[];
 };
 
-export interface MenuItem {
+export interface Links {
   href: string;
   label: string;
+}
+export interface NavigationLinks extends Links { 
   hide?: boolean; 
 }

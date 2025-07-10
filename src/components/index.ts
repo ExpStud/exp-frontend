@@ -36,7 +36,7 @@ const Testimonials = dynamic(() => import("./organisms/Testimonials"));
 const ProductList = dynamic(() => import("./organisms/ProductList"));
 const About = dynamic(() => import("./organisms/About"));
 const NavigationMenu = dynamic(() => import("./organisms/NavigationMenu"));
-const LandingScreen = dynamic(() => import("./organisms/LandingScreen"));
+const HeroSection = dynamic(() => import("./organisms/HeroSection"));
 const TestimonialsItem = dynamic(() => import("./organisms/TestimonialsItem"));
 const ProjectGallery = dynamic(() => import("./organisms/ProjectGallery"));
 const Gallery = dynamic(() => import("./organisms/Gallery"));
@@ -54,6 +54,7 @@ const MobileNavigation = dynamic(() => import("./x-old/MobileNavigation"));
 const Navigation = dynamic(() => import("./x-old/Navigation"));
 const CardCarousel = dynamic(() => import("./x-old/CardCarousel"));
 const CarouselSlider = dynamic(() => import("./x-old/CarouselSlider"));
+const LandingScreen = dynamic(() => import("./x-old/LandingScreen"));
 
 
 export {
@@ -103,5 +104,6 @@ export {
   Gallery,
   GalleryItem,
   CloudflareVideoPlayer,
-  NavigationItem
+  NavigationItem,
+  HeroSection
 };

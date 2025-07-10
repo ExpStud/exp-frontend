@@ -94,7 +94,7 @@ const HeaderItems: FC = () => {
 
   return (
     <motion.div
-      className="page-px flex items-center justify-between w-full  py-4 md:py-8 z-20 bg-transparent"
+      className="page-px flex items-center justify-between w-full py-4 md:py-8 z-20 bg-transparent"
       {...midEnterAnimation}
     >
       <Link href="/" className="text-sand-300 text-2xl md:text-3xl font-bold">

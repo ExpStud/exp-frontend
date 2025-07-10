@@ -116,9 +116,11 @@ html {
 p {
   @apply tracking-wide font-barlow;
 }
-
+h1 {
+  @apply text-custom-gray text-4xl md:text-5xl font-barlow !leading-tight;
+}
 h2 {
-  @apply text-custom-gray text-4xl md:text-5xl font-primary;
+  @apply text-custom-gray text-3xl md:text-4xl font-primary;
 }
 
 @keyframes shimmer {
