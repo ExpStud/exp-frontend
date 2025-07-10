@@ -1,4 +1,4 @@
-import { Client, Project } from "./types";
+import { Client, MenuItem, Project } from "./types";
 
 
 /*
@@ -137,7 +137,6 @@ export const projects: Project[] = [
     image: `${process.env.CLOUDFLARE_STORAGE}/images/projects/hotheads.png`,
   },
 ]
-
 
 export const clients: Client[] = [
   {
@@ -306,3 +305,11 @@ export const clients: Client[] = [
     }]
   },
 ];
+
+export const menuItems: MenuItem[] = [
+  { href: "/", label: "Home", hide: true },
+  { href: "/projects", label: "Our work"},
+  // { href: "/services", label: "What we do", hide: true },
+  { href: "/about", label: "About us"},
+  { href: "/contact", label: "Contact us"},
+]; 

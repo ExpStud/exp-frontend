@@ -41,6 +41,7 @@ module.exports = {
         "exp-gray": {
           100: "#5C5C5C",
           200: "#2D2D2D",
+          300: "#9D9D9E",
           600: "#353535",
         },
         "custom-black": "#0F0F0F",

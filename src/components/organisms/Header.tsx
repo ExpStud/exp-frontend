@@ -6,8 +6,14 @@ import {
   useScroll,
 } from "framer-motion";
 import Link from "next/link";
-import { TwoLinesIcon, NavigationMenu, Logo } from "@components";
-import { midEnterAnimation } from "@constants";
+import {
+  TwoLinesIcon,
+  NavigationMenu,
+  Logo,
+  NavigationItem,
+} from "@components";
+import { menuItems, midEnterAnimation } from "@constants";
+import { useWindowSize } from "@hooks";
 
 interface Props {
   showHeader?: boolean; //used to show header if isStatic is false
@@ -84,21 +90,38 @@ const Header: FC<Props> = (props: Props) => {
 
 const HeaderItems: FC = () => {
   const [open, cycleOpen] = useCycle(false, true);
+  const [winWidth] = useWindowSize();
 
   return (
     <motion.div
-      className="page-px flex items-center justify-between w-full  py-4 md:py-6 z-20 bg-transparent"
+      className="page-px flex items-center justify-between w-full  py-4 md:py-8 z-20 bg-transparent"
       {...midEnterAnimation}
     >
       <Link href="/" className="text-sand-300 text-2xl md:text-3xl font-bold">
         <Logo type="small" />
       </Link>
-      <TwoLinesIcon
-        animate={open}
-        onClick={() => cycleOpen()}
-        className="z-[100]"
-      />
-      <NavigationMenu open={open} toggleMenu={cycleOpen} />
+      {winWidth > 768 ? (
+        <nav className="row-centered gap-8 lg:gap-14">
+          {menuItems.map((item, index) => (
+            <NavigationItem key={index} item={item} />
+          ))}
+          <Link
+            href={menuItems[menuItems.length - 1].href}
+            className={`text-base font-barlow font-semibold w-[166px] h-[36px] col-centered rounded-3xl text-black bg-sand`}
+          >
+            Get an Estimate
+          </Link>
+        </nav>
+      ) : (
+        <>
+          <TwoLinesIcon
+            animate={open}
+            onClick={() => cycleOpen()}
+            className="z-[100]"
+          />
+          <NavigationMenu open={open} toggleMenu={cycleOpen} />
+        </>
+      )}
     </motion.div>
   );
 };

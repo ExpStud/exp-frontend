@@ -54,3 +54,9 @@ export type Client = {
   carousel?: Carousel[];
   gallery?: GalleryType[];
 };
+
+export interface MenuItem {
+  href: string;
+  label: string;
+  hide?: boolean; 
+}

@@ -211,7 +211,7 @@ h2 {
   @apply min-h-[95svh]  xl:min-h-[100svh] lg:max-h-[1080px] w-full border-b border-white border-opacity-10 pl-5 lg:pl-14 xl:pl-32 2010:pl-0;
 }
 .page-px {
-  @apply px-5 md:px-10 2xl:px-16 3xl:px-[5%];
+  @apply px-5 md:px-10 xl:px-16 3xl:px-[5%];
 }
 .page-py {
   @apply pt-24 xl:pt-32;

@@ -6,6 +6,7 @@ import {
   dekstopMenuParent,
   menuChild2Variants,
   menuChildVariants,
+  menuItems,
   midExitAnimation,
   mobileMenuParent,
 } from "@constants";
@@ -18,14 +19,6 @@ interface Props {
   menuVariants?: any;
   childVariants?: any;
 }
-
-const menuItems = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Our work" },
-  { href: "/services", label: "What we do" },
-  { href: "/about", label: "About us" },
-  { href: "/contact", label: "Contact us" },
-];
 
 const socialLinks = [
   {
@@ -105,9 +98,9 @@ const NavigationMenu: FC<Props> = (props: Props) => {
               key="nav"
             >
               {menuItems.map((item, index) => (
-                <NavigationItem key={index} href={item.href}>
+                <NavigationMenuItem key={index} href={item.href}>
                   {item.label}
-                </NavigationItem>
+                </NavigationMenuItem>
               ))}
               {/* Corner Image */}
               <motion.div variants={childVariants} className="-z-20">
@@ -145,12 +138,12 @@ const NavigationMenu: FC<Props> = (props: Props) => {
   );
 };
 
-interface NavigationItemProps {
+interface NavigationMenuItemProps {
   children: React.ReactNode;
   href: string;
 }
-const NavigationItem: FC<NavigationItemProps> = (
-  props: NavigationItemProps
+const NavigationMenuItem: FC<NavigationMenuItemProps> = (
+  props: NavigationMenuItemProps
 ) => {
   const { children, href } = props;
 

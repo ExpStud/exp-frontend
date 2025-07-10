@@ -24,6 +24,7 @@ const BackgroundImage = dynamic(() => import("./molecules/BackgroundImage"));
 const Dropdown = dynamic(() => import("./molecules/Dropdown"));
 const HeroVideo = dynamic(() => import("./molecules/HeroVideo"), { ssr: false });
 const CloudflareVideoPlayer = dynamic(() => import("./molecules/CloudflareVideoPlayer"));
+const NavigationItem = dynamic(() => import("./molecules/NavigationItem"));
 //organisms
 const SplashScreen = dynamic(() => import("./organisms/SplashScreen"));
 const Header = dynamic(() => import("./organisms/Header"));
@@ -101,5 +102,6 @@ export {
   ArrowButtonIcon,
   Gallery,
   GalleryItem,
-  CloudflareVideoPlayer
+  CloudflareVideoPlayer,
+  NavigationItem
 };
