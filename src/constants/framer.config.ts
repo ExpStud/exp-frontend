@@ -1,5 +1,33 @@
 import { Variants } from "framer-motion";
 
+// Animation variants
+export const widgetContainerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.3,
+    },
+  },
+};
+export const widgetItemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 80, damping: 18 },
+  },
+};
+
+export const widgetButtonVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 80, damping: 18 },
+  },
+};
+
 
 export const introContainerVariants = {
   hidden: {}, // Initial state

@@ -62,3 +62,19 @@ export interface Links {
 export interface NavigationLinks extends Links { 
   hide?: boolean; 
 }
+ 
+export type FormData = {
+  name: string;
+  email: string;
+  message: string;
+  budgetRange: string;
+  relevantDocuments: string;
+};
+
+export const emptyForm: FormData = {
+  name: "",
+  email: "",
+  message: "",
+  budgetRange: "",
+  relevantDocuments: "",
+};

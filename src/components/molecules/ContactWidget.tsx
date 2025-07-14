@@ -43,10 +43,11 @@ const ContactWidget: FC<Props> = () => {
           "z-40 rounded-full bg-custom-black p-2 border-2 border-sand cursor-pointer w-min"
         }
         onClick={() => setOpen(!open)}
-        initial={{ scale: open ? 0.9 : 1, opacity: open ? 0.7 : 1 }}
-        animate={{ scale: open ? 0.9 : 1, opacity: open ? 0.7 : 1 }}
-        whileHover={{ scale: open ? 0.9 : 1.05 }}
-        whileTap={{ scale: open ? 0.9 : 0.95 }}
+        initial={{ scale: open ? 0.93 : 1, opacity: open ? 0.7 : 1 }}
+        animate={{ scale: open ? 0.93 : 1, opacity: open ? 0.7 : 1 }}
+        whileHover={{ scale: open ? 0.93 : 1.1 }}
+        // whileTap={{ scale: open ? 0.9 : 0.9 }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
       >
         <ContactIcon className="w-10 h-10 md:w-12 md:h-12 lg:w-[52px] lg:h-[52px]" />
       </motion.div>

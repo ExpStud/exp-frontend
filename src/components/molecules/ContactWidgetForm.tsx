@@ -1,17 +1,24 @@
 import { Button } from "@components";
-import { midExitAnimation } from "@constants";
-import { useOutsideAlerter, useLockBodyScroll, useWindowSize } from "@hooks";
-import axios from "axios";
+import {
+  emptyForm,
+  FormData,
+  widgetButtonVariants,
+  widgetContainerVariants,
+  widgetItemVariants,
+} from "@constants";
+import { useLockBodyScroll, useWindowSize } from "@hooks";
+import { submitLead, validateEmail } from "@utils";
 import { motion } from "framer-motion";
 import {
   Dispatch,
   FC,
   HTMLAttributes,
   SetStateAction,
+  use,
+  useEffect,
   useRef,
   useState,
 } from "react";
-import toast from "react-hot-toast";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   open: boolean;
@@ -19,62 +26,17 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   buttonRef?: React.RefObject<HTMLElement>;
 }
 
-type FormData = {
-  name: string;
-  email: string;
-  message: string;
-  budgetRange: string;
-  relevantDocuments: string;
-};
-
-const emptyForm: FormData = {
-  name: "",
-  email: "",
-  message: "",
-  budgetRange: "",
-  relevantDocuments: "",
-};
-// Animation variants
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.3,
-    },
-  },
-};
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 80, damping: 18 },
-  },
-};
-
-const buttonVariants = {
-  hidden: { opacity: 0, y: 40 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 80, damping: 18 },
-  },
-};
-
 const ContactWidgetForm: FC<Props> = (props: Props) => {
   const { open, setOpen, buttonRef } = props;
-  const [winWidth] = useWindowSize();
+
   const [formData, setFormData] = useState<FormData>(emptyForm);
   const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
   const [submissionStatus, setSubmissionStatus] = useState<
     null | "sending" | "success" | "failed"
   >(null);
 
-  const validateEmail = (email: string) => {
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return regex.test(email);
-  };
+  const [winWidth] = useWindowSize();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -88,50 +50,27 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
     }
   };
 
-  const handleSubmit = async () => {
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.message ||
-      !formData.budgetRange
-    ) {
-      return;
-    }
-    if (!isEmailValid) {
-      toast.error("Please enter a valid email");
-      return;
-    }
-    if (formData.message.length < 20) {
-      toast.error("Message must be more than 20 characters");
-      return;
-    }
-    if (formData.budgetRange.length < 4) {
-      toast.error("Budget must be greater than 3 characters");
-      return;
+  const handleSubmit = () => {
+    submitLead(formData, isEmailValid, setSubmissionStatus);
+  };
+
+  useEffect(() => {
+    if (submissionStatus === "success") {
+      timeoutRef.current = setTimeout(() => {
+        setOpen(false);
+        setFormData(emptyForm);
+        setSubmissionStatus(null);
+      }, 2000);
     }
 
-    // Handle form submission logic
-    setSubmissionStatus("sending");
-    try {
-      toast.promise(axios.get("/api/add-lead", { params: formData }), {
-        loading: "Submitting...",
-        success: (res) => {
-          console.log(res.data);
-          // setFormData(emptyForm);
-          setSubmissionStatus("success");
-          return "Submitted successfully";
-        },
-        error: (err) => {
-          console.error(err);
-          setSubmissionStatus("failed");
-          return "Submission failed";
-        },
-      });
-    } catch (error) {
-      setSubmissionStatus("failed");
-      console.error(error);
-    }
-  };
+    // Cleanup: clear timeout on unmount or if submissionStatus changes before timeout ends
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    };
+  }, [submissionStatus]);
 
   //close dropdown on outside click
   const ref = useRef(null);
@@ -164,7 +103,7 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
       {/* close icon (not animated) */}
       {/* close icon */}
       <div
-        className="absolute top-4 right-4 cursor-pointer"
+        className="absolute top-4 right-4 cursor-pointer z-50"
         onClick={() => setOpen(false)}
       >
         <svg
@@ -184,7 +123,7 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
       {/* form header */}
       <motion.div
         className="w-full mr-4 pb-3 border-b border-white"
-        variants={itemVariants}
+        variants={widgetItemVariants}
         initial="hidden"
         animate="show"
       >
@@ -195,13 +134,13 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
         onSubmit={handleSubmit}
         className="flex flex-col justify-between gap-4 h-full pt-4"
         key="form"
-        variants={containerVariants}
+        variants={widgetContainerVariants}
         initial="hidden"
         animate="show"
       >
         <motion.div
           className="flex flex-col md:flex-row gap-4"
-          variants={itemVariants}
+          variants={widgetItemVariants}
         >
           <input
             type="text"
@@ -220,7 +159,7 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
             value={formData.email}
             onChange={handleChange}
             className="w-full lg:w-1/2 input"
-            placeholder="Email address"
+            placeholder="Email"
             maxLength={250}
           />
         </motion.div>
@@ -233,18 +172,17 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
           placeholder="Message (optional)"
           maxLength={1000}
           rows={winWidth >= 768 ? 13 : 11}
-          variants={itemVariants}
+          variants={widgetItemVariants}
         />
-        <motion.div variants={buttonVariants}>
+        <motion.div variants={widgetButtonVariants}>
           <Button
             title="Send message"
             callback={() => handleSubmit()}
             disabled={
-              submissionStatus === "sending" ||
-              !formData.name ||
-              !formData.email ||
-              !formData.message ||
-              !formData.budgetRange
+              submissionStatus === "sending"
+              // ||
+              // !formData.name ||
+              // !formData.email
             }
             className="!w-full sm:!w-1/2 !max-w-none md:!max-w-[220px] mt-4 md:mt-0"
           />

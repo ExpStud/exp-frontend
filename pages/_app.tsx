@@ -20,17 +20,17 @@ const App = ({ Component, pageProps }: AppProps) => {
     <AppProvider>
       <Component {...pageProps} />
       <Toaster
-        position="bottom-right"
+        position="top-right"
         toastOptions={{
           style: {
-            border: "2px solid #9D87D9",
+            border: "2px solid #181818",
             padding: "10px",
-            color: "#D2D2D2",
-            backgroundColor: "#101010",
+            color: "#181818",
+            backgroundColor: "#F0E3AA",
           },
           iconTheme: {
-            primary: "#171717",
-            secondary: "#9D87D9",
+            primary: "#181818",
+            secondary: "#F0E3AA",
           },
         }}
       />
