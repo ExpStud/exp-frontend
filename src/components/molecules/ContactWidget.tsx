@@ -9,13 +9,13 @@ const ContactWidget: FC<Props> = () => {
   const buttonRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="fixed bottom-4 right-8 z-50 flex flex-col items-end">
+    <div className="fixed bottom-2 sm:bottom-5 md:bottom-8 right-2 sm:right-4 md:right-8 z-50 flex flex-col items-end">
       {/* Backdrop (place first in DOM for stacking context) */}
       <AnimatePresence>
         {open && (
           <motion.div
             key="backdrop"
-            className="fixed inset-0 bg-background-black bg-opacity-80 z-20 cursor-pointer"
+            className="fixed inset-0 bg-background-black bg-opacity-90 md:bg-opacity-80 z-20 cursor-pointer"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -40,7 +40,7 @@ const ContactWidget: FC<Props> = () => {
       <motion.div
         ref={buttonRef}
         className={
-          "z-40 m-4 rounded-full bg-custom-black p-2 border-2 border-sand cursor-pointer w-min"
+          "z-40 rounded-full bg-custom-black p-2 border-2 border-sand cursor-pointer w-min"
         }
         onClick={() => setOpen(!open)}
         initial={{ scale: open ? 0.9 : 1, opacity: open ? 0.7 : 1 }}
@@ -48,7 +48,7 @@ const ContactWidget: FC<Props> = () => {
         whileHover={{ scale: open ? 0.9 : 1.05 }}
         whileTap={{ scale: open ? 0.9 : 0.95 }}
       >
-        <ContactIcon />
+        <ContactIcon className="w-10 h-10 md:w-12 md:h-12 lg:w-[52px] lg:h-[52px]" />
       </motion.div>
     </div>
   );

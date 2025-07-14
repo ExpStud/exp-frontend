@@ -168,6 +168,16 @@ h2 {
   @apply flex flex-col items-center justify-around;
 }
 
+.left-centered {
+  @apply absolute left-1/2 transform -translate-x-1/2;
+}
+.top-centered {
+  @apply absolute top-1/2 transform -translate-y-1/2;
+}
+.centered {
+  @apply left-centered top-centered;
+}
+
 /* Animations */
 .transition-1500 {
   @apply transition-all duration-[1500ms];

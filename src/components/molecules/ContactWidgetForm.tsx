@@ -1,6 +1,6 @@
 import { Button } from "@components";
 import { midExitAnimation } from "@constants";
-import { useOutsideAlerter, useLockBodyScroll } from "@hooks";
+import { useOutsideAlerter, useLockBodyScroll, useWindowSize } from "@hooks";
 import axios from "axios";
 import { motion } from "framer-motion";
 import {
@@ -64,7 +64,7 @@ const buttonVariants = {
 
 const ContactWidgetForm: FC<Props> = (props: Props) => {
   const { open, setOpen, buttonRef } = props;
-
+  const [winWidth] = useWindowSize();
   const [formData, setFormData] = useState<FormData>(emptyForm);
   const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
   const [submissionStatus, setSubmissionStatus] = useState<
@@ -142,7 +142,11 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
 
   return (
     <motion.aside
-      className="z-40 fixed bottom-32 right-6 origin-bottom-right flex flex-col justify-between w-[98vw] sm:w-[501px] h-[600px] rounded-3xl bg-custom-black p-10 border-2 border-sand/80 overflow-hidden"
+      className="z-40 fixed bottom-20 md:bottom-32 right-3 md:right-6 origin-bottom-right 
+          flex flex-col justify-between 
+          w-[90vw] md:w-[501px] h-[600px] 
+          rounded-3xl bg-custom-black p-6 md:p-10 
+          border md:border-2 border-sand/80 overflow-hidden"
       ref={ref}
       initial={{
         scale: 0.9,
@@ -189,7 +193,7 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
       {/* form */}
       <motion.form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-4 h-full pt-4"
+        className="flex flex-col justify-between gap-4 h-full pt-4"
         key="form"
         variants={containerVariants}
         initial="hidden"
@@ -228,7 +232,7 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
           className="input w-full resize-none"
           placeholder="Message (optional)"
           maxLength={1000}
-          rows={13}
+          rows={winWidth >= 768 ? 13 : 11}
           variants={itemVariants}
         />
         <motion.div variants={buttonVariants}>

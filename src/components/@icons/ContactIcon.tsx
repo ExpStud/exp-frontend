@@ -1,12 +1,9 @@
-import { motion } from "framer-motion";
 import { FC, SVGProps } from "react";
 
-interface Props extends SVGProps<SVGSVGElement> {
-  animate?: boolean;
-}
+interface Props extends SVGProps<SVGSVGElement> {}
 
 const ContactIcon: FC<Props> = (props: Props) => {
-  const { animate = false } = props;
+  const {} = props;
 
   return (
     <svg
@@ -16,7 +13,7 @@ const ContactIcon: FC<Props> = (props: Props) => {
       viewBox="0 0 52 52"
       fill="none"
       onClick={props.onClick}
-      className={` ${props.className} ${animate ? "" : ""}`}
+      className={props.className}
     >
       <path
         d="M13 28.166C7.01999 28.166 2.16666 32.9977 2.16666 38.9993C2.16666 45.001 7.01999 49.8327 13 49.8327C18.98 49.8327 23.8333 44.9793 23.8333 38.9993C23.8333 33.0193 19.0017 28.166 13 28.166ZM8.57997 34.5794H13C13.8233 34.5794 14.4733 35.251 14.4733 36.0527C14.4733 36.8543 13.8017 37.526 13 37.526H8.57997C7.75664 37.526 7.10665 36.8543 7.10665 36.0527C7.10665 35.251 7.75664 34.5794 8.57997 34.5794ZM17.42 43.4193H8.55835C7.73502 43.4193 7.08497 42.7477 7.08497 41.946C7.08497 41.1443 7.75668 40.4727 8.55835 40.4727H17.42C18.2433 40.4727 18.8933 41.1443 18.8933 41.946C18.8933 42.7477 18.2433 43.4193 17.42 43.4193Z"
