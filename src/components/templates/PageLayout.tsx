@@ -6,6 +6,7 @@ import {
   Navigation,
   MobileNavigation,
   Header,
+  ContactWidget,
 } from "@components";
 import { enterAnimation } from "@constants";
 import { motion } from "framer-motion";
@@ -45,7 +46,7 @@ const PageLayout: FC<Props> = (props: Props) => {
       <main className="flex flex-col h-full w-full overflow-y-auto">
         {children}
       </main>
-
+      <ContactWidget />
       {footer && <Footer />}
       {assets && <SplashScreen assets={assets} />}
     </div>

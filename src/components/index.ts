@@ -11,6 +11,7 @@ const ArrowIcon = dynamic(() => import("./@icons/ArrowIcon"));
 const TensorIcon = dynamic(() => import("./@icons/TensorIcon"));
 const ExchangeArtIcon = dynamic(() => import("./@icons/ExchangeArtIcon"));
 const ArrowButtonIcon = dynamic(() => import("./@icons/ArrowButtonIcon"));
+const ContactIcon = dynamic(() => import("./@icons/ContactIcon"));
 //atoms
 const Button = dynamic(() => import("./atoms/Button"));
 const AnimateWrapper = dynamic(() => import("./atoms/AnimateWrapper"));
@@ -25,6 +26,8 @@ const Dropdown = dynamic(() => import("./molecules/Dropdown"));
 const HeroVideo = dynamic(() => import("./molecules/HeroVideo"), { ssr: false });
 const CloudflareVideoPlayer = dynamic(() => import("./molecules/CloudflareVideoPlayer"));
 const NavigationItem = dynamic(() => import("./molecules/NavigationItem"));
+const ContactWidget = dynamic(() => import("./molecules/ContactWidget"));
+const ContactWidgetForm = dynamic(() => import("./molecules/ContactWidgetForm"));
 //organisms
 const SplashScreen = dynamic(() => import("./organisms/SplashScreen"));
 const Header = dynamic(() => import("./organisms/Header"));
@@ -105,5 +108,8 @@ export {
   GalleryItem,
   CloudflareVideoPlayer,
   NavigationItem,
-  HeroSection
+  HeroSection,
+  ContactIcon,
+  ContactWidget,
+  ContactWidgetForm,
 };

@@ -8,20 +8,14 @@ const LandingScreen: FC = () => {
   const { showView } = useViewStore(); // Access `showView` from the store
 
   return (
-    // <motion.div
-    //   className="min-h-[100svh] w-screen flex flex-row items-center justify-end gap-8 md:gap-10 border-b border-white border-opacity-10 px-5 lg:px-0"
-    //   variants={introContainerVariants}
-    //   initial="hidden"
-    //   animate={showView ? "show" : "hidden"}
-    // >
     <motion.div
       className="min-h-[100svh] col-centered max-w-screen overflow-hidden border-b border-white border-opacity-10 px-5 lg:px-0 pt-[64px]"
       variants={introContainerVariants}
       initial="hidden"
       animate={showView ? "show" : "hidden"}
     >
-      <motion.div className="flex flex-col xl:flex-row gap-16 xl:gap-32 max-w-[1256px]">
-        <div className="flex flex-col gap-10 xl:gap-14 max-w-[671px] py-12">
+      <motion.div className="flex flex-col xl:flex-row gap-16 xl:gap-32 max-w-[1256px] 2xl:max-w-[1512px]">
+        <div className="flex flex-col gap-10 xl:gap-14 xl:min-w-[671px] py-12">
           {/* Subtitle */}
           <motion.h1 variants={introItemVariants}>
             You&apos;re website doesn&apos;t need to be basic.{" "}
@@ -33,7 +27,7 @@ const LandingScreen: FC = () => {
         {/* Hero Video */}
         <motion.div
           variants={introItemVariants}
-          className="xl:-mr-[400px] object-cover scale-95 z-0"
+          // className="xl:-mr-[180px] 2xl:-mr-[500px] object-cover scale-95 z-0"
         >
           <HeroVideo />
         </motion.div>
