@@ -107,7 +107,10 @@ const HeaderItems: FC = () => {
           ))}
           <Link
             href={menuItems[menuItems.length - 1].href}
-            className={`text-base font-barlow font-semibold w-[166px] h-[36px] col-centered rounded-3xl text-black bg-sand`}
+            className={`text-base font-barlow font-semibold w-[166px] h-[36px] col-centered rounded-3xl 
+              transition-200 text-black bg-sand hover:text-sand-300 hover:bg-custom-black hover:border-2 hover:border-sand
+              
+              `}
           >
             Get an Estimate
           </Link>

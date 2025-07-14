@@ -85,7 +85,7 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
           flex flex-col justify-between 
           w-[90vw] md:w-[501px] h-[600px] 
           rounded-3xl bg-custom-black p-6 md:p-10 
-          border md:border-2 border-sand/80 overflow-hidden"
+          border md:border-4 border-sand/80 overflow-hidden"
       ref={ref}
       initial={{
         scale: 0.9,
