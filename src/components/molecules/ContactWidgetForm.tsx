@@ -70,7 +70,7 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
         timeoutRef.current = null;
       }
     };
-  }, [submissionStatus]);
+  }, [setOpen, submissionStatus]);
 
   //close dropdown on outside click
   const ref = useRef(null);
