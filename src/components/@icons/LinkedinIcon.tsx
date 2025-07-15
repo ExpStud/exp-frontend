@@ -5,7 +5,13 @@ interface Props extends SVGProps<SVGSVGElement> {
 }
 
 const LinkedinIcon: FC<Props> = (props: Props) => {
-  const { className, href = "", ...componentProps } = props;
+  const {
+    className,
+    href = "",
+    width = 23,
+    height = 23,
+    ...componentProps
+  } = props;
 
   const handleClick = () => {
     window.open(href, "_blank", "noopener,noreferrer");
@@ -13,8 +19,8 @@ const LinkedinIcon: FC<Props> = (props: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="23"
-      height="23"
+      width={width}
+      height={height}
       viewBox="0 0 23 23"
       fill="none"
       onClick={handleClick}

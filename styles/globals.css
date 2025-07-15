@@ -125,7 +125,9 @@ h2 {
 h3{
   @apply text-white text-xl font-primary font-normal;
 }
-
+.subheading {
+  @apply text-grayscale-200 text-base lg:text-xl tracking-wide font-barlow;
+}
 @keyframes shimmer {
   0% {
     background-position: 0% 0%;

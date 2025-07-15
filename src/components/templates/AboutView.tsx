@@ -17,7 +17,7 @@ const AboutView: FC<Props> = (props: Props) => {
   const { showView } = useViewStore();
 
   return (
-    <div className="page-py page-px xl:min-h-screen relative w-full h-full items-center justify-center z-0 mb-10">
+    <div className="page-py page-px xl:min-h-[60vh] relative w-full h-full items-center justify-center z-0 mb-10">
       <BackgroundImage setAssets={setAssets} />
       <motion.div
         className="flex flex-col gap-2"
@@ -30,7 +30,7 @@ const AboutView: FC<Props> = (props: Props) => {
         </motion.h1>
         <motion.p
           variants={introItemVariants}
-          className="max-w-[700px] text-base lg:text-xl pb-8"
+          className="subheading max-w-[700px] pb-8"
         >
           Our team is a tight-knit unit of talented individuals. Years of
           collaboration has made us not only a team with strong chemistry, but a

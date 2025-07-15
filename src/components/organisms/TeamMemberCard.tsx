@@ -17,20 +17,22 @@ const TeamMemberCard: FC<Props> = (props: Props) => {
           <h3>{member.name}</h3>
           <p className="text-grayscale-300">{member.title}</p>
         </div>
-        <div className="flex flex-col self-end">
-          {/* <p className="text-white underline text-xs hidden lg:block">
+        <div className="flex flex-col  gap-2 mt-1">
+          {/* <p className="text-white underline text-xs hidden lg:block self-end">
             Socials
           </p> */}
           <div className="flex gap-3 items-end">
             {member.twitter && (
               <TwitterIcon
                 href={member.twitter}
-                width={22}
-                height={18}
+                width={28}
+                height={22}
                 className="mb-0.5"
               />
             )}
-            {member.linkedin && <LinkedinIcon href={member.linkedin} />}
+            {member.linkedin && (
+              <LinkedinIcon href={member.linkedin} width={28} height={28} />
+            )}
             {/* {member.github && <TwitterIcon href={member.github} />} */}
           </div>
         </div>
