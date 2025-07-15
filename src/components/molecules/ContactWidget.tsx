@@ -9,7 +9,7 @@ const ContactWidget: FC<Props> = () => {
   const buttonRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="fixed bottom-5 md:bottom-8 right-5 md:right-8 z-50 flex flex-col items-end">
+    <div className="fixed bottom-5 md:bottom-8 right-5 md:right-8 3xl:right-[5%] z-50 flex flex-col items-end">
       {/* Backdrop (place first in DOM for stacking context) */}
       <AnimatePresence>
         {open && (

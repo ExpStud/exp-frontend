@@ -141,6 +141,9 @@ h3{
 .vertical-padding {
   @apply py-16 lg:py-24 ;
 }
+.page-width {
+  @apply max-w-[1800px];
+}
 
 .row-centered {
   @apply flex items-center justify-center;

@@ -17,7 +17,7 @@ const AboutView: FC<Props> = (props: Props) => {
   const { showView } = useViewStore();
 
   return (
-    <div className="page-py page-px xl:min-h-[60vh] relative w-full h-full items-center justify-center z-0 mb-10">
+    <div className="page-py page-px xl:min-h-screen 3xl:min-h-[80vh] relative w-full h-full items-center justify-center z-0 mb-10">
       <BackgroundImage setAssets={setAssets} />
       <motion.div
         className="flex flex-col gap-2"
