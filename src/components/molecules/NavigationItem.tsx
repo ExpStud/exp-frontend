@@ -24,7 +24,7 @@ const NavigationItem: FC<NavigationItemProps> = (
       className={`text-base font-barlow font-medium ${
         active
           ? "text-sand-300"
-          : "text-gray-300 hover:text-sand-300  hover:opacity-100 transition-200 opacity-70"
+          : "text-grayscale-200 hover:text-sand-300 transition-200"
       }`}
     >
       {item.label}

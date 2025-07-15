@@ -114,13 +114,13 @@ html {
   scroll-behavior: smooth;
 }
 p {
-  @apply tracking-wide font-barlow;
+  @apply tracking-wide font-barlow text-grayscale-200 ;
 }
 h1 {
-  @apply text-custom-gray text-4xl md:text-5xl font-barlow !leading-tight;
+  @apply text-grayscale-200 md:text-5xl font-barlow !leading-tight;
 }
 h2 {
-  @apply text-custom-gray text-3xl md:text-4xl font-primary;
+  @apply text-grayscale-200 text-3xl md:text-4xl font-primary;
 }
 
 @keyframes shimmer {

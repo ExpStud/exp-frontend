@@ -45,7 +45,7 @@ const Testimonials: FC = () => {
                   className={`py-2 px-4 cursor-pointer w-full min-w-[160px] transition-500 border-b-2 ${
                     selectedTestimonial.id === testimonial.id
                       ? "border-sand"
-                      : "border-custom-black text-custom-gray hover:text-white"
+                      : "border-custom-black text-grayscale-200 hover:text-white"
                   }`}
                   onClick={() => handleTestimonialChange(testimonial, index)}
                 >

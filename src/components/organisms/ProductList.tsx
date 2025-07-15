@@ -41,13 +41,13 @@ const ProductList: FC = () => {
             <p className="text-4xl md:text-5xl font-normal !leading-[1.3] tracking-wide md:min-w-[380px] font-primary hidden xl:block">
               Aesthetic digital products.
             </p>
-            <p className="text-custom-gray text-lg xl:text-xl font-regular !tracking-wide ">
+            <p className="text-lg xl:text-xl font-regular !tracking-wide ">
               At Sandbox Studio, we specialize in providing best-in-class web
               design, brand design, and web development services, tailored to
               our individual client needs.
             </p>
           </div>
-          <p className="text-custom-gray text-lg xl:text-xl font-regular">
+          <p className="text-lg xl:text-xl font-regular">
             Curious to learn more?
           </p>
           <Button

@@ -37,6 +37,18 @@ module.exports = {
         },
         batman: "#181818",
 
+        grayscale: {
+          100: "#E2E2E2", // Added - very light gray
+          200: "#BFBFBF", // Added - between 100 and 300
+          300: "#A2A2A2", // was 400
+          400: "#9D9D9E", // was 300
+          500: "#7C7C7C", // Added - mid gray
+          600: "#5C5C5C", // was 100
+          700: "#454545", // Added - between 600 and 800
+          800: "#353535", // was 600
+          900: "#2D2D2D", // was 800
+        },
+
         //old
         "exp-gray": {
           100: "#5C5C5C",
