@@ -18,7 +18,7 @@ const ProjectsView: FC<Props> = (props: Props) => {
   const { showView } = useViewStore();
 
   return (
-    <div className="relative w-full h-full page-py">
+    <div className="relative w-full h-full page-py-min">
       <BackgroundImage setAssets={setAssets} />
       <AnimateWrapper animate={showView}>
         <WelcomeSection title1="Our work." />

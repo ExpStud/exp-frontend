@@ -78,7 +78,7 @@ const AboutView: FC<Props> = (props: Props) => {
   }, [projectsCount, showProjectsCounter]);
 
   return (
-    <div className="page-py relative w-full h-full items-center justify-center z-0">
+    <div className="page-py-min relative w-full h-full items-center justify-center z-0">
       <BackgroundImage setAssets={setAssets} />
 
       <div className="relative z-10">

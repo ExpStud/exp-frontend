@@ -78,3 +78,12 @@ export const emptyForm: FormData = {
   budgetRange: "",
   relevantDocuments: "",
 };
+
+export interface TeamMember {
+  name: string;
+  title: string;
+  image: string;
+  twitter?: string;
+  linkedin?: string;
+  github?: string;
+}

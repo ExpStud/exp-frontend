@@ -12,6 +12,7 @@ const TensorIcon = dynamic(() => import("./@icons/TensorIcon"));
 const ExchangeArtIcon = dynamic(() => import("./@icons/ExchangeArtIcon"));
 const ArrowButtonIcon = dynamic(() => import("./@icons/ArrowButtonIcon"));
 const ContactIcon = dynamic(() => import("./@icons/ContactIcon"));
+const LinkedinIcon = dynamic(() => import("./@icons/LinkedinIcon"));
 //atoms
 const Button = dynamic(() => import("./atoms/Button"));
 const AnimateWrapper = dynamic(() => import("./atoms/AnimateWrapper"));
@@ -44,6 +45,7 @@ const TestimonialsItem = dynamic(() => import("./organisms/TestimonialsItem"));
 const ProjectGallery = dynamic(() => import("./organisms/ProjectGallery"));
 const Gallery = dynamic(() => import("./organisms/Gallery"));
 const GalleryItem = dynamic(() => import("./organisms/GalleryItem"));
+const TeamMemberCard = dynamic(() => import("./organisms/TeamMemberCard"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -112,4 +114,6 @@ export {
   ContactIcon,
   ContactWidget,
   ContactWidgetForm,
+  TeamMemberCard,
+  LinkedinIcon,
 };
