@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, use } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import Image from "next/image";
 import { handleAssetLoad } from "@utils";
 import { useTimeout, useWindowSize } from "@hooks";
@@ -25,7 +25,7 @@ const BackgroundImage: FC<Props> = (props: Props) => {
     <div
       className={`${
         fixed ? "fixed" : "absolute"
-      } inset-0 h-screen w-screen -z-[1] overflow-hidden`}
+      } inset-0    -z-[1] overflow-hidden`}
     >
       <Image
         src={`${process.env.CLOUDFLARE_STORAGE}/images/landing/landing-bg-${
