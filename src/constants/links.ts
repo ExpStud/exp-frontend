@@ -2,7 +2,7 @@ import {  NavigationLinks, Links } from "./types";
 
 export const menuItems: NavigationLinks[] = [
   { href: "/", label: "Home", hide: true },
-  { href: "/projects", label: "Our work"},
+  { href: "/projects", label: "Projects"},
   // { href: "/services", label: "What we do", hide: true },
   { href: "/about", label: "About us"},
   { href: "/contact", label: "Contact us"},

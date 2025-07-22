@@ -9,7 +9,7 @@ const Footer: FC = () => {
       <div className="page-px flex justify-between gap-2 md:gap-4 py-5 md:py-10 2xl:py-16">
         <div className="flex flex-col text-xl gap-1.5">
           <FooterItem href="/">Home</FooterItem>
-          <FooterItem href="/projects">Our work</FooterItem>
+          <FooterItem href="/projects">Projects</FooterItem>
           {/* <FooterItem href="/services">What we do</FooterItem> */}
           <FooterItem href="/about">About us</FooterItem>
           <FooterItem href="/contact">Contact us</FooterItem>
