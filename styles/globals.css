@@ -233,6 +233,9 @@ h3{
 .page-px {
   @apply px-5 md:px-10 xl:px-16 3xl:px-[5%];
 }
+.page-pl {
+  @apply pl-5 md:pl-10 xl:pl-16 3xl:pl-[5%];
+}
 .page-py-min {
   @apply pt-24 md:pt-32 xl:pt-32 pb-10 xl:pb-20;
 }

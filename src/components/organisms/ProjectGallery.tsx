@@ -2,7 +2,7 @@
 
 import { FC, useRef } from "react";
 import { Button, Gallery, GalleryItem } from "@components";
-import { GalleryType, clients } from "@constants";
+import { galleryData } from "@constants";
 import { useViewStore } from "@contexts";
 import { motion, useInView } from "framer-motion";
 
@@ -31,17 +31,6 @@ const itemVariants = {
   },
 };
 
-// Folio
-// Somos
-// Scum
-// Cyber
-const galleryData: GalleryType[] = [
-  clients[6].gallery![0],
-  clients[0].gallery![0],
-  clients[0].gallery![1],
-  clients[3].gallery![0],
-];
-
 const ProjectGallery: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-35% 0px" });
@@ -63,7 +52,7 @@ const ProjectGallery: FC = () => {
         </motion.div>
         {/* Gallery */}
         <motion.div variants={itemVariants} className="w-full">
-          <Gallery>
+          <Gallery arrowsAligned="right" roundedParent>
             {galleryData.map((item, i) => (
               <GalleryItem key={i} data={item} />
             ))}
