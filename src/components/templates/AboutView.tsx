@@ -21,7 +21,7 @@ const AboutView: FC<Props> = (props: Props) => {
   return (
     <div className="flex flex-col">
       <div
-        className={`page-py page-px  relative max-w-[1440px] self-center w-full h-full items-center justify-center ${
+        className={`page-py page-px relative max-w-[1440px] self-center w-full h-full items-center justify-center ${
           winHeight > 1024 ? "min-h-[50%]" : "xl:min-h-screen 3xl:min-h-[75%]"
         }`}
       >

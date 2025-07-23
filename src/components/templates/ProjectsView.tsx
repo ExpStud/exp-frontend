@@ -8,6 +8,7 @@ import {
   Gallery,
   GalleryItem,
   CloudflareVideoPlayer,
+  RightArrowIcon,
 } from "@components";
 import { useViewStore } from "@contexts";
 import {
@@ -15,7 +16,6 @@ import {
   GalleryType,
   introContainerVariants,
   introItemVariants,
-  projects,
 } from "@constants";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
@@ -88,13 +88,15 @@ const ProjectGalleryItem: FC<ProjectGalleryItemProps> = ({ data }) => {
             We need to add a {`data.description`} to each project
           </p>
         </div>
-        <div className="mr-2">
+        <div className="mr-6 underline text-sm">
+          {/* See more */}
           <ArrowButtonIcon
             direction="right"
             onClick={() =>
               handleClick(data.title.toLocaleLowerCase().replace(" ", "-"))
             }
           />
+          {/* <RightArrowIcon className="w-[28px] !opacity-100" /> */}
         </div>
       </div>
     </div>

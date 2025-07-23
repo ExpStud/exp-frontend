@@ -148,7 +148,7 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full lg:w-1/2 input"
+            className="w-full lg:w-1/2 input !bg-white !bg-opacity-[3%]"
             placeholder="Name"
             maxLength={250}
           />
@@ -158,7 +158,7 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full lg:w-1/2 input"
+            className="w-full lg:w-1/2 input !bg-white !bg-opacity-[3%]"
             placeholder="Email"
             maxLength={250}
           />
@@ -168,7 +168,7 @@ const ContactWidgetForm: FC<Props> = (props: Props) => {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          className="input w-full resize-none"
+          className="input w-full resize-none !bg-white !bg-opacity-[3%]"
           placeholder="Message (optional)"
           maxLength={1000}
           rows={winWidth >= 768 ? 13 : 11}

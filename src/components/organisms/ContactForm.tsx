@@ -1,12 +1,15 @@
 import { FC, useState } from "react";
-import { Button, Dropdown } from "@components";
+import { Button } from "@components";
 import { AnimatePresence, motion } from "framer-motion";
 import { emptyForm, midExitAnimation, FormData } from "src/constants";
 import { submitLead, validateEmail } from "@utils";
-import toast from "react-hot-toast";
-import axios from "axios";
 
-const ContactForm: FC = () => {
+interface ContactFormProps {
+  inputStyles?: string;
+}
+const ContactForm: FC<ContactFormProps> = ({
+  inputStyles = "!bg-white !bg-opacity-[3%]",
+}) => {
   const [formData, setFormData] = useState<FormData>(emptyForm);
   const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
   const [submissionStatus, setSubmissionStatus] = useState<
@@ -115,7 +118,7 @@ const ContactForm: FC = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full lg:w-1/2 input"
+              className={`w-full lg:w-1/2 input  ${inputStyles}`}
               placeholder="Name"
               maxLength={250}
             />
@@ -125,7 +128,7 @@ const ContactForm: FC = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full lg:w-1/2 input"
+              className={`w-full lg:w-1/2 input ${inputStyles}`}
               placeholder="Email address"
               maxLength={250}
             />
@@ -135,7 +138,7 @@ const ContactForm: FC = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className="input w-full resize-none"
+            className={`input w-full resize-none ${inputStyles}`}
             placeholder="Message"
             rows={6}
           ></textarea>
