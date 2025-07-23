@@ -21,7 +21,7 @@ const NavigationItem: FC<NavigationItemProps> = (
   return (
     <Link
       href={item.href}
-      className={`text-base font-barlow font-medium ${
+      className={`text-base font-barlow font-medium py-1 ${
         active
           ? "text-sand-300"
           : "text-grayscale-200 hover:text-sand-300 transition-200"
