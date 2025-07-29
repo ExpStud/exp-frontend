@@ -19,6 +19,7 @@ import {
 } from "@constants";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import { useWindowSize } from "@hooks";
 
 interface Props {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;
@@ -27,6 +28,7 @@ interface Props {
 const ProjectsView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
   const { showView } = useViewStore();
+  const [winWidth] = useWindowSize();
 
   return (
     <div className="flex flex-col">
@@ -43,7 +45,10 @@ const ProjectsView: FC<Props> = (props: Props) => {
             of our projects.
           </motion.h1>
           <motion.div className="w-full" variants={introItemVariants}>
-            <Gallery galleryItemGap={"gap-10 xl:gap-20"}>
+            <Gallery
+              galleryItemGap={"gap-10 xl:gap-20"}
+              itemGap={winWidth < 1280 ? 40 : 80}
+            >
               {galleryData.map((item, i) => (
                 <ProjectGalleryItem key={i} data={item} />
               ))}

@@ -20,10 +20,10 @@ const LandingView: FC<Props> = (props: Props) => {
     <div className="relative w-full h-full">
       <BackgroundImage setAssets={setAssets} fixed={false} />
       <HeroSection />
-      <ProjectGallery />
       <ProductList />
-      <Testimonials />
+      <ProjectGallery />
       <About />
+      <Testimonials />
 
       <LetsWorkLink />
     </div>

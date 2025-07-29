@@ -3,7 +3,7 @@ import Image from "next/image";
 import { handleAssetLoad } from "@utils";
 import { useTimeout, useWindowSize } from "@hooks";
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   setAssets?: Dispatch<SetStateAction<boolean[]>>;
   children?: React.ReactNode;
   fixed?: boolean;
@@ -24,7 +24,7 @@ const BackgroundImage: FC<Props> = (props: Props) => {
   return (
     <div
       className={`${
-        fixed ? "fixed" : "absolute"
+        fixed ? "fixed" : "absolute max-h-screen"
       } inset-0    -z-[1] overflow-hidden`}
     >
       <Image

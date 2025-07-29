@@ -26,7 +26,7 @@ const Header: FC<Props> = ({ headerType = "scroll", showHeader = true }) => {
   useEffect(() => {
     const unsubscribe = scrollY.on("change", (y) => {
       setIsScrolled(y > 30);
-      setIsDeepScrolled(y > 150);
+      setIsDeepScrolled(y > 30);
 
       const scrollDelta = y - lastScrollY.current;
 
