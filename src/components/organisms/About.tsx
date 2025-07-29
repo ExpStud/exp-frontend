@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button } from "@components";
+import { Button, HeroVideo } from "@components";
 import Image from "next/image";
 
 const About: FC = () => {
@@ -25,15 +25,8 @@ const About: FC = () => {
           </div>
           <Button title="About us" link="/about" />
         </div>
-        {/* <div className="w-[90vw] md:w-[608px] xl:!w-[780px] relative xl:-mr-64 aspect-[807/512]"> */}
-        <Image
-          src={`${process.env.CLOUDFLARE_STORAGE}/images/logo-art.png`}
-          alt="Sandbox Art"
-          width={807}
-          height={512}
-          className="xl:-mr-64 object-cover scale-95"
-        />
-        {/* </div> */}
+
+        <HeroVideo />
       </div>
     </div>
   );
