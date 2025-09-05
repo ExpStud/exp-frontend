@@ -1,14 +1,10 @@
 import { Dispatch, SetStateAction, FC } from "react";
 import {
-  WelcomeSection,
-  ProjectItem,
   LetsWorkLink,
   BackgroundImage,
   ArrowButtonIcon,
   Gallery,
-  GalleryItem,
   CloudflareVideoPlayer,
-  RightArrowIcon,
 } from "@components";
 import { useViewStore } from "@contexts";
 import {
@@ -101,7 +97,6 @@ const ProjectGalleryItem: FC<ProjectGalleryItemProps> = ({ data }) => {
               handleClick(data.title.toLocaleLowerCase().replace(" ", "-"))
             }
           />
-          {/* <RightArrowIcon className="w-[28px] !opacity-100" /> */}
         </div>
       </div>
     </div>

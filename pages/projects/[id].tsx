@@ -1,4 +1,4 @@
-import { PageLayout, ProjectsView } from "@components";
+import { PageLayout, ProjectItemView, ProjectsView } from "@components";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -10,7 +10,7 @@ const ProjectPage: NextPage = () => {
 
   return (
     <PageLayout assets={assets}>
-      <div className="col-centered h-screen"> Project : {id}</div>
+      <ProjectItemView setAssets={setAssets} id={id} />
     </PageLayout>
   );
 };

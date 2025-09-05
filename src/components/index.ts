@@ -29,6 +29,7 @@ const CloudflareVideoPlayer = dynamic(() => import("./molecules/CloudflareVideoP
 const NavigationItem = dynamic(() => import("./molecules/NavigationItem"));
 const ContactWidget = dynamic(() => import("./molecules/ContactWidget"));
 const ContactWidgetForm = dynamic(() => import("./molecules/ContactWidgetForm"));
+const ProjectItemFrame = dynamic(() => import("./molecules/ProjectItemFrame"));
 //organisms
 const SplashScreen = dynamic(() => import("./organisms/SplashScreen"));
 const Header = dynamic(() => import("./organisms/Header"));
@@ -46,6 +47,7 @@ const ProjectGallery = dynamic(() => import("./organisms/ProjectGallery"));
 const Gallery = dynamic(() => import("./organisms/Gallery"));
 const GalleryItem = dynamic(() => import("./organisms/GalleryItem"));
 const TeamMemberCard = dynamic(() => import("./organisms/TeamMemberCard"));
+const ProjectItemIntro = dynamic(() => import("./organisms/ProjectItemIntro"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -53,6 +55,7 @@ const AboutView = dynamic(() => import("./templates/AboutView"));
 const ContactView = dynamic(() => import("./templates/ContactView"));
 const ServicesView = dynamic(() => import("./templates/ServicesView"));
 const ProjectsView = dynamic(() => import("./templates/ProjectsView"));
+const ProjectItemView = dynamic(() => import("./templates/ProjectItemView"));
 
 //old
 const MobileNavigation = dynamic(() => import("./x-old/MobileNavigation"));
@@ -116,4 +119,7 @@ export {
   ContactWidgetForm,
   TeamMemberCard,
   LinkedinIcon,
+  ProjectItemView,
+  ProjectItemFrame,
+  ProjectItemIntro
 };

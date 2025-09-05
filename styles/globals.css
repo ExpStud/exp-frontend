@@ -242,6 +242,9 @@ h3{
 .page-py {
   @apply pt-24 md:pt-32 xl:pt-[150px] pb-10 xl:pb-20;
 }
+.page-pt {
+  @apply pt-24 md:pt-32 xl:pt-[150px];
+}
 .page-my {
   @apply mt-24 xl:mt-32;
 }
