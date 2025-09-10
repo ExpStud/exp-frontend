@@ -11,7 +11,8 @@ import {
   galleryData,
   GalleryType,
   introContainerVariants,
-  introItemVariants,
+  fadeInUp,
+  stagger,
 } from "@constants";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
@@ -32,15 +33,16 @@ const ProjectsView: FC<Props> = (props: Props) => {
         <BackgroundImage setAssets={setAssets} />
         <motion.div
           className="flex flex-col gap-0 md:gap-12"
-          variants={introContainerVariants}
+          variants={stagger(0.2, 0.2)}
           initial="hidden"
           animate={showView ? "show" : "hidden"}
+          viewport={{ once: true, amount: 0.4 }}
         >
-          <motion.h1 variants={introItemVariants}>
+          <motion.h1 variants={fadeInUp}>
             Take a look at <span className="text-sand font-medium">some</span>{" "}
             of our projects.
           </motion.h1>
-          <motion.div className="w-full" variants={introItemVariants}>
+          <motion.div className="w-full" variants={fadeInUp}>
             <Gallery
               galleryItemGap={"gap-10 xl:gap-20"}
               itemGap={winWidth < 1280 ? 40 : 80}

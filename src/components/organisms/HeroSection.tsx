@@ -3,7 +3,7 @@
 import { FC, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useViewStore } from "@contexts";
-import { introContainerVariants, introItemVariants } from "@constants";
+import { fadeInUp, stagger } from "@constants";
 import Image from "next/image";
 
 // Optional: small motion variant for logos
@@ -26,16 +26,14 @@ const LandingScreen: FC = () => {
   return (
     <motion.div
       className="min-h-[100svh] col-centered max-w-screen overflow-hidden border-b border-white border-opacity-10 px-5 lg:px-0 pt-[64px]"
-      variants={introContainerVariants}
+      variants={stagger(0.2, 0.2)}
       initial="hidden"
-      animate={hasAnimated ? "show" : "hidden"}
+      animate={showView ? "show" : "hidden"}
+      viewport={{ once: true, amount: 0.4 }}
     >
       <motion.div className="flex flex-col lg:items-center lg:justify-center max-w-[90vw] xl:max-w-[1256px] 2xl:max-w-[1512px] gap-16 md:gap-24 lg:gap-10 2xl:gap-24">
         {/* Heading */}
-        <motion.div
-          variants={introItemVariants}
-          className="col-centered text-center"
-        >
+        <motion.div variants={fadeInUp} className="col-centered text-center">
           <motion.h1 className="text-centered max-w-[700px] lg:max-w-[1000px]">
             You&apos;re website doesn&apos;t need to be basic.{" "}
             <span className="text-sand font-medium">
@@ -46,7 +44,7 @@ const LandingScreen: FC = () => {
 
         {/* Hero Image */}
         <motion.div
-          variants={introItemVariants}
+          variants={fadeInUp}
           className="lg:w-[65vw] 2xl:max-w-[80vw] col-centered"
         >
           <Image
@@ -58,7 +56,7 @@ const LandingScreen: FC = () => {
         </motion.div>
 
         {/* Logos */}
-        <motion.div variants={introItemVariants} className="col-centered gap-6">
+        <motion.div variants={fadeInUp} className="col-centered gap-6">
           <div className="flex items-center gap-1">
             <p>Trusted by</p>
             <Image

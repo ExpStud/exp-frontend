@@ -2,11 +2,7 @@ import { Dispatch, SetStateAction, FC } from "react";
 import { BackgroundImage, LetsWorkLink, TeamMemberCard } from "@components";
 import { useViewStore } from "src/contexts";
 import { motion } from "framer-motion";
-import {
-  introContainerVariants,
-  introItemVariants,
-  teamMembers,
-} from "@constants";
+import { stagger, teamMembers, fadeInUp } from "@constants";
 import { useWindowSize } from "@hooks";
 
 interface Props {
@@ -28,15 +24,16 @@ const AboutView: FC<Props> = (props: Props) => {
         <BackgroundImage setAssets={setAssets} />
         <motion.div
           className="flex flex-col gap-2"
-          variants={introContainerVariants}
+          variants={stagger(0.2, 0.2)}
           initial="hidden"
           animate={showView ? "show" : "hidden"}
+          viewport={{ once: true, amount: 0.4 }}
         >
-          <motion.h1 variants={introItemVariants}>
+          <motion.h1 variants={fadeInUp}>
             Meet the <span className="text-sand font-medium">Sandbox</span> Team
           </motion.h1>
           <motion.p
-            variants={introItemVariants}
+            variants={fadeInUp}
             className="subheading max-w-[700px] pb-8"
           >
             Our team is a tight-knit unit of talented individuals. Years of
@@ -46,7 +43,7 @@ const AboutView: FC<Props> = (props: Props) => {
           {/* Team Members */}
           <motion.div
             className="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-4 xl:gap-8 3xl:gap-10 px-4 md:px-0"
-            variants={introItemVariants}
+            variants={fadeInUp}
           >
             {teamMembers.map((member, index) => (
               <TeamMemberCard key={index} member={member} />

@@ -6,7 +6,7 @@ import {
   AnimateWrapper,
 } from "@components";
 import { useViewStore } from "src/contexts";
-import { introContainerVariants, introItemVariants } from "@constants";
+import { introContainerVariants, fadeInUp, stagger } from "@constants";
 import { motion } from "framer-motion";
 
 interface Props {
@@ -22,22 +22,20 @@ const ContactView: FC<Props> = (props: Props) => {
       <BackgroundImage setAssets={setAssets} />
       <motion.div
         className="col-start gap-8 md:gap-12 max-w-[824px] w-full"
-        variants={introContainerVariants}
+        variants={stagger(0.2, 0.2)}
         initial="hidden"
         animate={showView ? "show" : "hidden"}
+        viewport={{ once: true, amount: 0.4 }}
       >
-        <motion.div
-          className="flex w-full justify-between"
-          variants={introItemVariants}
-        >
-          <div className="flex flex-col lg:gap-2">
+        <div className="flex w-full justify-between">
+          <motion.div className="flex flex-col lg:gap-2" variants={fadeInUp}>
             <h1 className="text-white">How can we help?</h1>
             <p className="max-w-[425px]">
               Take a few seconds to fill out the form below and we will get back
               to you as soon as possible!
             </p>
-          </div>
-          <div className="hidden lg:flex flex-col ">
+          </motion.div>
+          <motion.div className="hidden lg:flex flex-col " variants={fadeInUp}>
             <p className="text-white font-light">Hate contact forms?</p>
             <a
               rel="noreferrer"
@@ -47,12 +45,12 @@ const ContactView: FC<Props> = (props: Props) => {
             >
               info@sandboxstud.io
             </a>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         <motion.div
           className="flex flex-col gap-5 lg:gap-10 w-full"
-          variants={introItemVariants}
+          variants={fadeInUp}
         >
           <div className="border-b border-white/20 pb-3">
             <p>
@@ -63,7 +61,7 @@ const ContactView: FC<Props> = (props: Props) => {
         </motion.div>
         <motion.div
           className="flex lg:hidden flex-col mb-6"
-          variants={introItemVariants}
+          variants={fadeInUp}
         >
           <p className="text-white font-light">Hate contact forms?</p>
           <a
