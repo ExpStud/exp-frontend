@@ -3,7 +3,7 @@ import { TeamMember } from "@constants";
 export const teamMembers: TeamMember[] = [
   {
     name: "Miguel Corzo (Blem)",
-    title: "Project Lead",
+    title: "Project Manager",
     image: `${process.env.CLOUDFLARE_STORAGE}/images/about/sketch-miguel.png`,
     twitter: "https://x.com/otablem",
     linkedin: "https://www.linkedin.com/in/miguel-andres-corzo",
