@@ -27,7 +27,8 @@ const SeamlessLogosMarquee: FC<Props> = ({
   const [rowWidth, setRowWidth] = useState(0);
 
   const [winWidth] = useWindowSize();
-  const gap = winWidth < 640 ? 48 : 96;
+  //  const gap = winWidth < 640 ? 48 : 96;
+  const gap = winWidth < 640 ? 60 : winWidth < 1024 ? 96 : 120;
 
   // Measure the width of ONE row (after images load / on resize)
   useLayoutEffect(() => {
@@ -69,18 +70,16 @@ const SeamlessLogosMarquee: FC<Props> = ({
         {/* First copy (has gaps between logos) */}
         <div
           ref={firstRowRef}
-          className="flex flex-nowrap items-center gap-[var(--gap)]
-             after:block"
-          style={{ ["--gap" as any]: `${gap}px` }}
+          className="flex flex-nowrap items-center gap-[var(--gap)] after:block  shrink-0"
+          style={{ gap: `${gap}px` }}
         >
           {children}
         </div>
         {/* Second copy (identical) */}
         <div
-          className="flex flex-nowrap items-center gap-[var(--gap)]
-             after:block"
+          className="flex flex-nowrap items-center gap-[var(--gap)] after:block  shrink-0"
           aria-hidden="true"
-          style={{ ["--gap" as any]: `${gap}px` }}
+          style={{ gap: `${gap}px` }}
         >
           {children}
         </div>
