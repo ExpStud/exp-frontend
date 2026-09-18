@@ -99,11 +99,11 @@ const AboutView: FC<Props> = (props: Props) => {
             <div className="lg:w-1/2 text-xl max-w-[608px]">
               <p>
                 Founded in January 2023, Sandbox Studio emerged from the nearly
-                decade-long partnership between Miguel Corzo and Wallace Palmer.
-                Having spent over eight years working together, our
-                collaborative journey began in diverse industries. Transitioning
-                from SaaS engineers to trailblazers in the Web 3 space, we bring
-                authentic expertise to the table.
+                decade-long partnership between Otablem and Darth. Having spent
+                over eight years working together, our collaborative journey
+                began in diverse industries. Transitioning from SaaS engineers
+                to trailblazers in the Web 3 space, we bring authentic expertise
+                to the table.
               </p>
             </div>
           </div>
@@ -136,7 +136,7 @@ const AboutView: FC<Props> = (props: Props) => {
             </p>
           </div>
           <div className="left-margin mt-20 flex flex-col lg:flex-row gap-10">
-            <a
+            {/* <a
               href="https://www.linkedin.com/in/miguel-andres-corzo/"
               rel="noreferrer"
               target="_blank"
@@ -148,14 +148,14 @@ const AboutView: FC<Props> = (props: Props) => {
                 height={500}
                 className="rounded-md grayscale-image"
               />
-            </a>
+            </a> */}
 
             <div className="flex flex-col justify-items-start lg:w-1/2 max-w-[608px] lg:ml-10">
-              <p className="font-primary">Miguel Corzo (Otablem)</p>
+              <p className="font-primary">Otablem</p>
               <p className="text-custom-gray">
-                With a decade-long career, Miguel brings a wealth of experience
+                With a decade-long career, Otablem brings a wealth of experience
                 to the table. As Sandbox Studio&apos;s project manager and
-                founder, Miguel orchestrates seamless collaborations, and
+                founder, Otablem orchestrates seamless collaborations, and
                 development cycles ensuring your vision comes to life with
                 precision and creativity.
               </p>
@@ -185,9 +185,9 @@ const AboutView: FC<Props> = (props: Props) => {
             ref={darthRef}
           >
             <div className="flex flex-col lg:w-1/2 max-w-[608px]">
-              <p className="font-primary">Wallace Palmer (Darth)</p>
+              <p className="font-primary">Darth</p>
               <p className="text-custom-gray">
-                As the lead developer, Wallace is the driving force behind the
+                As the lead developer, Darth is the driving force behind the
                 technical brilliance at Sandbox Studio. With over 10 years
                 development experience in various industries he has evolved from
                 SaaS web & mobile engineering to pioneering modern solutions.
@@ -207,7 +207,7 @@ const AboutView: FC<Props> = (props: Props) => {
               </div>
             </div>
 
-            <a
+            {/* <a
               href="https://www.linkedin.com/in/wallace-palmer-4b93473a/"
               rel="noreferrer"
               target="_blank"
@@ -219,7 +219,7 @@ const AboutView: FC<Props> = (props: Props) => {
                 height={500}
                 className="rounded-md grayscale-image"
               />
-            </a>
+            </a> */}
           </div>
         </AnimateWrapper>
 

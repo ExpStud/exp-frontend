@@ -25,9 +25,9 @@ const About: FC = () => {
           <div>
             <p className="font-regular text-lg xl:text-xl mb-5">
               Founded in January 2023, Sandbox Studio emerged from the nearly
-              decade-long partnership between Miguel Corzo and Wallace Palmer.
-              Having spent over ten years in collaboration, our journey has
-              spanned diverse industries.
+              decade-long partnership between Otablem and Darth. Having spent
+              over ten years in collaboration, our journey has spanned diverse
+              industries.
             </p>
             <p className=" font-regular text-lg xl:text-xl">
               We&apos;ve worked with some of the finest artist, builders, and
