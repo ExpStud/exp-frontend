@@ -2,14 +2,14 @@ import { TeamMember } from "@constants";
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "Miguel Corzo (Blem)",
+    name: "Otablem",
     title: "Project Manager",
     image: `${process.env.CLOUDFLARE_STORAGE}/images/about/sketch-miguel.png`,
     twitter: "https://x.com/otablem",
     linkedin: "https://www.linkedin.com/in/miguel-andres-corzo",
   },
   {
-    name: "Wallace Palmer (Darth)",
+    name: "Darth",
     title: "Lead Developer",
     image: `${process.env.CLOUDFLARE_STORAGE}/images/about/sketch-wallace.png`,
     twitter: "https://x.com/DarthDegen",

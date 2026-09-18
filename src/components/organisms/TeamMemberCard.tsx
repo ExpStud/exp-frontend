@@ -35,9 +35,9 @@ const TeamMemberCard: FC<Props> = (props: Props) => {
                 className="mb-0.5"
               />
             )}
-            {member.linkedin && (
+            {/* {member.linkedin && (
               <LinkedinIcon href={member.linkedin} width={28} height={28} />
-            )}
+            )} */}
           </div>
         </div>
       </div>
